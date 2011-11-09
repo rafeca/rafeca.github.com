@@ -1,0 +1,41 @@
+---
+layout: default
+title: Thoughts from rafeca
+---
+
+<h1>Thoughts from rafeca</h1>
+
+<h2>Blog posts <a href="/atom.xml"><img src="/gfx/rss.png" alt="RSS feed"/></a></h2>
+<ul class="posts list">
+  {% for post in site.posts %}
+    {% include post.html %}
+  {% endfor %}
+</ul>
+
+<h2>Open Source</h2>
+<ul class="software list">
+  <li>
+      <a href="https://github.com/bluevialabs/connfu-node">connFu-node</a> 
+      <span>&mdash; Node.js DSL for creating real time voice applications using the connFu platform</span>
+  </li>
+  <li>
+      <a href="https://rafeca.github.com/prettyjson">prettyjson</a>
+      <span>&mdash; library for echoing JSON data in a nice format on Node.js</span>
+  </li>
+</ul>
+  
+  
+<!--div class="navigation">
+  <div class="left">
+    {% if paginator.previous_page > 1 %}
+    <a href="/page{{ paginator.previous_page }}">Previous</a>
+    {% elsif paginator.page != 1 %}
+    <a href="/">Previous</a>
+    {% endif %}
+  </div>
+  <div class="right">
+    {% if paginator.next_page %}
+    <a href="/page{{ paginator.next_page }}">Next</a>
+    {% endif %}
+  </div>
+</div-->

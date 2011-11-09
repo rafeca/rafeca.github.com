@@ -1,0 +1,62 @@
+pre, tt, code {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+}
+
+code {
+  font-size: 0.75em;
+  line-height: 1.2em;
+  background-color: #F5F5FF;
+  padding: 0 2px;
+  border: 1px solid #d0d0ee;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
+pre {
+  margin: 15px 0;
+  padding: 3px 0 3px 15px;
+  border-left: 5px solid #d0d0ee;
+  color: #444466;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.15em;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.software li {
+  clear: both;
+}
+
+.software a {
+  float: left;
+  width: 120px;
+}
+
+#post {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #999;
+}
+
+#post h1 {
+  font-size: 1.5em;
+  margin: 30px 0 15px;
+}
+
+#post h2, #post h3 {
+  font-size: 1.125em;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+#post h3 {
+  font-size: 1em;
+}

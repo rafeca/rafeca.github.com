@@ -100,7 +100,7 @@ Liquid automatically parses source code and highlights it when it finds the `hig
     console.log('world');
   }, 100);
   console.log('hello');
-{{ "{% endhighlight "}} %}
+{{ "{% endhighlight "}}%}
 {% endhighlight %}
 
 But when I was creating the blog, the last version of Liquid was the 2.3.0, which had a bug on

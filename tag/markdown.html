@@ -1,0 +1,12 @@
+---
+layout: default
+title: Thoughts from rafeca
+---
+<h1><a href="/" title="Home">&laquo;</a> Thoughts from rafeca</h1>
+<h2>Posts in category "markdown"</h2>
+
+<ul class="posts_list">
+  {% for post in site.categories.markdown %}
+    {% include post.html %}
+  {% endfor %}
+</ul>

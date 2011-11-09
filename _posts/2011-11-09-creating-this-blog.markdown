@@ -137,9 +137,9 @@ static page for every tag, which would look like this:
 {% highlight html %}
 ---
 layout: default
-title: Thoughts from rafeca
+title: Thoughts by rafeca
 ---
-<h1>Thoughts from rafeca</h1>
+<h1>Thoughts by rafeca</h1>
 <h2>Posts in category "git"</h2>
 <ul class="posts_list">
   {{"{% for post in site.categories.git "}}%}
@@ -167,9 +167,9 @@ task :tags do
     html << <<-HTML
 ---
 layout: default
-title: Thoughts from rafeca
+title: Thoughts by rafeca
 ---
-<h1>Thoughts from rafeca</h1>
+<h1>Thoughts by rafeca</h1>
 <h2>Posts in category "#{category}"</h2>
 
 <ul class="posts_list">

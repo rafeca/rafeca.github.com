@@ -11,9 +11,9 @@ task :tags do
     html << <<-HTML
 ---
 layout: default
-title: Thoughts from rafeca
+title: Thoughts by rafeca
 ---
-<h1><a href="/" title="Home">&laquo;</a> Thoughts from rafeca</h1>
+<h1><a href="/" title="Home">&laquo;</a> Thoughts by rafeca</h1>
 <h2>Posts in category "#{category}"</h2>
 
 <ul class="posts list">

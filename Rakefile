@@ -16,7 +16,7 @@ title: Thoughts from rafeca
 <h1><a href="/" title="Home">&laquo;</a> Thoughts from rafeca</h1>
 <h2>Posts in category "#{category}"</h2>
 
-<ul class="posts_list">
+<ul class="posts list">
   {% for post in site.categories.#{category} %}
     {% include post.html %}
   {% endfor %}

@@ -59,16 +59,16 @@ and once I finish writing the post I merge to master and voilà: the post is pub
 I write my posts using TextMate or VIM, and publish them using the command line via GIT, this is my
 regular workflow when I develop so I'm very comfortable with it.
 
-I can do everything while offline and I can automate some tasks thanks to ZSH scripts or GIT commands
+I can do everything while offline and I can automate some tasks thanks to ZSH scripts or GIT commands.
 
 &nbsp;
 
-Ok, now let's talk about real stuff... Those are the basic steps I followed to create this blog
+Ok, now let's talk about real stuff... Those are the basic steps I followed to create this blog,
 
 # Creating the templates
 
 This was actually the easiest part, I just created the main layout in `_layouts/default.html` 
-and a layout for the posts, which inherits from the main layout in `_layout/post.html`. Jekyll
+and a layout for the posts  in `_layout/post.html`, which inherits from the main layout. Jekyll
 uses the [Liquid template engine](http://liquidmarkup.org/), which has the following beautiful format:
 
 {% highlight html %}
@@ -92,7 +92,7 @@ You can check both templates in my GitHub repository: [`_layouts/`](https://gith
 
 # Code highlighting
 
-Liquid automatically allow code highlighting by adding the `highlight` tag with the correspondent language:
+Liquid automatically parses source code and highlights it when it finds the `highlight` tag:
 
 {% highlight javascript %}
 {{ "{% highlight javascript"}} %}
@@ -110,14 +110,19 @@ But when I was creating the blog, the last version of Liquid was the 2.3.0, whic
 * Use [RedCarpet](https://github.com/tanoku/redcarpet), a Markdown parser created by 
 [Vicent Marti](http://twitter.com/tanoku), a Catalan GitHub employee.
 
-Obviously, I chose the second option ;)
+Obviously, I chose the second option ;) To change the markdown parser in Jekyll, I had to add
+a new config parameter in the Jekyll `_config.yml` file:
+
+{% highlight yaml %}
+markdown: redcarpet
+{% endhighlight %}
 
 # Adding comments
 
-As Jekylls creates static pages for the blog, it doesn't provide comments on the posts. I found
+As Jekylls creates static pages for the blog, it doesn't provide comments on the posts. So I found
 3 different options to solve the issue:
 
-* Don't provide comments justifying that nobody is going to comment on such a blog
+* Don't provide comments justifying that nobody is going to comment on blog like this one.
 * Use GitHub issues to host the comments, as it is explained
   [here](http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html).
   This is a really cool hack, but I didn't want to force readers to have a GitHub account and
@@ -131,7 +136,7 @@ in the design... So maybe in the future I switch to another commenting system
 
 # Other fun stuff
 
-I wanted to have a way to list all the posts with a certain tag, to accomplish it I needed to create a
+I wanted to have a way to list all the posts with a certain tag, and to accomplish it I needed to create a
 static page for every tag, which would look like this:
 
 {% highlight html %}
@@ -149,9 +154,10 @@ title: Thoughts by rafeca
 {% endhighlight %}
 
 To create all those pages I used a [Rake](http://rake.rubyforge.org/) task (Rake is a build library for Ruby).
-I opted to use Rake because Jekyll is written in Ruby, so this way I could access natively to the Jekylls API.
+I opted to use Rake because Jekyll is written in Ruby, so this way I could access natively to the Jekylls API
+to get the list of tags.
 
-I used a slightly modified version of this [Gist](https://gist.github.com/790778):
+This is the Rake task that I'm using (it's a slightly modified version of this [Gist](https://gist.github.com/790778)):
 
 {% highlight ruby %}
 desc 'Generate tag pages'

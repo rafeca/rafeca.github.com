@@ -64,3 +64,8 @@ pre {
 #post .back {
   margin-top: 30px;
 }
+
+#post image {
+  display: block;
+  margin: 0 auto;
+}

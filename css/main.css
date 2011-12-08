@@ -14,13 +14,14 @@ pre code {
   background-color: transparent;
   padding: 0;
   border: none;
+  padding: 3px 0 3px 15px;
+  border-left: 5px solid #d0d0ee;
+  color: #444466;
+  display: block;
 }
 
 pre {
   margin: 15px 0;
-  padding: 3px 0 3px 15px;
-  border-left: 5px solid #d0d0ee;
-  color: #444466;
   font-weight: normal;
   font-style: normal;
   font-size: 1em;
@@ -51,14 +52,24 @@ pre {
   margin: 30px 0 15px;
 }
 
-#post h2, #post h3 {
+#post h2 {
   font-size: 1.125em;
   font-weight: bold;
-  margin: 15px 0;
+  margin: 30px 0 10px;  
 }
 
 #post h3 {
+  margin: 15px 0;
   font-size: 1em;
+}
+
+#post ol, #post ul {
+  margin-left: 15px;
+}
+
+#post strong {
+  font-weight: bold;
+  color: #000;
 }
 
 #post .back {

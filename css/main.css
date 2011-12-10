@@ -28,6 +28,19 @@ pre {
   line-height: 1.15em;
 }
 
+/* terminal colors **/
+code.bash {
+  background-color: #073642;
+  color: #839496;
+  padding: 8px 15px;
+  margin: 20px auto;
+  border: 0;
+  line-height: 1.4em;
+  width: 690px;
+  border: 8px solid #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
 .list {
   list-style: none;
   padding: 0;

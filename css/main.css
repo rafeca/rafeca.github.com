@@ -55,7 +55,38 @@ code.bash {
   width: 160px;
 }
 
+ul.categories {
+  list-style: none;
+  padding-left: 30px;
+  margin: -45px 0 30px 0;
+  height: 30px;
+}
+
+.categories li {
+  float: left;
+  margin-right: 5px;
+}
+
+.categories li a {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #999;
+          border-radius: 3px;
+     -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 3px 8px;
+}
+
+.categories li a:hover {
+  background: #666;
+}
+
+
 #post {
+  clear: left;
   padding-bottom: 15px;
   border-bottom: 1px solid #999;
 }

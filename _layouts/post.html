@@ -4,18 +4,18 @@ layout: default
       
 <h1><a href="/" title="Home">&laquo;</a> {{ page.title }} <span>{{ page.date || date_to_string }}</span></h1>
 
+<ul class="categories">
+{% for category in page.categories %}
+  <li><a href="/tag/{{ category }}.html">{{ category }}</a></li>
+{% endfor %}
+</ul>
+
+
 <div id="post">
   {{ content }}
   
   <p class="back">&laquo; <a href="/">Home</a></p>
 </div>
-
-<h2>Categories</h2>
-<ul>
-{% for category in page.categories %}
-  <li><a href="/tag/{{ category }}.html">{{ category }}</a></li>
-{% endfor %}
-</ul>
       
 <!--h2>Related Posts</h2>
 <ul class="posts_list">

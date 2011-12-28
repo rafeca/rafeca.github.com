@@ -23,7 +23,14 @@ body {
   margin-top: 30px;
   padding: 10px 0;
   color: #666;
-  font-size: 1em;
+  line-height: 1.785em;
+  font-family: helvetica, arial, clean, sans-serif;
+  font-size: 0.875em;
+}
+
+#footer span {
+  height: 25px;
+  display: block;
 }
 
 #footer a, #footer a:visited {
@@ -106,10 +113,30 @@ h2 a {
   vertical-align: middle;
   display: inline-block;
   margin-left: 5px;
+  opacity: 0.6;
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+     -moz-transition-property: opacity;
+     -moz-transition-duration: 0.2s;
+     -moz-transition-timing-function: ease-out;
 }
 
-#footer {
-  font-family: helvetica, arial, clean, sans-serif;
-  font-size: 0.875em;
-  line-height: 1.4em;
+h2 a:hover {
+  opacity: 1;
+}
+
+#footer a {
+  margin: 0 3px;
+  opacity: 0.5;
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+     -moz-transition-property: opacity;
+     -moz-transition-duration: 0.3s;
+     -moz-transition-timing-function: ease-out;
+}
+
+#footer a:hover {
+  opacity: 1;
 }

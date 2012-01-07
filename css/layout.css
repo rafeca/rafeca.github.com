@@ -126,6 +126,10 @@ h2 a:hover {
   opacity: 1;
 }
 
+#footer span {
+  float: right;
+}
+
 #footer a {
   margin: 0 3px;
   opacity: 0.5;

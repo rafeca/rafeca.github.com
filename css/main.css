@@ -46,13 +46,18 @@ code.bash {
   padding: 0;
 }
 
-.software li {
+.software li, .posts li {
   clear: both;
 }
 
 .software a {
   float: left;
-  width: 160px;
+  width: 120px;
+}
+
+.posts span {
+  float: left;
+  width: 110px;
 }
 
 ul.categories {

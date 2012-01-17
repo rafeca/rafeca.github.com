@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Automate your release flow
-categories: [git, github, node.js]
+categories: [git, github, nodejs]
 ---
 
 When working on an opensource project or library, it's really important to

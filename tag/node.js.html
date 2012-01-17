@@ -1,0 +1,12 @@
+---
+layout: default
+title: Thoughts by rafeca
+---
+<h1><a href="/" title="Home">&laquo;</a> Thoughts by rafeca</h1>
+<h2>Posts in category "node.js"</h2>
+
+<ul class="posts list">
+  {% for post in site.categories.node.js %}
+    {% include post.html %}
+  {% endfor %}
+</ul>

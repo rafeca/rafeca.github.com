@@ -19,6 +19,7 @@ GEM
     maruku (0.6.0)
       syntax (>= 1.0.0)
     posix-spawn (0.3.6)
+    rake (0.9.2.2)
     redcarpet (1.17.2)
     syntax (1.0.0)
 
@@ -27,5 +28,5 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
-  kramdown
+  rake
   redcarpet (= 1.17.2)

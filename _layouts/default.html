@@ -1,43 +1,51 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <title>{{ page.title }}</title>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{{ page.title }}</title>
+  <meta name="description" content="Thoughts by rafeca - My personal thoughts about technology and the Web">
+  <meta name="author" content="Rafael de Oleza">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="http://feeds.feedburner.com/rafeca" rel="alternate" title="Thoughts by rafeca" type="application/atom+xml">
+  <link rel="author" href="/humans.txt">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/disqus.css">
+
+  <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
     
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="author" content="Rafael de Oleza" />
-    <link href="http://feeds.feedburner.com/rafeca" rel="alternate" title="Thoughts by rafeca" type="application/atom+xml" />
-     
-    <link rel="stylesheet" media="all" href="/css/reset.css" />
-    <link rel="stylesheet" media="all" href="/css/layout.css" />
-    <link rel="stylesheet" media="all" href="/css/main.css" />
-    <link rel="stylesheet" media="all" href="/css/syntax.css" />
-    <link rel="stylesheet" media="all" href="/css/disqus.css" />
+    {{ content }}
     
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-6212472-4']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
-  </head>
+    <footer>
+      <span>Rafael de Oleza &mdash; rafeca</span>
+      <a class="fadedlink" href="https://github.com/rafeca"><img src="/gfx/github-logo.png" alt="@github"></a>
+      <a class="fadedlink" href="https://twitter.com/rafeca"><img src="/gfx/twitter-logo.png" alt="@twitter"></a>
+      <a class="fadedlink" href="http://linkedin.com/in/rafeca"><img src="/gfx/linkedin-logo.png" alt="@linkedin"></a>
+      <a class="fadedlink" href="mailto:rafeca@gmail.com"><img src="/gfx/gmail-logo.png" alt="@gmail"></a>
+    </footer>
+  </div>
   
-  <body>
-    <div id="container">
-      {{ content }}
-      <div id="footer">
-        <span>Rafael de Oleza &mdash; rafeca</span>
-        <a href="https://github.com/rafeca"><img src="/gfx/github-logo.png" alt="@github"></a>
-        <a href="https://twitter.com/rafeca"><img src="/gfx/twitter-logo.png" alt="@twitter"></a>
-        <a href="http://linkedin.com/in/rafeca"><img src="/gfx/linkedin-logo.png" alt="@linkedin"></a>
-        <a href="mailto:rafeca@gmail.com"><img src="/gfx/gmail-logo.png" alt="@gmail"></a>
-      </div>
-    </div>
-  </body>
+  <script>
+    window._gaq = [['_setAccount','UA-6212472-4'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
 </html>

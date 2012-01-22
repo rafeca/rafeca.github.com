@@ -1,0 +1,17 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Blogger: Rafael de Oleza
+  Site: http://rafeca.com
+  Twitter: @rafeca
+  Location: Barcelona, London
+
+/* THANKS */
+  Names (& URL): 
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery, Jekyll, GitHub
+  Software: Sublime

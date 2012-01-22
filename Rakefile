@@ -13,10 +13,12 @@ task :tags do
 layout: default
 title: Thoughts by rafeca
 ---
-<h1><a href="/" title="Home">&laquo;</a> Thoughts by rafeca</h1>
-<h2>Posts in category "#{category}"</h2>
+<header>
+  <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> Thoughts by rafeca</h1>
+  <h2>Posts in category "#{category}"</h2>
+</header>
 
-<ul class="posts list">
+<ul>
   {% for post in site.categories.#{category} %}
     {% include post.html %}
   {% endfor %}

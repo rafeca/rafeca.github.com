@@ -2,10 +2,12 @@
 layout: default
 title: Thoughts by rafeca
 ---
-<h1><a href="/" title="Home">&laquo;</a> Thoughts by rafeca</h1>
-<h2>Posts in category "nodejs"</h2>
+<header>
+  <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> Thoughts by rafeca</h1>
+  <h2>Posts in category "nodejs"</h2>
+</header>
 
-<ul class="posts list">
+<ul>
   {% for post in site.categories.nodejs %}
     {% include post.html %}
   {% endfor %}

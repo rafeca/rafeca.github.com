@@ -1,17 +1,19 @@
 ---
 layout: default
 ---
-      
-<h1><a href="/" title="Home">&laquo;</a> {{ page.title }} <span>{{ page.date || date_to_string }}</span></h1>
+<header>   
+  <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> {{ page.title }} <small>{{ page.date || date_to_string }}</small></h1>
 
-<ul class="categories">
-{% for category in page.categories %}
-  <li><a href="/tag/{{ category }}.html">{{ category }}</a></li>
-{% endfor %}
-</ul>
+  <nav>
+    <ul class="clearfix">
+    {% for category in page.categories %}
+      <li><a href="/tag/{{ category }}.html">{{ category }}</a></li>
+    {% endfor %}
+    </ul>
+  </nav>
+</header>
 
-
-<div id="post">
+<div id="post" role="main">
   {{ content }}
   
   <p class="back">&laquo; <a href="/">Home</a></p>
@@ -23,6 +25,8 @@ layout: default
     {% include post.html %}
   {% endfor %}
 </ul-->
+
+<hr/>
 
 <h2>Comments</h2>
 <div id="disqus_thread"></div>

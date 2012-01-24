@@ -4,22 +4,22 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Thoughts by rafeca</title>
- <link href="http://feeds.feedburner.com/rafeca" rel="self"/>
- <link href="http://rafeca.com/"/>
+ <title>{{ site.title }}</title>
+ <link href="http://feeds.feedburner.com/{{ site.feedburner_id }}" rel="self"/>
+ <link href="{{ site.url_root}}{{ site.baseurl }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://rafeca.com</id>
+ <id>{{ site.url_root}}{{ site.baseurl }}</id>
  <author>
-   <name>Rafael de Oleza</name>
-   <email>rafeca@gmail.com</email>
+   <name>{{ site.author }}</name>
+   <email>{{ site.author_email }}</email>
  </author>
 
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://rafeca.com{{ post.url }}"/>
+   <link href="{{ site.url_root}}{{ site.baseurl }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://rafeca.github.com{{ post.url }}</id>
+   <id>{{ site.url_root}}{{ site.baseurl }}{{ post.url }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}

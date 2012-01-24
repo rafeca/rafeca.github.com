@@ -11,10 +11,10 @@ task :tags do
     html << <<-HTML
 ---
 layout: default
-title: Thoughts by rafeca
+title: {{ site.title }}
 ---
 <header>
-  <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> Thoughts by rafeca</h1>
+  <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> {{ site.title }}</h1>
   <h2>Posts in category "#{category}"</h2>
 </header>
 

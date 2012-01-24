@@ -3,3 +3,12 @@ pygments:     true
 markdown:     redcarpet
 permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
+title:        Thoughts by rafeca
+description:  My personal thoughts about technology and the Web
+url_root:     http://rafeca.com
+author:       Rafael Oleza
+author_short: rafeca
+author_email: rafeca@gmail.com
+analytics_ua: UA-6212472-4
+feedburner_id: rafeca
+disqus_id:    rafeca

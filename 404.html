@@ -7,8 +7,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>{{ page.title }}</title>
-  <meta name="description" content="{{ site.title }}">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.title }} - {{ site.description }}">
   <meta name="author" content="{{ site.author }}">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -31,9 +31,10 @@
     <h2>Sorry, this page does not exist :(</h2>
     
     <footer>
-      <span>{{ site.author }}</span>
+      <span>{{ site.author }} &mdash; {{ site.author_short }}</span>
       <a class="fadedlink" href="https://github.com/{{ site.author_short }}"><img src="/gfx/github-logo.png" alt="@github"></a>
       <a class="fadedlink" href="https://twitter.com/{{ site.author_short }}"><img src="/gfx/twitter-logo.png" alt="@twitter"></a>
+      <a class="fadedlink" href="http://linkedin.com/in/{{ site.author_short }}"><img src="/gfx/linkedin-logo.png" alt="@linkedin"></a>
       <a class="fadedlink" href="mailto:{{ site.author_email }}"><img src="/gfx/gmail-logo.png" alt="@gmail"></a>
     </footer>
   </div>

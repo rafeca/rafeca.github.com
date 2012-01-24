@@ -4,11 +4,11 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>{{ site.title }}</title>
+ <title>{{ site.title | xml_escape }}</title>
  <link href="http://feeds.feedburner.com/{{ site.feedburner_id }}" rel="self"/>
  <link href="{{ site.url_root}}{{ site.baseurl }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.url_root}}{{ site.baseurl }}</id>
+ <id>{{ site.url_root }}{{ site.baseurl }}</id>
  <author>
    <name>{{ site.author }}</name>
    <email>{{ site.author_email }}</email>
@@ -16,10 +16,10 @@ layout: nil
 
  {% for post in site.posts %}
  <entry>
-   <title>{{ post.title }}</title>
+   <title>{{ post.title | xml_escape }}</title>
    <link href="{{ site.url_root}}{{ site.baseurl }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.url_root}}{{ site.baseurl }}{{ post.url }}</id>
+   <id>{{ site.url_root }}{{ site.baseurl }}{{ post.url }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}

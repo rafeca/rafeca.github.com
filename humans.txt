@@ -3,15 +3,15 @@
 
 
 /* TEAM */
-  Blogger: Rafael de Oleza
-  Site: http://rafeca.com
-  Twitter: @rafeca
+  Blogger: osuka
+  Site: http://gatillos.com
+  Twitter: @osuka
   Location: Barcelona, London
 
 /* THANKS */
-  Names (& URL): 
+  Names (& URL): Rafa Oleza (http://rafeca.com)
 
 /* SITE */
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery, Jekyll, GitHub
-  Software: Sublime
+  Software: vim

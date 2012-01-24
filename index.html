@@ -5,9 +5,16 @@ layout: default
   <h1>{{ site.title }}</h1>
 </head>
 
+<h2><span>Latest comic</span></h2>
+<ul>
+ {% for post in site.categories.comic limit:1 %}
+   {% include comic_post.html %}
+ {% endfor %}
+</ul>
+
 <h2><span>Blog posts</span> <a class="fadedlink" href="http://feeds.feedburner.com/{{ site.feedburner_id }}" title="RSS feed"><img src="/gfx/rss.png" alt="RSS feed"/></a></h2>
 <ul>
-  {% for post in site.posts %}
+  {% for post in site.categories.blog limit:5 %}
     {% include post.html %}
   {% endfor %}
 </ul>

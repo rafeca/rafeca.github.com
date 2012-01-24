@@ -3,3 +3,12 @@ pygments:     true
 markdown:     redcarpet
 permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
+title:        gatillos.com - gun-toting kittens
+#baseurl:      /yay
+url_root:     http://gatillos.com
+author:       osuka
+author_short: osuka
+author_email: webmaster@gatillos.com
+analytics_ua: UA-15027129-1
+feedburner_id: gatillos
+disqus_id:     gatillos

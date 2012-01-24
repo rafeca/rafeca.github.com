@@ -11,6 +11,7 @@ task :tags do
     html << <<-HTML
 ---
 layout: default
+title: Thoughts by rafeca
 ---
 <header>
   <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> {{ site.title }}</h1>

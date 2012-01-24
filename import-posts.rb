@@ -5,6 +5,7 @@
 require 'nokogiri'
 require 'date'
 require 'php_serialize'
+require 'yaml'
 
 def parse_content(content) 
   
@@ -70,12 +71,12 @@ doc.xpath("//item").each_with_index do |item|
     filename="#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{post_name}.markdown"
     @output << "---\n"
     @output << "layout: post\n"
-    @output << "title: #{title}\n"
+    @output << "title: #{title.inspect}\n"
     @output << "permalink: #{link}\n"
     @output << "published: false\n" if is_private
     @output << "categories: [blog]\n"
     # in my blog, I used wordpress categories for what jekyll would call tags, whle jekyll categories
-    # would be 'blog, comic_1, comic_2, ...', so all posts go to category blog 
+    # would be blog and comic_1, comic_2, for the comics ...', so all posts go to category blog 
     @output << "tags: [#{categories.join(",")}]\n"
     @output << "date: #{postdate}\n"
     @output << "---\n"
@@ -95,14 +96,23 @@ doc.xpath("//item").each_with_index do |item|
     large_size_jpg = meta['files']['large'][0]
     medium_size_jpg = meta['files']['medium'][0]
     small_size_jpg = meta['files']['small'][0]
+    @output << "---\n"
+    @output << "layout: post\n"     # TODO change to webcomic_post?
+    @output << "title: #{title.inspect}\n"
+    @output << "permalink: #{link}\n"
+    @output << "published: false\n" if is_private
+    @output << "categories: [comic, #{collection}]\n" # this way we can filter by 'all comics' (category=comic) and by specific comic (category=collection name)
+    @output << "tags: [#{categories.join(", ")}]\n"
+    @output << "date: #{postdate}\n"
+    @output << "---\n"
     @output << "<div class='webcomic_image'><a href='#{link}'><img src='#{collection}/#{full_size_jpg}'/></a>\n"
     @output << "<div class='webcomic_content'>#{parse_content(content)}</div>\n"
-    @output << "------------------------***************\n"
+    @output << "[#{comments.length} comments]\n"
   end
 
   if filename && filename.length > 0
-    puts filename
-    puts @output
+    puts "creating #{filename}"
+    File.open( "_posts/" + filename, 'w' ) {|file| file.write(@output)}
   end
 
   # TODO export comments to disqus?

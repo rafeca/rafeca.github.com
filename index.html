@@ -5,32 +5,23 @@ layout: default
   <h1>{{ site.title }}</h1>
 </head>
 
-<h2><span>Latest comic</span></h2>
+<h2><span>Latest comic</span> <a class="fadedlink" href="http://feeds.feedburner.com/{{ site.feedburner_id }}" title="RSS feed"><img src="gfx/rss.png" alt="RSS feed"/></a></h2>
 <ul>
  {% for post in site.categories.comic limit:1 %}
    {% include comic_post.html %}
  {% endfor %}
 </ul>
 
-<h2><span>Blog posts</span> <a class="fadedlink" href="http://feeds.feedburner.com/{{ site.feedburner_id }}" title="RSS feed"><img src="/gfx/rss.png" alt="RSS feed"/></a></h2>
+<h2><span>Latest blog entries</span></h2>
 <ul>
   {% for post in site.categories.blog limit:5 %}
-    {% include post.html %}
+    {% include post_preview.html %}
   {% endfor %}
 </ul>
 
-<h2>Open Source</h2>
+<h2><span>Older blog entries</span></h2>
 <ul>
-  <li>
-      <a href="http://rafeca.com/node-releasetools">releasetools</a> 
-      <span>&mdash; Library for automating releases of Node.js package</span>
-  </li>
-  <li>
-      <a href="https://github.com/bluevialabs/connfu-node">connFu-node</a> 
-      <span>&mdash; Node.js DSL for creating real time voice applications using the connFu platform</span>
-  </li>
-  <li>
-      <a href="http://rafeca.com/prettyjson">prettyjson</a>
-      <span>&mdash; library for echoing JSON data in a nice format on Node.js</span>
-  </li>
+  {% for post in site.categories.blog limit:15 offset:5 %}
+    {% include post.html %}
+  {% endfor %}
 </ul>

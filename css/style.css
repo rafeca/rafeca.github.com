@@ -211,10 +211,17 @@ td { vertical-align: top; }
    Author: Rafael de Oleza
    ========================================================================== */
 
+body {
+  background-image: url(../gfx/site/gatillos_bg.png);
+  }
+
 #container {
   position: relative;
-  width: 750px;
+  width: 960px;
   margin: 0 auto;
+  padding: 0px 8px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 footer {

@@ -15,11 +15,11 @@
   <link href="http://feeds.feedburner.com/{{ site.feedburner_id }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml">
   <link rel="author" href="/humans.txt">
 
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/syntax.css">
-  <link rel="stylesheet" href="/css/disqus.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/disqus.css">
 
-  <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+  <script src="{{ site.baseurl }}/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
 <body>
@@ -29,9 +29,9 @@
     
     <footer>
       <span>{{ site.author }}</span>
-      <a class="fadedlink" href="https://github.com/{{ site.author_short }}"><img src="/gfx/github-logo.png" alt="@github"></a>
-      <a class="fadedlink" href="https://twitter.com/{{ site.author_short }}"><img src="/gfx/twitter-logo.png" alt="@twitter"></a>
-      <a class="fadedlink" href="mailto:{{ site.author_email }}"><img src="/gfx/gmail-logo.png" alt="@gmail"></a>
+      <a class="fadedlink" href="https://github.com/{{ site.author_short }}"><img src="{{ site.baseurl }}/gfx/github-logo.png" alt="@github"></a>
+      <a class="fadedlink" href="https://twitter.com/{{ site.author_short }}"><img src="{{ site.baseurl }}/gfx/twitter-logo.png" alt="@twitter"></a>
+      <a class="fadedlink" href="mailto:{{ site.author_email }}"><img src="{{ site.baseurl }}/gfx/gmail-logo.png" alt="@gmail"></a>
     </footer>
   </div>
   

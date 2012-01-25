@@ -1,5 +1,4 @@
 <li class="post">
-  <span class="date">Comic post {{ post.id }}</span>
-  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <span class="date"> published on {{ post.date | date_to_string }}</span>
   {{ post.content }}
 </li>

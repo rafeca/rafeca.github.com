@@ -6,6 +6,8 @@ require 'nokogiri'
 require 'date'
 require 'php_serialize'
 require 'yaml'
+require 'open-uri'
+require 'uri'
 
 def parse_content(content) 
   
@@ -22,7 +24,12 @@ def parse_content(content)
   return content
 end
 
-doc = Nokogiri::XML( File.open("../../../Downloads/gatillos.wordpress.2012-01-24-all.xml") )
+def mkdir_if_not_exists(directory_name)
+  Dir.mkdir(directory_name) unless File.exists?(directory_name)
+end
+
+
+doc = Nokogiri::XML( File.open("../../../Downloads/gatillos.wordpress.2012-01-24.xml") )
 
 doc.xpath("//item").each_with_index do |item|
 
@@ -96,6 +103,7 @@ doc.xpath("//item").each_with_index do |item|
     large_size_jpg = meta['files']['large'][0]
     medium_size_jpg = meta['files']['medium'][0]
     small_size_jpg = meta['files']['small'][0]
+    local_filename = "comics/#{collection}/#{full_size_jpg}"
     @output << "---\n"
     @output << "layout: post\n"     # TODO change to webcomic_post?
     @output << "title: #{title.inspect}\n"
@@ -105,9 +113,25 @@ doc.xpath("//item").each_with_index do |item|
     @output << "tags: [#{categories.join(", ")}]\n"
     @output << "date: #{postdate}\n"
     @output << "---\n"
-    @output << "<div class='webcomic_image'><a href='#{link}'><img src='#{collection}/#{full_size_jpg}'/></a>\n"
-    @output << "<div class='webcomic_content'>#{parse_content(content)}</div>\n"
-    @output << "[#{comments.length} comments]\n"
+    @output << "<div class='comic_image'><a href='#{link}'><img src='#{local_filename}'/></a>\n"
+    @output << "<div class='comic_text'>#{parse_content(content)}</div>\n"
+    @output << "<a href='#{link}'>[#{comments.length} comments] Click to view comments</a>\n"
+
+    # retrieve image
+    original_image_url = "http://gatillos.com/yay/wp-content/webcomic/#{collection}/#{URI.escape(full_size_jpg)}"
+    puts "  - resource #{local_filename}"
+
+    unless File.exists?(local_filename)
+      puts "  - resource not found locally, retrieving from site"
+      mkdir_if_not_exists("comics")
+      mkdir_if_not_exists("comics/#{collection}")
+      open(local_filename, 'wb') do |fout|
+        open(original_image_url) do |fin|
+          fout.write(fin.read)
+        end
+      end
+    end
+
   end
 
   if filename && filename.length > 0

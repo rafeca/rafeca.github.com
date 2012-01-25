@@ -7,7 +7,7 @@ layout: default
   <nav>
     <ul class="clearfix">
     {% for category in page.categories %}
-      <li><a href="/tag/{{ category }}.html">{{ category }}</a></li>
+    <li><a href="{{ site.baseurl }}/tag/{{ category }}.html">{{ category }}</a></li>
     {% endfor %}
     </ul>
   </nav>
@@ -16,7 +16,7 @@ layout: default
 <div id="post" role="main">
   {{ content }}
   
-  <p class="back">&laquo; <a href="/">Home</a></p>
+  <p class="back">&laquo; <a href="{{ site.baseurl }}">Home</a></p>
 </div>
       
 <!--h2>Related Posts</h2>

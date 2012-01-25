@@ -21,7 +21,9 @@ layout: default
 
 <h2><span>Older blog entries</span></h2>
 <ul>
-  {% for post in site.categories.blog limit:15 offset:5 %}
+  {% for post in site.categories.blog limit:10 offset:5 %}
     {% include post.html %}
   {% endfor %}
 </ul>
+<a href="{{ site.baseurl }}/blog.html">See all blog entries</a>
+

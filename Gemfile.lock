@@ -14,6 +14,7 @@ GEM
       kramdown (~> 0.13)
       liquid (~> 2.3)
       maruku (~> 0.5)
+    jekyll-pagination (0.0.4)
     kramdown (0.13.4)
     liquid (2.3.0)
     maruku (0.6.0)
@@ -30,6 +31,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  jekyll-pagination
   nokogiri
   php-serialize
   rake

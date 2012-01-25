@@ -1,0 +1,31 @@
+---
+layout: default
+category: blog
+---
+<head>
+  <h1>{{ site.title }}</h1>
+</head>
+
+<h2><span>Blog entries</span></h2>
+<ul>
+  {% for post in paginator.posts limit:10 %}
+    {% include post.html %}
+  {% endfor %}
+</ul>
+	<div class="next-prev-nav">
+		{% if paginator.previous_page %}
+			&laquo;&nbsp;<a href="{%if paginator.previous_page == 1 %} {{ site.baseurl }} {% else %} {{ site.baseurl }}/page{{ paginator.previous_page }} {% endif %}" 
+			rel="next" title="Previous Page">Previous Page</a>
+		{% endif %}
+
+		{% if paginator.next_page %}
+                        {% if paginator.previous_page %}
+			&nbsp;|
+                        {% endif %}
+                        <a href="{{ site.baseurl }}/page{{ paginator.next_page }}" rel="previous" title="Next Page">Next Page</a>&nbsp;&raquo;
+		{% endif %}
+		<br />
+	</div>  
+
+
+

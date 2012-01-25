@@ -1,4 +1,7 @@
 <li class="post">
-<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <span class="date"> published on {{ post.date | date_to_string }}</span>
+ <h3>
+   <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <span class="date"> published on {{ post.date | date_to_string }}</span>
+ </h3>
   {{ post.content }}
+  <div class="comments_link"><a href="{{ site.baseurl }}{{ post.url }}">Click to view comments</a></div>
 </li>

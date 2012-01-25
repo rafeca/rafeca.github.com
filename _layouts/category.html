@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<header>   
+  <h1><a class="fadedlink" href="{{ site.baseurl }}/" title="Home">gatillos &laquo;</a> {{ page.title }} archive</h1>
+</header>
+
+<nav>
+  <ul class="clearfix">
+  {% for category in page.categories %}
+  <li><a href="{{ site.baseurl }}/tag/{{ category }}.html">{{ category }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
+
+
+{% for post in paginator.posts %}
+    {% include post_preview.html %}
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<nav class="pagination">
+    
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <span class="prev"><a href="{{ site.baseurl }}/{{paginator.posts[0].categories[0]}}/" rel="prev">&laquo; Prev</a></span>
+        {% else %}
+            <span class="prev"><a href="{{ site.baseurl }}/{{paginator.posts[0].categories[0]}}/page{{paginator.previous_page}}" rel="prev">&laquo; Prev</a></span>
+        {% endif %}
+    {% endif %}
+    
+    {% for page in (1..paginator.total_pages) %}
+    
+        {% if page == paginator.page %}
+            <span class="page current">{{ page }}</span>
+        {% else %}
+            {% if page == 1 %}
+                <span class="page"><a href="{{ site.baseurl }}/{{paginator.posts[0].categories[0]}}/">{{ page }}</a></span>
+            {% else %}
+                <span class="page"><a href="{{ site.baseurl }}/{{paginator.posts[0].categories[0]}}/page{{page}}">{{ page }}</a></span>
+            {% endif %}
+        {% endif %}
+    
+    {% endfor %}
+
+    {% if paginator.next_page %}
+        <span class="next"><a href="{{ site.baseurl }}/{{paginator.posts[0].categories[0]}}/page{{paginator.next_page}}" rel="next">Next &raquo;</a></span>
+    {% endif %}
+    
+</nav>
+{% endif %}

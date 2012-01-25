@@ -7,23 +7,25 @@ layout: default
 
 <h2><span>Latest comic</span> <a class="fadedlink" href="http://feeds.feedburner.com/{{ site.feedburner_id }}" title="RSS feed"><img src="gfx/rss.png" alt="RSS feed"/></a></h2>
 <ul>
- {% for post in site.categories.comic limit:1 %}
+ {% for post in site.categories.comics limit:1 %}
    {% include comic_post.html %}
+   {% assign cats_nocomic = post.categories[1] %}
+   <a href="{{ site.baseurl }}/{{ cats_nocomic }}">Previous comics</a>
  {% endfor %}
 </ul>
 
-<h2><span>Latest blog entries</span></h2>
+<h2><a href="{{ site.baseurl }}/blog"><span>Latest blog entries</span></a></h2>
 <ul>
   {% for post in site.categories.blog limit:5 %}
     {% include post_preview.html %}
   {% endfor %}
 </ul>
 
-<h2><span>Older blog entries</span></h2>
+<h2><a href="{{ site.baseurl }}/blog"><span>Older blog entries</span></a></h2>
 <ul>
   {% for post in site.categories.blog limit:10 offset:5 %}
     {% include post.html %}
   {% endfor %}
 </ul>
-<a href="{{ site.baseurl }}/blog.html">See all blog entries</a>
+<a href="{{ site.baseurl }}/blog">See all blog entries</a>
 

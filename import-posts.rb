@@ -9,6 +9,7 @@ require 'yaml'
 require 'open-uri'
 require 'uri'
 require 'fileutils'
+require 'yaml'
 
 def parse_content(postid, content) 
   
@@ -27,7 +28,7 @@ def parse_content(postid, content)
     local = "gfx/posts/#{postid}/#{name}"
     puts "  - uses #{local}"
     retrieve_file(src, local) unless File.exists?(local)
-    item['src'] = local
+    item['src'] = "#{@config['baseurl']}/#{local}"
     item['class'] = ''
   end
 
@@ -41,7 +42,7 @@ def parse_content(postid, content)
     local = "gfx/posts/#{postid}/#{name}"
     puts "  - links to #{src}"
     retrieve_file(src, local) unless File.exists?(local)
-    item['href'] = local
+    item['href'] = "#{@config['baseurl']}/#{local}"
   end
 
   return doc.xpath("//body")
@@ -63,6 +64,11 @@ def retrieve_file(remote_url, local_filename)
     end
   end
 end
+
+# read config
+File.open( '_config.yml' ) { |file| @config = YAML::load(file) }
+puts @config
+puts @config['baseurl']
 
 doc = Nokogiri::XML( File.open("../../../Downloads/gatillos.wordpress.2012-01-24.xml") )
 
@@ -122,8 +128,8 @@ doc.xpath("//item").each_with_index do |item|
     @output << "date: #{postdate}\n"
     @output << "---\n"
     @output << "#{parse_content(post_name, content)}\n"
-    @output << "[#{comments.length} comments]\n"
-    filename="_posts/blog/#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{post_name}.html"
+    #@output << "[#{comments.length} comments]\n"
+    filename="_posts/blog/#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{post_name}.markdown"
   # Webcomic Post Entries
   #
   when 'webcomic_post' then
@@ -143,20 +149,20 @@ doc.xpath("//item").each_with_index do |item|
     @output << "title: #{title.inspect}\n"
     #@output << "permalink: #{link}\n"
     @output << "published: false\n" if is_private
-    @output << "categories: [comic, #{collection}]\n" # this way we can filter by 'all comics' (category=comic) and by specific comic (category=collection name)
+    @output << "categories: [comics, #{collection}]\n" # this way we can filter by 'all comics' (category=comic) and by specific comic (category=collection name)
     @output << "tags: [#{categories.join(", ")}]\n"
     @output << "date: #{postdate}\n"
     @output << "---\n"
-    @output << "<div class='comic_image'><img src='#{image_filename}'/></div>\n"
+    @output << "<div class='comic_image'><img src='#{@config['baseurl']}/#{image_filename}'/></div>\n"
     @output << "<div class='comic_text'>#{parse_content(post_name, content)}</div>\n"
-    @output << "[#{comments.length} comments] Click to view comments\n"
+    #@output << "[#{comments.length} comments]"
 
     # retrieve image
     original_image_url = "http://gatillos.com/yay/wp-content/webcomic/#{collection}/#{URI.escape(full_size_jpg)}"
     puts "  - uses #{original_image_url}"
     retrieve_file(original_image_url, image_filename)
 
-    filename="_posts/#{collection}/#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{collection}-#{post_name}.html"
+    filename="_posts/#{collection}/#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{collection}-#{post_name}.markdown"
   end
 
   if filename && filename.length > 0

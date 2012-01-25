@@ -269,6 +269,8 @@ h1 img, h2 img {
 /* Post styles */
 #post {
   clear: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #post h1 {
@@ -294,6 +296,42 @@ h1 img, h2 img {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   padding: 8px;
 }
+
+.post .comments_link {
+  float: left;
+  padding-right: 8px;
+}
+
+
+/* Post preview styles (list of posts on home page) */
+.post_preview {
+  clear: left;
+}
+
+.post_preview h1 {
+  font-size: 1.5em;
+  text-indent: 0;
+  padding-left: 0;
+}
+
+.post_preview h2 {
+  font-size: 1.125em;
+  font-weight: bold;
+}
+
+.post_preview h3 {
+  font-size: 1em;
+}
+
+.post_preview img {
+  display: block;
+  margin: 30px auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+}
+
 
 /** Code styles **/
 code {
@@ -344,7 +382,7 @@ nav {
 }
 
 nav li {
-  float: left;
+  float: right;
   margin-right: 5px;
 }
 

@@ -1,5 +1,5 @@
 <li class="post">
-  <a class="fadedlink" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> posted on <span class="date">{{ post.date | date_to_string }}</span>
+  <a class="fadedlink" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> posted on <span class="date">{{ post.date | date_to_long_string }}</span>
 
   <div id="post">
     {{ post.content }}

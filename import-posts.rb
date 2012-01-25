@@ -8,8 +8,9 @@ require 'php_serialize'
 require 'yaml'
 require 'open-uri'
 require 'uri'
+require 'fileutils'
 
-def parse_content(content) 
+def parse_content(postid, content) 
   
   # caption items
   # example:
@@ -18,16 +19,50 @@ def parse_content(content)
   # transform all [caption] wp tags into html,  \1 is the caption, \2 is the body
   content = content.gsub( /\[caption [^\]]+ caption=\"([^\"]*)\"\](.*)\[\/caption\]/, '<div class="post-image">\2</div><div class="post-image-caption">\1</div>' ) 
 
-  # TODO strip class tags, change urls?
-  # maybe the easiest solution is to just parse the whole content again looking for full URLs
+  # transform img sources to local file
+  doc = Nokogiri::HTML( content )
+  doc.xpath("//img").each_with_index do |item|
+    src = item['src']
+    name = File.basename(URI(src).path)
+    local = "gfx/posts/#{postid}/#{name}"
+    puts "  - uses #{local}"
+    retrieve_file(src, local) unless File.exists?(local)
+    item['src'] = local
+    item['class'] = ''
+  end
 
-  return content
+  # transform <a> urls that go to an image into references to local file
+  doc.xpath("//a[ substring(@href, string-length(@href) - 3, 4) = '.jpg' or
+                  substring(@href, string-length(@href) - 3, 4) = '.png' or
+                  substring(@href, string-length(@href) - 4, 5) = '.jpeg' or
+                  substring(@href, string-length(@href) - 3, 4) = '.gif' ]").each_with_index do |item|
+    src = item['href']
+    name = File.basename(URI(src).path)
+    local = "gfx/posts/#{postid}/#{name}"
+    puts "  - links to #{src}"
+    retrieve_file(src, local) unless File.exists?(local)
+    item['href'] = local
+  end
+
+  return doc.xpath("//body")
 end
 
 def mkdir_if_not_exists(directory_name)
   Dir.mkdir(directory_name) unless File.exists?(directory_name)
 end
 
+def retrieve_file(remote_url, local_filename)
+  unless File.exists?(local_filename)
+    puts "  - resource not found locally, retrieving from site to #{local_filename}"
+    dir = File.dirname(local_filename)
+    FileUtils.mkdir_p(dir) unless dir==""
+    open(local_filename, 'wb') do |fout|
+      open(remote_url) do |fin|
+        fout.write(fin.read)
+      end
+    end
+  end
+end
 
 doc = Nokogiri::XML( File.open("../../../Downloads/gatillos.wordpress.2012-01-24.xml") )
 
@@ -75,11 +110,10 @@ doc.xpath("//item").each_with_index do |item|
   # Regular Blog Entries
   #
   when 'post' then
-    filename="#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{post_name}.markdown"
     @output << "---\n"
     @output << "layout: post\n"
     @output << "title: #{title.inspect}\n"
-    @output << "permalink: #{link}\n"
+    #@output << "permalink: #{link}\n"
     @output << "published: false\n" if is_private
     @output << "categories: [blog]\n"
     # in my blog, I used wordpress categories for what jekyll would call tags, whle jekyll categories
@@ -87,14 +121,14 @@ doc.xpath("//item").each_with_index do |item|
     @output << "tags: [#{categories.join(",")}]\n"
     @output << "date: #{postdate}\n"
     @output << "---\n"
-    @output << "#{parse_content(content)}\n"
+    @output << "#{parse_content(post_name, content)}\n"
     @output << "[#{comments.length} comments]\n"
+    filename="_posts/blog/#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{post_name}.html"
   # Webcomic Post Entries
   #
   when 'webcomic_post' then
     #categories   = item.xpath("category[@domain='category']").collect(&:text).uniq
     collection = item.xpath("category[@domain='webcomic_collection']").first['nicename']
-    filename="#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{collection}-#{post_name}.markdown"
     meta = item.xpath("wp:postmeta/wp:meta_value[(../wp:meta_key='webcomic')]").first.content
     meta = PHP.unserialize(meta)
     # example of @output of the above:
@@ -103,40 +137,33 @@ doc.xpath("//item").each_with_index do |item|
     large_size_jpg = meta['files']['large'][0]
     medium_size_jpg = meta['files']['medium'][0]
     small_size_jpg = meta['files']['small'][0]
-    local_filename = "comics/#{collection}/#{full_size_jpg}"
+    image_filename = "comics/#{collection}/#{full_size_jpg}"
     @output << "---\n"
     @output << "layout: post\n"     # TODO change to webcomic_post?
     @output << "title: #{title.inspect}\n"
-    @output << "permalink: #{link}\n"
+    #@output << "permalink: #{link}\n"
     @output << "published: false\n" if is_private
     @output << "categories: [comic, #{collection}]\n" # this way we can filter by 'all comics' (category=comic) and by specific comic (category=collection name)
     @output << "tags: [#{categories.join(", ")}]\n"
     @output << "date: #{postdate}\n"
     @output << "---\n"
-    @output << "<div class='comic_image'><a href='#{link}'><img src='#{local_filename}'/></a>\n"
-    @output << "<div class='comic_text'>#{parse_content(content)}</div>\n"
-    @output << "<a href='#{link}'>[#{comments.length} comments] Click to view comments</a>\n"
+    @output << "<div class='comic_image'><img src='#{image_filename}'/></div>\n"
+    @output << "<div class='comic_text'>#{parse_content(post_name, content)}</div>\n"
+    @output << "[#{comments.length} comments] Click to view comments\n"
 
     # retrieve image
     original_image_url = "http://gatillos.com/yay/wp-content/webcomic/#{collection}/#{URI.escape(full_size_jpg)}"
-    puts "  - resource #{local_filename}"
+    puts "  - uses #{original_image_url}"
+    retrieve_file(original_image_url, image_filename)
 
-    unless File.exists?(local_filename)
-      puts "  - resource not found locally, retrieving from site"
-      mkdir_if_not_exists("comics")
-      mkdir_if_not_exists("comics/#{collection}")
-      open(local_filename, 'wb') do |fout|
-        open(original_image_url) do |fin|
-          fout.write(fin.read)
-        end
-      end
-    end
-
+    filename="_posts/#{collection}/#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{collection}-#{post_name}.html"
   end
 
   if filename && filename.length > 0
-    puts "creating #{filename}"
-    File.open( "_posts/" + filename, 'w' ) {|file| file.write(@output)}
+    puts "creating new post #{filename}"
+    dir = File.dirname(filename) 
+    FileUtils.mkdir_p(dir) unless dir==""
+    File.open(filename, 'w' ) {|file| file.write(@output)}
   end
 
   # TODO export comments to disqus?

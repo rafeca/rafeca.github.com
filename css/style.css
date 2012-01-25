@@ -211,15 +211,49 @@ td { vertical-align: top; }
    Author: Rafael de Oleza
    ========================================================================== */
 
+
+#header {
+  background-image: url(../gfx/site/header.png);
+  background-repeat: no-repeat;
+  height: 136px;
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#blog_header {
+  background-image: url(../gfx/site/gatillo-con-linea.png);
+  background-repeat: no-repeat;
+  height: 178px;
+  width: 960px;
+  margin: -36px auto;
+  position: relative;
+}
+
+/** align header text at the bottom, with the cat image */
+#blog_header h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#latest_posts {
+  margin-top: 36px;
+}
+
+ul {
+  list-style-type: none;
+}
+
 body {
   background-image: url(../gfx/site/gatillos_bg.png);
   }
 
 #container {
   position: relative;
-  width: 960px;
-  margin: 0 auto;
-  padding: 0px 8px;
+  width: 928px;
+  margin: 0px auto;
+  padding: 0px 16px;
   background-color: white;
   border-radius: 10px;
 }
@@ -242,9 +276,21 @@ footer span {
   float: right;
 }
 
+@font-face {
+  font-family: ArtistsAlleyBB_bold;
+  src: url('../gfx/site/ArtistsAlleyBB_bold.otf');
+}
+
+h1, h2, h3 {
+  font-family: ArtistsAlleyBB_bold, helvetica, arial, clean, sans-serif;
+  text-color: #2D1A21;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 h1 {
   font-weight: 200;
-  font-size: 2.5em;
+  font-size: 4em;
   text-indent: -30px;
   padding-left: 30px;
 }
@@ -255,15 +301,26 @@ h1 small {
 }
 
 h2 {
+  font-size: 3em;
   font-weight: 200;
 }
 
-h1 a, h2 a {
-  text-decoration: none;
+h3 {
+  font-size: 2em;
 }
 
-h1 img, h2 img {
-  vertical-align: text-bottom;
+h1 a, h2 a, h3 a {
+  text-decoration: none;
+  text-color: #2D1A21;
+}
+
+h1 a, h2 a, h3 a, h1 a:visited, h2 a:visited, h3 a:visited {
+  text-decoration: none;
+  color: #2D1A35;
+}
+
+h1 img, h2 img, h3 img {
+  vertical-align: middle;
 }
 
 /* Post styles */
@@ -271,21 +328,6 @@ h1 img, h2 img {
   clear: left;
   padding-left: 20px;
   padding-right: 20px;
-}
-
-#post h1 {
-  font-size: 1.5em;
-  text-indent: 0;
-  padding-left: 0;
-}
-
-#post h2 {
-  font-size: 1.125em;
-  font-weight: bold;
-}
-
-#post h3 {
-  font-size: 1em;
 }
 
 #post img {
@@ -302,6 +344,11 @@ h1 img, h2 img {
   padding-right: 8px;
 }
 
+.post .date {
+  float: left;
+  padding-right: 8px;
+  color: #BDA9C6;
+}
 
 /* Post preview styles (list of posts on home page) */
 .post_preview {

@@ -32,9 +32,11 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body { margin: 0; font-size: 16px; line-height: 1.4; }
+body { margin: 0; font-size: 14px; line-height: 1.4; }
 
-body, button, input, select, textarea { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, sans-serif; color: #252525; }
+body, button, input, select, textarea {
+  font-family: verdana, geneva, sans-serif;
+}
 
 /* 
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -221,6 +223,7 @@ td { vertical-align: top; }
   position: relative;
 }
 
+
 #logo a {
   background-image: url(../gfx/site/header-gatillo.png);
   background-repeat: no-repeat;
@@ -239,6 +242,7 @@ td { vertical-align: top; }
   position: absolute;
   margin-top: 4px;
   margin-left: 160px;
+  font-family: Sunshiney, helvetica, arial, clean, sans-serif;
   font-size: 6em;
 }
 
@@ -246,11 +250,13 @@ td { vertical-align: top; }
   position: absolute;
   margin-top: 86px;
   margin-left: 160px;
+  font-family: Sunshiney, helvetica, arial, clean, sans-serif;
   font-size: 1.5em;
 }
 
-#subscribe {
+#subscribe h3 {
   margin-bottom: 16px;
+  font-family: Sunshiney, helvetica, arial, clean, sans-serif;
 }
 
 /** blog header overlaps previous div */
@@ -273,6 +279,83 @@ td { vertical-align: top; }
 
 #latest_posts {
   margin-top: 48px;
+}
+
+#navigation {
+  font-family: Gochi Hand;
+  font-size: 32px;
+  height: 40px;
+}
+
+#navigation a {
+  text-decoration: none;
+  color: #310e40;
+  opacity: 0.8;
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+     -moz-transition-property: opacity;
+     -moz-transition-duration: 0.2s;
+     -moz-transition-timing-function: ease-out;
+}
+
+#navigation a:hover {
+  opacity: 1;
+}
+
+
+#navigation a.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.3;
+}
+
+
+#navigation .first {
+  background: url("../gfx/site/first.png");
+  background-position: 0px 4px;
+  background-repeat: no-repeat;
+  margin-left: 0px;
+  height: 48px;
+  width: 100px;
+  display: block;
+  position: absolute;
+  text-indent: 36px;
+}
+
+#navigation .previous {
+  background: url("../gfx/site/previous.png");
+  background-position: 0px 4px;
+  background-repeat: no-repeat;
+  margin-left: 114px;
+  height: 48px;
+  width: 144px;
+  display: block;
+  position: absolute;
+  text-indent: 29px;
+}
+
+#navigation .last {
+  background: url("../gfx/site/last.png");
+  background-position: 0px 4px;
+  background-repeat: no-repeat;
+  right: 24px;
+  height: 48px;
+  width: 100px;
+  display: block;
+  position: absolute;
+  text-indent: 8px;
+}
+
+#navigation .next {
+  background: url("../gfx/site/next.png");
+  background-position: 0px 4px;
+  background-repeat: no-repeat;
+  right: 132px;
+  height: 48px;
+  width: 100px;
+  display: block;
+  position: absolute;
 }
 
 ul {
@@ -322,8 +405,9 @@ footer span {
   src: url('../gfx/site/ArtistsAlleyBB_bold.otf');
 }
 
+
 h1, h2, h3 {
-  font-family: ArtistsAlleyBB_bold, helvetica, arial, clean, sans-serif;
+  font-family: Gochi Hand, Sunshiney, helvetica, arial, clean, sans-serif;
   text-color: #2D1A21;
   margin-bottom: 0px;
   margin-top: 0px;
@@ -337,20 +421,16 @@ h1 {
   padding-left: 30px;
 }
 
-h1 small {
-  font-size: 0.4em;
-  color: #666;
+/* for date */
+small {
+  font-size: 0.6em;
+  color: #c1a2ce;
+  margin-left: 8px;
 }
 
 h2 {
   font-size: 2.5em;
   font-weight: 200;
-}
-
-/* for date */
-h2 small {
-  font-size: 0.4em;
-  color: #666;
 }
 
 h3 {
@@ -368,7 +448,7 @@ h1 a, h2 a, h3 a, h1 a:visited, h2 a:visited, h3 a:visited {
 }
 
 h1 img, h2 img, h3 img {
-  vertical-align: middle;
+  vertical-align: bottom;
 }
 
 /* Post styles */

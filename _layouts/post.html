@@ -20,7 +20,10 @@ layout: default
   {% endcomment %}
 
 {% assign this_category = page.categories[0] %}
-{% assign all_posts = site.categories[this_category] %}
+{% if this_category == 'comics' %}
+  {% assign this_category = page.categories[1] %}
+{% endif %}
+{% assign all_posts = site.categories[this_category] | sort %}
 
 {% for post in all_posts %}
   {% if post.url == page.url %}
@@ -39,16 +42,40 @@ layout: default
 
 <div id="post_title">
   <h2>
-      {% if prev_post %} 
-        <a class="previous fadedlink" href="{{ site.baseurl }}{{prev_post.url}}" title="previous: {{prev_post.title}}">&laquo;</a> 
-      {% endif %} 
    {{ page.title }} <small>{{ page.date || date_to_string }}</small>
-      {% if next_post %}  
-        <a class="next fadedlink" href="{{ site.baseurl }}{{next_post.url}}" title="next: {{next_post.title}}">&raquo; </a> 
-      {% endif %} 
-
   </h2>
 </div>
+
+<div id="navigation">
+      {% assign p = all_posts.last %}
+      {% if p.url == page.url %}
+        <a class="first disabled" href="" title="">First</a> 
+      {% else %}
+        <a class="first" href="{{ site.baseurl }}{{p.url}}" title="first: {{p.title}}">First</a> 
+      {% endif %}
+
+      {% if prev_post %} 
+        {% assign p = prev_post %}
+        <a class="previous" href="{{ site.baseurl }}{{p.url}}" title="previous: {{p.title}}">Previous</a> 
+      {% else %}
+        <a class="previous disabled" href="" title="">Previous</a> 
+      {% endif %} 
+
+      {% if next_post %}  
+        {% assign p = next_post %}
+        <a class="next" href="{{ site.baseurl }}{{p.url}}" title="next: {{p.title}}">Next</a> 
+      {% else %}
+        <a class="next disabled" href="" title="">Next</a> 
+      {% endif %} 
+
+      {% assign p = all_posts.first %}
+      {% if p.url != page.url %}
+        <a class="last" href="{{ site.baseurl }}{{p.url}}" title="last: {{p.title}}">Last</a> 
+      {% else %}
+        <a class="last disabled" href="" title="">Last</a> 
+      {% endif %}
+</div>
+
 
 <div id="post" role="main">
   {{ content }}

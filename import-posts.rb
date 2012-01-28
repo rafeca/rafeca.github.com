@@ -156,16 +156,16 @@ doc.xpath("//item").each_with_index do |item|
     small_size_jpg = meta['files']['small'][0]
     image_filename = "comics/#{local_collection}/#{full_size_jpg}"
     @output << "---\n"
-    @output << "layout: post\n"     # TODO change to webcomic_post?
+    @output << "layout: webcomic\n"     # TODO change to webcomic_post?
     @output << "title: #{title.inspect}\n"
     #@output << "permalink: #{link}\n"
     @output << "published: false\n" if is_private
     @output << "categories: [comics, #{local_collection}]\n" # this way we can filter by 'all comics' (category=comic) and by specific comic (category=collection name)
     @output << "tags: [#{categories.join(", ")}]\n"
     @output << "date: #{postdate}\n"
+    @output << "image: #{@config['baseurl']}/#{image_filename}\n"
     @output << "---\n"
-    @output << "<div class='comic_image'><img src='#{@config['baseurl']}/#{image_filename}'/></div>\n"
-    @output << "<div class='comic_text'>#{parse_content(post_name, content)}</div>\n"
+    @output << "#{parse_content(post_name, content)}\n"
     #@output << "[#{comments.length} comments]"
 
     # retrieve image

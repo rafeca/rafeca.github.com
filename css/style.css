@@ -279,15 +279,16 @@ td { vertical-align: top; }
 
 #latest_posts {
   margin-top: 48px;
+  margin-bottom: 60px;
 }
 
-#navigation {
+.navigation {
   font-family: Gochi Hand;
   font-size: 32px;
   height: 40px;
 }
 
-#navigation a {
+.navigation a {
   text-decoration: none;
   color: #310e40;
   opacity: 0.8;
@@ -299,23 +300,23 @@ td { vertical-align: top; }
      -moz-transition-timing-function: ease-out;
 }
 
-#navigation a:hover {
+.navigation a:hover {
   opacity: 1;
 }
 
 
-#navigation a.disabled {
+.navigation a.disabled {
   pointer-events: none;
   cursor: default;
   opacity: 0.3;
 }
 
 
-#navigation .first {
+.navigation .first {
   background: url("../gfx/site/first.png");
   background-position: 0px 4px;
   background-repeat: no-repeat;
-  margin-left: 0px;
+  margin-left: 100px;
   height: 48px;
   width: 100px;
   display: block;
@@ -323,11 +324,11 @@ td { vertical-align: top; }
   text-indent: 36px;
 }
 
-#navigation .previous {
+.navigation .previous {
   background: url("../gfx/site/previous.png");
   background-position: 0px 4px;
   background-repeat: no-repeat;
-  margin-left: 114px;
+  margin-left: 214px;
   height: 48px;
   width: 144px;
   display: block;
@@ -335,11 +336,11 @@ td { vertical-align: top; }
   text-indent: 29px;
 }
 
-#navigation .last {
+.navigation .last {
   background: url("../gfx/site/last.png");
   background-position: 0px 4px;
   background-repeat: no-repeat;
-  right: 24px;
+  right: 124px;
   height: 48px;
   width: 100px;
   display: block;
@@ -347,11 +348,11 @@ td { vertical-align: top; }
   text-indent: 8px;
 }
 
-#navigation .next {
+.navigation .next {
   background: url("../gfx/site/next.png");
   background-position: 0px 4px;
   background-repeat: no-repeat;
-  right: 132px;
+  right: 232px;
   height: 48px;
   width: 100px;
   display: block;
@@ -453,19 +454,19 @@ h1 img, h2 img, h3 img {
 
 /* Post styles */
 
-#post_title {
-  padding-top: 18px;
+.post .post_title {
+  padding-top: 12px;
 }
 
-#post {
+.post {
   clear: left;
   padding-left: 4px;
   padding-right: 20px;
 }
 
-#post img {
+.post img {
   display: block;
-  margin: 22px auto;
+  margin: 10px auto 20px auto;
   background-color: white;
   border: 1px solid #ccc;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -479,6 +480,8 @@ h1 img, h2 img, h3 img {
 .post .comments_link {
   float: left;
   padding-right: 8px;
+  margin-top: -20px;
+  margin-bottom: -20px;
 }
 
 .post .comment_count {
@@ -497,8 +500,31 @@ h1 img, h2 img, h3 img {
   color: #BDA9C6;
 }
 
+.post .post-image-caption {
+  text-align: center;
+  margin-top: -22px;
+  margin-bottom: 12px;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+
+.post .main {
+  margin-bottom: 24px;
+}
+
 #older_posts a {
   text-decoration: none;
+}
+
+.archive .post .post_title {
+  padding-top: 30px;
+}
+
+.archive .post .comments_link {
+  margin-top: -20px;
+  margin-right: 50px;
+  float: right;
+ 
 }
 
 /* Post preview styles (list of posts on home page) */
@@ -575,8 +601,8 @@ code.bash {
 }
 
 /** Tags in post page **/
-nav {
-  margin: -22px 0 30px 30px;
+.post_tags {
+  margin: -18px 0 30px 30px;
 }
 
 nav li {
@@ -662,7 +688,7 @@ nav li a:hover {
     margin-top: -45px;
   }
 
-  #post img {
+  .post img {
     margin-left: 3%;
     margin-right: 3%;
     max-width: 90%;
@@ -689,7 +715,7 @@ nav li a:hover {
     font-size: 0.67em;
   }
 
-  h2, #post h1 {
+  h2, .post h1 {
     font-size: 1.25em;
   }
 

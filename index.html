@@ -2,18 +2,15 @@
 layout: default
 ---
 
-<div id="subscribe">
-  <h3><a class="fadedlink" href="http://feeds.feedburner.com/{{ site.feedburner_id }}" title="RSS feed"><img src="{{ site.baseurl }}/gfx/site/rss.png" alt="RSS feed"/>Subscribe</a></h3>
-</div>
-
 <div id="last_comic">
    {% for post in site.categories.comics limit:1 %}
-     {{ post.images }}
-
-     {% include comic_post.html %}
-     {% if post.previous %}
-       <a href="{{ site.baseurl }}/{{ post.previous.url }}">Previous</a>
-     {% endif %}
+     {% assign render_navigation_above = true %}
+     {% assign render_navigation_below = true %}
+     {% assign render_comments = false %}
+     {% assign render_title_above = false %}
+     {% assign render_title_below = true %}
+     {% assign render_content = true %}
+     {% include a_comic.html %}
    {% endfor %}
 </div>
 
@@ -24,7 +21,14 @@ layout: default
 <div id="latest_posts">
   <ul>
     {% for post in site.categories.blog limit:4 %}
-      {% include post_preview.html %}
+      {% assign render_navigation_above = false %}
+      {% assign render_navigation_below = false %}
+      {% assign render_comments = false %}
+      {% assign render_comment_count = true %}
+      {% assign render_title_above = true %}
+      {% assign render_title_below = false %}
+      {% assign render_content = true %}
+      {% include a_comic.html %}
     {% endfor %}
   </ul>
 </div>
@@ -33,7 +37,7 @@ layout: default
   <h2><a href="{{ site.baseurl }}/blog"><span>Older blog entries</span></a></h2>
   <ul>
     {% for post in site.categories.blog limit:15 offset:4 %}
-      {% include post.html %}
+      {% include post_title.html %}
     {% endfor %}
   </ul>
   <a href="{{ site.baseurl }}/blog">See all blog entries</a>

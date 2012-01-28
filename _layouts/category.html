@@ -14,10 +14,29 @@ layout: default
   </ul>
 </nav>
 
+<div class="archive">
 
-{% for post in paginator.posts %}
-    {% include post_preview.html %}
-{% endfor %}
+  {% for post in paginator.posts %}
+    {% assign render_navigation_above = false %}
+    {% assign render_navigation_below = false %}
+    {% assign render_comments = false %}
+    {% if post.categories[1] != 'lifeinterior' %}
+      {% assign render_title_above = true %}
+      {% assign render_title_below = false %}
+      {% assign render_comment_count = true %}
+    {% else %}
+      {% assign render_title_above = false %}
+      {% assign render_title_below = false %}
+    {% endif %}
+    {% if post.categories[0] == 'blog' %}
+      {% assign render_content = true %}
+    {% else %}
+      {% assign render_content = false %}
+    {% endif %}
+    {% include a_comic.html %}
+  {% endfor %}
+
+</div>
 
 {% if paginator.total_pages > 1 %}
 <nav class="pagination">

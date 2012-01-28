@@ -20,7 +20,12 @@ layout: nil
    <link href="{{ site.url_root}}{{ site.baseurl }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url_root }}{{ site.baseurl }}{{ post.url }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <content type="html">
+      {% if post.image %}
+        &lt;img src=&quot;{{site.url_root}}{{post.image}}&quot;/&gt;
+        &lt;br/&gt;
+      {% endif %}
+      {{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
  

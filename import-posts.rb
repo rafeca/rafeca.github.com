@@ -70,6 +70,10 @@ File.open( '_config.yml' ) { |file| @config = YAML::load(file) }
 puts @config
 puts @config['baseurl']
 
+# remove generated files
+File.delete('urlmap.txt') if File.exists?('urlmap.txt')
+File.delete('htaccess.txt') if File.exists?('htaccess.txt')
+
 doc = Nokogiri::XML( File.open("../../../Downloads/gatillos.wordpress.2012-01-24.xml") )
 
 doc.xpath("//item").each_with_index do |item|
@@ -129,12 +133,19 @@ doc.xpath("//item").each_with_index do |item|
     @output << "---\n"
     @output << "#{parse_content(post_name, content)}\n"
     #@output << "[#{comments.length} comments]\n"
-    filename="_posts/blog/#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{post_name}.markdown"
+    filename="_posts/blog/#{postdate.strftime '%Y-%m-%d'}-#{post_name}.markdown"
+    new_path = "#{postdate.strftime '%Y/%m/%d'}/#{post_name}/"
   # Webcomic Post Entries
   #
   when 'webcomic_post' then
     #categories   = item.xpath("category[@domain='category']").collect(&:text).uniq
     collection = item.xpath("category[@domain='webcomic_collection']").first['nicename']
+    # hard-coded adjustments for my comics' names
+    if title.inspect.include?('Paul')
+	    local_collection = 'paul';
+    else
+	    local_collection = collection
+    end
     meta = item.xpath("wp:postmeta/wp:meta_value[(../wp:meta_key='webcomic')]").first.content
     meta = PHP.unserialize(meta)
     # example of @output of the above:
@@ -143,13 +154,13 @@ doc.xpath("//item").each_with_index do |item|
     large_size_jpg = meta['files']['large'][0]
     medium_size_jpg = meta['files']['medium'][0]
     small_size_jpg = meta['files']['small'][0]
-    image_filename = "comics/#{collection}/#{full_size_jpg}"
+    image_filename = "comics/#{local_collection}/#{full_size_jpg}"
     @output << "---\n"
     @output << "layout: post\n"     # TODO change to webcomic_post?
     @output << "title: #{title.inspect}\n"
     #@output << "permalink: #{link}\n"
     @output << "published: false\n" if is_private
-    @output << "categories: [comics, #{collection}]\n" # this way we can filter by 'all comics' (category=comic) and by specific comic (category=collection name)
+    @output << "categories: [comics, #{local_collection}]\n" # this way we can filter by 'all comics' (category=comic) and by specific comic (category=collection name)
     @output << "tags: [#{categories.join(", ")}]\n"
     @output << "date: #{postdate}\n"
     @output << "---\n"
@@ -158,11 +169,12 @@ doc.xpath("//item").each_with_index do |item|
     #@output << "[#{comments.length} comments]"
 
     # retrieve image
-    original_image_url = "http://gatillos.com/yay/wp-content/webcomic/#{collection}/#{URI.escape(full_size_jpg)}"
+    original_image_url = "#{@config['import_location']}/wp-content/webcomic/#{collection}/#{URI.escape(full_size_jpg)}"
     puts "  - uses #{original_image_url}"
     retrieve_file(original_image_url, image_filename)
 
-    filename="_posts/#{collection}/#{postdate.strftime '%Y-%m-%d-%H-%M'}-#{collection}-#{post_name}.markdown"
+    filename="_posts/#{local_collection}/#{postdate.strftime '%Y-%m-%d'}-#{post_name}.markdown"
+    new_path = "#{postdate.strftime '%Y/%m/%d'}/#{post_name}/"
   end
 
   if filename && filename.length > 0
@@ -170,6 +182,16 @@ doc.xpath("//item").each_with_index do |item|
     dir = File.dirname(filename) 
     FileUtils.mkdir_p(dir) unless dir==""
     File.open(filename, 'w' ) {|file| file.write(@output)}
+    # record the mapping that we just did
+    new_link = "#{@config['url_root']}#{@config['baseurl']}/#{new_path}"
+    if new_link != link
+      File.open("urlmap.txt", 'a' ) {|file| file.write("#{link}, #{new_link}\n")}
+    end
+    original_path = URI(link).path
+    migrated_path = "#{@config['baseurl']}/#{new_path}"
+    if migrated_path != original_path
+      File.open("htaccess.txt", 'a' ) {|file| file.write("Redirect permanent #{original_path} #{migrated_path}\n")}
+    end
   end
 
   # TODO export comments to disqus?

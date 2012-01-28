@@ -1,24 +1,76 @@
 ---
 layout: default
 ---
-<header>   
-  <h1><a class="fadedlink" href="{{ site.baseurl }}/" title="Home">gatillos &laquo;</a> {{ page.title }} <small>{{ page.date || date_to_string }}</small></h1>
-</header>
 
-<nav>
-  <ul class="clearfix">
-  {% for category in page.categories %}
-  <li><a href="{{ site.baseurl }}/{{ category }}">{{ category }}</a></li>
-  {% endfor %}
-  {% for tag in page.tags %}
-  <li>{{ tag }}</li>
-  {% endfor %}
-  </ul>
-</nav>
+  {% comment %}
+*******************************************
+    Normally, next/previous can be done like the following snippet, but we want it to be per-category.
+      {% if page.next.url %} 
+      <a href="{{ site.baseurl }}{{page.next.url}}" title="next Post: 
+        {{page.next.title}}">{{page.next.title}} &raquo; </a> 
+      {% endif %} 
+      {% if page.previous.url %} 
+      <a href="{{ site.baseurl }}{{page.previous.url}}" title="Previous Post: 
+        {{page.previous.title}}">&laquo; {{page.previous.title}}</a> 
+      {% endif %} 
+
+    Instead, what we will do is traverse an array with all posts of the current category, looking for
+    the one we are in right now. Once found, we now the previous/next ones.
+*******************************************
+  {% endcomment %}
+
+{% assign this_category = page.categories[0] %}
+{% assign all_posts = site.categories[this_category] %}
+
+{% for post in all_posts %}
+  {% if post.url == page.url %}
+    {% assign post_index0 = forloop.index0 %}
+    {% assign post_index1 = forloop.index %}
+  {% endif %}
+{% endfor %}
+{% for post in all_posts %}
+  {% if post_index0 == forloop.index %}
+    {% assign next_post = post %}
+  {% endif %}
+  {% if post_index1 == forloop.index0 %}
+    {% assign prev_post = post %}
+  {% endif %}
+{% endfor %}
+
+<div id="post_title">
+  <h2>
+      {% if prev_post %} 
+        <a class="previous fadedlink" href="{{ site.baseurl }}{{prev_post.url}}" title="previous: {{prev_post.title}}">&laquo;</a> 
+      {% endif %} 
+   {{ page.title }} <small>{{ page.date || date_to_string }}</small>
+      {% if next_post %}  
+        <a class="next fadedlink" href="{{ site.baseurl }}{{next_post.url}}" title="next: {{next_post.title}}">&raquo; </a> 
+      {% endif %} 
+
+  </h2>
+</div>
 
 <div id="post" role="main">
   {{ content }}
 </div>
+
+    <div class="right"> 
+      {% if prev_post %} 
+        <a href="{{ site.baseurl }}{{prev_post.url}}" title="previous: {{prev_post.title}}">&laquo; {{prev_post.title}}</a> 
+      {% endif %} 
+      {% if next_post %} 
+        {% if prev_post %} | {% endif %}
+        <a href="{{ site.baseurl }}{{next_post.url}}" title="next: {{next_post.title}}">{{next_post.title}} &raquo; </a> 
+      {% endif %} 
+    </div> 
+
+<nav>
+  <ul class="clearfix">
+  {% for category in page.categories %}
+    <li><a href="{{ site.baseurl }}/{{ category }}">{{ category }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
 
 <!--h2>Related Posts</h2>
 <ul class="posts_list">

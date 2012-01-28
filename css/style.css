@@ -221,13 +221,47 @@ td { vertical-align: top; }
   position: relative;
 }
 
+#logo a {
+  background-image: url(../gfx/site/header-gatillo.png);
+  background-repeat: no-repeat;
+  background-position: 21px 21px;
+  height: 118px;
+  width: 160px;
+  position: absolute;
+  opacity: 0.9;
+}
+
+#logo a:hover {
+  opacity: 1;
+}
+
+#header .title {
+  position: absolute;
+  margin-top: 4px;
+  margin-left: 160px;
+  font-size: 6em;
+}
+
+#header .subtitle {
+  position: absolute;
+  margin-top: 86px;
+  margin-left: 160px;
+  font-size: 1.5em;
+}
+
+#subscribe {
+  margin-bottom: 16px;
+}
+
+/** blog header overlaps previous div */
 #blog_header {
   background-image: url(../gfx/site/gatillo-con-linea.png);
   background-repeat: no-repeat;
-  height: 178px;
+  height: 168px;
   width: 960px;
   margin: -36px auto;
   position: relative;
+  pointer-events: none;
 }
 
 /** align header text at the bottom, with the cat image */
@@ -238,7 +272,7 @@ td { vertical-align: top; }
 }
 
 #latest_posts {
-  margin-top: 36px;
+  margin-top: 48px;
 }
 
 ul {
@@ -247,7 +281,8 @@ ul {
 
 body {
   background-image: url(../gfx/site/gatillos_bg.png);
-  }
+  background-position: center top;
+}
 
 #container {
   position: relative;
@@ -276,6 +311,12 @@ footer span {
   float: right;
 }
 
+#boilerplate {
+  font-size: 0.7em; 
+  font-style: italic;
+}
+
+
 @font-face {
   font-family: ArtistsAlleyBB_bold;
   src: url('../gfx/site/ArtistsAlleyBB_bold.otf');
@@ -286,6 +327,7 @@ h1, h2, h3 {
   text-color: #2D1A21;
   margin-bottom: 0px;
   margin-top: 0px;
+  line-height: 1;
 }
 
 h1 {
@@ -301,8 +343,14 @@ h1 small {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 200;
+}
+
+/* for date */
+h2 small {
+  font-size: 0.4em;
+  color: #666;
 }
 
 h3 {
@@ -324,19 +372,28 @@ h1 img, h2 img, h3 img {
 }
 
 /* Post styles */
+
+#post_title {
+  padding-top: 18px;
+}
+
 #post {
   clear: left;
-  padding-left: 20px;
+  padding-left: 4px;
   padding-right: 20px;
 }
 
 #post img {
   display: block;
-  margin: 30px auto;
+  margin: 22px auto;
   background-color: white;
   border: 1px solid #ccc;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   padding: 8px;
+}
+
+.post .comic_image {
+  text-align: center;
 }
 
 .post .comments_link {
@@ -344,10 +401,24 @@ h1 img, h2 img, h3 img {
   padding-right: 8px;
 }
 
+.post .comment_count {
+  font-size: 0.8em; 
+  text-decoration: none;
+  font-style: italic;
+}
+
+.post .comment_count a {
+  text-decoration: none;
+}
+
 .post .date {
   float: left;
   padding-right: 8px;
   color: #BDA9C6;
+}
+
+#older_posts a {
+  text-decoration: none;
 }
 
 /* Post preview styles (list of posts on home page) */
@@ -425,7 +496,7 @@ code.bash {
 
 /** Tags in post page **/
 nav {
-  margin: -30px 0 30px 30px;
+  margin: -22px 0 30px 30px;
 }
 
 nav li {

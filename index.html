@@ -10,17 +10,17 @@ layout: default
    {% for post in site.categories.comics limit:1 %}
      {% include comic_post.html %}
      {% assign cats_nocomic = post.categories[1] %}
-     <a href="{{ site.baseurl }}/{{ cats_nocomic }}">Previous comics</a>
+     <a href="{{ site.baseurl }}/{{ cats_nocomic }}">Comics archive</a>
    {% endfor %}
 </div>
 
 <div id="blog_header">
-  <h2><a href="{{ site.baseurl }}/blog"><span>Latest blog entries</span></a></h2>
+  <h2><a href="{{ site.baseurl }}/blog"><span>Latest blog entry</span></a></h2>
 </div>
 
 <div id="latest_posts">
   <ul>
-    {% for post in site.categories.blog limit:5 %}
+    {% for post in site.categories.blog limit:1 %}
       {% include post_preview.html %}
     {% endfor %}
   </ul>
@@ -29,7 +29,7 @@ layout: default
 <div id="older_posts">
   <h2><a href="{{ site.baseurl }}/blog"><span>Older blog entries</span></a></h2>
   <ul>
-    {% for post in site.categories.blog limit:10 offset:5 %}
+    {% for post in site.categories.blog limit:10 offset:1 %}
       {% include post.html %}
     {% endfor %}
   </ul>

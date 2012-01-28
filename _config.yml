@@ -4,8 +4,9 @@ markdown:     redcarpet
 permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
 title:        gatillos.com - gun-toting kittens
-baseurl:      /yay
+baseurl:      /yay2
 url_root:     http://gatillos.com
+import_location: http://gatillos.com/yay
 author:       osuka
 author_short: osuka
 author_email: webmaster@gatillos.com

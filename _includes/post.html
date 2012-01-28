@@ -1,4 +1,5 @@
 <li class="post">
   <span class="date">{{ post.date | date_to_string }}</span>
   <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  <span class="comment_count">(<a href="{{ site.baseurl }}{{ post.url }}#disqus_thread" title="{{ post.title }}"> View comments</a>)</span>
 </li>

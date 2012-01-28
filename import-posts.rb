@@ -28,7 +28,7 @@ def parse_content(postid, content)
     local = "gfx/posts/#{postid}/#{name}"
     puts "  - uses #{local}"
     retrieve_file(src, local) unless File.exists?(local)
-    item['src'] = "#{@config['baseurl']}/#{local}"
+    item['src'] = "#{@config['url_root']}#{@config['baseurl']}/#{local}"
     item['class'] = ''
   end
 
@@ -42,7 +42,7 @@ def parse_content(postid, content)
     local = "gfx/posts/#{postid}/#{name}"
     puts "  - links to #{src}"
     retrieve_file(src, local) unless File.exists?(local)
-    item['href'] = "#{@config['baseurl']}/#{local}"
+    item['href'] = "#{@config['url_root']}#{@config['baseurl']}/#{local}"
   end
 
   return doc.xpath("//body")

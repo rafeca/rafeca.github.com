@@ -19,7 +19,6 @@ layout: default
 </div>
 
 <div id="latest_posts">
-  <ul>
     {% for post in site.categories.blog limit:4 %}
       {% assign render_navigation_above = false %}
       {% assign render_navigation_below = false %}
@@ -30,7 +29,6 @@ layout: default
       {% assign render_content = true %}
       {% include a_comic.html %}
     {% endfor %}
-  </ul>
 </div>
 
 <div id="older_posts">

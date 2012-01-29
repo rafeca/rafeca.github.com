@@ -21,20 +21,8 @@
 {% endif %}
 {% assign all_posts = site.categories[this_category] | sort %}
 
-{% for p in all_posts %}
-  {% if p.url == post.url %}
-    {% assign post_index0 = forloop.index0 %}
-    {% assign post_index1 = forloop.index %}
-  {% endif %}
-{% endfor %}
-{% for p in all_posts %}
-  {% if post_index0 == forloop.index %}
-    {% assign next_post = p %}
-  {% endif %}
-  {% if post_index1 == forloop.index0 %}
-    {% assign prev_post = p %}
-  {% endif %}
-{% endfor %}
+{% for p in all_posts %} {% if p.url == post.url %} {% assign post_index0 = forloop.index0 %} {% assign post_index1 = forloop.index %} {% endif %} {% endfor %}
+{% for p in all_posts %} {% if post_index0 == forloop.index %} {% assign next_post = p %} {% endif %} {% if post_index1 == forloop.index0 %} {% assign prev_post = p %} {% endif %} {% endfor %}
 
 <div class="post">
 
@@ -126,7 +114,10 @@
   {% endif %}
 
   {% if render_comment_count %}
-    <div class="comments_link"><a href="{{ site.baseurl }}{{ post.url }}#disqus_thread">Click to view comments</a></div>
+    <!-- temporaryly disabled until Disqus works again...
+    <div class="comments_link"><a href="{{ site.url_root}}{{ site.baseurl }}{{ post.url }}#disqus_thread">Click to view comments</a></div>
+    -->
+    <div class="comments_link"><a href="{{ site.url_root}}{{ site.baseurl }}{{ post.url }}">Click to view comments</a></div>
   {% endif %}
 
 </div>
@@ -135,20 +126,8 @@
 
   <h2>Comments</h2>
   <div id="disqus_thread"></div>
-  <script type="text/javascript">
-      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = '{{ site.disqus_id }}'; // required: replace example with your forum shortname
-      //var disqus_developer = 1; // developer mode is on, for testing locally
-      //var disqus_identifier = '/some/id';
-  
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-  </script>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 {% endif %}
+
 

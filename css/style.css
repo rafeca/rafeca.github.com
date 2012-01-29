@@ -225,10 +225,10 @@ td { vertical-align: top; }
 
 
 #logo a {
-  background-image: url(../gfx/site/header-gatillo.png);
+  background-image: url(../gfx/site/header-gatillo-2.png);
   background-repeat: no-repeat;
-  background-position: 21px 21px;
-  height: 118px;
+  background-position: 21px 12px;
+  height: 144px;
   width: 160px;
   position: absolute;
   opacity: 0.9;
@@ -238,9 +238,20 @@ td { vertical-align: top; }
   opacity: 1;
 }
 
+#logo-2 a {
+  background-image: url(../gfx/site/header-monkey.png);
+  background-repeat: no-repeat;
+  background-position: 21px 6px;
+  height: 144px;
+  width: 160px;
+  right: 140px;
+  position: absolute;
+  opacity: 0.9;
+}
+
 #header .title {
   position: absolute;
-  margin-top: 4px;
+  margin-top: 10px;
   margin-left: 160px;
   font-family: Sunshiney, helvetica, arial, clean, sans-serif;
   font-size: 6em;

@@ -495,7 +495,7 @@ h1 img, h2 img, h3 img {
   float: left;
   padding-right: 8px;
   margin-top: -20px;
-  margin-bottom: -20px;
+  margin-bottom: 20px;
 }
 
 .post .comment_count {

@@ -74,7 +74,7 @@ puts @config['baseurl']
 File.delete('urlmap.txt') if File.exists?('urlmap.txt')
 File.delete('htaccess.txt') if File.exists?('htaccess.txt')
 
-doc = Nokogiri::XML( File.open("../../../Downloads/gatillos.wordpress.2012-01-24.xml") )
+doc = Nokogiri::XML( File.open("../../../Downloads/gatillos.wordpress.2012-01-29.xml") )
 
 doc.xpath("//item").each_with_index do |item|
 
@@ -107,6 +107,7 @@ doc.xpath("//item").each_with_index do |item|
   title = item.xpath("title").first.content
   postdate = item.xpath("wp:post_date").first.content
   postdate = DateTime.parse(postdate)
+  postdate = postdate.to_time   # this converts to local time zone
   link     = item.xpath("link").first.content
   content = item.xpath("content:encoded").first.content
 
@@ -175,6 +176,7 @@ doc.xpath("//item").each_with_index do |item|
 
     filename="_posts/#{local_collection}/#{postdate.strftime '%Y-%m-%d'}-#{post_name}.markdown"
     new_path = "#{postdate.strftime '%Y/%m/%d'}/#{post_name}/"
+    puts "#{postdate} --> #{filename} --> #{new_path}"
   end
 
   if filename && filename.length > 0

@@ -217,7 +217,7 @@ td { vertical-align: top; }
 #header {
   background-image: url(../gfx/site/header.png);
   background-repeat: no-repeat;
-  height: 136px;
+  height: 140px;
   width: 960px;
   margin: 0 auto;
   position: relative;
@@ -386,6 +386,9 @@ body {
   padding: 0px 16px;
   background-color: white;
   border-radius: 10px;
+  box-shadow: 0px 0px 4px 4px #351f3e;
+  margin-bottom: 10px;
+  padding-top: 2px;
 }
 
 footer {
@@ -678,66 +681,38 @@ nav li a:hover {
 
 @media only screen and (max-width: 750px) {
   #container {
-    width: 94%;
-    padding: 0 3%;
   }
 
   h1 {
-    font-size: 2em;
-    text-indent: -25px;
-    padding-left: 25px;
   }
 
   h1 small {
-    font-size: 0.5em;
-    display: block;
-    margin-left: 25px;
   }
 
   nav {
-    float: right;
-    margin-top: -45px;
   }
 
   .post img {
-    margin-left: 3%;
-    margin-right: 3%;
-    max-width: 90%;
-    padding: 2%;
   }
 
   code.bash {
-    margin-left: 2%;
-    margin-right: 2%;
-    width: 88%;
-    padding: 1% 2%;
   }
 }
 
 @media only screen and (max-width: 480px) {
   h1 {
-    font-size: 1.5em;  
-    text-indent: -20px;
-    padding-left: 20px;
   }
 
   h1 small {
-    margin-left: 18px;
-    font-size: 0.67em;
   }
 
   h2, .post h1 {
-    font-size: 1.25em;
   }
 
   nav {
-    float: none;
-    margin-left: 18px;
-    margin-top: -10px;
   }
 
   ul, ol {
-    padding-left: 30px;
   }
 }
 

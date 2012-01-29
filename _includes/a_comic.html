@@ -114,10 +114,7 @@
   {% endif %}
 
   {% if render_comment_count %}
-    <!-- temporaryly disabled until Disqus works again...
-    <div class="comments_link"><a href="{{ site.url_root}}{{ site.baseurl }}{{ post.url }}#disqus_thread">Click to view comments</a></div>
-    -->
-    <div class="comments_link"><a href="{{ site.url_root}}{{ site.baseurl }}{{ post.url }}">Click to view comments</a></div>
+    <div class="comments_link"><a href="{{ site.baseurl }}{{ post.url }}/#disqus_thread">Click to view comments</a></div>
   {% endif %}
 
 </div>

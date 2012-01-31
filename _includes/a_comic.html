@@ -72,7 +72,7 @@
 
   {% if post.image %}
   <div class="comic_image">
-    <img src='{{ post.image }}'/> 
+    <img src='{{ post.image }}' alt='{{ post.image }}' {{ post.image | remove_first:site.baseurl | prepend:'..' | image_dimensions }}/> 
   </div> 
   {% endif %}
 

@@ -69,3 +69,136 @@ layout: default
     
 </nav>
 {% endif %}
+
+
+<script>
+function desactivar() {
+  var img = jQuery("img", this);
+  var src = img.attr("src");
+  img.attr("title", src);     // save src in title
+  img.attr("src", "white_pixel.png");
+//  img.toggle();
+
+  var a = jQuery("a", this);
+  var href = a.attr("href");
+  a.attr("title", href);     // disable a, save url in title
+  a.attr("href", "javascript:;");
+}
+
+(function($) {
+  // on DOM load
+  $(function() {
+    
+    // disable all page IMG elements so they don't load
+  $(".comic_image").each(desactivar);
+  
+    // activate a trigger for when clicked, focused or hovered over
+//  $(".post").lazyready(activar);
+  
+  // above trigger is a fallback, we use also a scroll listener to detect elements in viewport
+  $(".post").bind('inview', activar);
+
+  });
+})(jQuery);
+
+/**
+ * author Remy Sharp
+ * url http://remysharp.com/2009/01/26/element-in-view-event-plugin/
+ */
+(function ($) {
+    function getViewportHeight() {
+        var height = window.innerHeight; // Safari, Opera
+        var mode = document.compatMode;
+
+        if ( (mode || !$.support.boxModel) ) { // IE, Gecko
+            height = (mode == 'CSS1Compat') ?
+            document.documentElement.clientHeight : // Standards
+            document.body.clientHeight; // Quirks
+        }
+
+        return height;
+    }
+
+    $(window).scroll(function () {
+        var vpH = getViewportHeight(),
+            scrolltop = (document.documentElement.scrollTop ?
+                document.documentElement.scrollTop :
+                document.body.scrollTop),
+            elems = [];
+        
+            $(".comic_image img").each(function () {
+                var $el = $(this),
+                    top = $el.offset().top,
+                    height = $el.height(),
+                    inview = $el.data('inview') || false;
+                
+                  if( top < scrolltop + vpH && top + height > scrolltop ) {
+                      if (!inview) {
+                        // fire event if element is visible
+                          $el.data('inview', true);
+                          $el.trigger('inview', [ true ]);
+                      }
+                  }
+            });
+    });
+
+    // kick the event to pick up any elements already in view.
+    // note however, this only works if the plugin is included after the elements are bound to 'inview'
+    $(function () {
+        $(window).scroll();
+    });
+})(jQuery);
+  
+
+
+function activar() {
+  var img = jQuery("img:last", this); // there's two img, and we want the second
+  var oldsrc = img.attr("title");
+  img.attr("src", oldsrc);
+  
+  var a = jQuery("a", this);
+  var oldhref = a.attr("title");
+  a.attr("href", oldhref); // recover link from title
+
+  img.toggle();
+  img.fadeIn(1000, function() {
+        // Animation complete
+  });
+
+}
+
+
+              
+
+// lazyready plugin
+// loads image when clicked or hovered
+
+(function($) {
+
+  $.fn.lazyready = function(fn, options) {
+    var defaults = {
+      readyClass: 'ready'       //when user hovers over item
+    };
+
+    var opts = $.extend(defaults, options);
+
+    return this.each(function() {
+      var $container = $(this);
+
+      function activate() {
+        if ($container.hasClass(opts.readyClass))
+          return;
+
+        $container.addClass(opts.readyClass);
+        if (fn)
+          $container.each(fn);
+      }
+
+      $container.mouseover(activate).find('*').andSelf().focus(activate);
+    });
+  };
+})(jQuery);
+
+
+
+</script>

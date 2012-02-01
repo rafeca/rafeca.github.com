@@ -71,9 +71,11 @@
   {% endif %}
 
   {% if post.image %}
-  <div class="comic_image">
-    <img src='{{ post.image }}' alt='{{ post.image }}' {{ post.image | remove_first:site.baseurl | prepend:'..' | image_dimensions }}/> 
-  </div> 
+    <div class="comic_image">
+      <a href="{{ site.baseurl }}{{post.url}}" title="{{post.title}}">
+        <img src='{{ post.image }}' alt='{{ post.image }}' {{ post.image | remove_first:site.baseurl | prepend:'..' | image_dimensions }}/> 
+      </a>
+    </div>
   {% endif %}
 
   {% if render_title_below %}

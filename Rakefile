@@ -1,14 +1,21 @@
+
+
+# Use green color to format text
+def green(text)
+  "\e[32m#{text}\e[0m"
+end
+
 desc 'Generate tag pages'
 task :tags do
-  puts "Generating tag pages..."
+  puts green("Generating tag pages...")
+  
   require 'jekyll'
   
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
   site.read_posts('')
-  site.categories.sort.each do |category, posts|
-    html = ''
-    html << <<-HTML
+  site.categories.sort.each do |category, _|
+    html = <<HTML
 ---
 layout: default
 title: Thoughts by rafeca
@@ -23,11 +30,14 @@ title: Thoughts by rafeca
     {% include post.html %}
   {% endfor %}
 </ul>
-    HTML
+HTML
+
+    file = green("tag/#{category}.html")
+    puts "Creating file #{file}"
     File.open("tag/#{category}.html", 'w+') do |file|
-      file.puts html
+      file.write html
     end
-    puts "tag/#{category}.html generated!"
   end
   puts 'Done!'
 end
+

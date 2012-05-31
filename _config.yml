@@ -1,14 +1,14 @@
 safe:         true
 pygments:     true
-markdown:     redcarpet
+markdown:     liquid
 permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
-title:        Thoughts by rafeca
-description:  My personal thoughts about technology and the Web
-url_root:     http://rafeca.com
-author:       Rafael Oleza
-author_short: rafeca
-author_email: rafeca@gmail.com
-analytics_ua: UA-6212472-4
-feedburner_id: rafeca
-disqus_id:    rafeca
+title:        Personal thoughts about technology
+description:  Personal thoughts about technology (@juandebravo)
+url_root:     http://juandebrvo.com
+author:       Juan de Bravo
+author_short: juandebravo
+author_email: juandebravo@gmail.com
+analytics_ua: UA-XXXXXXX-X
+feedburner_id: XXXXXXX
+disqus_id:    XXXXXXX

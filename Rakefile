@@ -8,9 +8,9 @@ end
 desc 'Generate tag pages'
 task :tags do
   puts green("Generating tag pages...")
-  
+
   require 'jekyll'
-  
+
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
   site.read_posts('')
@@ -18,7 +18,7 @@ task :tags do
     html = <<HTML
 ---
 layout: default
-title: Thoughts by rafeca
+title: Thoughts by juandebravo
 ---
 <header>
   <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> {{ site.title }}</h1>

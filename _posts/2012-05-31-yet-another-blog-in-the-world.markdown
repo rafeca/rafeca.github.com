@@ -30,5 +30,4 @@ Well, I'm always reading new stuff, you know, never stop learning. I'll try to s
 - [Adhearsion](http://www.adhearsion.com), the open source telephony framework I was actively contributing for some months and that is being leaded by the awesome Ben Klang, Ben Langfeld and Jason Goecke.
 - Freeswitch and ESL, the telephony platform I'm hacking with (not so often though)
 - Scala: learning Scala was my first new year resolution, I've started learning now and I do like to syntax. I don't have yet a strong opinion about it that seems quite amazing.
-- mongoDB:
 

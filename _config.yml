@@ -5,10 +5,10 @@ permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
 title:        Personal thoughts about technology
 description:  Personal thoughts about technology (@juandebravo)
-url_root:     http://juandebrvo.com
+url_root:     http://juandebravo.com
 author:       Juan de Bravo
 author_short: juandebravo
 author_email: juandebravo@gmail.com
-analytics_ua: UA-XXXXXXX-X
+analytics_ua: UA-32824811-1
 feedburner_id: XXXXXXX
 disqus_id:    juandebravo

@@ -18,7 +18,7 @@ During the last months I've felt an increasing need to share my thoughts with th
 
 - ruby, github and git are my tools of choice whenever I can use them and I'm a big fan of UNIX shell so it's kind of familiar environment for me. Kudos to [GitHub pages for supporting Jekyll](http://pages.github.com/#using_jekyll_for_complex_layouts). I can use git flow to write my blog!
 
-- Last, but not least, my fellow [@rafeca](http://www.twitter.com/rafeca) started a blog during our international assignment in [Jajah](http://www.jajah.com). I'm using [Jekyll](http://jekyllrb.com/) and I have borrowed his layout to build this blog.  Hopefully I'll write more often than he does, though. For me it's also a way to share experiences with him now that ours careers have diverged :-) Please check his explanation about how to create a blog from scratch.
+- Last, but not least, my fellow [@rafeca](http://www.twitter.com/rafeca) started a blog during our international assignment in [Jajah](http://www.jajah.com). I'm using [Jekyll](http://jekyllrb.com/) and I have borrowed his layout to build this blog.  Hopefully I'll write more often than he does, though. For me it's also a way to share experiences with him now that ours careers have diverged :-) Please check [his explanation about how to create a blog like this from scratch](http://rafeca.com/2011/11/09/creating-this-blog/).
 
 # What will be this about
 

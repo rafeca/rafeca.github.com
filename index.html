@@ -1,33 +1,14 @@
 ---
 layout: default
 ---
-<head>
-  <h1>{{ site.title }}</h1>
-</head>
+<h1>{{ site.title }}
+  <a class="fadedlink rss" href="http://feeds.feedburner.com/{{ site.feedburner_id }}" title="RSS feed">RSS feed
+  </a>
+</h1>
 
-<h2><span>Blog posts</span> <a class="fadedlink" href="http://feeds.feedburner.com/{{ site.feedburner_id }}" title="RSS feed"><img src="/gfx/rss.png" alt="RSS feed"/></a></h2>
-<ul>
+<ul class="posts">
   {% for post in site.posts %}
     {% include post.html %}
   {% endfor %}
 </ul>
 
-<h2>Open Source</h2>
-<ul>
-  <li>
-      <a href="https://github.com/adhearsion/adhearsion">Adhearsion</a>
-      <span>&mdash; Adhearsion is an open-source voice application development framework.</span>
-  </li>
-  <li>
-      <a href="https://github.com/bluevialabs/connfu-client">connFu-client</a>
-      <span>&mdash; Ruby DSL for creating real time voice applications using the connFu platform</span>
-  </li>
-  <li>
-  	<a href="https://github.com/telefonicaid/bluevia_engine">bluevia_engine</a>
-  	<span>&mdash; Handle OAuth authentication mechanism with <a href="https://www.bluevia.com">BlueVia</a> API in a <a href="http://rubyonrails.org/">Rails</a> application.</span>
-  </li>
-  <li>
-  	<a href="https://github.com/juandebravo/google_client">google_client</a>
-  	<span>&mdash; get access to a specific set of <a href="https://developers.google.com/products/?hl=es">Google APIs</a>.</span>
-  </li>
-</ul>

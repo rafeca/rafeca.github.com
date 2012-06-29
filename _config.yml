@@ -1,6 +1,6 @@
 safe:         true
 pygments:     true
-markdown:     kramdown
+markdown:     redcarpet
 permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
 title:        Personal thoughts about technology

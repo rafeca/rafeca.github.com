@@ -211,6 +211,11 @@ td { vertical-align: top; }
    Author: Juan de Bravo
    ========================================================================== */
 
+header {
+  overflow: hidden;
+  zoom: 1;
+}
+
 .menu {
   position: relative;
   width: 150px;
@@ -402,6 +407,7 @@ code.bash {
 /** Tags in post page **/
 nav {
   margin: 0px 30px;
+  min-height: 30px;
 }
 
 nav li {

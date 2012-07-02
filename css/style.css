@@ -262,11 +262,11 @@ header {
   color: black;
 }
 
-.post a {
+.container a {
   text-decoration: none;
 }
 
-.post a:hover {
+.container a:hover {
   text-decoration: underline;
 }
 

@@ -24,11 +24,12 @@
 
 <body>
   <div class="menu">
-    <ul>
-      <li class="item active"><a href="/index.html">Dev Blog</a></li>
-      <li class="item"><a href="/open_source.html">Open Source</a></li>
-      <li class="item"><a href="/about_me.html">About me</a></li>
-    </ul>
+    {% include menu.html %}
+  </div>
+  <div class="title">
+    <h1>
+      {{ site.title }}
+    </h1>
   </div>
   <div class="container">
 

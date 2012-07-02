@@ -12,3 +12,11 @@ author_email: juandebravo@gmail.com
 analytics_ua: UA-32824811-1
 feedburner_id: juandebravo
 disqus_id:    juandebravo
+navigation:
+- text: Dev Blog
+  url: /index.html
+  layout: post
+- text: Open Source
+  url: /open_source.html
+- text: About me
+  url: /about_me.html

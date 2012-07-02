@@ -223,6 +223,13 @@ header {
   margin: 100px 0;
 }
 
+.title {
+  height: 30px;
+  padding: 20px 30px;
+  width: 750px;
+  margin: 30px 180px;
+}
+
 .container {
   background-color: #F4F4F4;
   border: 1px solid #D5D6D8;
@@ -289,6 +296,11 @@ h1 {
 
 h1 small {
   font-size: 0.4em;
+  color: #666;
+}
+
+h2 small {
+  font-size: 0.5em;
   color: #666;
 }
 
@@ -362,7 +374,7 @@ code.bash {
 }
 
 .rss {
-  background:url("/gfx/rss.png") no-repeat scroll 0 18px transparent;
+  background:url("/gfx/rss.png") no-repeat scroll 0 3px transparent;
   width: 30px;
   display: inline-block;
   text-indent: -2000px;
@@ -482,7 +494,7 @@ nav li a:hover {
     padding-left: 25px;
   }
 
-  h1 small {
+  h1 small, h2 small {
     font-size: 0.5em;
     display: block;
     margin-left: 25px;
@@ -515,7 +527,7 @@ nav li a:hover {
     padding-left: 20px;
   }
 
-  h1 small {
+  h1 small, h2 small {
     margin-left: 18px;
     font-size: 0.67em;
   }

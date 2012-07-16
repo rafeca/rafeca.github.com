@@ -12,7 +12,7 @@ During the last months I've felt an increasing need to share my thoughts with th
 
 - One of my new year resolutions was to embrace a new programming language. It's incredible how much you can learn in a travel like that and sometimes I need to share some bits of that new knowledge. Some of those might be could obvious to you but they are new to me that's why they are here. As my motto says: "never stop learning".
 
-# Why Jekill and not Wordpress?
+# Why Jekyll and not Wordpress?
 
 - In 2011 I'd been working mainly in an innovation project where we had the chance to test and use different tools to build our platform and service. It was an awesome adventure. One of the things we did was creating all the documentation our service needed using [Markdown](http://daringfireball.net/projects/markdown/) format and running a [Rake](http://rake.rubyforge.org/) task to generate the HTML pages that any HTTP server in the world could serve. Yes, we did not need any hard editorial flow to follow, we were innovators. Kudos to [@osuka](http://www.twitter.com/osuka) for letting me that freedom.
 

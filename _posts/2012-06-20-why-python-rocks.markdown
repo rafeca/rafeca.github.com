@@ -6,14 +6,27 @@ categories: [python]
 
 # Introduction
 
-During last months I've been spending few hours everyday coding python. Not only it's been my first experience in a real project, before this stage I hadn't dropped a single line of python. That's why the former weeks were really hard for me to get things done. During the previous two years I had been coding ruby all the time, so coming outside the comfort zone made me felt myself really improductive.
+[As you know](2012/06/26/git-tip-how-to-change-the-branch-of-a-commit/) these lasts months I've sepnt quite some time coding python, the language chosen for the project to which I've devoted heart, soul and most of my weekends too...
 
-That time (my feeling about being improductive) fortunately is over, still I cannot think of myself as an expert in python, but I feel comfortable in this environment though.
+During the first weeks I really struggled to get the code alive as during the previous two years it was all bout ruby, so python has taken me out of my comfort zone which really hit me. Although I cannot call myself a python expert (yet), I'm enjoying this new friendship.
 
-I would like to emphasize what are my favourites python features and know your thoughts about them and something that probably I'm missing. I'm just talking about python and in some cases comparing with ruby, every point I'm talking about deserves IMO a dedicated post, just take this as a summary of the things I like more.
+# Things I like using python
+
+I'm going to share some of my favourites features and I'd like to know yours, yours thoughts about them and any missed bit that may be key:
+
+* List comprehensions
+* Generators
+* Decorators
+* Use blank spaces to define code blocks
+* Context managers
+
+Find below a brief description and example about the first two dots.
 
 # List comprehensions
 
+As python doc says, ["list comprehensions provide a concise way to create lists"](http://docs.python.org/tutorial/datastructures.html#list-comprehensions).
+
+### Example
 ```python
 users = [{'name': 'John Doe', 'email': 'john@doe.com'},
 		 {'name': 'Mike Cunhingam', 'email': 'mike@cunhingam.com'}]
@@ -22,7 +35,7 @@ users = [{'name': 'John Doe', 'email': 'john@doe.com'},
 emails = [user['email'] for user in users]
 ```
 
-Of course something similar can be done in ruby, but after some weeks I felt comfortable with the idea or iterate over objects in an array without calling a specific object method:
+Of course something similar can be done in ruby, but after some weeks I felt comfortable with the idea of iterate over objects in an array without calling a specific object method:
 
 ```ruby
 users = [{name: 'John Doe', email: 'john@doe.com'},
@@ -36,30 +49,10 @@ List comprehensions can be used with any iterable object, as strings and arrays 
 
 # Generators
 
-# Decorators
+Again reading through python docs, ["generators are a simple and powerful tool for creating iterators"](http://docs.python.org/tutorial/classes.html#generators), covered in [PEP255](http://www.python.org/dev/peps/pep-0255/). Generators may be used when you need to maintain state between values produced and allows you to avoid callback functions.
 
-With decorators you can change any function behavior just adding annotations above the function definition. I was seeking an example about how to log the parameters being received in a method call, and I found [this implementation in python.org site](http://wiki.python.org/moin/PythonDecoratorLibrary#Easy_Dump_of_Function_Arguments):
+Let's imagine that [Github API](http://developer.github.com) only allows to download an user gist per API call. In the example below we're using a generator to create an iterator over user gists. To retrieve an user gist we're maintainng the state between calls (the current page) and we're retrieving the data only when is actually needed. Of course another approach could be to retrieve a chunk of gists and return them upon request, but it seems a good example about how to use generators :-)
 
-```python
-def dump_args(func):
-    "This decorator dumps out the arguments passed to a function before calling it"
-    argnames = func.func_code.co_varnames[:func.func_code.co_argcount]
-    fname = func.func_name
+{% include "gist" with "1474101" %}
 
-    def echo_func(*args,**kwargs):
-        print fname, ":", ', '.join(
-            '%s=%r' % entry
-            for entry in zip(argnames,args) + kwargs.items())
-        return func(*args, **kwargs)
-
-    return echo_func
-
-@dump_args
-def f1(a,b,c):
-    print a + b + c
-
-f1(1, 2, 3)
-``
-
-
-# Use blank spaces to define code blocks
+To be continued...

@@ -449,6 +449,10 @@ nav li a:hover {
   color: #fff;
 }
 
+.gist {
+  font-size: 0.7em;
+}
+
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
    ========================================================================== */

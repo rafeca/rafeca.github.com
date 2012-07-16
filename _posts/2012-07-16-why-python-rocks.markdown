@@ -27,23 +27,23 @@ Find below a brief description and example about the first two dots.
 As python doc says, ["list comprehensions provide a concise way to create lists"](http://docs.python.org/tutorial/datastructures.html#list-comprehensions).
 
 ### Example
-```python
+{% highlight python %}
 users = [{'name': 'John Doe', 'email': 'john@doe.com'},
 		 {'name': 'Mike Cunhingam', 'email': 'mike@cunhingam.com'}]
 
 # Retrieve users email
 emails = [user['email'] for user in users]
-```
+{% endhighlight %}
 
 Of course something similar can be done in ruby, but after some weeks I felt comfortable with the idea of iterate over objects in an array without calling a specific object method:
 
-```ruby
+{% highlight ruby %}
 users = [{name: 'John Doe', email: 'john@doe.com'},
 		 {name: 'Mike Cunhingam', email: 'mike@cunhingam.com'}]
 
 # Retrieve users email
 emails = users.map{|x| x[:email]}
-```
+{% endhighlight %}
 
 List comprehensions can be used with any iterable object, as strings and arrays instances.
 
@@ -53,6 +53,7 @@ Again reading through python docs, ["generators are a simple and powerful tool f
 
 Let's imagine that [Github API](http://developer.github.com) only allows to download an user gist per API call. In the example below we're using a generator to create an iterator over user gists. To retrieve an user gist we're maintainng the state between calls (the current page) and we're retrieving the data only when is actually needed. Of course another approach could be to retrieve a chunk of gists and return them upon request, but it seems a good example about how to use generators :-)
 
-{% include "gist" with "1474101" %}
+{% assign gist_id = 3124648 %}
+{% include gist.html %}
 
 To be continued...

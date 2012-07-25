@@ -6,7 +6,7 @@ categories: [python]
 
 # Introduction
 
-[As you know](/2012/06/26/git-tip-how-to-change-the-branch-of-a-commit/) these lasts months I've spent quite some time coding python, the language chosen for the project to which I've devoted heart, soul and most of my weekends too...
+[As you know](/2012/05/31/yet-another-blog-in-the-world/) these lasts months I've spent quite some time coding python, the language chosen for the project to which I've devoted heart, soul and most of my weekends too...
 
 During the first weeks I really struggled to get the code alive as during the previous two years it was all bout ruby, so python has taken me out of my comfort zone which really hit me. Although I cannot call myself a python expert (yet), I'm enjoying this new friendship.
 

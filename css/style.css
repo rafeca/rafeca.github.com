@@ -284,8 +284,13 @@ footer a {
   margin: 0 3px;
 }
 
-footer span {
+footer .author_info {
   float: right;
+}
+
+footer .author_info a {
+  text-decoration: none;
+  color: #666;
 }
 
 h1 {
@@ -378,6 +383,16 @@ code.bash {
   width: 30px;
   display: inline-block;
   text-indent: -2000px;
+}
+
+.intro {
+  background:url("/gfx/juandebravo.png") no-repeat top right;
+  height: 160px;
+  padding: 0 160px 0 0;
+}
+
+h3.about_me {
+  color: #D11E27;
 }
 
 .menu .item {

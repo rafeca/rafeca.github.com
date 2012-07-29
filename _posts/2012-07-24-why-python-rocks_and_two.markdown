@@ -6,7 +6,7 @@ categories: [python]
 
 # Introduction
 
-Here it goes my second and last post on the "things that I like about coding in python" serie in which was missing a small section on how cool these features (below) are:
+Here it goes my second and last post on the "things that I like about coding in python" series in which was missing a small section on how cool these features (below) are:
 
 * Decorators
 * Context managers

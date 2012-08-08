@@ -211,6 +211,11 @@ td { vertical-align: top; }
    Author: Juan de Bravo
    ========================================================================== */
 
+.baruco {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}
 header {
   overflow: hidden;
   zoom: 1;

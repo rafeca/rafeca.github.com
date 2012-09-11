@@ -4,11 +4,11 @@ title: Dynamic loading
 categories: [python, django]
 ---
 
-I usually don't use dynamic loading, but when I do, I log carefully any possible error that may raise while loading a specific file.
+![Dynamic loading](/gfx/posts/dynamic-loading/most-interesing-man.png)
 
-In my current project we are reusing a Django project to run two different products, productA and productB. These two products requires the same service logic often, but in some scenarios we need to write different code.
+In the project I am working right now, we are reusing a Django project to develop two different products, productA and productB :-). These products frequently require the same service layer and the code can be directly reused, but in some scenarios different code is required.
 
-We're getting some advantages by reusing the Django project, I list some of them below:
+Django project reusage gives us some advantages. Here I highlight some of them:
 
 * authentication
 * authorization
@@ -18,31 +18,36 @@ We're getting some advantages by reusing the Django project, I list some of them
 * security tests
 * third party integrations
 
-Instead of using project configuration, our current solution to run different logic in both products is dynamic loading. To implement it, we have defined our own code structure trying to respect the Django default structure:
+Our current solution to run different logic in both products, instead of using project configuration, is **dynamic loading**. To implement it, we have defined our own code structure respecting Django default structure:
 
 {% highlight bash %}
 
 - django_project_root
   - django_app_1
+    - __init__.py
     - services.py
     - projectA
+       - __init__.py
        - services.py
     - projectB
+       - __init__.py
        - sevices.py
   - django_app_2
+    - __init__.py
     - services.py
     - projectB
+      - __init__.py
       - services.py
 
 {% endhighlight %}
 
-When the Django application is running as projectA, the service logic being used is:
+If the Django application is running as projectA, the service logic being used is:
 - for django_app_1 application, the module django_app_1.projectA.services
 - for django_app_2 application, the module django_app_2.services (as django_app_2.projectA.services module is not created).
 
-ProjectB defines in both django applications specific logic, and therefore no generic one is used.
+ProjectB has defined specific logic in both Django applications, and therefore no generic one is used.
 
-To know which module must be loaded, we're using the following snippet of code (simplified):
+Find underneath the snippet of code (simplified) we're using to know which module must be loaded:
 
 {% highlight python %}
 
@@ -60,9 +65,10 @@ get_module('django_app_1', 'projectA', 'services')
 
 {% endhighlight %}
 
-Pretty simple. I'm trying to load a module, and if it fails, I'm logging a warning. Sometimes it's an expected behavior (projectA does not define its own django_app_2 service logic), but also it may happen that while parsing a module code, an exception is raised and the module cannot be imported (i.e. projectB django_app_2 service logic has a syntax error). Not logging this situation will hide possible undesired errors.
+Pretty simple. I'm trying to load a module, and if it fails, I'm logging a warning.
+Sometimes the warning is the expected behavior (i.e. projectA does not define its own django_app_2 service logic), but it could also happen that an exception is raised while parsing a module code, and therefore the module cannot be imported (i.e. projectB django_app_2 service logic has a syntax error). Not logging this situation will hide possible undesired errors.
 
-This is something that Django is not doing (at least in version 1.3.1) and caused me some paintful last Friday. I was running:
+This is something that Django is not doing (at least in version 1.3.1) and caused me some paintful last Friday. This command:
 
 {% highlight python %}
 
@@ -70,7 +76,7 @@ python manage.py collectstatic --settings=projectA_settings
 
 {% endhighlight %}
 
-and getting as result:
+generated the following result:
 
 {% highlight python %}
 
@@ -80,29 +86,7 @@ Unknown command: 'collectstatic'
 
 WTF! I was getting crazy as I was pretty sure the *django.contrib.staticfiles* app was installed in the projectA settings file. After some debugging I came out with the problem: Django is using dynamic loading, I had a missing dependency in a model module, and the projectA settings wasn't been loaded, therefore collectstatic was not a valid command.
 
-I usually don't use dynamic loading, but when I do, I log carefully any possible error the program raises while loading a specific file. You and Django should too.
+# Conclusion
 
-{% highlight python %}
-# django/utils/importlib.py
+To sum up, be careful while dynamic loading your code and log any possible error that may raise during the process. I do, you and [Django](https://github.com/django/django/blob/master/django/utils/importlib.py) should too. Otherwise, weird errors will happen because the root of the problem is being hidden.
 
-def import_module(name, package=None):
-    """Import a module.
-
-    The 'package' argument is required when performing a relative import. It
-    specifies the package to use as the anchor point from which to resolve the
-    relative import to an absolute import.
-
-    """
-    if name.startswith('.'):
-        if not package:
-            raise TypeError("relative imports require the 'package' argument")
-        level = 0
-        for character in name:
-            if character != '.':
-                break
-            level += 1
-        name = _resolve_name(name[level:], package, level)
-    __import__(name)
-    return sys.modules[name]
-
-{% endhighlight %}

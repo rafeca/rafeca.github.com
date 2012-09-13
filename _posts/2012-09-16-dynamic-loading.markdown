@@ -42,8 +42,8 @@ Our current solution to run different logic in both products, instead of using p
 {% endhighlight %}
 
 If the Django application is running as projectA, the service logic being used is:
-- for django_app_1 application, the module django_app_1.projectA.services
-- for django_app_2 application, the module django_app_2.services (as django_app_2.projectA.services module is not created).
+- for django\_app\_1 application, the module django\_app\_1.projectA.services
+- for django\_app\_2 application, the module django\_app\_2.services (as django\_app\_2.projectA.services module is not created).
 
 ProjectB has defined specific logic in both Django applications, and therefore no generic one is used.
 
@@ -66,7 +66,7 @@ get_module('django_app_1', 'projectA', 'services')
 {% endhighlight %}
 
 Pretty simple. I'm trying to load a module, and if it fails, I'm logging a warning.
-Sometimes the warning is the expected behavior (i.e. projectA does not define its own django_app_2 service logic), but it could also happen that an exception is raised while parsing a module code, and therefore the module cannot be imported (i.e. projectB django_app_2 service logic has a syntax error). Not logging this situation will hide possible undesired errors.
+Sometimes the warning is the expected behavior (i.e. projectA does not define its own django\_app\_2 service logic), but it could also happen that an exception is raised while parsing a module code, and therefore the module cannot be imported (i.e. projectB django\_app\_2 service logic has a syntax error). Not logging this situation will hide possible undesired errors.
 
 This is something that Django is not doing (at least in version 1.3.1) and caused me some paintful last Friday. This command:
 

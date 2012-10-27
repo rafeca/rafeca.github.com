@@ -246,18 +246,18 @@ header {
 
 /* ul and li */
 
-.posts ul {
+.container ul.posts {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.posts ul li {
+.container ul.posts li {
     padding-left: 1em;
 }
 
-.posts ul li:before {
-  content: "•";
+.container ul.posts li:before {
+  content: "\0445";
   padding-right: 5px;
   color: black;
 }

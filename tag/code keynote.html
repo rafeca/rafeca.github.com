@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<header>
+  <h2>Posts in category <strong>code keynote</strong></h2>
+</header>
+
+<ul>
+  {% for post in site.categories.code keynote %}
+    {% include post.html %}
+  {% endfor %}
+</ul>

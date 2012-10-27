@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<header>
+  <h2>Posts in category <strong>scala</strong></h2>
+</header>
+
+<ul>
+  {% for post in site.categories.scala %}
+    {% include post.html %}
+  {% endfor %}
+</ul>

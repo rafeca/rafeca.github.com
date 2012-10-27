@@ -274,9 +274,9 @@ header {
   text-decoration: underline;
 }
 
-.date {
+.left_title {
   display: inline-block;
-  min-width: 100px;
+  min-width: 110px;
 }
 
 footer {

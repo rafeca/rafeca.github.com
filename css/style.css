@@ -32,7 +32,11 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body { margin: 0; font-size: 16px; line-height: 1.4; }
+body {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
 
 body, button, input, select, textarea { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, sans-serif; color: #252525; }
 
@@ -246,18 +250,18 @@ header {
 
 /* ul and li */
 
-.posts ul {
+.container ul.posts {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.posts ul li {
+.container ul.posts li {
     padding-left: 1em;
 }
 
-.posts ul li:before {
-  content: "•";
+.container ul.posts li:before {
+  content: "\0445";
   padding-right: 5px;
   color: black;
 }
@@ -268,6 +272,11 @@ header {
 
 .container a:hover {
   text-decoration: underline;
+}
+
+.left_title {
+  display: inline-block;
+  min-width: 110px;
 }
 
 footer {
@@ -291,6 +300,24 @@ footer .author_info {
 footer .author_info a {
   text-decoration: none;
   color: #666;
+}
+
+.footer_link {
+  width: 25px;
+  display: inline-block;
+  text-indent: -1000px;
+}
+
+.github {
+  background: url("/gfx/github-logo.png") no-repeat scroll 0 transparent;
+}
+
+.twitter {
+  background: url("/gfx/twitter-logo.png") no-repeat scroll 0 transparent;
+}
+
+.linkedin {
+  background: url("/gfx/linkedin-logo.png") no-repeat scroll 0 transparent;
 }
 
 h1 {

@@ -293,6 +293,24 @@ footer .author_info a {
   color: #666;
 }
 
+.footer_link {
+  width: 25px;
+  display: inline-block;
+  text-indent: -1000px;
+}
+
+.github {
+  background: url("/gfx/github-logo.png") no-repeat scroll 0 transparent;
+}
+
+.twitter {
+  background: url("/gfx/twitter-logo.png") no-repeat scroll 0 transparent;
+}
+
+.linkedin {
+  background: url("/gfx/linkedin-logo.png") no-repeat scroll 0 transparent;
+}
+
 h1 {
   font-weight: 200;
   font-size: 2.5em;

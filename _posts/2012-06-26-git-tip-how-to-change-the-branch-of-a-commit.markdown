@@ -8,6 +8,7 @@ categories: [git]
 
 I like git, I hope you like it too. I like using the [git flow](http://nvie.com/posts/a-successful-git-branching-model/) branching model while developing new features or fixing undesired bugs in a stable version.
 
+Sometimes while you're starting a new feature, you forget changing your current branch and commit a change to the wrong branch (often develop).
 Sometimes while you're starting a new feature, you forget changing your current branch and end up committing a change to the wrong branch (often develop).
 
 Let's walk through the steps required to move your latest commit from the wrong branch to the right one:

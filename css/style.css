@@ -221,17 +221,24 @@ header {
 }
 
 .menu {
-  position: relative;
-  width: 150px;
   float: left;
-  margin: 100px 0;
+  text-align: right;
 }
 
 .title {
   height: 30px;
   padding: 20px 30px;
   width: 750px;
-  margin: 30px 180px;
+  margin: 30px auto;
+}
+
+.title h1 a {
+  color: black;
+}
+
+.main_container {
+  margin: 0px auto;
+  width: 970px;
 }
 
 .container {
@@ -241,7 +248,7 @@ header {
   min-height: 250px;
   padding: 20px 30px;
   width: 750px;
-  margin: 30px 180px;
+  float: right;
 }
 
 .posts {

@@ -6,7 +6,7 @@ categories: [css]
 
 Today I've been changing a bit the CSS that creates the layout of this site. Almost the whole style was defined by my pal [@rafeca](http://www.twitter.com/rafeca) while creating [his blog](http://www.rafeca.com). I have borrowed it :smile:.
 
-Although I am not an expert on CSS, I like hacking a bit of this :sun_with_face:.
+Although I am not an expert on CSS, I like hacking a bit of this :squirrel:.
 
 I summarize the changes in the following sections.
 

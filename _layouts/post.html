@@ -2,7 +2,7 @@
 layout: default
 ---
 <header>   
-  <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> {{ page.title }} <small>{{ page.date || date_to_string }}</small></h1>
+  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> {{ page.title }} <small>{{ page.date || date_to_string }}</small></h2>
 
   <nav>
     <ul class="clearfix">
@@ -14,7 +14,7 @@ layout: default
 </header>
 
 <div id="post" role="main">
-  {{ content }}
+  {{ content | emojify }}
   
   <p class="back">&laquo; <a href="/">Home</a></p>
 </div>

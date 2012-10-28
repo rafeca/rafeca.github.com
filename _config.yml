@@ -3,12 +3,21 @@ pygments:     true
 markdown:     redcarpet
 permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
-title:        Thoughts by rafeca
-description:  My personal thoughts about technology and the Web
-url_root:     http://rafeca.com
-author:       Rafael Oleza
-author_short: rafeca
-author_email: rafeca@gmail.com
-analytics_ua: UA-6212472-4
-feedburner_id: rafeca
-disqus_id:    rafeca
+title:        Personal thoughts about technology
+description:  Personal thoughts about technology (@juandebravo)
+url_root:     http://juandebravo.com
+author:       Juan de Bravo
+author_short: juandebravo
+author_email: juandebravo@gmail.com
+analytics_ua: UA-32824811-1
+feedburner_id: juandebravo
+disqus_id:    juandebravo
+emoji:        gfx/emoji
+navigation:
+- text: Dev Blog
+  url: /index.html
+  layout: post
+- text: Open Source
+  url: /open_source.html
+- text: About me
+  url: /about_me.html

@@ -1,0 +1,235 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Fix latest commit branch using git - Personal thoughts about technology</title>
+  <meta name="description" content="Personal thoughts about technology - Personal thoughts about technology (@juandebravo)">
+  <meta name="author" content="Juan de Bravo">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="http://feeds.feedburner.com/juandebravo" rel="alternate" title="Personal thoughts about technology" type="application/atom+xml">
+  <link rel="author" href="/humans.txt">
+
+  <link rel="stylesheet" href="/css/emoji.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/disqus.css">
+
+  <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+    <div class="title">
+      <h1>
+        <a href="/index.html">Personal thoughts about technology</a>
+      </h1>
+    </div>
+  <div class='main_container'>
+    <div class="menu">
+      <ul>
+  
+    
+    
+      
+    
+    <li class="item active">
+      <a href="/index.html">Dev Blog</a>
+    </li>
+  
+    
+    
+    <li class="item ">
+      <a href="/open_source.html">Open Source</a>
+    </li>
+  
+    
+    
+    <li class="item ">
+      <a href="/about_me.html">About me</a>
+    </li>
+  
+</ul>
+    </div>
+    <div class="container">
+
+      <header>   
+  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> Fix latest commit branch using git <small>26 Jun 2012</small></h2>
+
+  <nav>
+    <ul class="clearfix">
+    
+      <li><a href="/tag/git.html">git</a></li>
+    
+    </ul>
+  </nav>
+</header>
+
+<div id="post" role="main">
+  <h1>Introduction</h1>
+
+<p>I like git, I hope you like it too. I like using the <a href="http://nvie.com/posts/a-successful-git-branching-model/">git flow</a> branching model while developing new features or fixing undesired bugs in a stable version.</p>
+
+<p>Sometimes while you're starting a new feature, you forget changing your current branch and commit a change to the wrong branch (often develop).
+Sometimes while you're starting a new feature, you forget changing your current branch and end up committing a change to the wrong branch (often develop).</p>
+
+<p>Let's walk through the steps required to move your latest commit from the wrong branch to the right one:</p>
+
+<h1>1.- Prerequisites</h1>
+
+<ul>
+<li>Create the repository with an initial content and create the develop branch.</li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">bundle gem foo_bar
+<span class="nb">cd </span>foo_bar
+git commit -am <span class="s2">&quot;first commit&quot;</span>
+git checkout -b develop
+<span class="c"># modify version.rb file to increase the version number</span>
+git commit -am <span class="s2">&quot;bump version&quot;</span>
+</code></pre>
+</div>
+
+<ul>
+<li>Create your feature branch</li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">git branch feature/hello
+git lg                                                                                                                                   
+* d62b49a - <span class="o">(</span>HEAD, feature/hello, develop<span class="o">)</span> bump version - juandebravo <span class="o">(</span>66 seconds ago<span class="o">)</span>
+* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span>2 minutes ago<span class="o">)</span>
+</code></pre>
+</div>
+
+<ul>
+<li>Commit a change to develop (instead of your feature branch)</li>
+</ul>
+
+<div class="highlight"><pre><code class="bash"><span class="nb">echo</span> <span class="s2">&quot;require &#39;foo_bar/version&#39;\n\nmodule FooBar\n  def self.hello(name)\n    print \&quot;hello #{name}\&quot;\n  end\nend&quot;</span> &gt; lib/foo_bar.rb
+git commit -am <span class="s2">&quot;add hello method&quot;</span>
+</code></pre>
+</div>
+
+<p>WRONG! You commit to develop instead of feature/hello</p>
+
+<div class="highlight"><pre><code class="bash">git lg
+* ecd59c3 - <span class="o">(</span>HEAD, develop<span class="o">)</span> add hello method - juandebravo <span class="o">(</span>2 seconds ago<span class="o">)</span>
+* d62b49a - <span class="o">(</span>feature/hello<span class="o">)</span> bump version - juandebravo <span class="o">(</span>40 minutes ago<span class="o">)</span>
+* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span>40 minutes ago<span class="o">)</span>
+</code></pre>
+</div>
+
+<h1>2.- Fix the wrong commit</h1>
+
+<ul>
+<li>Merge develop to your feature branch</li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">git checkout feature/crud_users
+git merge develop
+git lg
+* ecd59c3 - <span class="o">(</span>HEAD, feature/hello, develop<span class="o">)</span> add hello method - juandebravo <span class="o">(</span>3 minutes ago<span class="o">)</span>
+* d62b49a - bump version - juandebravo <span class="o">(</span>43 minutes ago<span class="o">)</span>
+* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span>44 minutes ago<span class="o">)</span>
+</code></pre>
+</div>
+
+<p>Now you already have the change in your feature branch. Now it's time to remove it from develop branch.</p>
+
+<ul>
+<li>Remove the commit from develop branch</li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">git checkout develop
+git reset --hard HEAD~1
+git lg
+* ecd59c3 - <span class="o">(</span>feature/hello<span class="o">)</span> add hello method - juandebravo <span class="o">(</span>4 minutes ago<span class="o">)</span>
+* d62b49a - <span class="o">(</span>HEAD, develop<span class="o">)</span> bump version - juandebravo <span class="o">(</span>44 minutes ago<span class="o">)</span>
+* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span>44 minutes ago<span class="o">)</span>
+</code></pre>
+</div>
+
+<ul>
+<li>That's all!!</li>
+</ul>
+
+  
+  <p class="back">&laquo; <a href="/">Home</a></p>
+</div>
+      
+<!--h2>Related Posts</h2>
+<ul class="posts_list">
+  
+    <li class="post">
+  <span class="left_title">28 Oct 2012</span>
+  <a href="/2012/10/28/css-changes" title="CSS changes">CSS changes</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">21 Oct 2012</span>
+  <a href="/2012/10/21/how-to-paste-code-in-keynote" title="How to paste code in keynote">How to paste code in keynote</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">26 Sep 2012</span>
+  <a href="/2012/09/26/first-steps-with-scala" title="First steps with Scala">First steps with Scala</a>
+</li>
+  
+</ul-->
+
+<hr/>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'juandebravo'; // required: replace example with your forum shortname
+    //var disqus_developer = 1; // developer mode is on, for testing locally
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      <footer>
+        <span class="author_info">
+          <a href="/about_me.html">Juan de Bravo</a>
+        </span>
+        <a class="fadedlink footer_link github" href="https://github.com/juandebravo">
+          @github
+        </a>
+        <a class="fadedlink footer_link twitter" href="https://twitter.com/juandebravo">
+          @twitter
+        </a>
+        <a class="fadedlink footer_link linkedin" href="http://linkedin.com/in/juandebravo">
+          @linkedin
+        </a>
+        <a class="fadedlink" href="mailto:juandebravo@gmail.com">
+          <img src="/gfx/gmail-logo.png" alt="@gmail">
+        </a>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    window._gaq = [['_setAccount','UA-32824811-1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>

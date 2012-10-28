@@ -1,0 +1,4341 @@
+.emoji {
+  width: 20px;
+  display: inline-block;
+  text-indent: -2000px;
+}
+
+.emoji_+1 {
+  background:url("/gfx/emoji/+1.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_-1 {
+  background:url("/gfx/emoji/-1.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_100 {
+  background:url("/gfx/emoji/100.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_109 {
+  background:url("/gfx/emoji/109.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_1234 {
+  background:url("/gfx/emoji/1234.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_8ball {
+  background:url("/gfx/emoji/8ball.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_a {
+  background:url("/gfx/emoji/a.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ab {
+  background:url("/gfx/emoji/ab.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_abc {
+  background:url("/gfx/emoji/abc.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_abcd {
+  background:url("/gfx/emoji/abcd.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_accept {
+  background:url("/gfx/emoji/accept.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_aerial_tramway {
+  background:url("/gfx/emoji/aerial_tramway.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_airplane {
+  background:url("/gfx/emoji/airplane.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_alarm_clock {
+  background:url("/gfx/emoji/alarm_clock.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_alien {
+  background:url("/gfx/emoji/alien.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ambulance {
+  background:url("/gfx/emoji/ambulance.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_anchor {
+  background:url("/gfx/emoji/anchor.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_angel {
+  background:url("/gfx/emoji/angel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_anger {
+  background:url("/gfx/emoji/anger.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_angry {
+  background:url("/gfx/emoji/angry.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_anguished {
+  background:url("/gfx/emoji/anguished.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ant {
+  background:url("/gfx/emoji/ant.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_apple {
+  background:url("/gfx/emoji/apple.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_aquarius {
+  background:url("/gfx/emoji/aquarius.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_aries {
+  background:url("/gfx/emoji/aries.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_backward {
+  background:url("/gfx/emoji/arrow_backward.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_double_down {
+  background:url("/gfx/emoji/arrow_double_down.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_double_up {
+  background:url("/gfx/emoji/arrow_double_up.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_down {
+  background:url("/gfx/emoji/arrow_down.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_down_small {
+  background:url("/gfx/emoji/arrow_down_small.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_forward {
+  background:url("/gfx/emoji/arrow_forward.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_heading_down {
+  background:url("/gfx/emoji/arrow_heading_down.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_heading_up {
+  background:url("/gfx/emoji/arrow_heading_up.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_left {
+  background:url("/gfx/emoji/arrow_left.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_lower_left {
+  background:url("/gfx/emoji/arrow_lower_left.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_lower_right {
+  background:url("/gfx/emoji/arrow_lower_right.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_right {
+  background:url("/gfx/emoji/arrow_right.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_right_hook {
+  background:url("/gfx/emoji/arrow_right_hook.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_up {
+  background:url("/gfx/emoji/arrow_up.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_up_down {
+  background:url("/gfx/emoji/arrow_up_down.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_up_small {
+  background:url("/gfx/emoji/arrow_up_small.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_upper_left {
+  background:url("/gfx/emoji/arrow_upper_left.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrow_upper_right {
+  background:url("/gfx/emoji/arrow_upper_right.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrows_clockwise {
+  background:url("/gfx/emoji/arrows_clockwise.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_arrows_counterclockwise {
+  background:url("/gfx/emoji/arrows_counterclockwise.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_art {
+  background:url("/gfx/emoji/art.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_articulated_lorry {
+  background:url("/gfx/emoji/articulated_lorry.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_astonished {
+  background:url("/gfx/emoji/astonished.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_atm {
+  background:url("/gfx/emoji/atm.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_b {
+  background:url("/gfx/emoji/b.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_baby {
+  background:url("/gfx/emoji/baby.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_baby_bottle {
+  background:url("/gfx/emoji/baby_bottle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_baby_chick {
+  background:url("/gfx/emoji/baby_chick.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_baby_symbol {
+  background:url("/gfx/emoji/baby_symbol.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_baggage_claim {
+  background:url("/gfx/emoji/baggage_claim.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_balloon {
+  background:url("/gfx/emoji/balloon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ballot_box_with_check {
+  background:url("/gfx/emoji/ballot_box_with_check.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bamboo {
+  background:url("/gfx/emoji/bamboo.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_banana {
+  background:url("/gfx/emoji/banana.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bangbang {
+  background:url("/gfx/emoji/bangbang.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bank {
+  background:url("/gfx/emoji/bank.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bar_chart {
+  background:url("/gfx/emoji/bar_chart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_barber {
+  background:url("/gfx/emoji/barber.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_baseball {
+  background:url("/gfx/emoji/baseball.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_basketball {
+  background:url("/gfx/emoji/basketball.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bath {
+  background:url("/gfx/emoji/bath.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bathtub {
+  background:url("/gfx/emoji/bathtub.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_battery {
+  background:url("/gfx/emoji/battery.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bear {
+  background:url("/gfx/emoji/bear.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bee {
+  background:url("/gfx/emoji/bee.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_beer {
+  background:url("/gfx/emoji/beer.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_beers {
+  background:url("/gfx/emoji/beers.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_beetle {
+  background:url("/gfx/emoji/beetle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_beginner {
+  background:url("/gfx/emoji/beginner.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bell {
+  background:url("/gfx/emoji/bell.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bento {
+  background:url("/gfx/emoji/bento.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bicyclist {
+  background:url("/gfx/emoji/bicyclist.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bike {
+  background:url("/gfx/emoji/bike.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bikini {
+  background:url("/gfx/emoji/bikini.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bird {
+  background:url("/gfx/emoji/bird.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_birthday {
+  background:url("/gfx/emoji/birthday.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_black_circle {
+  background:url("/gfx/emoji/black_circle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_black_joker {
+  background:url("/gfx/emoji/black_joker.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_black_nib {
+  background:url("/gfx/emoji/black_nib.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_black_square {
+  background:url("/gfx/emoji/black_square.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_black_square_button {
+  background:url("/gfx/emoji/black_square_button.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_blossom {
+  background:url("/gfx/emoji/blossom.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_blowfish {
+  background:url("/gfx/emoji/blowfish.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_blue_book {
+  background:url("/gfx/emoji/blue_book.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_blue_car {
+  background:url("/gfx/emoji/blue_car.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_blue_heart {
+  background:url("/gfx/emoji/blue_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_blush {
+  background:url("/gfx/emoji/blush.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_boar {
+  background:url("/gfx/emoji/boar.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_boat {
+  background:url("/gfx/emoji/boat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bomb {
+  background:url("/gfx/emoji/bomb.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_book {
+  background:url("/gfx/emoji/book.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bookmark {
+  background:url("/gfx/emoji/bookmark.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bookmark_tabs {
+  background:url("/gfx/emoji/bookmark_tabs.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_books {
+  background:url("/gfx/emoji/books.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_boom {
+  background:url("/gfx/emoji/boom.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_boot {
+  background:url("/gfx/emoji/boot.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bouquet {
+  background:url("/gfx/emoji/bouquet.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bow {
+  background:url("/gfx/emoji/bow.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bowling {
+  background:url("/gfx/emoji/bowling.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bowtie {
+  background:url("/gfx/emoji/bowtie.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_boy {
+  background:url("/gfx/emoji/boy.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bread {
+  background:url("/gfx/emoji/bread.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bride_with_veil {
+  background:url("/gfx/emoji/bride_with_veil.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bridge_at_night {
+  background:url("/gfx/emoji/bridge_at_night.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_briefcase {
+  background:url("/gfx/emoji/briefcase.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_broken_heart {
+  background:url("/gfx/emoji/broken_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bug {
+  background:url("/gfx/emoji/bug.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bulb {
+  background:url("/gfx/emoji/bulb.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bullettrain_front {
+  background:url("/gfx/emoji/bullettrain_front.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bullettrain_side {
+  background:url("/gfx/emoji/bullettrain_side.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bus {
+  background:url("/gfx/emoji/bus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_busstop {
+  background:url("/gfx/emoji/busstop.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_bust_in_silhouette {
+  background:url("/gfx/emoji/bust_in_silhouette.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_busts_in_silhouette {
+  background:url("/gfx/emoji/busts_in_silhouette.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cactus {
+  background:url("/gfx/emoji/cactus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cake {
+  background:url("/gfx/emoji/cake.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_calendar {
+  background:url("/gfx/emoji/calendar.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_calling {
+  background:url("/gfx/emoji/calling.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_camel {
+  background:url("/gfx/emoji/camel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_camera {
+  background:url("/gfx/emoji/camera.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cancer {
+  background:url("/gfx/emoji/cancer.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_candy {
+  background:url("/gfx/emoji/candy.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_capital_abcd {
+  background:url("/gfx/emoji/capital_abcd.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_capricorn {
+  background:url("/gfx/emoji/capricorn.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_car {
+  background:url("/gfx/emoji/car.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_card_index {
+  background:url("/gfx/emoji/card_index.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_carousel_horse {
+  background:url("/gfx/emoji/carousel_horse.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cat {
+  background:url("/gfx/emoji/cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cat2 {
+  background:url("/gfx/emoji/cat2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cd {
+  background:url("/gfx/emoji/cd.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_chart {
+  background:url("/gfx/emoji/chart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_chart_with_downwards_trend {
+  background:url("/gfx/emoji/chart_with_downwards_trend.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_chart_with_upwards_trend {
+  background:url("/gfx/emoji/chart_with_upwards_trend.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_checkered_flag {
+  background:url("/gfx/emoji/checkered_flag.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cherries {
+  background:url("/gfx/emoji/cherries.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cherry_blossom {
+  background:url("/gfx/emoji/cherry_blossom.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_chestnut {
+  background:url("/gfx/emoji/chestnut.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_chicken {
+  background:url("/gfx/emoji/chicken.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_children_crossing {
+  background:url("/gfx/emoji/children_crossing.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_chocolate_bar {
+  background:url("/gfx/emoji/chocolate_bar.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_christmas_tree {
+  background:url("/gfx/emoji/christmas_tree.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_church {
+  background:url("/gfx/emoji/church.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cinema {
+  background:url("/gfx/emoji/cinema.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_circus_tent {
+  background:url("/gfx/emoji/circus_tent.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_city_sunrise {
+  background:url("/gfx/emoji/city_sunrise.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_city_sunset {
+  background:url("/gfx/emoji/city_sunset.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cl {
+  background:url("/gfx/emoji/cl.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clap {
+  background:url("/gfx/emoji/clap.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clapper {
+  background:url("/gfx/emoji/clapper.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clipboard {
+  background:url("/gfx/emoji/clipboard.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock1 {
+  background:url("/gfx/emoji/clock1.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock10 {
+  background:url("/gfx/emoji/clock10.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock1030 {
+  background:url("/gfx/emoji/clock1030.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock11 {
+  background:url("/gfx/emoji/clock11.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock1130 {
+  background:url("/gfx/emoji/clock1130.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock12 {
+  background:url("/gfx/emoji/clock12.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock1230 {
+  background:url("/gfx/emoji/clock1230.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock130 {
+  background:url("/gfx/emoji/clock130.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock2 {
+  background:url("/gfx/emoji/clock2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock230 {
+  background:url("/gfx/emoji/clock230.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock3 {
+  background:url("/gfx/emoji/clock3.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock330 {
+  background:url("/gfx/emoji/clock330.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock4 {
+  background:url("/gfx/emoji/clock4.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock430 {
+  background:url("/gfx/emoji/clock430.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock5 {
+  background:url("/gfx/emoji/clock5.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock530 {
+  background:url("/gfx/emoji/clock530.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock6 {
+  background:url("/gfx/emoji/clock6.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock630 {
+  background:url("/gfx/emoji/clock630.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock7 {
+  background:url("/gfx/emoji/clock7.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock730 {
+  background:url("/gfx/emoji/clock730.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock8 {
+  background:url("/gfx/emoji/clock8.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock830 {
+  background:url("/gfx/emoji/clock830.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock9 {
+  background:url("/gfx/emoji/clock9.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clock930 {
+  background:url("/gfx/emoji/clock930.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_closed_book {
+  background:url("/gfx/emoji/closed_book.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_closed_lock_with_key {
+  background:url("/gfx/emoji/closed_lock_with_key.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_closed_umbrella {
+  background:url("/gfx/emoji/closed_umbrella.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cloud {
+  background:url("/gfx/emoji/cloud.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_clubs {
+  background:url("/gfx/emoji/clubs.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cn {
+  background:url("/gfx/emoji/cn.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cocktail {
+  background:url("/gfx/emoji/cocktail.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_coffee {
+  background:url("/gfx/emoji/coffee.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cold_sweat {
+  background:url("/gfx/emoji/cold_sweat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_collision {
+  background:url("/gfx/emoji/collision.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_computer {
+  background:url("/gfx/emoji/computer.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_confetti_ball {
+  background:url("/gfx/emoji/confetti_ball.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_confounded {
+  background:url("/gfx/emoji/confounded.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_confused {
+  background:url("/gfx/emoji/confused.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_congratulations {
+  background:url("/gfx/emoji/congratulations.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_construction {
+  background:url("/gfx/emoji/construction.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_construction_worker {
+  background:url("/gfx/emoji/construction_worker.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_convenience_store {
+  background:url("/gfx/emoji/convenience_store.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cookie {
+  background:url("/gfx/emoji/cookie.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cool {
+  background:url("/gfx/emoji/cool.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cop {
+  background:url("/gfx/emoji/cop.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_copyright {
+  background:url("/gfx/emoji/copyright.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_corn {
+  background:url("/gfx/emoji/corn.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_couple {
+  background:url("/gfx/emoji/couple.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_couple_with_heart {
+  background:url("/gfx/emoji/couple_with_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_couplekiss {
+  background:url("/gfx/emoji/couplekiss.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cow {
+  background:url("/gfx/emoji/cow.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cow2 {
+  background:url("/gfx/emoji/cow2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_credit_card {
+  background:url("/gfx/emoji/credit_card.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_crocodile {
+  background:url("/gfx/emoji/crocodile.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_crossed_flags {
+  background:url("/gfx/emoji/crossed_flags.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_crown {
+  background:url("/gfx/emoji/crown.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cry {
+  background:url("/gfx/emoji/cry.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_crying_cat_face {
+  background:url("/gfx/emoji/crying_cat_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_crystal_ball {
+  background:url("/gfx/emoji/crystal_ball.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cupid {
+  background:url("/gfx/emoji/cupid.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_curly_loop {
+  background:url("/gfx/emoji/curly_loop.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_currency_exchange {
+  background:url("/gfx/emoji/currency_exchange.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_curry {
+  background:url("/gfx/emoji/curry.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_custard {
+  background:url("/gfx/emoji/custard.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_customs {
+  background:url("/gfx/emoji/customs.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_cyclone {
+  background:url("/gfx/emoji/cyclone.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dancer {
+  background:url("/gfx/emoji/dancer.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dancers {
+  background:url("/gfx/emoji/dancers.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dango {
+  background:url("/gfx/emoji/dango.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dart {
+  background:url("/gfx/emoji/dart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dash {
+  background:url("/gfx/emoji/dash.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_date {
+  background:url("/gfx/emoji/date.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_de {
+  background:url("/gfx/emoji/de.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_deciduous_tree {
+  background:url("/gfx/emoji/deciduous_tree.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_department_store {
+  background:url("/gfx/emoji/department_store.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_diamond_shape_with_a_dot_inside {
+  background:url("/gfx/emoji/diamond_shape_with_a_dot_inside.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_diamonds {
+  background:url("/gfx/emoji/diamonds.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_disappointed {
+  background:url("/gfx/emoji/disappointed.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dizzy {
+  background:url("/gfx/emoji/dizzy.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dizzy_face {
+  background:url("/gfx/emoji/dizzy_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_do_not_litter {
+  background:url("/gfx/emoji/do_not_litter.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dog {
+  background:url("/gfx/emoji/dog.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dog2 {
+  background:url("/gfx/emoji/dog2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dollar {
+  background:url("/gfx/emoji/dollar.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dolls {
+  background:url("/gfx/emoji/dolls.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dolphin {
+  background:url("/gfx/emoji/dolphin.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_door {
+  background:url("/gfx/emoji/door.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_doughnut {
+  background:url("/gfx/emoji/doughnut.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dragon {
+  background:url("/gfx/emoji/dragon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dragon_face {
+  background:url("/gfx/emoji/dragon_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dress {
+  background:url("/gfx/emoji/dress.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dromedary_camel {
+  background:url("/gfx/emoji/dromedary_camel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_droplet {
+  background:url("/gfx/emoji/droplet.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_dvd {
+  background:url("/gfx/emoji/dvd.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_e-mail {
+  background:url("/gfx/emoji/e-mail.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ear {
+  background:url("/gfx/emoji/ear.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ear_of_rice {
+  background:url("/gfx/emoji/ear_of_rice.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_earth_africa {
+  background:url("/gfx/emoji/earth_africa.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_earth_americas {
+  background:url("/gfx/emoji/earth_americas.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_earth_asia {
+  background:url("/gfx/emoji/earth_asia.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_egg {
+  background:url("/gfx/emoji/egg.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_eggplant {
+  background:url("/gfx/emoji/eggplant.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_eight {
+  background:url("/gfx/emoji/eight.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_eight_pointed_black_star {
+  background:url("/gfx/emoji/eight_pointed_black_star.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_eight_spoked_asterisk {
+  background:url("/gfx/emoji/eight_spoked_asterisk.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_electric_plug {
+  background:url("/gfx/emoji/electric_plug.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_elephant {
+  background:url("/gfx/emoji/elephant.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_email {
+  background:url("/gfx/emoji/email.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_end {
+  background:url("/gfx/emoji/end.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_envelope {
+  background:url("/gfx/emoji/envelope.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_es {
+  background:url("/gfx/emoji/es.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_euro {
+  background:url("/gfx/emoji/euro.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_european_castle {
+  background:url("/gfx/emoji/european_castle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_european_post_office {
+  background:url("/gfx/emoji/european_post_office.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_evergreen_tree {
+  background:url("/gfx/emoji/evergreen_tree.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_exclamation {
+  background:url("/gfx/emoji/exclamation.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_expressionless {
+  background:url("/gfx/emoji/expressionless.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_eyeglasses {
+  background:url("/gfx/emoji/eyeglasses.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_eyes {
+  background:url("/gfx/emoji/eyes.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_facepunch {
+  background:url("/gfx/emoji/facepunch.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_factory {
+  background:url("/gfx/emoji/factory.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fallen_leaf {
+  background:url("/gfx/emoji/fallen_leaf.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_family {
+  background:url("/gfx/emoji/family.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fast_forward {
+  background:url("/gfx/emoji/fast_forward.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fax {
+  background:url("/gfx/emoji/fax.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fearful {
+  background:url("/gfx/emoji/fearful.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_feelsgood {
+  background:url("/gfx/emoji/feelsgood.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_feet {
+  background:url("/gfx/emoji/feet.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ferris_wheel {
+  background:url("/gfx/emoji/ferris_wheel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_file_folder {
+  background:url("/gfx/emoji/file_folder.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_finnadie {
+  background:url("/gfx/emoji/finnadie.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fire {
+  background:url("/gfx/emoji/fire.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fire_engine {
+  background:url("/gfx/emoji/fire_engine.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fireworks {
+  background:url("/gfx/emoji/fireworks.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_first_quarter_moon {
+  background:url("/gfx/emoji/first_quarter_moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_first_quarter_moon_with_face {
+  background:url("/gfx/emoji/first_quarter_moon_with_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fish {
+  background:url("/gfx/emoji/fish.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fish_cake {
+  background:url("/gfx/emoji/fish_cake.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fishing_pole_and_fish {
+  background:url("/gfx/emoji/fishing_pole_and_fish.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fist {
+  background:url("/gfx/emoji/fist.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_five {
+  background:url("/gfx/emoji/five.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_flags {
+  background:url("/gfx/emoji/flags.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_flashlight {
+  background:url("/gfx/emoji/flashlight.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_floppy_disk {
+  background:url("/gfx/emoji/floppy_disk.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_flower_playing_cards {
+  background:url("/gfx/emoji/flower_playing_cards.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_flushed {
+  background:url("/gfx/emoji/flushed.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_foggy {
+  background:url("/gfx/emoji/foggy.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_football {
+  background:url("/gfx/emoji/football.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fork_and_knife {
+  background:url("/gfx/emoji/fork_and_knife.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fountain {
+  background:url("/gfx/emoji/fountain.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_four {
+  background:url("/gfx/emoji/four.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_four_leaf_clover {
+  background:url("/gfx/emoji/four_leaf_clover.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fr {
+  background:url("/gfx/emoji/fr.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_free {
+  background:url("/gfx/emoji/free.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fried_shrimp {
+  background:url("/gfx/emoji/fried_shrimp.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fries {
+  background:url("/gfx/emoji/fries.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_frog {
+  background:url("/gfx/emoji/frog.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_frowning {
+  background:url("/gfx/emoji/frowning.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_fuelpump {
+  background:url("/gfx/emoji/fuelpump.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_full_moon {
+  background:url("/gfx/emoji/full_moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_full_moon_with_face {
+  background:url("/gfx/emoji/full_moon_with_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_game_die {
+  background:url("/gfx/emoji/game_die.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_gb {
+  background:url("/gfx/emoji/gb.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_gem {
+  background:url("/gfx/emoji/gem.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_gemini {
+  background:url("/gfx/emoji/gemini.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ghost {
+  background:url("/gfx/emoji/ghost.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_gift {
+  background:url("/gfx/emoji/gift.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_gift_heart {
+  background:url("/gfx/emoji/gift_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_girl {
+  background:url("/gfx/emoji/girl.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_globe_with_meridians {
+  background:url("/gfx/emoji/globe_with_meridians.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_goat {
+  background:url("/gfx/emoji/goat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_goberserk {
+  background:url("/gfx/emoji/goberserk.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_godmode {
+  background:url("/gfx/emoji/godmode.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_golf {
+  background:url("/gfx/emoji/golf.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_grapes {
+  background:url("/gfx/emoji/grapes.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_green_apple {
+  background:url("/gfx/emoji/green_apple.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_green_book {
+  background:url("/gfx/emoji/green_book.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_green_heart {
+  background:url("/gfx/emoji/green_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_grey_exclamation {
+  background:url("/gfx/emoji/grey_exclamation.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_grey_question {
+  background:url("/gfx/emoji/grey_question.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_grimacing {
+  background:url("/gfx/emoji/grimacing.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_grin {
+  background:url("/gfx/emoji/grin.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_grinning {
+  background:url("/gfx/emoji/grinning.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_guardsman {
+  background:url("/gfx/emoji/guardsman.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_guitar {
+  background:url("/gfx/emoji/guitar.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_gun {
+  background:url("/gfx/emoji/gun.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_haircut {
+  background:url("/gfx/emoji/haircut.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hamburger {
+  background:url("/gfx/emoji/hamburger.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hammer {
+  background:url("/gfx/emoji/hammer.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hamster {
+  background:url("/gfx/emoji/hamster.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hand {
+  background:url("/gfx/emoji/hand.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_handbag {
+  background:url("/gfx/emoji/handbag.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hankey {
+  background:url("/gfx/emoji/hankey.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hash {
+  background:url("/gfx/emoji/hash.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hatched_chick {
+  background:url("/gfx/emoji/hatched_chick.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hatching_chick {
+  background:url("/gfx/emoji/hatching_chick.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_headphones {
+  background:url("/gfx/emoji/headphones.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hear_no_evil {
+  background:url("/gfx/emoji/hear_no_evil.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heart {
+  background:url("/gfx/emoji/heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heart_decoration {
+  background:url("/gfx/emoji/heart_decoration.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heart_eyes {
+  background:url("/gfx/emoji/heart_eyes.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heart_eyes_cat {
+  background:url("/gfx/emoji/heart_eyes_cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heartbeat {
+  background:url("/gfx/emoji/heartbeat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heartpulse {
+  background:url("/gfx/emoji/heartpulse.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hearts {
+  background:url("/gfx/emoji/hearts.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heavy_check_mark {
+  background:url("/gfx/emoji/heavy_check_mark.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heavy_division_sign {
+  background:url("/gfx/emoji/heavy_division_sign.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heavy_dollar_sign {
+  background:url("/gfx/emoji/heavy_dollar_sign.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heavy_exclamation_mark {
+  background:url("/gfx/emoji/heavy_exclamation_mark.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heavy_minus_sign {
+  background:url("/gfx/emoji/heavy_minus_sign.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heavy_multiplication_x {
+  background:url("/gfx/emoji/heavy_multiplication_x.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_heavy_plus_sign {
+  background:url("/gfx/emoji/heavy_plus_sign.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_helicopter {
+  background:url("/gfx/emoji/helicopter.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_herb {
+  background:url("/gfx/emoji/herb.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hibiscus {
+  background:url("/gfx/emoji/hibiscus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_high_brightness {
+  background:url("/gfx/emoji/high_brightness.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_high_heel {
+  background:url("/gfx/emoji/high_heel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hocho {
+  background:url("/gfx/emoji/hocho.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_honey_pot {
+  background:url("/gfx/emoji/honey_pot.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_honeybee {
+  background:url("/gfx/emoji/honeybee.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_horse {
+  background:url("/gfx/emoji/horse.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_horse_racing {
+  background:url("/gfx/emoji/horse_racing.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hospital {
+  background:url("/gfx/emoji/hospital.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hotel {
+  background:url("/gfx/emoji/hotel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hotsprings {
+  background:url("/gfx/emoji/hotsprings.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hourglass {
+  background:url("/gfx/emoji/hourglass.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hourglass_flowing_sand {
+  background:url("/gfx/emoji/hourglass_flowing_sand.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_house {
+  background:url("/gfx/emoji/house.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_house_with_garden {
+  background:url("/gfx/emoji/house_with_garden.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hurtrealbad {
+  background:url("/gfx/emoji/hurtrealbad.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_hushed {
+  background:url("/gfx/emoji/hushed.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ice_cream {
+  background:url("/gfx/emoji/ice_cream.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_icecream {
+  background:url("/gfx/emoji/icecream.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_id {
+  background:url("/gfx/emoji/id.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ideograph_advantage {
+  background:url("/gfx/emoji/ideograph_advantage.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_imp {
+  background:url("/gfx/emoji/imp.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_inbox_tray {
+  background:url("/gfx/emoji/inbox_tray.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_incoming_envelope {
+  background:url("/gfx/emoji/incoming_envelope.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_information_desk_person {
+  background:url("/gfx/emoji/information_desk_person.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_information_source {
+  background:url("/gfx/emoji/information_source.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_innocent {
+  background:url("/gfx/emoji/innocent.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_interrobang {
+  background:url("/gfx/emoji/interrobang.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_iphone {
+  background:url("/gfx/emoji/iphone.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_it {
+  background:url("/gfx/emoji/it.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_izakaya_lantern {
+  background:url("/gfx/emoji/izakaya_lantern.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_jack_o_lantern {
+  background:url("/gfx/emoji/jack_o_lantern.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_japan {
+  background:url("/gfx/emoji/japan.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_japanese_castle {
+  background:url("/gfx/emoji/japanese_castle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_japanese_goblin {
+  background:url("/gfx/emoji/japanese_goblin.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_japanese_ogre {
+  background:url("/gfx/emoji/japanese_ogre.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_jeans {
+  background:url("/gfx/emoji/jeans.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_joy {
+  background:url("/gfx/emoji/joy.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_joy_cat {
+  background:url("/gfx/emoji/joy_cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_jp {
+  background:url("/gfx/emoji/jp.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_key {
+  background:url("/gfx/emoji/key.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_keycap_ten {
+  background:url("/gfx/emoji/keycap_ten.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_kimono {
+  background:url("/gfx/emoji/kimono.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_kiss {
+  background:url("/gfx/emoji/kiss.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_kissing {
+  background:url("/gfx/emoji/kissing.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_kissing_cat {
+  background:url("/gfx/emoji/kissing_cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_kissing_closed_eyes {
+  background:url("/gfx/emoji/kissing_closed_eyes.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_kissing_heart {
+  background:url("/gfx/emoji/kissing_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_kissing_smiling_eyes {
+  background:url("/gfx/emoji/kissing_smiling_eyes.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_koala {
+  background:url("/gfx/emoji/koala.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_koko {
+  background:url("/gfx/emoji/koko.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_kr {
+  background:url("/gfx/emoji/kr.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_large_blue_circle {
+  background:url("/gfx/emoji/large_blue_circle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_large_blue_diamond {
+  background:url("/gfx/emoji/large_blue_diamond.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_large_orange_diamond {
+  background:url("/gfx/emoji/large_orange_diamond.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_last_quarter_moon {
+  background:url("/gfx/emoji/last_quarter_moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_last_quarter_moon_with_face {
+  background:url("/gfx/emoji/last_quarter_moon_with_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_laughing {
+  background:url("/gfx/emoji/laughing.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_leaves {
+  background:url("/gfx/emoji/leaves.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ledger {
+  background:url("/gfx/emoji/ledger.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_left_luggage {
+  background:url("/gfx/emoji/left_luggage.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_left_right_arrow {
+  background:url("/gfx/emoji/left_right_arrow.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_leftwards_arrow_with_hook {
+  background:url("/gfx/emoji/leftwards_arrow_with_hook.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_lemon {
+  background:url("/gfx/emoji/lemon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_leo {
+  background:url("/gfx/emoji/leo.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_leopard {
+  background:url("/gfx/emoji/leopard.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_libra {
+  background:url("/gfx/emoji/libra.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_light_rail {
+  background:url("/gfx/emoji/light_rail.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_link {
+  background:url("/gfx/emoji/link.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_lips {
+  background:url("/gfx/emoji/lips.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_lipstick {
+  background:url("/gfx/emoji/lipstick.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_lock {
+  background:url("/gfx/emoji/lock.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_lock_with_ink_pen {
+  background:url("/gfx/emoji/lock_with_ink_pen.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_lollipop {
+  background:url("/gfx/emoji/lollipop.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_loop {
+  background:url("/gfx/emoji/loop.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_loudspeaker {
+  background:url("/gfx/emoji/loudspeaker.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_love_hotel {
+  background:url("/gfx/emoji/love_hotel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_love_letter {
+  background:url("/gfx/emoji/love_letter.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_low_brightness {
+  background:url("/gfx/emoji/low_brightness.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_m {
+  background:url("/gfx/emoji/m.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mag {
+  background:url("/gfx/emoji/mag.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mag_right {
+  background:url("/gfx/emoji/mag_right.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mahjong {
+  background:url("/gfx/emoji/mahjong.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mailbox {
+  background:url("/gfx/emoji/mailbox.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mailbox_closed {
+  background:url("/gfx/emoji/mailbox_closed.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mailbox_with_mail {
+  background:url("/gfx/emoji/mailbox_with_mail.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mailbox_with_no_mail {
+  background:url("/gfx/emoji/mailbox_with_no_mail.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_man {
+  background:url("/gfx/emoji/man.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_man_with_gua_pi_mao {
+  background:url("/gfx/emoji/man_with_gua_pi_mao.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_man_with_turban {
+  background:url("/gfx/emoji/man_with_turban.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mans_shoe {
+  background:url("/gfx/emoji/mans_shoe.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_maple_leaf {
+  background:url("/gfx/emoji/maple_leaf.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mask {
+  background:url("/gfx/emoji/mask.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_massage {
+  background:url("/gfx/emoji/massage.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_meat_on_bone {
+  background:url("/gfx/emoji/meat_on_bone.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mega {
+  background:url("/gfx/emoji/mega.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_melon {
+  background:url("/gfx/emoji/melon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_memo {
+  background:url("/gfx/emoji/memo.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mens {
+  background:url("/gfx/emoji/mens.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_metal {
+  background:url("/gfx/emoji/metal.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_metro {
+  background:url("/gfx/emoji/metro.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_microphone {
+  background:url("/gfx/emoji/microphone.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_microscope {
+  background:url("/gfx/emoji/microscope.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_milky_way {
+  background:url("/gfx/emoji/milky_way.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_minibus {
+  background:url("/gfx/emoji/minibus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_minidisc {
+  background:url("/gfx/emoji/minidisc.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mobile_phone_off {
+  background:url("/gfx/emoji/mobile_phone_off.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_money_with_wings {
+  background:url("/gfx/emoji/money_with_wings.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_moneybag {
+  background:url("/gfx/emoji/moneybag.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_monkey {
+  background:url("/gfx/emoji/monkey.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_monkey_face {
+  background:url("/gfx/emoji/monkey_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_monorail {
+  background:url("/gfx/emoji/monorail.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_moon {
+  background:url("/gfx/emoji/moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mortar_board {
+  background:url("/gfx/emoji/mortar_board.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mount_fuji {
+  background:url("/gfx/emoji/mount_fuji.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mountain_bicyclist {
+  background:url("/gfx/emoji/mountain_bicyclist.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mountain_cableway {
+  background:url("/gfx/emoji/mountain_cableway.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mountain_railway {
+  background:url("/gfx/emoji/mountain_railway.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mouse {
+  background:url("/gfx/emoji/mouse.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mouse2 {
+  background:url("/gfx/emoji/mouse2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_movie_camera {
+  background:url("/gfx/emoji/movie_camera.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_moyai {
+  background:url("/gfx/emoji/moyai.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_muscle {
+  background:url("/gfx/emoji/muscle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mushroom {
+  background:url("/gfx/emoji/mushroom.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_musical_keyboard {
+  background:url("/gfx/emoji/musical_keyboard.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_musical_note {
+  background:url("/gfx/emoji/musical_note.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_musical_score {
+  background:url("/gfx/emoji/musical_score.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_mute {
+  background:url("/gfx/emoji/mute.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_nail_care {
+  background:url("/gfx/emoji/nail_care.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_name_badge {
+  background:url("/gfx/emoji/name_badge.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_neckbeard {
+  background:url("/gfx/emoji/neckbeard.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_necktie {
+  background:url("/gfx/emoji/necktie.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_negative_squared_cross_mark {
+  background:url("/gfx/emoji/negative_squared_cross_mark.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_neutral_face {
+  background:url("/gfx/emoji/neutral_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_new {
+  background:url("/gfx/emoji/new.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_new_moon {
+  background:url("/gfx/emoji/new_moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_new_moon_with_face {
+  background:url("/gfx/emoji/new_moon_with_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_newspaper {
+  background:url("/gfx/emoji/newspaper.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ng {
+  background:url("/gfx/emoji/ng.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_nine {
+  background:url("/gfx/emoji/nine.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_bell {
+  background:url("/gfx/emoji/no_bell.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_bicycles {
+  background:url("/gfx/emoji/no_bicycles.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_entry {
+  background:url("/gfx/emoji/no_entry.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_entry_sign {
+  background:url("/gfx/emoji/no_entry_sign.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_good {
+  background:url("/gfx/emoji/no_good.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_mobile_phones {
+  background:url("/gfx/emoji/no_mobile_phones.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_mouth {
+  background:url("/gfx/emoji/no_mouth.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_pedestrians {
+  background:url("/gfx/emoji/no_pedestrians.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_no_smoking {
+  background:url("/gfx/emoji/no_smoking.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_non-potable_water {
+  background:url("/gfx/emoji/non-potable_water.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_nose {
+  background:url("/gfx/emoji/nose.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_notebook {
+  background:url("/gfx/emoji/notebook.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_notebook_with_decorative_cover {
+  background:url("/gfx/emoji/notebook_with_decorative_cover.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_notes {
+  background:url("/gfx/emoji/notes.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_nut_and_bolt {
+  background:url("/gfx/emoji/nut_and_bolt.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_o {
+  background:url("/gfx/emoji/o.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_o2 {
+  background:url("/gfx/emoji/o2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ocean {
+  background:url("/gfx/emoji/ocean.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_octocat {
+  background:url("/gfx/emoji/octocat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_octopus {
+  background:url("/gfx/emoji/octopus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_oden {
+  background:url("/gfx/emoji/oden.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_office {
+  background:url("/gfx/emoji/office.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ok {
+  background:url("/gfx/emoji/ok.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ok_hand {
+  background:url("/gfx/emoji/ok_hand.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ok_woman {
+  background:url("/gfx/emoji/ok_woman.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_older_man {
+  background:url("/gfx/emoji/older_man.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_older_woman {
+  background:url("/gfx/emoji/older_woman.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_on {
+  background:url("/gfx/emoji/on.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_oncoming_automobile {
+  background:url("/gfx/emoji/oncoming_automobile.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_oncoming_bus {
+  background:url("/gfx/emoji/oncoming_bus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_oncoming_police_car {
+  background:url("/gfx/emoji/oncoming_police_car.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_oncoming_taxi {
+  background:url("/gfx/emoji/oncoming_taxi.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_one {
+  background:url("/gfx/emoji/one.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_open_file_folder {
+  background:url("/gfx/emoji/open_file_folder.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_open_hands {
+  background:url("/gfx/emoji/open_hands.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_open_mouth {
+  background:url("/gfx/emoji/open_mouth.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ophiuchus {
+  background:url("/gfx/emoji/ophiuchus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_orange_book {
+  background:url("/gfx/emoji/orange_book.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_outbox_tray {
+  background:url("/gfx/emoji/outbox_tray.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ox {
+  background:url("/gfx/emoji/ox.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_page_facing_up {
+  background:url("/gfx/emoji/page_facing_up.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_page_with_curl {
+  background:url("/gfx/emoji/page_with_curl.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pager {
+  background:url("/gfx/emoji/pager.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_palm_tree {
+  background:url("/gfx/emoji/palm_tree.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_panda_face {
+  background:url("/gfx/emoji/panda_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_paperclip {
+  background:url("/gfx/emoji/paperclip.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_parking {
+  background:url("/gfx/emoji/parking.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_part_alternation_mark {
+  background:url("/gfx/emoji/part_alternation_mark.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_partly_sunny {
+  background:url("/gfx/emoji/partly_sunny.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_passport_control {
+  background:url("/gfx/emoji/passport_control.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_paw_prints {
+  background:url("/gfx/emoji/paw_prints.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_peach {
+  background:url("/gfx/emoji/peach.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pear {
+  background:url("/gfx/emoji/pear.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pencil {
+  background:url("/gfx/emoji/pencil.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pencil2 {
+  background:url("/gfx/emoji/pencil2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_penguin {
+  background:url("/gfx/emoji/penguin.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pensive {
+  background:url("/gfx/emoji/pensive.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_performing_arts {
+  background:url("/gfx/emoji/performing_arts.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_persevere {
+  background:url("/gfx/emoji/persevere.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_person_frowning {
+  background:url("/gfx/emoji/person_frowning.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_person_with_blond_hair {
+  background:url("/gfx/emoji/person_with_blond_hair.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_person_with_pouting_face {
+  background:url("/gfx/emoji/person_with_pouting_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_phone {
+  background:url("/gfx/emoji/phone.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pig {
+  background:url("/gfx/emoji/pig.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pig2 {
+  background:url("/gfx/emoji/pig2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pig_nose {
+  background:url("/gfx/emoji/pig_nose.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pill {
+  background:url("/gfx/emoji/pill.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pineapple {
+  background:url("/gfx/emoji/pineapple.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pisces {
+  background:url("/gfx/emoji/pisces.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pizza {
+  background:url("/gfx/emoji/pizza.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_point_down {
+  background:url("/gfx/emoji/point_down.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_point_left {
+  background:url("/gfx/emoji/point_left.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_point_right {
+  background:url("/gfx/emoji/point_right.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_point_up {
+  background:url("/gfx/emoji/point_up.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_point_up_2 {
+  background:url("/gfx/emoji/point_up_2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_police_car {
+  background:url("/gfx/emoji/police_car.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_poodle {
+  background:url("/gfx/emoji/poodle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_poop {
+  background:url("/gfx/emoji/poop.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_post_office {
+  background:url("/gfx/emoji/post_office.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_postal_horn {
+  background:url("/gfx/emoji/postal_horn.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_postbox {
+  background:url("/gfx/emoji/postbox.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_potable_water {
+  background:url("/gfx/emoji/potable_water.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pouch {
+  background:url("/gfx/emoji/pouch.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_poultry_leg {
+  background:url("/gfx/emoji/poultry_leg.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pound {
+  background:url("/gfx/emoji/pound.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pouting_cat {
+  background:url("/gfx/emoji/pouting_cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pray {
+  background:url("/gfx/emoji/pray.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_princess {
+  background:url("/gfx/emoji/princess.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_punch {
+  background:url("/gfx/emoji/punch.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_purple_heart {
+  background:url("/gfx/emoji/purple_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_purse {
+  background:url("/gfx/emoji/purse.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_pushpin {
+  background:url("/gfx/emoji/pushpin.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_put_litter_in_its_place {
+  background:url("/gfx/emoji/put_litter_in_its_place.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_question {
+  background:url("/gfx/emoji/question.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rabbit {
+  background:url("/gfx/emoji/rabbit.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rabbit2 {
+  background:url("/gfx/emoji/rabbit2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_racehorse {
+  background:url("/gfx/emoji/racehorse.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_radio {
+  background:url("/gfx/emoji/radio.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_radio_button {
+  background:url("/gfx/emoji/radio_button.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rage {
+  background:url("/gfx/emoji/rage.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rage1 {
+  background:url("/gfx/emoji/rage1.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rage2 {
+  background:url("/gfx/emoji/rage2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rage3 {
+  background:url("/gfx/emoji/rage3.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rage4 {
+  background:url("/gfx/emoji/rage4.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_railway_car {
+  background:url("/gfx/emoji/railway_car.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rainbow {
+  background:url("/gfx/emoji/rainbow.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_raised_hand {
+  background:url("/gfx/emoji/raised_hand.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_raised_hands {
+  background:url("/gfx/emoji/raised_hands.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ram {
+  background:url("/gfx/emoji/ram.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ramen {
+  background:url("/gfx/emoji/ramen.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rat {
+  background:url("/gfx/emoji/rat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_recycle {
+  background:url("/gfx/emoji/recycle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_red_car {
+  background:url("/gfx/emoji/red_car.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_red_circle {
+  background:url("/gfx/emoji/red_circle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_registered {
+  background:url("/gfx/emoji/registered.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_relaxed {
+  background:url("/gfx/emoji/relaxed.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_relieved {
+  background:url("/gfx/emoji/relieved.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_repeat {
+  background:url("/gfx/emoji/repeat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_repeat_one {
+  background:url("/gfx/emoji/repeat_one.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_restroom {
+  background:url("/gfx/emoji/restroom.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_revolving_hearts {
+  background:url("/gfx/emoji/revolving_hearts.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rewind {
+  background:url("/gfx/emoji/rewind.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ribbon {
+  background:url("/gfx/emoji/ribbon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rice {
+  background:url("/gfx/emoji/rice.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rice_ball {
+  background:url("/gfx/emoji/rice_ball.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rice_cracker {
+  background:url("/gfx/emoji/rice_cracker.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rice_scene {
+  background:url("/gfx/emoji/rice_scene.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ring {
+  background:url("/gfx/emoji/ring.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rocket {
+  background:url("/gfx/emoji/rocket.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_roller_coaster {
+  background:url("/gfx/emoji/roller_coaster.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rooster {
+  background:url("/gfx/emoji/rooster.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rose {
+  background:url("/gfx/emoji/rose.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rotating_light {
+  background:url("/gfx/emoji/rotating_light.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_round_pushpin {
+  background:url("/gfx/emoji/round_pushpin.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rowboat {
+  background:url("/gfx/emoji/rowboat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ru {
+  background:url("/gfx/emoji/ru.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_rugby_football {
+  background:url("/gfx/emoji/rugby_football.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_runner {
+  background:url("/gfx/emoji/runner.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_running {
+  background:url("/gfx/emoji/running.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_running_shirt_with_sash {
+  background:url("/gfx/emoji/running_shirt_with_sash.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sa {
+  background:url("/gfx/emoji/sa.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sagittarius {
+  background:url("/gfx/emoji/sagittarius.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sailboat {
+  background:url("/gfx/emoji/sailboat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sake {
+  background:url("/gfx/emoji/sake.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sandal {
+  background:url("/gfx/emoji/sandal.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_santa {
+  background:url("/gfx/emoji/santa.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_satellite {
+  background:url("/gfx/emoji/satellite.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_satisfied {
+  background:url("/gfx/emoji/satisfied.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_saxophone {
+  background:url("/gfx/emoji/saxophone.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_school {
+  background:url("/gfx/emoji/school.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_school_satchel {
+  background:url("/gfx/emoji/school_satchel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_scissors {
+  background:url("/gfx/emoji/scissors.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_scorpius {
+  background:url("/gfx/emoji/scorpius.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_scream {
+  background:url("/gfx/emoji/scream.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_scream_cat {
+  background:url("/gfx/emoji/scream_cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_scroll {
+  background:url("/gfx/emoji/scroll.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_seat {
+  background:url("/gfx/emoji/seat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_secret {
+  background:url("/gfx/emoji/secret.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_see_no_evil {
+  background:url("/gfx/emoji/see_no_evil.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_seedling {
+  background:url("/gfx/emoji/seedling.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_seven {
+  background:url("/gfx/emoji/seven.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_shaved_ice {
+  background:url("/gfx/emoji/shaved_ice.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sheep {
+  background:url("/gfx/emoji/sheep.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_shell {
+  background:url("/gfx/emoji/shell.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ship {
+  background:url("/gfx/emoji/ship.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_shipit {
+  background:url("/gfx/emoji/shipit.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_shirt {
+  background:url("/gfx/emoji/shirt.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_shit {
+  background:url("/gfx/emoji/shit.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_shoe {
+  background:url("/gfx/emoji/shoe.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_shower {
+  background:url("/gfx/emoji/shower.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_signal_strength {
+  background:url("/gfx/emoji/signal_strength.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_six {
+  background:url("/gfx/emoji/six.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_six_pointed_star {
+  background:url("/gfx/emoji/six_pointed_star.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ski {
+  background:url("/gfx/emoji/ski.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_skull {
+  background:url("/gfx/emoji/skull.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sleeping {
+  background:url("/gfx/emoji/sleeping.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sleepy {
+  background:url("/gfx/emoji/sleepy.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_slot_machine {
+  background:url("/gfx/emoji/slot_machine.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_small_blue_diamond {
+  background:url("/gfx/emoji/small_blue_diamond.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_small_orange_diamond {
+  background:url("/gfx/emoji/small_orange_diamond.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_small_red_triangle {
+  background:url("/gfx/emoji/small_red_triangle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_small_red_triangle_down {
+  background:url("/gfx/emoji/small_red_triangle_down.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_smile {
+  background:url("/gfx/emoji/smile.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_smile_cat {
+  background:url("/gfx/emoji/smile_cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_smiley {
+  background:url("/gfx/emoji/smiley.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_smiley_cat {
+  background:url("/gfx/emoji/smiley_cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_smiling_imp {
+  background:url("/gfx/emoji/smiling_imp.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_smirk {
+  background:url("/gfx/emoji/smirk.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_smirk_cat {
+  background:url("/gfx/emoji/smirk_cat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_smoking {
+  background:url("/gfx/emoji/smoking.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_snail {
+  background:url("/gfx/emoji/snail.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_snake {
+  background:url("/gfx/emoji/snake.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_snowboarder {
+  background:url("/gfx/emoji/snowboarder.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_snowflake {
+  background:url("/gfx/emoji/snowflake.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_snowman {
+  background:url("/gfx/emoji/snowman.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sob {
+  background:url("/gfx/emoji/sob.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_soccer {
+  background:url("/gfx/emoji/soccer.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_soon {
+  background:url("/gfx/emoji/soon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sos {
+  background:url("/gfx/emoji/sos.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sound {
+  background:url("/gfx/emoji/sound.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_space_invader {
+  background:url("/gfx/emoji/space_invader.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_spades {
+  background:url("/gfx/emoji/spades.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_spaghetti {
+  background:url("/gfx/emoji/spaghetti.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sparkler {
+  background:url("/gfx/emoji/sparkler.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sparkles {
+  background:url("/gfx/emoji/sparkles.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sparkling_heart {
+  background:url("/gfx/emoji/sparkling_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_speak_no_evil {
+  background:url("/gfx/emoji/speak_no_evil.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_speaker {
+  background:url("/gfx/emoji/speaker.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_speech_balloon {
+  background:url("/gfx/emoji/speech_balloon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_speedboat {
+  background:url("/gfx/emoji/speedboat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_squirrel {
+  background:url("/gfx/emoji/squirrel.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_star {
+  background:url("/gfx/emoji/star.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_star2 {
+  background:url("/gfx/emoji/star2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_stars {
+  background:url("/gfx/emoji/stars.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_station {
+  background:url("/gfx/emoji/station.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_statue_of_liberty {
+  background:url("/gfx/emoji/statue_of_liberty.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_steam_locomotive {
+  background:url("/gfx/emoji/steam_locomotive.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_stew {
+  background:url("/gfx/emoji/stew.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_straight_ruler {
+  background:url("/gfx/emoji/straight_ruler.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_strawberry {
+  background:url("/gfx/emoji/strawberry.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_stuck_out_tongue {
+  background:url("/gfx/emoji/stuck_out_tongue.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_stuck_out_tongue_closed_eyes {
+  background:url("/gfx/emoji/stuck_out_tongue_closed_eyes.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_stuck_out_tongue_winking_eye {
+  background:url("/gfx/emoji/stuck_out_tongue_winking_eye.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sun_with_face {
+  background:url("/gfx/emoji/sun_with_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sunflower {
+  background:url("/gfx/emoji/sunflower.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sunglasses {
+  background:url("/gfx/emoji/sunglasses.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sunny {
+  background:url("/gfx/emoji/sunny.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sunrise {
+  background:url("/gfx/emoji/sunrise.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sunrise_over_mountains {
+  background:url("/gfx/emoji/sunrise_over_mountains.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_surfer {
+  background:url("/gfx/emoji/surfer.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sushi {
+  background:url("/gfx/emoji/sushi.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_suspect {
+  background:url("/gfx/emoji/suspect.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_suspension_railway {
+  background:url("/gfx/emoji/suspension_railway.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sweat {
+  background:url("/gfx/emoji/sweat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sweat_drops {
+  background:url("/gfx/emoji/sweat_drops.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sweat_smile {
+  background:url("/gfx/emoji/sweat_smile.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_sweet_potato {
+  background:url("/gfx/emoji/sweet_potato.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_swimmer {
+  background:url("/gfx/emoji/swimmer.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_symbols {
+  background:url("/gfx/emoji/symbols.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_syringe {
+  background:url("/gfx/emoji/syringe.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tada {
+  background:url("/gfx/emoji/tada.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tanabata_tree {
+  background:url("/gfx/emoji/tanabata_tree.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tangerine {
+  background:url("/gfx/emoji/tangerine.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_taurus {
+  background:url("/gfx/emoji/taurus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_taxi {
+  background:url("/gfx/emoji/taxi.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tea {
+  background:url("/gfx/emoji/tea.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_telephone {
+  background:url("/gfx/emoji/telephone.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_telephone_receiver {
+  background:url("/gfx/emoji/telephone_receiver.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_telescope {
+  background:url("/gfx/emoji/telescope.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tennis {
+  background:url("/gfx/emoji/tennis.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tent {
+  background:url("/gfx/emoji/tent.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_thought_balloon {
+  background:url("/gfx/emoji/thought_balloon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_three {
+  background:url("/gfx/emoji/three.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_thumbsdown {
+  background:url("/gfx/emoji/thumbsdown.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_thumbsup {
+  background:url("/gfx/emoji/thumbsup.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_ticket {
+  background:url("/gfx/emoji/ticket.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tiger {
+  background:url("/gfx/emoji/tiger.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tiger2 {
+  background:url("/gfx/emoji/tiger2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tired_face {
+  background:url("/gfx/emoji/tired_face.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tm {
+  background:url("/gfx/emoji/tm.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_toilet {
+  background:url("/gfx/emoji/toilet.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tokyo_tower {
+  background:url("/gfx/emoji/tokyo_tower.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tomato {
+  background:url("/gfx/emoji/tomato.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tongue {
+  background:url("/gfx/emoji/tongue.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_top {
+  background:url("/gfx/emoji/top.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tophat {
+  background:url("/gfx/emoji/tophat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tractor {
+  background:url("/gfx/emoji/tractor.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_traffic_light {
+  background:url("/gfx/emoji/traffic_light.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_train {
+  background:url("/gfx/emoji/train.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_train2 {
+  background:url("/gfx/emoji/train2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tram {
+  background:url("/gfx/emoji/tram.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_triangular_flag_on_post {
+  background:url("/gfx/emoji/triangular_flag_on_post.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_triangular_ruler {
+  background:url("/gfx/emoji/triangular_ruler.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_trident {
+  background:url("/gfx/emoji/trident.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_triumph {
+  background:url("/gfx/emoji/triumph.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_trolleybus {
+  background:url("/gfx/emoji/trolleybus.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_trollface {
+  background:url("/gfx/emoji/trollface.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_trophy {
+  background:url("/gfx/emoji/trophy.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tropical_drink {
+  background:url("/gfx/emoji/tropical_drink.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tropical_fish {
+  background:url("/gfx/emoji/tropical_fish.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_truck {
+  background:url("/gfx/emoji/truck.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_trumpet {
+  background:url("/gfx/emoji/trumpet.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tshirt {
+  background:url("/gfx/emoji/tshirt.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tulip {
+  background:url("/gfx/emoji/tulip.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_turtle {
+  background:url("/gfx/emoji/turtle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_tv {
+  background:url("/gfx/emoji/tv.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_twisted_rightwards_arrows {
+  background:url("/gfx/emoji/twisted_rightwards_arrows.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_two {
+  background:url("/gfx/emoji/two.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_two_hearts {
+  background:url("/gfx/emoji/two_hearts.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_two_men_holding_hands {
+  background:url("/gfx/emoji/two_men_holding_hands.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_two_women_holding_hands {
+  background:url("/gfx/emoji/two_women_holding_hands.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u5272 {
+  background:url("/gfx/emoji/u5272.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u5408 {
+  background:url("/gfx/emoji/u5408.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u55b6 {
+  background:url("/gfx/emoji/u55b6.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u6307 {
+  background:url("/gfx/emoji/u6307.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u6708 {
+  background:url("/gfx/emoji/u6708.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u6709 {
+  background:url("/gfx/emoji/u6709.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u6e80 {
+  background:url("/gfx/emoji/u6e80.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u7121 {
+  background:url("/gfx/emoji/u7121.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u7533 {
+  background:url("/gfx/emoji/u7533.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u7981 {
+  background:url("/gfx/emoji/u7981.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_u7a7a {
+  background:url("/gfx/emoji/u7a7a.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_uk {
+  background:url("/gfx/emoji/uk.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_umbrella {
+  background:url("/gfx/emoji/umbrella.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_unamused {
+  background:url("/gfx/emoji/unamused.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_underage {
+  background:url("/gfx/emoji/underage.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_unlock {
+  background:url("/gfx/emoji/unlock.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_up {
+  background:url("/gfx/emoji/up.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_us {
+  background:url("/gfx/emoji/us.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_v {
+  background:url("/gfx/emoji/v.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_vertical_traffic_light {
+  background:url("/gfx/emoji/vertical_traffic_light.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_vhs {
+  background:url("/gfx/emoji/vhs.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_vibration_mode {
+  background:url("/gfx/emoji/vibration_mode.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_video_camera {
+  background:url("/gfx/emoji/video_camera.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_video_game {
+  background:url("/gfx/emoji/video_game.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_violin {
+  background:url("/gfx/emoji/violin.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_virgo {
+  background:url("/gfx/emoji/virgo.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_volcano {
+  background:url("/gfx/emoji/volcano.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_vs {
+  background:url("/gfx/emoji/vs.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_walking {
+  background:url("/gfx/emoji/walking.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_waning_crescent_moon {
+  background:url("/gfx/emoji/waning_crescent_moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_waning_gibbous_moon {
+  background:url("/gfx/emoji/waning_gibbous_moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_warning {
+  background:url("/gfx/emoji/warning.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_watch {
+  background:url("/gfx/emoji/watch.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_water_buffalo {
+  background:url("/gfx/emoji/water_buffalo.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_watermelon {
+  background:url("/gfx/emoji/watermelon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wave {
+  background:url("/gfx/emoji/wave.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wavy_dash {
+  background:url("/gfx/emoji/wavy_dash.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_waxing_crescent_moon {
+  background:url("/gfx/emoji/waxing_crescent_moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_waxing_gibbous_moon {
+  background:url("/gfx/emoji/waxing_gibbous_moon.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wc {
+  background:url("/gfx/emoji/wc.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_weary {
+  background:url("/gfx/emoji/weary.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wedding {
+  background:url("/gfx/emoji/wedding.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_whale {
+  background:url("/gfx/emoji/whale.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_whale2 {
+  background:url("/gfx/emoji/whale2.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wheelchair {
+  background:url("/gfx/emoji/wheelchair.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_white_check_mark {
+  background:url("/gfx/emoji/white_check_mark.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_white_circle {
+  background:url("/gfx/emoji/white_circle.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_white_flower {
+  background:url("/gfx/emoji/white_flower.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_white_square {
+  background:url("/gfx/emoji/white_square.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_white_square_button {
+  background:url("/gfx/emoji/white_square_button.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wind_chime {
+  background:url("/gfx/emoji/wind_chime.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wine_glass {
+  background:url("/gfx/emoji/wine_glass.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wink {
+  background:url("/gfx/emoji/wink.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wolf {
+  background:url("/gfx/emoji/wolf.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_woman {
+  background:url("/gfx/emoji/woman.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_womans_clothes {
+  background:url("/gfx/emoji/womans_clothes.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_womans_hat {
+  background:url("/gfx/emoji/womans_hat.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_womens {
+  background:url("/gfx/emoji/womens.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_worried {
+  background:url("/gfx/emoji/worried.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_wrench {
+  background:url("/gfx/emoji/wrench.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_x {
+  background:url("/gfx/emoji/x.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_yellow_heart {
+  background:url("/gfx/emoji/yellow_heart.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_yen {
+  background:url("/gfx/emoji/yen.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_yum {
+  background:url("/gfx/emoji/yum.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_zap {
+  background:url("/gfx/emoji/zap.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_zero {
+  background:url("/gfx/emoji/zero.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+
+.emoji_zzz {
+  background:url("/gfx/emoji/zzz.png") no-repeat scroll 0 center transparent;
+  background-size: 20px auto;
+}
+

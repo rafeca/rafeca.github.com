@@ -1,29 +1,153 @@
----
-layout: default
----
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <h1>{{ site.title }}</h1>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Personal thoughts about technology</title>
+  <meta name="description" content="Personal thoughts about technology - Personal thoughts about technology (@juandebravo)">
+  <meta name="author" content="Juan de Bravo">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="http://feeds.feedburner.com/juandebravo" rel="alternate" title="Personal thoughts about technology" type="application/atom+xml">
+  <link rel="author" href="/humans.txt">
+
+  <link rel="stylesheet" href="/css/emoji.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/disqus.css">
+
+  <script src="/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
-<h2><span>Blog posts</span> <a class="fadedlink" href="http://feeds.feedburner.com/{{ site.feedburner_id }}" title="RSS feed"><img src="/gfx/rss.png" alt="RSS feed"/></a></h2>
-<ul>
-  {% for post in site.posts %}
-    {% include post.html %}
-  {% endfor %}
+<body>
+    <div class="title">
+      <h1>
+        <a href="/index.html">Personal thoughts about technology</a>
+      </h1>
+    </div>
+  <div class='main_container'>
+    <div class="menu">
+      <ul>
+  
+    
+    
+      
+    
+    <li class="item active">
+      <a href="/index.html">Dev Blog</a>
+    </li>
+  
+    
+    
+    <li class="item ">
+      <a href="/open_source.html">Open Source</a>
+    </li>
+  
+    
+    
+    <li class="item ">
+      <a href="/about_me.html">About me</a>
+    </li>
+  
+</ul>
+    </div>
+    <div class="container">
+
+      <h2>Blog
+  <a class="fadedlink rss" href="http://feeds.feedburner.com/juandebravo" title="RSS feed">RSS feed
+  </a>
+</h2>
+
+<ul class="posts">
+  
+    <li class="post">
+  <span class="left_title">28 Oct 2012</span>
+  <a href="/2012/10/28/css-changes" title="CSS changes">CSS changes</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">21 Oct 2012</span>
+  <a href="/2012/10/21/how-to-paste-code-in-keynote" title="How to paste code in keynote">How to paste code in keynote</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">26 Sep 2012</span>
+  <a href="/2012/09/26/first-steps-with-scala" title="First steps with Scala">First steps with Scala</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">16 Sep 2012</span>
+  <a href="/2012/09/16/dynamic-loading" title="Dynamic loading">Dynamic loading</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">08 Sep 2012</span>
+  <a href="/2012/09/08/baruco-saturday" title="Baruco, First day">Baruco, First day</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">05 Aug 2012</span>
+  <a href="/2012/08/05/ensuring-array-as-object-type" title="Ensuring Array as object type">Ensuring Array as object type</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">24 Jul 2012</span>
+  <a href="/2012/07/24/why-python-rocks_and_two" title="Things I like using python (part II)">Things I like using python (part II)</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">16 Jul 2012</span>
+  <a href="/2012/07/16/why-python-rocks" title="Things I like using python (part I)">Things I like using python (part I)</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">26 Jun 2012</span>
+  <a href="/2012/06/26/git-tip-how-to-change-the-branch-of-a-commit" title="Fix latest commit branch using git">Fix latest commit branch using git</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">31 May 2012</span>
+  <a href="/2012/05/31/yet-another-blog-in-the-world" title="Yet another blog in the world">Yet another blog in the world</a>
+</li>
+  
 </ul>
 
-<h2>Open Source</h2>
-<ul>
-  <li>
-      <a href="http://rafeca.com/node-releasetools">releasetools</a> 
-      <span>&mdash; Library for automating releases of Node.js package</span>
-  </li>
-  <li>
-      <a href="https://github.com/bluevialabs/connfu-node">connFu-node</a> 
-      <span>&mdash; Node.js DSL for creating real time voice applications using the connFu platform</span>
-  </li>
-  <li>
-      <a href="http://rafeca.com/prettyjson">prettyjson</a>
-      <span>&mdash; library for echoing JSON data in a nice format on Node.js</span>
-  </li>
-</ul>
+
+
+      <footer>
+        <span class="author_info">
+          <a href="/about_me.html">Juan de Bravo</a>
+        </span>
+        <a class="fadedlink footer_link github" href="https://github.com/juandebravo">
+          @github
+        </a>
+        <a class="fadedlink footer_link twitter" href="https://twitter.com/juandebravo">
+          @twitter
+        </a>
+        <a class="fadedlink footer_link linkedin" href="http://linkedin.com/in/juandebravo">
+          @linkedin
+        </a>
+        <a class="fadedlink" href="mailto:juandebravo@gmail.com">
+          <img src="/gfx/gmail-logo.png" alt="@gmail">
+        </a>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    window._gaq = [['_setAccount','UA-32824811-1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>

@@ -3,13 +3,13 @@
 
 
 /* TEAM */
-  Blogger: Rafael de Oleza
-  Site: http://rafeca.com
-  Twitter: @rafeca
-  Location: Barcelona, London
+  Blogger: Juan de Bravo
+  Site: http://juandebravo.com
+  Twitter: @juandebravo
+  Location: Barcelona, Valladolid
 
 /* THANKS */
-  Names (& URL): 
+  Names (& URL):
 
 /* SITE */
   Standards: HTML5, CSS3

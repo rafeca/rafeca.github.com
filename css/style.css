@@ -265,18 +265,17 @@ h1 img, h2 img {
 }
 
 #post h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   text-indent: 0;
   padding-left: 0;
 }
 
 #post h2 {
-  font-size: 1.125em;
-  font-weight: bold;
+  font-size: 1.5em;
 }
 
 #post h3 {
-  font-size: 1em;
+  font-size: 1.125em;
 }
 
 #post img {

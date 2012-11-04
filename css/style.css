@@ -289,6 +289,11 @@ header h1 {
   padding: 8px;
 }
 
+#post img.noshadow {
+  border: none;
+  box-shadow: none;
+}
+
 /** Code styles **/
 code {
   background-color: #F5F5FF;

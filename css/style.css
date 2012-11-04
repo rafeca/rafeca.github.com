@@ -238,8 +238,6 @@ footer span {
 h1 {
   font-weight: 200;
   font-size: 2.5em;
-  text-indent: -30px;
-  padding-left: 30px;
 }
 
 h1 small {
@@ -260,6 +258,10 @@ h1 img, h2 img {
 }
 
 /* Post styles */
+header h1 {
+  text-indent: -30px;
+}
+
 #post {
   clear: left;
 }
@@ -332,12 +334,13 @@ code.bash {
 
 /** Tags in post page **/
 nav {
-  margin: -30px 0 30px 30px;
+  margin: -25px 0 30px 0;
 }
 
 nav li {
   float: left;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 nav li a {
@@ -395,27 +398,37 @@ nav li a:hover {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 760px) {
   #container {
     width: 94%;
     padding: 0 3%;
   }
 
-  h1 {
+  header {
+    position: relative;
+  }
+
+  header h1 {
     font-size: 2em;
     text-indent: -25px;
     padding-left: 25px;
+    max-width: 60%;
+    line-height: 1.2em;
   }
 
-  h1 small {
+  header h1 small {
     font-size: 0.5em;
     display: block;
     margin-left: 25px;
   }
 
-  nav {
-    float: right;
-    margin-top: -45px;
+  header nav {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    margin: 0;
+    max-width: 30%;
+    display: block;
   }
 
   #post img {
@@ -434,13 +447,14 @@ nav li a:hover {
 }
 
 @media only screen and (max-width: 480px) {
-  h1 {
+  header h1 {
     font-size: 1.5em;  
     text-indent: -20px;
     padding-left: 20px;
+    max-width: 100%;
   }
 
-  h1 small {
+  header h1 small {
     margin-left: 18px;
     font-size: 0.67em;
   }
@@ -449,10 +463,12 @@ nav li a:hover {
     font-size: 1.25em;
   }
 
-  nav {
+  header nav {
     float: none;
+    position: relative;
+    max-width: 100%;
     margin-left: 18px;
-    margin-top: -10px;
+    margin-top: -20px;
   }
 
   ul, ol {

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<header>
+  <h2>Posts in category <strong>sbt</strong></h2>
+</header>
+
+<ul>
+  {% for post in site.categories.sbt %}
+    {% include post.html %}
+  {% endfor %}
+</ul>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SBT run&#58; choose automatically the App to launch
-categories: [scala sbt]
+categories: [scala, sbt]
 ---
 
 I like Christmas because, beside resting from work and having fun with family and friends, usually there is time to learn something new. During this Xmas I've been playing with Scala: First, trying to finish the [Coursera Functional Programming Principles course](https://class.coursera.org/progfun-2012-001/auth/auth_redirector?type=login&subtype=normal). Later, working a bit in a personal project. Better late than never :smile

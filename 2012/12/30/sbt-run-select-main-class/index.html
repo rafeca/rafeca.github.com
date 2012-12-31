@@ -1,0 +1,244 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>SBT run&#58; choose automatically the App to launch - Personal thoughts about technology</title>
+  <meta name="description" content="Personal thoughts about technology - Personal thoughts about technology (@juandebravo)">
+  <meta name="author" content="Juan de Bravo">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="http://feeds.feedburner.com/juandebravo" rel="alternate" title="Personal thoughts about technology" type="application/atom+xml">
+  <link rel="author" href="/humans.txt">
+
+  <link rel="stylesheet" href="/css/emoji.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/disqus.css">
+
+  <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+    <div class="title">
+      <h1>
+        <a href="/index.html">Personal thoughts about technology</a>
+      </h1>
+    </div>
+  <div class='main_container'>
+    <div class="menu">
+      <ul>
+  
+    
+    
+      
+    
+    <li class="item active">
+      <a href="/index.html">Dev Blog</a>
+    </li>
+  
+    
+    
+    <li class="item ">
+      <a href="/open_source.html">Open Source</a>
+    </li>
+  
+    
+    
+    <li class="item ">
+      <a href="/about_me.html">About me</a>
+    </li>
+  
+</ul>
+    </div>
+    <div class="container">
+
+      <header>   
+  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> SBT run&#58; choose automatically the App to launch <small>30 Dec 2012</small></h2>
+
+  <nav>
+    <ul class="clearfix">
+    
+      <li><a href="/tag/scala sbt.html">scala sbt</a></li>
+    
+    </ul>
+  </nav>
+</header>
+
+<div id="post" role="main">
+  <p>I like Christmas because, beside resting from work and having fun with family and friends, usually there is time to learn something new. During this Xmas I've been playing with Scala: First, trying to finish the <a href="https://class.coursera.org/progfun-2012-001/auth/auth_redirector?type=login&subtype=normal">Coursera Functional Programming Principles course</a>. Later, working a bit in a personal project. Better late than never :smile</p>
+
+<p>As for my personal project, it provides more than one <strong>executable entry point</strong>:</p>
+
+<ul>
+<li>web application exposing a REST API using <a href="http://www.scalatra.org/">Scalatra</a>.</li>
+<li>offline script to retrieve data from a third party periodically. This could be easily done with <a href="http://rake.rubyforge.org/">Rake</a> in the Ruby world, and as far as I know there's not a <a href="http://code.activestate.com/pypm/search:rake/">task management tool &quot;de facto standard&quot; in python</a>.</li>
+</ul>
+
+<p>Working with Scala and SBT, the command <strong>sbt run</strong> looks like the natural alternative. It seeks for every Scala Object in the project that could be used as the assembly entry point:</p>
+
+<ul>
+<li>an object that defines a main method</li>
+<li>an object that inherits from App</li>
+</ul>
+
+<p>If your application has more than one object fitting the previous requirement, the command <em>sbt run</em> will ask for your help to finish the execution.</p>
+
+<p>Let's consider the following snippet of code, having two objects that define a <em>main</em> method:</p>
+
+<p>```scala</p>
+
+<h1>File src/main/Foo.scala</h1>
+
+<p>object Foo {
+    def main(args: Array[String]) = println(&quot;Hello from Foo&quot;)
+}</p>
+
+<h1>File src/main/Bar.scala</h1>
+
+<p>object Bar extends App{
+    println(&quot;Hello from Bar&quot;)
+}</p>
+
+<p>```</p>
+
+<p>When you execute the <strong>sbt run</strong> command, the following text shows up:</p>
+
+<p>```bash
+&gt; sbt run</p>
+
+<p>Multiple main classes detected, select one to run:</p>
+
+<p>[1] Bar
+ [2] Foo</p>
+
+<p>Enter number: 2
+[info] Running Foo
+Hello from Foo
+[success] Total time: 29 s, completed Dec 30, 2012 11:36:28 PM
+```</p>
+
+<p>It requires human action (in the previous example, fill in the number <em>2</em>), as the <em>run</em> command does not receive any parameter to automate the process.</p>
+
+<p>Fortunately, there's an easy solution using the SBT plugin <a href="https://github.com/sbt/sbt-start-script">sbt-start-script</a> :squirrel:. You just need to follow these three steps:</p>
+
+<ul>
+<li>Create (or update) the file <em>project/plugins.sbt</em>, including:</li>
+</ul>
+
+<p><code>scala
+addSbtPlugin(&quot;com.typesafe.sbt&quot; % &quot;sbt-start-script&quot; % &quot;0.6.0&quot;)
+</code></p>
+
+<ul>
+<li>Create (or update) the file <em>build.sbt</em>, adding:</li>
+</ul>
+
+<p><code>scala
+import com.typesafe.sbt.SbtStartScript
+seq(SbtStartScript.startScriptForClassesSettings: _*)
+</code></p>
+
+<ul>
+<li>Execute:</li>
+</ul>
+
+<p><code>bash
+sbt update
+sbt start-script
+</code></p>
+
+<p>As result, a new file <strong>target/start</strong> is created. A file that requires the main class name to be executed as the first argument:</p>
+
+<p>```bash
+&gt; target/start Foo
+Hello from Foo</p>
+<blockquote>
+<p>target/start Bar
+Hello from Bar
+```</p>
+</blockquote>
+<p>Two last tips:
+* In case your program just has a single main class, the script does not require any argument.
+* Remember to add the automatically generated file <em>target/start</em> to your CVS</p>
+
+  
+  <p class="back">&laquo; <a href="/">Home</a></p>
+</div>
+      
+<!--h2>Related Posts</h2>
+<ul class="posts_list">
+  
+    <li class="post">
+  <span class="left_title">01 Dec 2012</span>
+  <a href="/2012/12/01/git-internals-lecture" title="About git internals">About git internals</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">17 Nov 2012</span>
+  <a href="/2012/11/17/emoji-support-in-jekyll" title="Emoji support in jekyll">Emoji support in jekyll</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">28 Oct 2012</span>
+  <a href="/2012/10/28/css-changes" title="CSS changes">CSS changes</a>
+</li>
+  
+</ul-->
+
+<hr/>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'juandebravo'; // required: replace example with your forum shortname
+    //var disqus_developer = 1; // developer mode is on, for testing locally
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      <footer>
+        <span class="author_info">
+          <a href="/about_me.html">Juan de Bravo</a>
+        </span>
+        <a class="fadedlink footer_link github" href="https://github.com/juandebravo">
+          @github
+        </a>
+        <a class="fadedlink footer_link twitter" href="https://twitter.com/juandebravo">
+          @twitter
+        </a>
+        <a class="fadedlink footer_link linkedin" href="http://linkedin.com/in/juandebravo">
+          @linkedin
+        </a>
+        <a class="fadedlink" href="mailto:juandebravo@gmail.com">
+          <img src="/gfx/gmail-logo.png" alt="@gmail">
+        </a>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    window._gaq = [['_setAccount','UA-32824811-1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>

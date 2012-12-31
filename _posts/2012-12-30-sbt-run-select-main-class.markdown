@@ -84,5 +84,7 @@ Hello from Bar
 {% endhighlight %}
 
 Two last tips:
+
 * In case your program just has a single main class, the script does not require any argument.
+
 * Remember to add the automatically generated file *target/start* to your CVS

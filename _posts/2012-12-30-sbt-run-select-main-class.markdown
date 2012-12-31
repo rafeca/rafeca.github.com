@@ -20,7 +20,7 @@ If your application has more than one object fitting the previous requirement, t
 
 Let's consider the following snippet of code, having two objects that define a *main* method:
 
-```scala
+{% highlight scala %}
 # File src/main/Foo.scala
 object Foo {
     def main(args: Array[String]) = println("Hello from Foo")
@@ -31,11 +31,11 @@ object Bar extends App{
     println("Hello from Bar")
 }
 
-```
+{% endhighlight %}
 
 When you execute the **sbt run** command, the following text shows up:
 
-```bash
+{% highlight bash %}
 > sbt run
 
 Multiple main classes detected, select one to run:
@@ -47,7 +47,7 @@ Enter number: 2
 [info] Running Foo
 Hello from Foo
 [success] Total time: 29 s, completed Dec 30, 2012 11:36:28 PM
-```
+{% endhighlight %}
 
 It requires human action (in the previous example, fill in the number *2*), as the *run* command does not receive any parameter to automate the process.
 
@@ -55,33 +55,33 @@ Fortunately, there's an easy solution using the SBT plugin [sbt-start-script](ht
 
 * Create (or update) the file *project/plugins.sbt*, including:
 
-```scala
+{% highlight scala %}
 addSbtPlugin("com.typesafe.sbt" % "sbt-start-script" % "0.6.0")
-```
+{% endhighlight %}
 
 * Create (or update) the file *build.sbt*, adding:
 
-```scala
+{% highlight scala %}
 import com.typesafe.sbt.SbtStartScript
 seq(SbtStartScript.startScriptForClassesSettings: _*)
-```
+{% endhighlight %}
 
 * Execute:
 
-```bash
+{% highlight bash %}
 sbt update
 sbt start-script
-```
+{% endhighlight %}
 
 As result, a new file **target/start** is created. A file that requires the main class name to be executed as the first argument:
 
-```bash
+{% highlight bash %}
 > target/start Foo
 Hello from Foo
 
 > target/start Bar
 Hello from Bar
-```
+{% endhighlight %}
 
 Two last tips:
 * In case your program just has a single main class, the script does not require any argument.

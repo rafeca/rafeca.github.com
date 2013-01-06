@@ -26,7 +26,7 @@ To use the Notifications API, first of all you have to let the user grant permis
 To do so, the first to do is to check if she has already granted the permissions by calling the `checkPermission()`
 method. This method returns 0 in case the user has already granted permissions and 1 if not:
 
-{% highlight javascript %}
+```javascript
 // function to check if the user has already granted notification permissions
 var hasNotificationsPermissions = function() {
   // Check if the browser supports notifications
@@ -36,30 +36,30 @@ var hasNotificationsPermissions = function() {
     return false;
   }
 };
-{% endhighlight %}
+```
 
 And then use the previous function to create the method `askForPermissions()`:
 
-{% highlight javascript %}
+```javascript
 // function to ask for notification permissions if the user hasn't done it already
 var askForPermissions = function askForPermissions() {
   if (window.webkitNotifications && !hasNotificationsPermissions) {
     window.webkitNotifications.requestPermission();
   }
 };
-{% endhighlight %}
+```
 
 Also, it's very important to point out that the `requestPermission()` method only works when it's been triggered by a
 user-generated event, like a `click` or `keypress` event (to prevent unsolicited requests). So we have to create a
 button in our app to ask for notification permissions:
 
-{% highlight html %}
+```html
 <button id="notification-permissions">Ask for notification permissions</button>
 
 <script type="text/javascript">
 document.querySelector('#notification-permissions').addEventListener('click', askForPermissions);
 </script>
-{% endhighlight %}
+```
 
 Once the user clicks on the button, she will get a popup which asks her to grant the website permissions:
 
@@ -69,7 +69,7 @@ Once she clicks on "Allow", we'll be able to start sending notifications. As the
 displayed indefinitely (once created they never disappear), I use a simple wrapper function to send
 notifications with a timeout:
 
-{% highlight javascript %}
+```javascript
 // Sends a notification that expires after a timeout. If timeout = 0 it does not expire
 var sendNotification = function sendNotification(image, title, message, timeout, showOnFocus) {
   // Default values for optional params
@@ -97,7 +97,7 @@ var sendNotification = function sendNotification(image, title, message, timeout,
     }
   }
 };
-{% endhighlight %}
+```
 
 As you can see, this wrapper function has also a last argument called `showOnFocus`, which allows restricting
 notifications only when the browser window is not the active window in the desktop. When no `timeout` or `showOnFocus`

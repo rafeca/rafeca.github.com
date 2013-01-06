@@ -68,9 +68,9 @@ version somewhere else you should get it from this single place where it's defin
 For example in Node.js packages, if you want to make the version available to the outside, it's
 good to do the following:
 
-{% highlight javascript %}
+```javascript
 exports.version = JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version;
-{% endhighlight %}
+```
 
 This way you only have to change the library version in a single place, so it will be easier to create
 an script that parses this single file and updates the version.
@@ -107,9 +107,9 @@ then each commit summary can be used as a single bullet point in the changelog.
 How can this be achieved? It's very easy: with git and the following single line command you can get
 all the changes since last created tag.
 
-{% highlight bash %}
+```bash
 $ git log `git describe --tags --abbrev=0`..HEAD --pretty=format:"  * %s"
-{% endhighlight %}
+```
 
 This command prints all the changes between some initial revision and the HEAD, formatted as a plain
 text bulleted list.
@@ -133,9 +133,9 @@ following format:
 To get all the contributors, git is there again to help you: you can get all the commiter names and
 their email address by calling the following command:
 
-{% highlight bash %}
+```bash
 $ git log --all --format="%aN <%aE>" | sort -u
-{% endhighlight %}
+```
 
 So you just have to replace all the contents in the `AUTHORS` file by the output of the command above.
 
@@ -163,7 +163,7 @@ and a footer) and then insert the markdown output within them.
 
 The header partial file would look like:
 
-{% highlight html %}
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -178,24 +178,24 @@ The header partial file would look like:
       <img src="gfx/forkme" alt="Fork me on GitHub">
     </a>
     <div id="container">
-{% endhighlight %}
+```
 
 And the footer file like:
 
-{% highlight html %}
+```html
     </div>
     <script type="text/javascript">sh_highlightDocument();</script>
   </body>
 </html>
-{% endhighlight %}
+```
 
 Between the header and the footer files you can add as much information as you want, for example
 the changelog, the contributors and even the license:
 
-{% highlight bash %}
+```bash
 $ (markdown README.md && markdown History.md && markdown AUTHORS && markdown LICENSE) | \
   cat docs/_header.html - docs/_footer.html > docs/index.html
-{% endhighlight %}
+```
 
 This command will insert the output of the four markdown files between the `_header.html` and
 `_footer.html` files and then save the resulting file as `index.html` in the `docs/` folder.
@@ -203,11 +203,11 @@ This command will insert the output of the four markdown files between the `_hea
 If you prefer to have multiple pages in your site instead of one large page, you can still do
 it by calling the previous command multiple times with different contents:
 
-{% highlight bash %}
+```bash
 $ (markdown README.md) | cat docs/_header.html - docs/_footer.html > docs/index.html
 $ (markdown AUTHORS) | cat docs/_header.html - docs/_footer.html > docs/authors.html
 $ (markdown LICENSE) | cat docs/_header.html - docs/_footer.html > docs/license.html
-{% endhighlight %}
+```
 
 ## Creating the example pages
 
@@ -216,9 +216,9 @@ all the comments displayed alongside the code.
 
 Executing the Docco command is trivial:
 
-{% highlight bash %}
+```bash
 $ docco examples/*
-{% endhighlight %}
+```
 
 This will create an HTML file in the `doc/` folder for each file in the `examples/` folder. It
 will also create a `docco.css` which will make the HTML example files look beautiful.
@@ -227,7 +227,7 @@ will also create a `docco.css` which will make the HTML example files look beaut
 
 Now you have the full public site inside the `docs/` folder, which will look more or less like this:
 
-{% highlight bash %}
+```bash
 $ tree docs/
 docs
 ├── example1.html
@@ -241,7 +241,7 @@ docs
 │   └── sh_javascript.min.js
 └── stylesheets
     └── main.css
-{% endhighlight %}
+```
 
 What we want to do now is to move all those files to the `gh-pages` branch to allow GitHub to create
 our [repository Page](http://pages.github.com/).
@@ -267,20 +267,20 @@ branch.
 
 To do all this we only need the following 4 commands:
 
-{% highlight bash %}
+```bash
 $ git checkout -b gh-pages
 $ ls | grep -v docs | xargs rm -rf
 $ git mv docs/* .
 $ git commit -a -m "Initial commit in pages branch"
-{% endhighlight %}
+```
 
 This has to be done only once: once the branch is created, everytime you want to update the `gh-pages` branch
 you only have to merge the changes from the `master` branch:
 
-{% highlight bash %}
+```bash
 $ git checkout gh-pages
 $ git merge -s subtree master
-{% endhighlight %}
+```
 
 It's important to specify the Subtree merging strategy when performing the merge, this way git will
 detect that all the changes in the `docs/` subfolder have to go to the root folder and you won't get
@@ -295,10 +295,10 @@ clearly the relation between the public site and the library code:
 
 Now that everything is ready, you only have to create the git tag and push everything to GitHub:
 
-{% highlight bash %}
+```bash
 $ git tag 1.0.0
 $ git push origin master gh-pages 1.0.0
-{% endhighlight %}
+```
 
 # 7. Publish the new version to the correspondent library repository
 
@@ -306,16 +306,16 @@ This last step depends on the package manager where you want to upload your libr
 Most package managers provide really good tools that simplify a lot the upload process... for example,
 if you use RubyGems you'll only have to do:
 
-{% highlight bash %}
+```bash
 $ gem build myawesomelibrary.gemspec
 $ gem push myawesomelibrary-1.0.0.gem
-{% endhighlight %}
+```
 
 Or in Node.js if you are using `npm` it's even simpler:
 
-{% highlight bash %}
+```bash
 $ npm publish
-{% endhighlight %}
+```
 
 # One more thing...
 
@@ -324,7 +324,7 @@ If you are developing Node.js packages, you can check out my
 them are even improved) and exposes everything in a very simple API. For instance, the whole previous release
 process can be automated using the following task:
 
-{% highlight javascript %}
+```javascript
 releaseTools = require('releasetools');
 
 Step(function(){
@@ -347,4 +347,4 @@ Step(function(){
     releaseTools.npmPublish()
   }
 )
-{% endhighlight %}
+```

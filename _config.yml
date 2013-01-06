@@ -12,3 +12,5 @@ author_email: rafeca@gmail.com
 analytics_ua: UA-6212472-4
 feedburner_id: rafeca
 disqus_id:    rafeca
+auto:         true
+server:       true

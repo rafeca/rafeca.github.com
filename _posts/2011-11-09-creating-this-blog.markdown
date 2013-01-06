@@ -10,13 +10,13 @@ explain a little bit how I set up everything.
 
 # Choosing Jekyll as a blog system
 
-Instead of using a more classic blog system like Wordpress or Drupal, I decided to try 
+Instead of using a more classic blog system like Wordpress or Drupal, I decided to try
 [Jekyll](http://jekyllrb.com/), which is a static site generator written in Ruby. It does not
 require any DB and it doesn't have any dynamic generated page: it just parses a set of plain text
-files that contain the posts and templates and generates static HTML files that can be 
+files that contain the posts and templates and generates static HTML files that can be
 served with any Web Server.
 
-There is a lot of info on the net about Jekyll, you can find out more about it in 
+There is a lot of info on the net about Jekyll, you can find out more about it in
 [its official wiki](https://github.com/mojombo/jekyll/wiki/Usage).
 
 
@@ -41,7 +41,7 @@ of config parameters (the same applies to those insane CSS files) anymore.
 
 ## GitHub hosting
 
-Well, it turns out that 
+Well, it turns out that
 [GitHub pages support Jekyll](http://pages.github.com/#using_jekyll_for_complex_layouts), so
 just by creating a GIT repository with a Jekyll blog, GitHub automatically creates all the blog
 static pages and each time I push new code, the blog is regenerated... an awesome hosting for free!
@@ -67,7 +67,7 @@ Ok, now let's talk about real stuff... Those are the basic steps I followed to c
 
 # Creating the templates
 
-This was actually the easiest part, I just created the main layout in `_layouts/default.html` 
+This was actually the easiest part, I just created the main layout in `_layouts/default.html`
 and a layout for the posts  in `_layout/post.html`, which inherits from the main layout. Jekyll
 uses the [Liquid template engine](http://liquidmarkup.org/), which has the following beautiful format:
 
@@ -107,7 +107,7 @@ But when I was creating the blog, the last version of Liquid was the 2.3.0, whic
 [code highlighting](https://github.com/imathis/octopress/issues/243) that made it crash, so I had two options:
 
 * Downgrade Liquid version to 2.2.2
-* Use [RedCarpet](https://github.com/tanoku/redcarpet), a Markdown parser created by 
+* Use [RedCarpet](https://github.com/tanoku/redcarpet), a Markdown parser created by
 [Vicent Marti](http://twitter.com/tanoku), a Catalan GitHub employee.
 
 Obviously, I chose the second option ;) To change the markdown parser in Jekyll, I had to add
@@ -128,11 +128,11 @@ As Jekylls creates static pages for the blog, it doesn't provide comments on the
   This is a really cool hack, but I didn't want to force readers to have a GitHub account and
   I wanted to allow writing the comments within the blog.
 * Use DISQUS, which is a third party commenting system that provides a Javascript widget to embed
-  comments to any page. 
+  comments to any page.
 
 At the end I opted for DISQUS, because it provides all the functionality that I need. Even though
 I don't really like its UI and I had to tweak some of its CSS classes to make it fit properly
-in the design... So maybe in the future I switch to another commenting system 
+in the design... So maybe in the future I switch to another commenting system
 
 # Other fun stuff
 
@@ -164,7 +164,7 @@ desc 'Generate tag pages'
 task :tags do
   puts "Generating tag pages..."
   require 'jekyll'
-  
+
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
   site.read_posts('')

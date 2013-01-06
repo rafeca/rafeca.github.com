@@ -453,7 +453,7 @@ nav li a:hover {
 
 @media only screen and (max-width: 480px) {
   header h1 {
-    font-size: 1.5em;  
+    font-size: 1.5em;
     text-indent: -20px;
     padding-left: 20px;
     max-width: 100%;
@@ -485,7 +485,7 @@ nav li a:hover {
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
- 
+
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
   a, a:visited { text-decoration: underline; }

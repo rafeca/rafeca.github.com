@@ -100,7 +100,7 @@ to format it clearly. This is the layout I use:
       (...)
 
 The best way to automate the generation of this file is by getting all git commit messages since
-last version. If you commit your changes using 
+last version. If you commit your changes using
 [well formed commit messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html),
 then each commit summary can be used as a single bullet point in the changelog.
 
@@ -169,7 +169,7 @@ The header partial file would look like:
   <head>
     <title>My awesome library - a library full of awesomeness</title>
     <link rel="stylesheet" media="all" href="stylesheets/main.css" />
-    
+
     <script type="text/javascript" src="javascripts/sh_main.min.js"></script>
     <script type="text/javascript" src="javascripts/sh_javascript.min.js"></script>
   </head>
@@ -220,7 +220,7 @@ Executing the Docco command is trivial:
 $ docco examples/*
 {% endhighlight %}
 
-This will create an HTML file in the `doc/` folder for each file in the `examples/` folder. It 
+This will create an HTML file in the `doc/` folder for each file in the `examples/` folder. It
 will also create a `docco.css` which will make the HTML example files look beautiful.
 
 ## Creating/updating the gh-pages branch

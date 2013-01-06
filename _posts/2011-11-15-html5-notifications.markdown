@@ -15,15 +15,15 @@ suitable for use in few very specific scenarios... use them with care!
 
 # Who's already using Web notifications
 
-As the spec and the first implementation of Web notifications were written by Google, they were the first to use 
-them in a real world product: in fact Gmail 
+As the spec and the first implementation of Web notifications were written by Google, they were the first to use
+them in a real world product: in fact Gmail
 [has been using them](http://gmailblog.blogspot.com/2011/01/desktop-notifications-for-emails-and.html) for several months.
 
 # How to use them
 
 To use the Notifications API, first of all you have to let the user grant permissions to your page to show notifications.
 
-To do so, the first to do is to check if she has already granted the permissions by calling the `checkPermission()` 
+To do so, the first to do is to check if she has already granted the permissions by calling the `checkPermission()`
 method. This method returns 0 in case the user has already granted permissions and 1 if not:
 
 {% highlight javascript %}
@@ -50,7 +50,7 @@ var askForPermissions = function askForPermissions() {
 {% endhighlight %}
 
 Also, it's very important to point out that the `requestPermission()` method only works when it's been triggered by a
-user-generated event, like a `click` or `keypress` event (to prevent unsolicited requests). So we have to create a 
+user-generated event, like a `click` or `keypress` event (to prevent unsolicited requests). So we have to create a
 button in our app to ask for notification permissions:
 
 {% highlight html %}
@@ -78,17 +78,17 @@ var sendNotification = function sendNotification(image, title, message, timeout,
 
   // Check if the browser window is focused
   var isWindowFocused = document.querySelector(":focus") === null ? false : true;
-  
+
   // Check if we should send the notification based on the showOnFocus parameter
   var shouldNotify = !isWindowFocused || isWindowFocused && showOnFocus;
-  
+
   if (window.webkitNotifications && shouldNotify) {
     // Create the notification object
     var notification = window.webkitNotifications.createNotification(image, title, message);
-    
+
     // Display the notification
     notification.show();
-    
+
     if (timeout > 0) {
       // Hide the notification after the timeout
       setTimeout(function(){

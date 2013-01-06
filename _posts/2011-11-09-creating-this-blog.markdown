@@ -71,7 +71,7 @@ This was actually the easiest part, I just created the main layout in `_layouts/
 and a layout for the posts  in `_layout/post.html`, which inherits from the main layout. Jekyll
 uses the [Liquid template engine](http://liquidmarkup.org/), which has the following beautiful format:
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -86,7 +86,7 @@ uses the [Liquid template engine](http://liquidmarkup.org/), which has the follo
     </ul>
   </body>
 </html>
-```
+{% endhighlight %}
 
 You can check both templates in my GitHub repository: [`_layouts/`](https://github.com/rafeca/rafeca.github.com/blob/master/_layouts/)
 
@@ -94,14 +94,14 @@ You can check both templates in my GitHub repository: [`_layouts/`](https://gith
 
 Liquid automatically parses source code and highlights it when it finds the `highlight` tag:
 
-```javascript
+{% highlight javascript %}
 {{ "{% highlight javascript"}} %}
   setTimeout(function(){
     console.log('world');
   }, 100);
   console.log('hello');
 {{ "{% endhighlight "}}%}
-```
+{% endhighlight %}
 
 But when I was creating the blog, the last version of Liquid was the 2.3.0, which had a bug on
 [code highlighting](https://github.com/imathis/octopress/issues/243) that made it crash, so I had two options:
@@ -113,9 +113,9 @@ But when I was creating the blog, the last version of Liquid was the 2.3.0, whic
 Obviously, I chose the second option ;) To change the markdown parser in Jekyll, I had to add
 a new config parameter in the Jekyll `_config.yml` file:
 
-```yaml
+{% highlight yaml %}
 markdown: redcarpet
-```
+{% endhighlight %}
 
 # Adding comments
 
@@ -139,7 +139,7 @@ in the design... So maybe in the future I switch to another commenting system
 I wanted to have a way to list all the posts with a certain tag, and to accomplish it I needed to create a
 static page for every tag, which would look like this:
 
-```html
+{% highlight html %}
 ---
 layout: default
 title: Thoughts by rafeca
@@ -151,7 +151,7 @@ title: Thoughts by rafeca
     {{"{% include post.html "}}%}
   {{"{% endfor "}}%}
 </ul>
-```
+{% endhighlight %}
 
 To create all those pages I used a [Rake](http://rake.rubyforge.org/) task (Rake is a build library for Ruby).
 I opted to use Rake because Jekyll is written in Ruby, so this way I could access natively to the Jekylls API
@@ -159,7 +159,7 @@ to get the list of tags.
 
 This is the Rake task that I'm using (it's a slightly modified version of this [Gist](https://gist.github.com/790778)):
 
-```ruby
+{% highlight ruby %}
 desc 'Generate tag pages'
 task :tags do
   puts "Generating tag pages..."
@@ -191,14 +191,14 @@ title: Thoughts by rafeca
   end
   puts 'Done!'
 end
-```
+{% endhighlight %}
 
 As you can see I'm iterating over all the Jekyll categories and creating the HTML file for each category.
 Pretty simple, huh?
 
 So, this way the only thing I have to do before committing a new post is to execute the Rake task:
 
-```bash
+{% highlight bash %}
 $ rake tags
 Generating tag pages...
 Configuration from _config.yml
@@ -207,7 +207,7 @@ tag/git.html generated!
 tag/markdown.html generated!
 tag/ruby.html generated!
 Done!
-```
+{% endhighlight %}
 
 # Conclusions
 

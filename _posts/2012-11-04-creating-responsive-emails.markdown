@@ -52,11 +52,11 @@ as a responsive design.
 
 Even though, it has two subtle effects that have been implemented using CSS rules not recommended for emails:
 
-```html
+{% highlight html %}
 <table class="box" width="580" cellpadding="0" cellspacing="0" border="0" style="border-radius: 7px;">
   <tr>
     <td class="boxcell" width="580" style="background-image: url(black-triangle.png);">
-```
+{% endhighlight %}
 
 Rules like `border-radius` and `background-image` won't be supported by all the email clients, but this is not a big deal as
 long as the email still looks well on those clients:
@@ -78,24 +78,24 @@ The first thing to do to make it look better is to change the main container wid
 this way the mail client won't need to rescale it. To do so, we can use CSS media queries (notice that smartphone
 email clients, as opposite to webmail clients, are able to read CSS properties not defined inline):
 
-```html
+{% highlight html %}
 <style>
 @media only screen and (max-width: 480px) {
   /** your mobile styles go here **/
 }
 </style>
-```
+{% endhighlight %}
 
 Now, inside the media query, we should redefine every table width to match the mobile horizontal size. If desktop emails
 use 600px as a standard width, 320px is a good size to choose for the mobile version.
 
-```css
+{% highlight css %}
 @media only screen and (max-width: 480px) {
   table[class="box"], td[class="box"] {
     width: 300px !important;
   }
 }
-```
+{% endhighlight %}
 
 (Note that attribute selectors are being used to [prevent Yahoo! Mail from displaying the mobile version]
 (http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email/)).
@@ -110,13 +110,13 @@ tables to become thinner... so we'll have to reduce the image sizes as well.
 
 The most efficient way to do so is by setting a `max-width` for all the images:
 
-```css
+{% highlight css %}
 @media only screen and (max-width: 480px) {
   table[class="container"] img {
     max-width: 100% !important;
   }
 }
-```
+{% endhighlight %}
 
 Also, we can change font sizes, margins, and even hide elements... whatever is needed to make the email look good on smaller screens.
 
@@ -134,13 +134,13 @@ rule for each image.
 
 First of all, we should put the image element inside a parent element that can be uniquely identified on the CSS:
 
-```html
+{% highlight html %}
 <div id="info-goodybags"><img src="gfx/info-goodybags.png"/></div>
-```
+{% endhighlight %}
 
 Now, we should hide the image tag and apply a background image to the container element inside the media query:
 
-```css
+{% highlight css %}
 @media only screen and (max-width: 480px) {
   div[id="info-goodybags"] img {
     display: none !important;
@@ -152,7 +152,7 @@ Now, we should hide the image tag and apply a background image to the container 
     height: 139px;
   }
 }
-```
+{% endhighlight %}
 
 With this, we can use a smaller image for mobile that won't be scaled down on mobile devices and therefore it will look much better:
 
@@ -169,7 +169,7 @@ image by its high-resolution alternative, but it becomes a crafting job to do th
 
 Using media queries we can target mobile devices with high-resolution displays and make them render the optimized images:
 
-```css
+{% highlight css %}
 @media only screen and (max-width: 480px) {
   div[id="info-goodybags"] img {
     display: none !important;
@@ -188,7 +188,7 @@ Using media queries we can target mobile devices with high-resolution displays a
     background-size: 210px 139px;
   }
 }
-```
+{% endhighlight %}
 
 **Note:** We can also provide high resolution images for the desktop version of the image, but this would mean creating yet
 another CSS rule and another version of each image and another and in this case it wouldn't be available to most email clients
@@ -207,7 +207,7 @@ in the mobile version:
 
 To do so, we should have an html like:
 
-```html
+{% highlight html %}
 <table class="linkstable" width="540" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td class="linkscell">
@@ -219,13 +219,13 @@ To do so, we should have an html like:
         </tr>
       </table>
       <!-- Two more columns ... -->
-```
+{% endhighlight %}
 
 As you can see a nested table inside each column is needed, which makes HTML more verbose and complicated.
 
 Now, to display these columns as a single column in the mobile version, we have to redefine the style again using media queries:
 
-```css
+{% highlight css %}
 @media only screen and (max-width: 480px) {
   table[class="linkstable"] {
     width: 260px !important;
@@ -240,7 +240,7 @@ Now, to display these columns as a single column in the mobile version, we have 
     margin-top: 15px;
   }
 }
-```
+{% endhighlight %}
 
 The important rule here is the `display: block`. It will make the table cells behave like regular block elements and then they
 will be moved one at the bottom of the other:

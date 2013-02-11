@@ -1,0 +1,14 @@
+---
+layout: default
+title: Thoughts by rafeca
+---
+<header>
+  <h1><a class="fadedlink" href="/" title="Home">&laquo;</a> {{ site.title }}</h1>
+  <h2>Posts in category "css"</h2>
+</header>
+
+<ul>
+  {% for post in site.categories.css %}
+    {% include post.html %}
+  {% endfor %}
+</ul>

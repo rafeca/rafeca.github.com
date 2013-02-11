@@ -84,7 +84,9 @@ var sendNotification = function sendNotification(image, title, message, timeout,
 
   if (window.webkitNotifications && shouldNotify) {
     // Create the notification object
-    var notification = window.webkitNotifications.createNotification(image, title, message);
+    var notification = window.webkitNotifications.createNotification(
+      image, title, message
+    );
 
     // Display the notification
     notification.show();

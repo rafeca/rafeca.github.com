@@ -69,7 +69,9 @@ For example in Node.js packages, if you want to make the version available to th
 good to do the following:
 
 {% highlight javascript %}
-exports.version = JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version;
+exports.version = JSON.parse(
+  fs.readFileSync(__dirname + '/../package.json', 'utf8')
+).version;
 {% endhighlight %}
 
 This way you only have to change the library version in a single place, so it will be easier to create
@@ -193,8 +195,7 @@ Between the header and the footer files you can add as much information as you w
 the changelog, the contributors and even the license:
 
 {% highlight bash %}
-$ (markdown README.md && markdown History.md && markdown AUTHORS && markdown LICENSE) | \
-  cat docs/_header.html - docs/_footer.html > docs/index.html
+$ (markdown README.md && markdown History.md && markdown AUTHORS && markdown LICENSE) | cat docs/_header.html - docs/_footer.html > docs/index.html
 {% endhighlight %}
 
 This command will insert the output of the four markdown files between the `_header.html` and

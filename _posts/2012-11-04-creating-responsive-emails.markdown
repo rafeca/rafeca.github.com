@@ -218,7 +218,10 @@ To do so, we should have an html like:
           </td>
         </tr>
       </table>
-      <!-- Two more columns ... -->
+    </td>
+    <td class="linkscell">
+      <!-- (...) -->
+      <!-- second column -->
 {% endhighlight %}
 
 As you can see a nested table inside each column is needed, which makes HTML more verbose and complicated.

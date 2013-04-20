@@ -255,3 +255,9 @@ will be moved one at the bottom of the other:
 If your company uses email as an important marketing resource and you are not sending responsive emails yet, you are loosing money. There
 is no technical or business reason to not switch to responsive emails. So if you have the needed resources, redesign your emails and create
 a responsive version and your conversion rates on mobile will be improved immediately.
+
+# Update
+
+I have opensourced this whole responsive email as a template, to serve as inspiration to future readers. You can find the code 
+[in GitHub](https://github.com/rafeca/email-templates).
+

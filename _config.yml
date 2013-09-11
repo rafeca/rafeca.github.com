@@ -13,6 +13,7 @@ analytics_ua: UA-32824811-1
 feedburner_id: juandebravo
 disqus_id:    juandebravo
 emoji:        gfx/emoji
+posts:		  _posts
 navigation:
 - text: Dev Blog
   url: /index.html

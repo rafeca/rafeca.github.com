@@ -1,0 +1,20 @@
+language: ruby
+
+rvm: "1.9.3"
+
+install:
+    - bundle install
+    - rake emoji
+
+before_script: rake tags
+
+script:
+    - git checkout develop
+    - jekyll --no-server --no-safe
+    - git checkout master
+    - rm -rf 2012 2013 gfx css tag js
+    - cp -r _site/* .
+    - git add 2012 2013 2014 tag
+    - git commit -am "Added new post"
+    - git push origin master
+

@@ -22,7 +22,7 @@ script:
     - git checkout master
     - rm -rf 2012 2013 gfx css tag js
     - cp -r _site/* .
-    - git add 2012 2013 2014 tag
+    - git add 2012 2013 tag
     - git commit -am "Added new post"
 
 after_success:

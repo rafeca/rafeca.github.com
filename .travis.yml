@@ -1,6 +1,10 @@
 language: ruby
 
-rvm: "1.9.3"
+env:
+  global:
+    secure: CNw3WewLv0XHRnbeXuVMEQIMCDN3sPaZqXlmDiFi6jCYITnSnet9t86/4Ul6i5Cf/QgYgkQikizwwvunIf6MQHkV7baaLPIdbwItRdmE1SbCc2WGqnTFlih55guReJo7Q03yy6d1fgrHzSYE6hBqZQDZGL4NWbCkaRgTgiAyIpw=
+
+rvm: 1.9.3
 
 install:
     - bundle install
@@ -11,10 +15,14 @@ before_script: rake tags
 script:
     - git checkout develop
     - jekyll --no-server --no-safe
+    - rm -rf tag
     - git checkout master
     - rm -rf 2012 2013 gfx css tag js
     - cp -r _site/* .
     - git add 2012 2013 2014 tag
     - git commit -am "Added new post"
-    - git push origin master
 
+after_success:
+    - git config credential.helper "store --file=.git/credentials"
+    - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+    - git push origin master

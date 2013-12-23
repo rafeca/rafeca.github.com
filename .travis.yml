@@ -10,7 +10,10 @@ install:
     - bundle install
     - rake emoji
 
-before_script: rake tags
+before_script:
+    - rake tags
+    - git config --global user.email "juandebravo@gmail.com"
+    - git config --global user.name "Juan de Bravo"
 
 script:
     - git checkout develop

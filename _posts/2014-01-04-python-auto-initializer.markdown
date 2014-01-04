@@ -81,6 +81,6 @@ class Foo(object):
 f = Foo(1, 2, 4)
 
 print f.x, f.y, f.a, f.b
-// 1 2 4 10
+// 1 2 4 100
 {% endhighlight %}
 

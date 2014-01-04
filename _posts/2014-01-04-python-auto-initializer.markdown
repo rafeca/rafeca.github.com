@@ -55,7 +55,8 @@ def autoinit(fn):
             nargs[k] = kwargs[k] if k in kwargs else kwa_defaults[kwa_keys.index(k)]
 
         # Set the values to the instance attributes
-        map(lambda (k, v): setattr(self, k, v), nargs.iteritems())
+        for k, v in nargs.iteritems():
+            setattr(self, k, v)
 
         return fn(*args, **kwargs)
 
@@ -66,7 +67,7 @@ def autoinit(fn):
 The function that builds the decorator (autoinit) is doing simple things:
 
 - retrieve the parameter names and the default keyword parameter values
-- build a function, which is the value returned by the function autoinit, which will inspect both args and kwargs while creating a new instance object, retrieve the actual value for every paramter, and assign them to instance attributes.
+- build a function, which is the value returned by the function autoinit, which will inspect both args and kwargs while creating a new instance object, retrieve the actual value for every parameter, and assign them to instance attributes.
 
 An usage example:
 

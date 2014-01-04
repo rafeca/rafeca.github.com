@@ -24,6 +24,6 @@ script:
 
 after_success:
     - git config credential.helper "store --file=.git/credentials"
-    - git remote set-url origin https://github.com/juandebravo/juandebravo.github.com.git
+    - git remote set-url origin https://${GH_TOKEN}@github.com/juandebravo/juandebravo.github.com.git
     - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
     - git push origin master

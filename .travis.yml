@@ -14,14 +14,13 @@ install:
     - rake emoji
 
 before_script:
+    - rm -rf 2012 2013 2014 gfx css tag js
     - rake tags
     - git config --global user.email "juandebravo@gmail.com"
     - git config --global user.name "Juan de Bravo"
 
 script:
     - jekyll --no-server --no-safe
-    - rm -rf tag
-    - rm -rf 2012 2013 2014 gfx css tag js
     - cp -r _site/* .
     - git add 2012 2013 2014 tag
     - git commit -am "Added new post"

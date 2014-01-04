@@ -6,6 +6,7 @@ env:
 
 install:
     - bundle install
+    - pip install pygments
     - rake emoji
 
 before_script:

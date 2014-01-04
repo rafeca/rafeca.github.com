@@ -1,11 +1,8 @@
 language: ruby
-
+rvm: 1.9.3
 env:
   global:
-    secure: CNw3WewLv0XHRnbeXuVMEQIMCDN3sPaZqXlmDiFi6jCYITnSnet9t86/4Ul6i5Cf/QgYgkQikizwwvunIf6MQHkV7baaLPIdbwItRdmE1SbCc2WGqnTFlih55guReJo7Q03yy6d1fgrHzSYE6hBqZQDZGL4NWbCkaRgTgiAyIpw=
-
-rvm: 1.9.3
-
+    secure: qw47wfZJRHLrKY0WXVn6OjUPUFJH1Dz4GyqeatpAhI8X/LNqGDBvv5fj1V18TkDzfiK3R8gpIspzk9Eqed54WRu0eAmYcOzY0JdsCgisivM3AzzVS8BIoYWnPTokIzQMvZZRraVVJvOtqPdwUlVBa2EhV72QXhIx3gon/1S1ywI=
 install:
     - bundle install
     - rake emoji

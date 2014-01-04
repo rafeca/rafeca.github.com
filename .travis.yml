@@ -1,0 +1,31 @@
+language: python
+rvm: 2.6
+env:
+  global:
+    secure: qw47wfZJRHLrKY0WXVn6OjUPUFJH1Dz4GyqeatpAhI8X/LNqGDBvv5fj1V18TkDzfiK3R8gpIspzk9Eqed54WRu0eAmYcOzY0JdsCgisivM3AzzVS8BIoYWnPTokIzQMvZZRraVVJvOtqPdwUlVBa2EhV72QXhIx3gon/1S1ywI=
+
+branches:
+  only: 
+    - master
+
+install:
+    - bundle install
+    - pip install pygments
+    - rake emoji
+
+before_script:
+    - rake tags
+    - git config --global user.email "juandebravo@gmail.com"
+    - git config --global user.name "Juan de Bravo"
+
+script:
+    - jekyll --no-server --no-safe
+    - rm -rf tag
+    - rm -rf 2012 2013 2014 gfx css tag js
+    - cp -r _site/* .
+    - git add 2012 2013 2014 tag
+    - git commit -am "Added new post"
+
+after_success:
+    - git remote set-url origin https://${GH_TOKEN}@github.com/juandebravo/juandebravo.github.com.git
+    - git push origin master

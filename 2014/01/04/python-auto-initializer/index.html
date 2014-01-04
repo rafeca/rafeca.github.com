@@ -117,7 +117,8 @@
             <span class="n">nargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">else</span> <span class="n">kwa_defaults</span><span class="p">[</span><span class="n">kwa_keys</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
 
         <span class="c"># Set the values to the instance attributes</span>
-        <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">),</span> <span class="n">nargs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nargs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
@@ -129,7 +130,7 @@
 
 <ul>
 <li>retrieve the parameter names and the default keyword parameter values</li>
-<li>build a function, which is the value returned by the function autoinit, which will inspect both args and kwargs while creating a new instance object, retrieve the actual value for every paramter, and assign them to instance attributes.</li>
+<li>build a function, which is the value returned by the function autoinit, which will inspect both args and kwargs while creating a new instance object, retrieve the actual value for every parameter, and assign them to instance attributes.</li>
 </ul>
 
 <p>An usage example:</p>
@@ -143,7 +144,7 @@
 <span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">f</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">b</span>
-<span class="o">//</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">10</span>
+<span class="o">//</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">100</span>
 </code></pre>
 </div>
 

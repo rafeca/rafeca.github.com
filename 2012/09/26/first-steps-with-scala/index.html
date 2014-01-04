@@ -78,36 +78,15 @@
 
 <h1>1. Install the interpreter</h1>
 
-<div class="highlight"><pre><code class="bash">brew install scala
-</code></pre>
-</div>
-
 <h1>2. Install SBT, the build tool</h1>
 
 <p><a href="https://github.com/harrah/xsbt/wiki">SBT</a> is for Scala what Maven is for Java. I haven't used it in depth yet, but hopefully it'll suck less than Maven.</p>
-
-<div class="highlight"><pre><code class="bash">brew install sbt
-</code></pre>
-</div>
 
 <h1>3. Write your first Scala code using the Scala REPL</h1>
 
 <p>Scala provides a built-in interpreter (Read-Evaluate-Print Loop) to write and run Scala code very easily.</p>
 
 <p>You can run the Scala <strong>REPL</strong> either using sbt or <strong>scala</strong> command:</p>
-
-<div class="highlight"><pre><code class="bash"><span class="c"># Using SBT</span>
-juandebravo <span class="o">[</span>~/bin<span class="o">]</span> λ sbt console
-scala&gt;
-scala&gt; println<span class="o">(</span><span class="s2">&quot;Hello world&quot;</span><span class="o">)</span>
-Hello world
-<span class="c"># Using scala</span>
-juandebravo <span class="o">[</span>~/bin<span class="o">]</span> λ scala
-scala&gt;
-scala&gt; println<span class="o">(</span><span class="s2">&quot;Hello world&quot;</span><span class="o">)</span>
-Hello world
-</code></pre>
-</div>
 
 <h1>4. Configure your IDE of choice. Sublime Text 2</h1>
 
@@ -117,14 +96,6 @@ Hello world
 Follow the instructions in the <a href="https://github.com/sublimescala/sublime-ensime">sublime-ensime github main page</a> to make it work.</p>
 
 <p>Some months ago I created project showing some cool Scala features, check it out in my <a href="https://github.com/juandebravo/scala-examples">github repository</a>. To run it using Sublime Text 2, create a new Build system with the following configuration:</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="p">{</span>
-    <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;sbt&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;selector&quot;</span><span class="o">:</span> <span class="s2">&quot;source.scala&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;working_dir&quot;</span><span class="o">:</span> <span class="s2">&quot;${project_path}&quot;</span>
-<span class="p">}</span>
-</code></pre>
-</div>
 
   
   <p class="back">&laquo; <a href="/">Home</a></p>

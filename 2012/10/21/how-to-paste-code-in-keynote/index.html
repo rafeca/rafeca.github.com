@@ -75,16 +75,6 @@ Eventually I tidy up my long list of unread interesting stuff and today I found 
 
 <p>There was <a href="https://twitter.com/spastorino/status/250708430036295681">this tweet</a> from <a href="https://twitter.com/spastorino/">Santiago Pastorino</a> about how to include highlighted code into a Keynote.app presentation:</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Copy the text to the pasteboard from your editor</span>
-
-<span class="c"># &lt;language&gt; should be a programming language supported by pygmentize.</span>
-
-pbpaste | pygmentize -l &lt;language&gt; -f rtf | pbcopy
-
-<span class="c"># Paste the pasteboard content into Keynote.app</span>
-</code></pre>
-</div>
-
 <p>As simple as that. Keynote.app recognizes automatically the RTF format and therefore the code is highlighted as defined by pygmentize. Awesome tip!</p>
 
 <p>Two last comments:</p>

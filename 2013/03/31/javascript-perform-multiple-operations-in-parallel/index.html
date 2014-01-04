@@ -82,124 +82,17 @@
 
 <h1>1.- Create the HTML skeleton to print the user profiles</h1>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;table&gt;</span>
-        <span class="nt">&lt;thead&gt;</span>
-            <span class="nt">&lt;tr&gt;</span>
-              <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
-              <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;profile&quot;</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/th&gt;</span>
-            <span class="nt">&lt;/tr&gt;</span>
-        <span class="nt">&lt;/thead&gt;</span>
-        <span class="nt">&lt;tbody</span> <span class="na">id=</span><span class="s">&quot;profiles&quot;</span><span class="nt">&gt;&lt;/tbody&gt;</span>
-    <span class="nt">&lt;/table&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;error&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre>
-</div>
-
 <h1>2.- Create a simple function to retrieve user profiles</h1>
 
 <p>For the sake of simplicity, I've mocked the profile database using an in-memory dictionary:</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Profile</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">profile</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">profile</span> <span class="o">=</span> <span class="nx">profile</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kd">var</span> <span class="nx">ProfileDB</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">john</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Profile</span><span class="p">(</span><span class="s2">&quot;john&quot;</span><span class="p">,</span> <span class="s2">&quot;manager&quot;</span><span class="p">),</span>
-        <span class="nx">mark</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Profile</span><span class="p">(</span><span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="s2">&quot;developer&quot;</span><span class="p">),</span>
-        <span class="nx">thomas</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Profile</span><span class="p">(</span><span class="s2">&quot;thomas&quot;</span><span class="p">,</span> <span class="s2">&quot;QA&quot;</span><span class="p">)</span>
-    <span class="p">};</span>
-
-    <span class="kd">var</span> <span class="nx">_getUserProfile</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nx">users</span><span class="p">[</span><span class="nx">user</span><span class="p">];</span>
-            <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">profile</span> <span class="o">===</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">error</span><span class="p">(</span><span class="s2">&quot;profile &quot;</span> <span class="o">+</span> <span class="nx">user</span> <span class="o">+</span> <span class="s2">&quot; not found&quot;</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="p">{</span>
-                <span class="k">if</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="c1">// simulate a random delay between 0 and 1 seconds</span>
-                    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">profile</span><span class="p">),</span> <span class="mi">1000</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
-                <span class="p">}</span>
-                <span class="k">else</span> <span class="p">{</span>
-                    <span class="k">return</span> <span class="nx">users</span><span class="p">[</span><span class="nx">user</span><span class="p">];</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">};</span>
-
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">getUserProfile</span><span class="o">:</span> <span class="nx">_getUserProfile</span>
-    <span class="p">};</span>
-
-<span class="p">})();</span>
-</code></pre>
-</div>
 
 <h1>3.- Create a function to retrieve a set of users profile and execute a callback upon every profile retrieval</h1>
 
 <p>In this step we're building the function that will start in parallel the required operations and execute the relevant callback (success or error in case of any failure):</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">getUserProfiles</span><span class="p">(</span><span class="nx">users</span><span class="p">,</span> <span class="nx">onsuccess</span><span class="p">,</span> <span class="nx">onerror</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// number of pending operations</span>
-    <span class="kd">var</span> <span class="nx">pending</span> <span class="o">=</span> <span class="nx">users</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-    <span class="c1">// store results in this array</span>
-    <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">pending</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// execute callback if users is empty</span>
-        <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">onsuccess</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">result</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="nx">users</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">ProfileDB</span><span class="p">.</span><span class="nx">getUserProfile</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">profile</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">profile</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="nx">pending</span><span class="o">--</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="nx">pending</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                <span class="c1">// every profile has been retrieved, execute callback</span>
-                <span class="nx">onsuccess</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// execute error callback</span>
-            <span class="nx">onerror</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
 <h1>4.- Create the client to retrieve a list of user profiles</h1>
 
 <p>Step 4 creates the client that will use the function created in step 3. We need to provide callbacks for both success and error scenearios. Upon success, users profile are printed in the HTML skeleton built in step 1. In case of error, the specific message is shown in the div element:</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">userElement</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">profile</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">_name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
-    <span class="nx">_name</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">name</span><span class="p">));</span>
-    <span class="kd">var</span> <span class="nx">_profile</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
-    <span class="nx">_profile</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">profile</span><span class="p">));</span>
-    <span class="nx">el</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">_name</span><span class="p">);</span>
-    <span class="nx">el</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">_profile</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">el</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">getUserProfiles</span><span class="p">([</span><span class="s2">&quot;john&quot;</span><span class="p">,</span> <span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="s2">&quot;thomas&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">profiles</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">fragment</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createDocumentFragment</span><span class="p">();</span>
-        <span class="nx">profiles</span> <span class="o">=</span> <span class="nx">profiles</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">profile</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">fragment</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">userElement</span><span class="p">(</span><span class="nx">profile</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">profile</span><span class="p">));</span>
-        <span class="p">});</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;profiles&quot;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fragment</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
-    <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
-        <span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-        <span class="nx">el</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
-    <span class="p">});</span>
-<span class="p">})();</span>
-</code></pre>
-</div>
 
 <h1>5.- Run it</h1>
 

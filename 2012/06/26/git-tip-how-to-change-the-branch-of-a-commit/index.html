@@ -82,46 +82,12 @@ Sometimes while you're starting a new feature, you forget changing your current 
 <h1>1.- Prerequisites</h1>
 
 <ul>
-<li>Create the repository with an initial content and create the develop branch.</li>
+<li><p>Create the repository with an initial content and create the develop branch.</p></li>
+<li><p>Create your feature branch</p></li>
+<li><p>Commit a change to develop (instead of your feature branch)</p></li>
 </ul>
-
-<div class="highlight"><pre><code class="bash">bundle gem foo_bar
-<span class="nb">cd </span>foo_bar
-git commit -am <span class="s2">&quot;first commit&quot;</span>
-git checkout -b develop
-<span class="c"># modify version.rb file to increase the version number</span>
-git commit -am <span class="s2">&quot;bump version&quot;</span>
-</code></pre>
-</div>
-
-<ul>
-<li>Create your feature branch</li>
-</ul>
-
-<div class="highlight"><pre><code class="bash">git branch feature/hello
-git lg                                                                                                                                   
-* d62b49a - <span class="o">(</span>HEAD, feature/hello, develop<span class="o">)</span> bump version - juandebravo <span class="o">(</span>66 seconds ago<span class="o">)</span>
-* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span>2 minutes ago<span class="o">)</span>
-</code></pre>
-</div>
-
-<ul>
-<li>Commit a change to develop (instead of your feature branch)</li>
-</ul>
-
-<div class="highlight"><pre><code class="bash"><span class="nb">echo</span> <span class="s2">&quot;require &#39;foo_bar/version&#39;\n\nmodule FooBar\n  def self.hello(name)\n    print \&quot;hello #{name}\&quot;\n  end\nend&quot;</span> &gt; lib/foo_bar.rb
-git commit -am <span class="s2">&quot;add hello method&quot;</span>
-</code></pre>
-</div>
 
 <p>WRONG! You commit to develop instead of feature/hello</p>
-
-<div class="highlight"><pre><code class="bash">git lg
-* ecd59c3 - <span class="o">(</span>HEAD, develop<span class="o">)</span> add hello method - juandebravo <span class="o">(</span>2 seconds ago<span class="o">)</span>
-* d62b49a - <span class="o">(</span>feature/hello<span class="o">)</span> bump version - juandebravo <span class="o">(</span>40 minutes ago<span class="o">)</span>
-* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span>40 minutes ago<span class="o">)</span>
-</code></pre>
-</div>
 
 <h1>2.- Fix the wrong commit</h1>
 
@@ -129,32 +95,11 @@ git commit -am <span class="s2">&quot;add hello method&quot;</span>
 <li>Merge develop to your feature branch</li>
 </ul>
 
-<div class="highlight"><pre><code class="bash">git checkout feature/crud_users
-git merge develop
-git lg
-* ecd59c3 - <span class="o">(</span>HEAD, feature/hello, develop<span class="o">)</span> add hello method - juandebravo <span class="o">(</span>3 minutes ago<span class="o">)</span>
-* d62b49a - bump version - juandebravo <span class="o">(</span>43 minutes ago<span class="o">)</span>
-* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span>44 minutes ago<span class="o">)</span>
-</code></pre>
-</div>
-
 <p>Now you already have the change in your feature branch. Now it's time to remove it from develop branch.</p>
 
 <ul>
-<li>Remove the commit from develop branch</li>
-</ul>
-
-<div class="highlight"><pre><code class="bash">git checkout develop
-git reset --hard HEAD~1
-git lg
-* ecd59c3 - <span class="o">(</span>feature/hello<span class="o">)</span> add hello method - juandebravo <span class="o">(</span>4 minutes ago<span class="o">)</span>
-* d62b49a - <span class="o">(</span>HEAD, develop<span class="o">)</span> bump version - juandebravo <span class="o">(</span>44 minutes ago<span class="o">)</span>
-* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span>44 minutes ago<span class="o">)</span>
-</code></pre>
-</div>
-
-<ul>
-<li>That's all!!</li>
+<li><p>Remove the commit from develop branch</p></li>
+<li><p>That's all!!</p></li>
 </ul>
 
   

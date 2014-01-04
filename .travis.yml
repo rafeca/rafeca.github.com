@@ -3,6 +3,7 @@ rvm: 1.9.3
 env:
   global:
     secure: qw47wfZJRHLrKY0WXVn6OjUPUFJH1Dz4GyqeatpAhI8X/LNqGDBvv5fj1V18TkDzfiK3R8gpIspzk9Eqed54WRu0eAmYcOzY0JdsCgisivM3AzzVS8BIoYWnPTokIzQMvZZRraVVJvOtqPdwUlVBa2EhV72QXhIx3gon/1S1ywI=
+
 install:
     - bundle install
     - rake emoji
@@ -23,7 +24,5 @@ script:
     - git commit -am "Added new post"
 
 after_success:
-    - git config credential.helper "store --file=.git/credentials"
     - git remote set-url origin https://${GH_TOKEN}@github.com/juandebravo/juandebravo.github.com.git
-    - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
     - git push origin master

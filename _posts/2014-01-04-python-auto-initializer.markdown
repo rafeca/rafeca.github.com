@@ -52,8 +52,7 @@ def autoinit(fn):
         nargs = dict((k, nargs[names.index(k)]) for k in names)
         # Add the keyword arguments
         for k in kwa_keys:
-            nargs[k] = kwargs[k] if k in kwargs else
-kwa_defaults[kwa_keys.index(k)]
+            nargs[k] = kwargs[k] if k in kwargs else kwa_defaults[kwa_keys.index(k)]
 
         # Set the values to the instance attributes
         map(lambda (k, v): setattr(self, k, v), nargs.iteritems())

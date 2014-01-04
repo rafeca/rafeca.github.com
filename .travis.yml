@@ -1,5 +1,5 @@
-language: ruby
-rvm: 1.9.3
+language: python
+rvm: 2.6
 env:
   global:
     secure: qw47wfZJRHLrKY0WXVn6OjUPUFJH1Dz4GyqeatpAhI8X/LNqGDBvv5fj1V18TkDzfiK3R8gpIspzk9Eqed54WRu0eAmYcOzY0JdsCgisivM3AzzVS8BIoYWnPTokIzQMvZZRraVVJvOtqPdwUlVBa2EhV72QXhIx3gon/1S1ywI=

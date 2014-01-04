@@ -96,23 +96,7 @@
 
 <h3>Example</h3>
 
-<div class="highlight"><pre><code class="python"><span class="n">users</span> <span class="o">=</span> <span class="p">[{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;John Doe&#39;</span><span class="p">,</span> <span class="s">&#39;email&#39;</span><span class="p">:</span> <span class="s">&#39;john@doe.com&#39;</span><span class="p">},</span>
-         <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Mike Cunhingam&#39;</span><span class="p">,</span> <span class="s">&#39;email&#39;</span><span class="p">:</span> <span class="s">&#39;mike@cunhingam.com&#39;</span><span class="p">}]</span>
-
-<span class="c"># Retrieve users email</span>
-<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="p">[</span><span class="s">&#39;email&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">]</span>
-</code></pre>
-</div>
-
 <p>Of course something similar can be done in ruby, but after some weeks I felt comfortable with the idea of iterate over objects in an array without calling a specific object method:</p>
-
-<div class="highlight"><pre><code class="ruby"><span class="n">users</span> <span class="o">=</span> <span class="o">[</span><span class="p">{</span><span class="nb">name</span><span class="p">:</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="s1">&#39;john@doe.com&#39;</span><span class="p">},</span>
-         <span class="p">{</span><span class="nb">name</span><span class="p">:</span> <span class="s1">&#39;Mike Cunhingam&#39;</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="s1">&#39;mike@cunhingam.com&#39;</span><span class="p">}</span><span class="o">]</span>
-
-<span class="c1"># Retrieve users email</span>
-<span class="n">emails</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="o">[</span><span class="ss">:email</span><span class="o">]</span><span class="p">}</span>
-</code></pre>
-</div>
 
 <p>List comprehensions can be used with any iterable object, as strings and arrays instances.</p>
 
@@ -134,18 +118,18 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">04 Jan 2014</span>
+  <a href="/2014/01/04/python-auto-initializer" title="Building an automatic initializer in python">Building an automatic initializer in python</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">11 Sep 2013</span>
+  <a href="/2013/09/11/encoding-exercise-in-python" title="Encoding exercise in python">Encoding exercise in python</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">31 Mar 2013</span>
   <a href="/2013/03/31/javascript-perform-multiple-operations-in-parallel" title="JavaScript, perform multiple operations in parallel">JavaScript, perform multiple operations in parallel</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">30 Dec 2012</span>
-  <a href="/2012/12/30/sbt-run-select-main-class" title="SBT run&#58; choose automatically the App to launch">SBT run&#58; choose automatically the App to launch</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">01 Dec 2012</span>
-  <a href="/2012/12/01/git-internals-lecture" title="About git internals">About git internals</a>
 </li>
   
 </ul-->

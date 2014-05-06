@@ -227,9 +227,9 @@ header {
 
 .title {
   height: 30px;
-  padding: 20px 30px;
-  width: 750px;
-  margin: 30px auto;
+  padding: 20px;
+  margin: 30px;
+  text-align: center;
 }
 
 .title h1 a {
@@ -535,10 +535,20 @@ nav li a:hover {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width: 750px) {
-  #container {
-    width: 94%;
+@media only screen and (max-width: 980px) {
+  .main_container {
+    width: 86%;
+
+  }
+
+  .container {
+    width: 75%;
     padding: 0 3%;
+    float: left;
+  }
+
+  .menu {
+    text-align: left;
   }
 
   h1 {
@@ -573,7 +583,8 @@ nav li a:hover {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 580px) {
+
   h1 {
     font-size: 1.5em;
     text-indent: -20px;

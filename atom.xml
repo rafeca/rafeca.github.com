@@ -4,7 +4,7 @@
  <title>juandebravo's personal blog</title>
  <link href="http://feeds.feedburner.com/juandebravo" rel="self"/>
  <link href="http://juandebravo.com"/>
- <updated>2014-11-16T14:05:34+01:00</updated>
+ <updated>2014-11-22T15:47:22+01:00</updated>
  <id>http://juandebravo.com</id>
  <author>
    <name>Juan de Bravo</name>
@@ -14,34 +14,54 @@
  
  <entry>
    <title>Using travis-ci to build this blog</title>
-   <link href="http://juandebravo.com/2014/11/18/using-travis-ci-to-build-this-blog"/>
-   <updated>2014-11-18T00:00:00+01:00</updated>
-   <id>http://juandebravo.com/2014/11/18/using-travis-ci-to-build-this-blog</id>
-   <content type="html">&lt;p&gt;This blog is built using Jekyll as static code site generator and GitHub as the deployment target.&lt;/p&gt;
+   <link href="http://juandebravo.com/2014/11/22/using-travis-ci-to-build-this-blog"/>
+   <updated>2014-11-22T00:00:00+01:00</updated>
+   <id>http://juandebravo.com/2014/11/22/using-travis-ci-to-build-this-blog</id>
+   <content type="html">&lt;p&gt;This &lt;a href=&quot;/2012/05/31/yet-another-blog-in-the-world/&quot;&gt;blog is built&lt;/a&gt; using Jekyll as static code site generator and GitHub as the deployment target thanks to its support to Jekyll via GitHub pages.&lt;/p&gt;
 
 &lt;p&gt;One of the great things about using GitHub together with Jekyll is the support that GitHub provides out of the box to generate your HTML pages using Jekyll in the server side whenever a new content is added to your repository.&lt;/p&gt;
 
 &lt;p&gt;Some months ago I ran some experiments to include &lt;em&gt;emojis support&lt;/em&gt; to this blog :smile:. Jekyll
-supports a plugin mechanism to extend the framework functionality.
-Bad news are that Github, while building your Jekyll based web page (like this
-one), does not allow third-party plugins, probably to avoid any kind of attack from a malicious user. Then I needed to either build the site locally and upload the HTML version to GitHub, or get rid of emojies.&lt;/p&gt;
+supports a plugin mechanism to extend the framework functionality.&lt;/p&gt;
 
-&lt;p&gt;That's why I started playing with &lt;em&gt;travis&lt;/em&gt;. Those are the relevant steps that I did:&lt;/p&gt;
+&lt;p&gt;Bad news are that GitHub does not allow third-party plugins to build your Jekyll based web page, like this
+one. The reason behind this might be to avoid any kind of attack from a malicious user. Then I needed to either build the site locally and upload the HTML version to GitHub, or get rid of emojies.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Create a new account in Travis&lt;/li&gt;
-&lt;li&gt;Configure your build in &lt;strong&gt;.travis.yaml&lt;/strong&gt; file&lt;/li&gt;
-&lt;li&gt;Run the command &lt;em&gt;travis-lint&lt;/em&gt; to validate the file syntax&lt;/li&gt;
-&lt;li&gt;Unable to configure more than one language. By default, ruby is properly configured so you don't need to specify it. On the other hand, python libraries are installed by default in /usr/local/lib, which is not granted&lt;/li&gt;
-&lt;li&gt;You can configure the branches that you want travis to build&lt;/li&gt;
-&lt;li&gt;Jekyll did not raise any error in case of pygments not being available. This caused a downtime in the blog content&lt;/li&gt;
-&lt;li&gt;In order to use a github OAuth token, the configured URL should be the HTTPS one:
+&lt;p&gt;I have been working on local compiling over the last months, but some weeks ago I started playing with &lt;em&gt;&lt;a href=&quot;http://travis-ci.org&quot;&gt;travis&lt;/a&gt;&lt;/em&gt; to remove this boring work from my side. Those are the relevant steps that I did:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;travis encrypt -r &lt;USER&gt;/&lt;REPOSITORY&gt; GH_TOKEN=&lt;GH-TOKEN&gt; --add env.global&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Travis only downloads the latest 50 revisions.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a new account in Travis&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Configure your GitHub project to support &lt;em&gt;travis&lt;/em&gt;. &lt;a href=&quot;https://developer.github.com/webhooks/#services&quot;&gt;Here&lt;/a&gt; you can find the list of supported services &amp;amp; webhooks (&lt;a href=&quot;https://api.github.com/hooks&quot;&gt;JSON format&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install the &lt;em&gt;travis&lt;/em&gt; gem in your local environment&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;gem install travis
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Generate a valid token in the GitHub project settings page.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hash the token for travis to be able to use it in a secured way (as the value will be included in your repository)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;travis encrypt -r &amp;lt;USER&amp;gt;/&amp;lt;REPOSITORY&amp;gt; &lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;GH-TOKEN&amp;gt; --add env.global
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://docs.travis-ci.com/&quot;&gt;Configure your build&lt;/a&gt; in the &lt;strong&gt;.travis.yaml&lt;/strong&gt; file at the root of your repository.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In order to use a GitHub OAuth token, &lt;a href=&quot;https://github.com/juandebravo/juandebravo.github.com/blob/master/.travis.yml#L36&quot;&gt;the configured URL should be the HTTPS one&lt;/a&gt;:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git remote &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-url origin https://&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;@github.com/juandebravo/juandebravo.github.com.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Run the command &lt;em&gt;travis-lint&lt;/em&gt; to validate the file syntax.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;http://travis-ci.org&quot;&gt;Travis&lt;/a&gt;&lt;/em&gt; is a great piece of software that you can take advantage of very easily!! :bowtie: :neckbeard:&lt;/p&gt;
 </content>
  </entry>
  

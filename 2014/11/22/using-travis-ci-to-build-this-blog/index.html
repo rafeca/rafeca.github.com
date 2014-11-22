@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Yet another blog in the world - juandebravo's personal blog</title>
+  <title>Using travis-ci to build this blog - juandebravo's personal blog</title>
   <meta name="description" content="juandebravo's personal blog - Personal thoughts about technology (@juandebravo)">
   <meta name="author" content="Juan de Bravo">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -58,53 +58,67 @@
     <div class="container">
 
       <header>   
-  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> Yet another blog in the world <small>31 May 2012</small></h2>
+  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> Using travis-ci to build this blog <small>22 Nov 2014</small></h2>
 
   <nav>
     <ul class="clearfix">
     
-      <li><a href="/tag/ruby.html">ruby</a></li>
+      <li><a href="/tag/jekyll.html">jekyll</a></li>
     
-      <li><a href="/tag/git.html">git</a></li>
+      <li><a href="/tag/travis.html">travis</a></li>
     
-      <li><a href="/tag/markdown.html">markdown</a></li>
-    
-      <li><a href="/tag/blog.html">blog</a></li>
+      <li><a href="/tag/github.html">github</a></li>
     
     </ul>
   </nav>
 </header>
 
 <div id="post" role="main">
-  <h1>Hello world</h1>
+  <p>This <a href="/2012/05/31/yet-another-blog-in-the-world/">blog is built</a> using Jekyll as static code site generator and GitHub as the deployment target thanks to its support to Jekyll via GitHub pages.</p>
 
-<p>During the last months I've felt an increasing need to share my thoughts with the tech world for the following reasons:</p>
+<p>One of the great things about using GitHub together with Jekyll is the support that GitHub provides out of the box to generate your HTML pages using Jekyll in the server side whenever a new content is added to your repository.</p>
 
-<ul>
-<li><p>I think it's a good way to keep on learning English. Yes fellas, I've been working on Shakespeare's language for a while but there is a whole road of new words and expressions to take in. Sad but true. So, never give up. Learn!</p></li>
-<li><p>One of my new year resolutions was to embrace a new programming language. It's incredible how much you can learn in a travel like that and sometimes I need to share some bits of that new knowledge. Some of those might be could obvious to you but they are new to me that's why they are here. As my motto says: &quot;never stop learning&quot;.</p></li>
-</ul>
+<p>Some months ago I ran some experiments to include <em>emojis support</em> to this blog <span class='emoji emoji_smile'>smile emoji</span>. Jekyll
+supports a plugin mechanism to extend the framework functionality.</p>
 
-<h1>Why Jekyll and not Wordpress?</h1>
+<p>Bad news are that GitHub does not allow third-party plugins to build your Jekyll based web page, like this
+one. The reason behind this might be to avoid any kind of attack from a malicious user. Then I needed to either build the site locally and upload the HTML version to GitHub, or get rid of emojies.</p>
 
-<ul>
-<li><p>In 2011 I'd been working mainly in an innovation project where we had the chance to test and use different tools to build our platform and service. It was an awesome adventure. One of the things we did was creating all the documentation our service needed using <a href="http://daringfireball.net/projects/markdown/">Markdown</a> format and running a <a href="http://rake.rubyforge.org/">Rake</a> task to generate the HTML pages that any HTTP server in the world could serve. Yes, we did not need any hard editorial flow to follow, we were innovators. Kudos to <a href="http://www.twitter.com/osuka">@osuka</a> for letting me that freedom.</p></li>
-<li><p>ruby, github and git are my tools of choice whenever I can use them and I'm a big fan of UNIX shell so it's kind of familiar environment for me. Kudos to <a href="http://pages.github.com/#using_jekyll_for_complex_layouts">GitHub pages for supporting Jekyll</a>. I can use git flow to write my blog!</p></li>
-<li><p>Last, but not least, my fellow <a href="http://www.twitter.com/rafeca">@rafeca</a> started a blog during our international assignment in <a href="http://www.jajah.com">Jajah</a>. I'm using <a href="http://jekyllrb.com/">Jekyll</a> and I have borrowed his layout to build this blog.  Hopefully I'll write more often than he does, though. For me it's also a way to share experiences with him now that ours careers have diverged :-) Please check <a href="http://rafeca.com/2011/11/09/creating-this-blog/">his explanation about how to create a blog like this from scratch</a>.</p></li>
-</ul>
-
-<h1>What will be this about</h1>
-
-<p>Well, I'm always reading new stuff, you know, never stop learning. I'll try to show some of the new stuff I'm reading about. At this point, could be something related to:</p>
+<p>I have been working on local compiling over the last months, but some weeks ago I started playing with <em><a href="http://travis-ci.org">travis</a></em> to remove this boring work from my side. Those are the relevant steps that I did:</p>
 
 <ul>
-<li>ruby, my programming language of choice.</li>
-<li>python, the language I'm currently using more widely.</li>
-<li>git, the SCM that is amazing IMO.</li>
-<li><a href="http://www.adhearsion.com">Adhearsion</a>, the open source telephony framework I was actively contributing for some months and that is being leaded by the awesome Ben Klang, Ben Langfeld and Jason Goecke.</li>
-<li>Freeswitch and ESL, the telephony platform I'm hacking with (not so often though)</li>
-<li>Scala: learning Scala was my first new year resolution, I've started learning now and I do like to syntax. I don't have yet a strong opinion about it that seems quite amazing.</li>
+<li><p>Create a new account in Travis</p></li>
+<li><p>Configure your GitHub project to support <em>travis</em>. <a href="https://developer.github.com/webhooks/#services">Here</a> you can find the list of supported services &amp; webhooks (<a href="https://api.github.com/hooks">JSON format</a>).</p></li>
+<li><p>Install the <em>travis</em> gem in your local environment</p></li>
 </ul>
+
+<div class="highlight"><pre><code class="bash">gem install travis
+</code></pre>
+</div>
+
+<ul>
+<li><p>Generate a valid token in the GitHub project settings page.</p></li>
+<li><p>Hash the token for travis to be able to use it in a secured way (as the value will be included in your repository)</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">travis encrypt -r &lt;USER&gt;/&lt;REPOSITORY&gt; <span class="nv">GH_TOKEN</span><span class="o">=</span>&lt;GH-TOKEN&gt; --add env.global
+</code></pre>
+</div>
+
+<ul>
+<li><p><a href="http://docs.travis-ci.com/">Configure your build</a> in the <strong>.travis.yaml</strong> file at the root of your repository.</p></li>
+<li><p>In order to use a GitHub OAuth token, <a href="https://github.com/juandebravo/juandebravo.github.com/blob/master/.travis.yml#L36">the configured URL should be the HTTPS one</a>:</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">git remote <span class="nb">set</span>-url origin https://<span class="k">${</span><span class="nv">GH_TOKEN</span><span class="k">}</span>@github.com/juandebravo/juandebravo.github.com.git
+</code></pre>
+</div>
+
+<ul>
+<li>Run the command <em>travis-lint</em> to validate the file syntax.</li>
+</ul>
+
+<p><em><a href="http://travis-ci.org">Travis</a></em> is a great piece of software that you can take advantage of very easily!! <span class='emoji emoji_bowtie'>bowtie emoji</span> <span class='emoji emoji_neckbeard'>neckbeard emoji</span></p>
 
   
   <p class="back">&laquo; <a href="/">Home</a></p>
@@ -114,11 +128,6 @@
 <ul class="posts_list">
   
     <li class="post">
-  <span class="left_title">22 Nov 2014</span>
-  <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
-</li>
-  
-    <li class="post">
   <span class="left_title">12 Mar 2014</span>
   <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
 </li>
@@ -126,6 +135,11 @@
     <li class="post">
   <span class="left_title">08 Mar 2014</span>
   <a href="/2014/03/08/python-class-and-static-methods" title="Class and static methods in python">Class and static methods in python</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">04 Jan 2014</span>
+  <a href="/2014/01/04/python-auto-initializer" title="Building an automatic initializer in python">Building an automatic initializer in python</a>
 </li>
   
 </ul-->

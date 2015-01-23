@@ -74,50 +74,11 @@
 <div id="post" role="main">
   <p>Unicode and encodings is always a fun thing. This script encodes an input string using different encodings and shows the output length:</p>
 
-<div class="highlight"><pre><code class="python"><span class="c"># -*- coding: utf-8 -*-</span>
-<span class="kn">import</span> <span class="nn">sys</span>
- 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="n">code_points</span> <span class="o">=</span> <span class="p">[</span><span class="nb">unicode</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c"># Testing values</span>
-    <span class="n">code_points</span> <span class="o">=</span> <span class="p">[</span><span class="s">u&#39;</span><span class="se">\U0001F37A\U00000045\U0000039B</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">u&#39;</span><span class="se">\U0001F37A</span><span class="s">&#39;</span><span class="p">]</span>
- 
-<span class="k">def</span> <span class="nf">handle_encoding</span><span class="p">(</span><span class="n">encoding</span><span class="p">,</span> <span class="n">code_point</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>                                                                        
-        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;{:&gt;15}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">encoding</span><span class="p">),</span>                                      
-                  <span class="s">&#39; ---&gt; &#39;</span><span class="p">,</span>                                                     
-                  <span class="s">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;{0:x}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span>                      
-                  <span class="n">code_point</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)),</span>                                   
-                  <span class="s">&#39; (&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">code_point</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="p">))),</span> <span class="s">&#39;)&#39;</span><span class="p">]</span>               
-        <span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>                                                   
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>                                                     
-        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;{:&gt;15}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">encoding</span><span class="p">),</span>                                      
-                  <span class="s">&#39; ---&gt; &#39;</span><span class="p">,</span>                                                     
-                  <span class="s">&#39;Unable to encode the codepoint in {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">encoding</span><span class="p">)]</span>       
-        <span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>  
- 
-<span class="k">for</span> <span class="n">code_point</span> <span class="ow">in</span> <span class="n">code_points</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&#39;{:&gt;15}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;character&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39; ---&gt; &#39;</span> <span class="o">+</span> <span class="n">code_point</span>
-    <span class="k">print</span> <span class="s">&#39;{:&gt;15}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;code points&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39; ---&gt; &#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">code_point</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">coding</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;ascii&#39;</span><span class="p">,</span> <span class="s">&#39;latin-1&#39;</span><span class="p">,</span> <span class="s">&#39;utf-8&#39;</span><span class="p">,</span> <span class="s">&#39;utf-16&#39;</span><span class="p">,</span> <span class="s">&#39;utf-16be&#39;</span><span class="p">,</span> <span class="s">&#39;utf-16le&#39;</span><span class="p">):</span>
-        <span class="n">handle_encoding</span><span class="p">(</span><span class="n">coding</span><span class="p">,</span> <span class="n">code_point</span><span class="p">)</span>
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <p>Example:</p>
 
-<div class="highlight"><pre><code class="bash">python encoding.py <span class="s2">&quot;OLA KE ASE&quot;</span>
-      character ---&gt; OLA KE ASE
-    code points ---&gt; u<span class="s1">&#39;OLA KE ASE&#39;</span>
-          ascii ---&gt; 4f:4c:41:20:4b:45:20:41:53:45 <span class="o">(</span>10<span class="o">)</span>
-        latin-1 ---&gt; 4f:4c:41:20:4b:45:20:41:53:45 <span class="o">(</span>10<span class="o">)</span>
-          utf-8 ---&gt; 4f:4c:41:20:4b:45:20:41:53:45 <span class="o">(</span>10<span class="o">)</span>
-         utf-16 ---&gt; ff:fe:4f:0:4c:0:41:0:20:0:4b:0:45:0:20:0:41:0:53:0:45:0 <span class="o">(</span>22<span class="o">)</span>
-       utf-16be ---&gt; 0:4f:0:4c:0:41:0:20:0:4b:0:45:0:20:0:41:0:53:0:45 <span class="o">(</span>20<span class="o">)</span>
-       utf-16le ---&gt; 4f:0:4c:0:41:0:20:0:4b:0:45:0:20:0:41:0:53:0:45:0 <span class="o">(</span>20<span class="o">)</span>
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <p>Happy encoding <span class='emoji emoji_monkey'>monkey emoji</span></p>
 
@@ -129,6 +90,11 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">23 Jan 2015</span>
+  <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">22 Nov 2014</span>
   <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
 </li>
@@ -136,11 +102,6 @@
     <li class="post">
   <span class="left_title">12 Mar 2014</span>
   <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">08 Mar 2014</span>
-  <a href="/2014/03/08/python-class-and-static-methods" title="Class and static methods in python">Class and static methods in python</a>
 </li>
   
 </ul-->

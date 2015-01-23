@@ -78,119 +78,41 @@
 
 <h2>1. Include the <strong>gemoji</strong> dependency in your Gemfile</h2>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">gem</span> <span class="s1">&#39;gemoji&#39;</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">&#39;emoji/railtie&#39;</span>
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <h2>2. Add a configuration attribute in the <strong>_config.yml</strong> file</h2>
 
 <p>This folder will contain the emoji icons.</p>
 
-<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">emoji</span><span class="p-Indicator">:</span>    <span class="l-Scalar-Plain">gfx/emoji</span>
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <h2>3. Write a rake task into the Rakefile</h2>
 
 <p>This rake task copies the icons included in the gemoji gem into your Jekyll site folder. It also generates a CSS file.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s1">&#39;Generate emoji CSS styles&#39;</span>
-<span class="n">task</span> <span class="ss">:emoji</span> <span class="k">do</span>
-  <span class="nb">puts</span> <span class="n">green</span> <span class="s1">&#39;Generating emoji CSS...&#39;</span>
-
-  <span class="nb">require</span> <span class="s1">&#39;jekyll&#39;</span>
-
-  <span class="n">site</span> <span class="o">=</span> <span class="ss">Jekyll</span><span class="p">:</span><span class="ss">:Site</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">.</span><span class="n">configuration</span><span class="p">({}))</span>
-
-  <span class="n">path</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;emoji&#39;</span><span class="o">]</span>
-
-  <span class="k">if</span> <span class="o">!</span><span class="n">path</span><span class="o">.</span><span class="n">empty?</span> <span class="ow">and</span> <span class="o">!</span><span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="o">!</span><span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">path</span><span class="si">}</span><span class="s2">/smiley.png&quot;</span><span class="p">)</span>
-    <span class="ss">Dir</span><span class="p">:</span><span class="ss">:mkdir</span> <span class="n">path</span>
-
-    <span class="n">_css</span> <span class="o">=</span> <span class="sx">%[.emoji {</span>
-<span class="sx">  width: 20px;</span>
-<span class="sx">  display: inline-block;</span>
-<span class="sx">  text-indent: -2000px;</span>
-<span class="sx">}</span>
-
-<span class="sx">]</span>
-
-    <span class="no">Dir</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">Emoji</span><span class="o">.</span><span class="n">images_path</span><span class="si">}</span><span class="s2">/emoji/*.png&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">src</span><span class="o">|</span>
-      <span class="no">FileUtils</span><span class="o">.</span><span class="n">cp</span> <span class="n">src</span><span class="p">,</span> <span class="n">path</span>
-      <span class="o">*</span><span class="n">_</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-      <span class="o">*</span><span class="n">emoji_name</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-      <span class="n">_css</span> <span class="o">+=</span> <span class="sx">%[.emoji_</span><span class="si">#{</span><span class="n">emoji_name</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="si">}</span><span class="sx"> {</span>
-<span class="sx">  background:url(&quot;/</span><span class="si">#{</span><span class="n">path</span><span class="si">}</span><span class="sx">/</span><span class="si">#{</span><span class="n">file</span><span class="si">}</span><span class="sx">&quot;) no-repeat scroll 0 center transparent;</span>
-<span class="sx">  background-size: 20px auto;</span>
-<span class="sx">}</span>
-
-<span class="sx">]</span>
-    <span class="k">end</span>
-
-    <span class="no">File</span><span class="o">.</span><span class="n">open</span> <span class="s2">&quot;css/emoji.css&quot;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
-      <span class="n">file</span><span class="o">.</span><span class="n">write</span> <span class="n">_css</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-  <span class="nb">puts</span> <span class="n">green</span> <span class="s1">&#39;Done!&#39;</span>
-<span class="k">end</span>
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <h2>4. Execute the rake task</h2>
 
-<div class="highlight"><pre><code class="bash">rake emoji
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <p>Now you can check the generated CSS file that defines a specific style per emoji icon and the <strong>png</strong> files (the emoji icons) copied into the configured folder.</p>
 
 <h2>5. Include the generated CSS file into HTML layouts</h2>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/css/style.css&quot;</span><span class="nt">&gt;</span>
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <h2>6. Write a plugin that converts the emoji tags in HTML tags</h2>
 
 <p>Copy this content into the file <strong>_plugins/emoji.rb</strong></p>
 
-<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s2">&quot;gemoji&quot;</span>
-
-<span class="k">module</span> <span class="nn">Jekyll</span>
-  <span class="k">module</span> <span class="nn">EmojiFilter</span>
-
-    <span class="k">def</span> <span class="nf">emojify</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-      <span class="k">if</span> <span class="vi">@context</span><span class="o">.</span><span class="n">registers</span><span class="o">[</span><span class="ss">:site</span><span class="o">].</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;emoji&#39;</span><span class="o">]</span>
-        <span class="n">content</span><span class="o">.</span><span class="n">to_str</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/:([a-z0-9\+\-_]+):/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">match</span><span class="o">|</span>
-          <span class="k">if</span> <span class="no">Emoji</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="vg">$1</span><span class="p">)</span>
-            <span class="s2">&quot;&lt;span class=&#39;emoji emoji_</span><span class="si">#{</span><span class="vg">$1</span><span class="si">}</span><span class="s2">&#39;&gt;</span><span class="si">#{</span><span class="vg">$1</span><span class="si">}</span><span class="s2"> emoji&lt;/span&gt;&quot;</span>
-          <span class="k">else</span>
-            <span class="n">match</span>
-          <span class="k">end</span>
-        <span class="k">end</span>
-      <span class="k">else</span>
-        <span class="n">content</span>
-      <span class="k">end</span>
-    <span class="k">end</span> <span class="c1"># emojify</span>
-
-  <span class="k">end</span> <span class="c1"># EmojiFilter</span>
-<span class="k">end</span> <span class="c1"># Jekyll</span>
-
-<span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Template</span><span class="o">.</span><span class="n">register_filter</span><span class="p">(</span><span class="ss">Jekyll</span><span class="p">:</span><span class="ss">:EmojiFilter</span><span class="p">)</span>
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <h2>7. Emojify your content!</h2>
 
 <p>Concat the filter <strong>emojify</strong> in the layouts where you want to include emojies.</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;post&quot;</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
-  Liquid error: undefined method `to_str&#39; for nil:NilClass
-  
-  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;back&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;laquo;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <h2>8. Write an emoji in a markdown file and run the server</h2>
 
@@ -198,9 +120,7 @@
 
 <h2>9. Run jekyll</h2>
 
-<div class="highlight"><pre><code class="bash">jekyll --server --auto
-</code></pre>
-</div>
+<p>Liquid error: No such file or directory - posix_spawnp</p>
 
 <h2>10. Enjoy</h2>
 
@@ -214,6 +134,11 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">23 Jan 2015</span>
+  <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">22 Nov 2014</span>
   <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
 </li>
@@ -221,11 +146,6 @@
     <li class="post">
   <span class="left_title">12 Mar 2014</span>
   <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">08 Mar 2014</span>
-  <a href="/2014/03/08/python-class-and-static-methods" title="Class and static methods in python">Class and static methods in python</a>
 </li>
   
 </ul-->

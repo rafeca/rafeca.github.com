@@ -92,6 +92,7 @@ task :post do
     exit -1
   end
   filename = File.join(path, "#{date}-#{slug}.markdown")
+  print filename
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end

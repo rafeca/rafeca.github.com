@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Validate Arity"
+title: "Validating Arity in JavaScript"
 categories: [javascript]
 ---
 

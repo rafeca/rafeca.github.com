@@ -42,7 +42,7 @@ Currently three BackEnd are implemented (a memory based backend and
  storages, such as [memcached](http://memcached.org/)
  and [mongoDB](http://www.mongodb.org/).
 
-For additional information about hanoi check the documentation in the [github repository]).
+For additional information about hanoi check the documentation in the [github repository](https://github.com/juandebravo/hanoi#hanoi).
 
 Happy deploying! :hammer:
 

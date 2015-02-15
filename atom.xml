@@ -4,7 +4,7 @@
  <title>juandebravo's personal blog</title>
  <link href="http://feeds.feedburner.com/juandebravo" rel="self"/>
  <link href="http://juandebravo.com"/>
- <updated>2015-02-15T16:54:45+01:00</updated>
+ <updated>2015-02-15T17:08:01+01:00</updated>
  <id>http://juandebravo.com</id>
  <author>
    <name>Juan de Bravo</name>
@@ -59,7 +59,7 @@ the percentage gradually to ensure server and client behaviour.&lt;/li&gt;
  storages, such as &lt;a href=&quot;http://memcached.org/&quot;&gt;memcached&lt;/a&gt;
  and &lt;a href=&quot;http://www.mongodb.org/&quot;&gt;mongoDB&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;For additional information about hanoi check the documentation in the [github repository]).&lt;/p&gt;
+&lt;p&gt;For additional information about hanoi check the documentation in the &lt;a href=&quot;https://github.com/juandebravo/hanoi#hanoi&quot;&gt;github repository&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Happy deploying! :hammer:&lt;/p&gt;
 

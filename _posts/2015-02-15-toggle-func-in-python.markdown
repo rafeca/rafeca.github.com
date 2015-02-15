@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hanoi. Toggle functionalities in python"
-categories: [python, a/b testing, controlled deployment]
+categories: [python, a-b testing, controlled deployment]
 ---
 
 Upon deploying a new version of your product into production,

@@ -46,4 +46,4 @@ For additional information about hanoi check the documentation in the [github re
 
 Happy deploying! :hammer:
 
-![Hanoi](/gfx/hanoi.jpg)
+<img alt="Hanoi" style="with: 100%; padding: 0" src="/gfx/hanoi.jpg">

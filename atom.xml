@@ -4,7 +4,7 @@
  <title>juandebravo's personal blog</title>
  <link href="http://feeds.feedburner.com/juandebravo" rel="self"/>
  <link href="http://juandebravo.com"/>
- <updated>2015-02-15T16:53:00+01:00</updated>
+ <updated>2015-02-15T16:54:45+01:00</updated>
  <id>http://juandebravo.com</id>
  <author>
    <name>Juan de Bravo</name>
@@ -63,7 +63,7 @@ the percentage gradually to ensure server and client behaviour.&lt;/li&gt;
 
 &lt;p&gt;Happy deploying! :hammer:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&quot;Hanoi&quot; style=&quot;with: 100%; padding: 0&quot; src=&quot;/gfx/hanoi.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;Hanoi&quot; style=&quot;width: 100%; padding: 0&quot; src=&quot;/gfx/hanoi.jpg&quot;&gt;&lt;/p&gt;
 </content>
  </entry>
  

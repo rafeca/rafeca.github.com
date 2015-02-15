@@ -14,7 +14,7 @@ install:
     - rake emoji
 
 before_script:
-    - rm -rf 2012 2013 2014
+    - rm -rf 2012 2013 2014 2015
     - rm -f tag/*
     - rake tags
     - git config --global user.email "juandebravo@gmail.com"

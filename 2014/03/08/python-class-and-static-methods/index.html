@@ -76,11 +76,32 @@
 
 <p>In general, you should think about <strong>moving a class or static method to the module</strong> that holds the class definition. As you may well know, functions are first class citizens in python:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">VALUES</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bar</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="n">bar</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_values</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">VALUES</span>
+</code></pre>
+</div>
 
 <p>This snippet can be refactored to:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="k">def</span> <span class="nf">get_foo_values</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">Foo</span><span class="o">.</span><span class="n">VALUES</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">VALUES</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bar</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="n">bar</span>
+</code></pre>
+</div>
 
 <p>Some exception that might apply:</p>
 
@@ -90,11 +111,44 @@
 <li><p>You want to define an <em>auxiliar method</em> to create an instance, and you want the childs to be able to override the initialization (think if you should use composition instead of inheritance!):</p></li>
 </ul>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="n">PROPERTIES</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;john&#39;</span><span class="p">,</span>
+              <span class="s">&#39;surname&#39;</span><span class="p">:</span> <span class="s">&#39;doe&#39;</span><span class="p">,</span>
+              <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+              <span class="s">&#39;email&#39;</span><span class="p">:</span> <span class="s">&#39;john@pollinimini.net&#39;</span><span class="p">}</span>
+
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_properties</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+        <span class="n">ins</span> <span class="o">=</span> <span class="n">cls</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">properties</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="n">ins</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="n">ins</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+
+<span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="n">Foo</span><span class="p">):</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_properties</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+        <span class="n">ins</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Bar</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">from_properties</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
+        <span class="n">ins</span><span class="o">.</span><span class="n">deferred</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="n">ins</span>
+
+<span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">from_properties</span><span class="p">(</span><span class="n">PROPERTIES</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">Bar</span><span class="o">.</span><span class="n">from_properties</span><span class="p">(</span><span class="n">PROPERTIES</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>The output of the program is:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="bash">age, surname, name, email
+deferred, age, surname, name, email
+</code></pre>
+</div>
 
 <p><strong>Bar</strong> includes an additional attribute to the instance, but the preliminar instance initilization is similar to what <strong>Foo</strong> does.</p>
 
@@ -105,7 +159,40 @@
 <li><p>define a function that receives as parameter a function to be applied while defining the instance:</p></li>
 </ul>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="n">PROPERTIES</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;john&#39;</span><span class="p">,</span>
+              <span class="s">&#39;surname&#39;</span><span class="p">:</span> <span class="s">&#39;doe&#39;</span><span class="p">,</span>
+              <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+              <span class="s">&#39;email&#39;</span><span class="p">:</span> <span class="s">&#39;john@pollinimini.net&#39;</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">create_foo_with_function</span><span class="p">(</span><span class="n">properties</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">ins</span> <span class="o">=</span> <span class="n">Foo</span><span class="o">.</span><span class="n">from_properties</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">func</span><span class="p">:</span>
+        <span class="n">func</span><span class="p">(</span><span class="n">ins</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ins</span>
+
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_properties</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+        <span class="n">ins</span> <span class="o">=</span> <span class="n">cls</span><span class="p">()</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">properties</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="n">ins</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ins</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+
+<span class="c"># Create a Foo instance</span>
+<span class="k">print</span> <span class="n">create_foo_with_function</span><span class="p">(</span><span class="n">PROPERTIES</span><span class="p">)</span>
+
+<span class="c"># Create a Bar instance</span>
+<span class="k">print</span> <span class="n">create_foo_with_function</span><span class="p">(</span><span class="n">PROPERTIES</span><span class="p">,</span>
+                               <span class="k">lambda</span> <span class="n">ins</span><span class="p">:</span> <span class="n">ins</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="s">&#39;deferred&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span>
+</code></pre>
+</div>
 
 <p>Happy coding! <span class='emoji emoji_kissing_cat'>kissing_cat emoji</span></p>
 
@@ -117,6 +204,11 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">15 Feb 2015</span>
+  <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Jan 2015</span>
   <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
 </li>
@@ -124,11 +216,6 @@
     <li class="post">
   <span class="left_title">22 Nov 2014</span>
   <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">12 Mar 2014</span>
-  <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
 </li>
   
 </ul-->

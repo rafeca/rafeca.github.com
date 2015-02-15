@@ -75,7 +75,15 @@ Eventually I tidy up my long list of unread interesting stuff and today I found 
 
 <p>There was <a href="https://twitter.com/spastorino/status/250708430036295681">this tweet</a> from <a href="https://twitter.com/spastorino/">Santiago Pastorino</a> about how to include highlighted code into a Keynote.app presentation:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="bash"><span class="c"># Copy the text to the pasteboard from your editor</span>
+
+<span class="c"># &lt;language&gt; should be a programming language supported by pygmentize.</span>
+
+pbpaste <span class="p">|</span> pygmentize -l &lt;language&gt; -f rtf <span class="p">|</span> pbcopy
+
+<span class="c"># Paste the pasteboard content into Keynote.app</span>
+</code></pre>
+</div>
 
 <p>As simple as that. Keynote.app recognizes automatically the RTF format and therefore the code is highlighted as defined by pygmentize. Awesome tip!</p>
 
@@ -94,6 +102,11 @@ Eventually I tidy up my long list of unread interesting stuff and today I found 
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">15 Feb 2015</span>
+  <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Jan 2015</span>
   <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
 </li>
@@ -101,11 +114,6 @@ Eventually I tidy up my long list of unread interesting stuff and today I found 
     <li class="post">
   <span class="left_title">22 Nov 2014</span>
   <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">12 Mar 2014</span>
-  <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
 </li>
   
 </ul-->

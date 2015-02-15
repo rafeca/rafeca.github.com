@@ -85,37 +85,76 @@ Sometimes while you're starting a new feature, you forget changing your current 
 <li>Create the repository with an initial content and create the develop branch.</li>
 </ul>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="bash">bundle gem foo_bar
+<span class="nb">cd </span>foo_bar
+git commit -am <span class="s2">&quot;first commit&quot;</span>
+git checkout -b develop
+<span class="c"># modify version.rb file to increase the version number</span>
+git commit -am <span class="s2">&quot;bump version&quot;</span>
+</code></pre>
+</div>
 
 <ul>
 <li>Create your feature branch</li>
 </ul>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="bash">git branch feature/hello
+git lg                                                                                                                                   
+* d62b49a - <span class="o">(</span>HEAD, feature/hello, develop<span class="o">)</span> bump version - juandebravo <span class="o">(</span><span class="m">66</span> seconds ago<span class="o">)</span>
+* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span><span class="m">2</span> minutes ago<span class="o">)</span>
+</code></pre>
+</div>
 
 <ul>
 <li>Commit a change to develop (instead of your feature branch)</li>
 </ul>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="bash"><span class="nb">echo</span> <span class="s2">&quot;require &#39;foo_bar/version&#39;\n\nmodule FooBar\n  def self.hello(name)\n    print \&quot;hello #{name}\&quot;\n  end\nend&quot;</span> &gt; lib/foo_bar.rb
+git commit -am <span class="s2">&quot;add hello method&quot;</span>
+</code></pre>
+</div>
 
 <p>WRONG! You commit to develop instead of feature/hello</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="bash">git lg
+* ecd59c3 - <span class="o">(</span>HEAD, develop<span class="o">)</span> add hello method - juandebravo <span class="o">(</span><span class="m">2</span> seconds ago<span class="o">)</span>
+* d62b49a - <span class="o">(</span>feature/hello<span class="o">)</span> bump version - juandebravo <span class="o">(</span><span class="m">40</span> minutes ago<span class="o">)</span>
+* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span><span class="m">40</span> minutes ago<span class="o">)</span>
+</code></pre>
+</div>
 
 <h1>2.- Fix the wrong commit</h1>
 
 <ul>
-<li>Merge develop to your feature branch
-Liquid error: No such file or directory - posix_spawnp</li>
+<li>Merge develop to your feature branch</li>
 </ul>
+
+<div class="highlight"><pre><code class="bash">git checkout feature/crud_users
+git merge develop
+git lg
+* ecd59c3 - <span class="o">(</span>HEAD, feature/hello, develop<span class="o">)</span> add hello method - juandebravo <span class="o">(</span><span class="m">3</span> minutes ago<span class="o">)</span>
+* d62b49a - bump version - juandebravo <span class="o">(</span><span class="m">43</span> minutes ago<span class="o">)</span>
+* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span><span class="m">44</span> minutes ago<span class="o">)</span>
+</code></pre>
+</div>
 
 <p>Now you already have the change in your feature branch. Now it's time to remove it from develop branch.</p>
 
 <ul>
-<li><p>Remove the commit from develop branch
-Liquid error: No such file or directory - posix_spawnp</p></li>
-<li><p>That's all!!</p></li>
+<li>Remove the commit from develop branch</li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">git checkout develop
+git reset --hard HEAD~1
+git lg
+* ecd59c3 - <span class="o">(</span>feature/hello<span class="o">)</span> add hello method - juandebravo <span class="o">(</span><span class="m">4</span> minutes ago<span class="o">)</span>
+* d62b49a - <span class="o">(</span>HEAD, develop<span class="o">)</span> bump version - juandebravo <span class="o">(</span><span class="m">44</span> minutes ago<span class="o">)</span>
+* 9158f06 - <span class="o">(</span>master<span class="o">)</span> first commit - juandebravo <span class="o">(</span><span class="m">44</span> minutes ago<span class="o">)</span>
+</code></pre>
+</div>
+
+<ul>
+<li>That's all!!</li>
 </ul>
 
   
@@ -126,6 +165,11 @@ Liquid error: No such file or directory - posix_spawnp</p></li>
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">15 Feb 2015</span>
+  <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Jan 2015</span>
   <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
 </li>
@@ -133,11 +177,6 @@ Liquid error: No such file or directory - posix_spawnp</p></li>
     <li class="post">
   <span class="left_title">22 Nov 2014</span>
   <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">12 Mar 2014</span>
-  <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
 </li>
   
 </ul-->

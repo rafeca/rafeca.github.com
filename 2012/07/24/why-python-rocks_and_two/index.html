@@ -88,13 +88,49 @@
 
 <p>Before decorators reached python, the following excerpt was needed to create a class/static method:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;Hello {0} from my class method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">bazz</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;Hello {0} from my static method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    
+    <span class="c"># Convert bar from instance to class method</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="nb">classmethod</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+    
+    <span class="c"># Create a static method</span>
+    <span class="n">bazz</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">bazz</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s">&#39;John Doe&#39;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bazz</span><span class="p">(</span><span class="s">&#39;John Doe&#39;</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>Reminder: the main difference between static and class methods is that a class method can be overriden by a child, which is not true for a static method. Also a class method needs the class object as first parameter in the method definition. At this point, I don't find a good reason to define a static method though.</p>
 
 <p>Using decorators and its syntax sugar (the <strong>@</strong> symbol), the previous excerpt can be re-written to:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="c"># Define bar as a class method</span>
+    <span class="c"># As first parameter we could use &#39;self&#39;, but the facto standard is to use &#39;cls&#39; while</span>
+    <span class="c"># defining class methods</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;Hello {0} from my class method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="c"># Define bazz as a static method</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">bazz</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;Hello {0} from my static method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s">&#39;John Doe&#39;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bazz</span><span class="p">(</span><span class="s">&#39;John Doe&#39;</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>The best blog post explaining decorators I've found so far is <a href="http://pythonconquerstheuniverse.wordpress.com/2012/04/29/python-decorators">this one from Steve Ferg</a>. I find decorators quite useful when you need transversal functionalities in your code. A set of examples can be found in <a href="http://wiki.python.org/moin/PythonDecoratorLibrary">wiki.python.org</a>.</p>
 
@@ -102,11 +138,86 @@
 
 <p>The following code creates a decorator that dumps the arguments that a function/method receives when executed. The base of that code is taken from <a href="http://wiki.python.org/moin/PythonDecoratorLibrary#Easy_Dump_of_Function_Arguments">wiki.python.org#Easy<em>Dump</em>Of<em>Function</em>Arguments</a>.</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="c"># decorator_utils.py</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">dump_args</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="c"># get function arguments name</span>
+    <span class="n">argnames</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_varnames</span><span class="p">[:</span><span class="n">func</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_argcount</span><span class="p">]</span>
+
+    <span class="c"># get function name</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">func_name</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">echo_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Log arguments, including name, type and value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">format_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">=</span><span class="si">%s</span><span class="s">&lt;</span><span class="si">%s</span><span class="s">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">arg</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot; args =&gt; {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">format_arg</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">argnames</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">echo_func</span>
+
+<span class="c"># example.py</span>
+
+<span class="kn">from</span> <span class="nn">decorator_utils</span> <span class="kn">import</span> <span class="n">dump_args</span>
+
+<span class="k">class</span> <span class="nc">UserModel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    User model object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@dump_args</span>
+    <span class="k">def</span> <span class="nf">find_by_id</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@dump_args</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
+
+
+<span class="nd">@dump_args</span>
+<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">UserModel</span><span class="o">.</span><span class="n">find_by_id</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
+
+    <span class="n">u</span> <span class="o">=</span> <span class="n">UserModel</span><span class="p">(</span><span class="s">&#39;879234-32423423&#39;</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="n">surname</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">)</span>
+    <span class="n">f1</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="n">f1</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="s">&#39;bazz&#39;</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>The execution of the previous code generates the following output:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="bash">λ python example.py
+
+DEBUG:find_by_id: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">cls</span><span class="o">=</span><span class="nb">type</span>&lt;&lt;class <span class="s1">&#39;__main__.UserModel&#39;</span>&gt;&gt;, <span class="nv">user_id</span><span class="o">=</span>str&lt;foo&gt;
+DEBUG:update: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">self</span><span class="o">=</span>UserModel&lt;879234-32423423&gt;, <span class="nv">surname</span><span class="o">=</span>str&lt;Doe&gt;, <span class="nv">name</span><span class="o">=</span>str&lt;John&gt;
+DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">user_id</span><span class="o">=</span>UserModel&lt;879234-32423423&gt;, <span class="nv">arg1</span><span class="o">=</span>int&lt;2&gt;, <span class="nv">arg2</span><span class="o">=</span>int&lt;3&gt;
+DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">user_id</span><span class="o">=</span>UserModel&lt;879234-32423423&gt;, <span class="nv">arg1</span><span class="o">=</span>int&lt;2&gt;, <span class="nv">arg2</span><span class="o">=</span>int&lt;3&gt;, <span class="nv">foo</span><span class="o">=</span>str&lt;bazz&gt;, <span class="nv">bar</span><span class="o">=</span>int&lt;23&gt;
+</code></pre>
+</div>
 
 <p>As it's shown above (method <em>find<em>by</em>id</em>), you can use more than one decorator in a function/method (and are executed bottom-up).</p>
 
@@ -116,17 +227,95 @@
 
 <p>The basic example using python native library to handle a file object:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;/var/log/events.log&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;New user created&quot;</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>The file <em>/var/log/events.log</em> is opened when entering into the context manager, and closed when the code block is finished. You don't need to catch exceptions, close the file, etc.</p>
 
 <p>To create a context manager you need to define a class that implements two methods, <strong><strong>enter</strong></strong> and <strong><strong>exit</strong></strong>. In the following code I'm creating a context manager, <em>user</em>, that retrieves an object from an external source and stores it back if updated:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Database object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">has_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># logic to check if any user property has been updated</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">class</span> <span class="nc">user</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Context manager for a User object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This code block is executed while entering a context manager</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># mock that returns always a basic User</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="n">surname</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This code block is executed at context manager exit</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">has_changed</span><span class="p">():</span>
+            <span class="c"># here the save logic</span>
+            <span class="k">pass</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">user</span><span class="p">(</span><span class="s">&#39;00000-11111&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">u</span><span class="p">:</span>
+        <span class="n">u</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Johnny&#39;</span>
+</code></pre>
+</div>
 
 <p>Switching to ruby, something similar can be achieved with the following snippet:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Hash</span>
+  <span class="kp">attr_reader</span> <span class="ss">:user_id</span>
+  
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="p">{})</span>
+    <span class="vi">@user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="nb">block_given?</span>
+      <span class="k">yield</span> <span class="nb">self</span>
+      <span class="k">if</span> <span class="nb">self</span><span class="o">.</span><span class="n">has_changed?</span>
+        <span class="c1"># here the save logic</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">has_changed?</span>
+    <span class="c1"># logic to check if any user property has been updated</span>
+    <span class="k">return</span> <span class="no">True</span>
+  <span class="k">end</span>
+  
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">def</span> <span class="nf">find!</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+      <span class="c1"># mock that returns always a basic User instance</span>
+      <span class="k">if</span> <span class="nb">block_given?</span>
+        <span class="no">User</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="p">{</span><span class="nb">name</span><span class="ss">:&quot;John&quot;</span><span class="p">,</span> <span class="ss">surname</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span><span class="p">},</span> <span class="o">&amp;</span><span class="no">Proc</span><span class="o">.</span><span class="n">new</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="no">User</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="p">{</span><span class="nb">name</span><span class="ss">:&quot;John&quot;</span><span class="p">,</span> <span class="ss">surname</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span><span class="p">})</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">User</span><span class="o">.</span><span class="n">find!</span><span class="p">(</span><span class="s1">&#39;0000-1111&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">u</span><span class="o">|</span>
+  <span class="n">u</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Johnny&quot;</span>
+<span class="k">end</span>
+</code></pre>
+</div>
 
 <h1>Use blank spaces to define code blocks</h1>
 
@@ -144,6 +333,11 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">15 Feb 2015</span>
+  <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Jan 2015</span>
   <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
 </li>
@@ -151,11 +345,6 @@
     <li class="post">
   <span class="left_title">22 Nov 2014</span>
   <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">12 Mar 2014</span>
-  <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
 </li>
   
 </ul-->

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>About git internals - juandebravo's personal blog</title>
+  <title>Validating Arity in JavaScript - juandebravo's personal blog</title>
   <meta name="description" content="juandebravo's personal blog - Personal thoughts about technology (@juandebravo)">
   <meta name="author" content="Juan de Bravo">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -58,26 +58,80 @@
     <div class="container">
 
       <header>   
-  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> About git internals <small>01 Dec 2012</small></h2>
+  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> Validating Arity in JavaScript <small>23 Jan 2015</small></h2>
 
   <nav>
     <ul class="clearfix">
     
-      <li><a href="/tag/git.html">git</a></li>
+      <li><a href="/tag/javascript.html">javascript</a></li>
     
     </ul>
   </nav>
 </header>
 
 <div id="post" role="main">
-  <p>Last week, <a href="https://twitter.com/search?q=%23Devcon1&src=typd">the first Telefonica Digital Developers Conference</a> was held in Madrid.
-A two day event that gathered the Spain based developer team. 48 hours of lectures and constant knowledge sharing.</p>
+  <p>Last week I was discussing with my pals <a href="http://www.pollinimini.net">@drslump</a>
+ and <a href="http://www.ladybenko.net/">@ladybenko</a> about a very simple idea I came up
+ with while reading <a href="http://ejohn.org/about/">John Resig</a> <a href="http://ejohn.org/blog/secrets-of-the-javascript-ninja-released/">Secrets of the JavaScript Ninja</a> book on Christmas holidays.</p>
 
-<p>My talk, &quot;git internals&quot;, highlighted how git repository works when storing relevant information.</p>
+<p>The idea is very simple: ensure that a function is called with the expected number of parameters.</p>
 
-<p><center>
-<iframe src="http://www.slideshare.net/slideshow/embed_code/15439276" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
-</center></p>
+<p>A function defined like:</p>
+
+<p><code>javascript
+var fullName = function fullName (name, surname) {
+    return name + ' ' + surname;
+};
+</code></p>
+
+<p>could be called with:</p>
+
+<ul>
+<li><strong>zero parameters</strong>: <em>name</em> and <em>surname</em> will be undefined.</li>
+<li><strong>one parameter</strong>: the parameter will be assigned to <em>name</em>, <em>surname</em> will be undefined.</li>
+<li><strong>two parameters</strong>: the former parameter will be assigned to <em>name</em>, the latter to <em>surname</em>.</li>
+<li><strong>three or more parameters</strong>: the first two parameters will be assigned to <em>name</em> and <em>surname</em> respectively, the next ones could be accessed via <code>arguments</code>.</li>
+</ul>
+
+<p>You might want to ensure the function is always called with two parameters, so scenarios like this one won't happen:</p>
+
+<p><code>javascript
+fullName(&quot;Foo&quot;);
+'Foo undefined'
+</code></p>
+
+<p>Let's do the magic by defining a method in the <code>Function prototype</code>:</p>
+
+<p><code>javascript
+Function.prototype.validateArity = function validateArity () {
+    var fn = this;
+    return function () {
+        if (arguments.length === fn.length) {
+            return fn.apply(this, arguments);
+        } else {
+            throw new Error(&quot;Arity was &lt;&quot;+arguments.length+&quot;&gt; but expected &lt;&quot;+fn.length+&quot;&gt;&quot;);
+        }
+    };
+};
+</code></p>
+
+<p>Simply adding to our previous function the following:</p>
+
+<p>```javascript
+var fullName = function fullName (name, surname) {
+    return name + ' ' + surname;
+}.validateArity();</p>
+
+<p>// Correct call
+console.log(fullName(&quot;Foo&quot;, &quot;Bar&quot;));
+Foo Bar</p>
+
+<p>// Incorrect call
+console.log(fullName(&quot;Foo&quot;));
+Error: Arity was <1> but expected <2>
+```</p>
+
+<p><strong>Protip</strong>: adding a function to <code>Function prototype</code> is usually NOT a good idea.</p>
 
   
   <p class="back">&laquo; <a href="/">Home</a></p>
@@ -92,13 +146,13 @@ A two day event that gathered the Spain based developer team. 48 hours of lectur
 </li>
   
     <li class="post">
-  <span class="left_title">23 Jan 2015</span>
-  <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
+  <span class="left_title">22 Nov 2014</span>
+  <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
 </li>
   
     <li class="post">
-  <span class="left_title">22 Nov 2014</span>
-  <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
+  <span class="left_title">12 Mar 2014</span>
+  <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
 </li>
   
 </ul-->

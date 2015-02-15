@@ -91,13 +91,66 @@
 
 <p>Find below two snippets of code that registers a list of subclasses in both ruby and python.</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">Plugin</span>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+
+    <span class="k">def</span> <span class="nf">inherited</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+      <span class="n">registry</span> <span class="o">&lt;&lt;</span> <span class="n">base</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">registry</span>
+      <span class="vi">@registry</span> <span class="o">||=</span> <span class="o">[]</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="n">registry</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">member</span><span class="o">|</span>
+        <span class="n">block</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">member</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Foo</span> <span class="o">&lt;</span> <span class="no">Plugin</span>
+<span class="k">end</span>
+
+<span class="no">Bar</span> <span class="o">=</span> <span class="no">Class</span><span class="o">.</span><span class="n">new</span> <span class="no">Plugin</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;Plugin subclasses: &quot;</span> <span class="o">+</span> <span class="no">Plugin</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:to_s</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Registry</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dct</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="s">&#39;registry&#39;</span><span class="p">):</span>
+            <span class="c"># Parent class</span>
+            <span class="n">cls</span><span class="o">.</span><span class="n">registry</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># Child class</span>
+            <span class="n">cls</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Registry</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dct</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Plugin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">Registry</span>
+
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">Bar</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s">&#39;Bar&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">Plugin</span><span class="p">,),</span> <span class="p">{})</span>
+
+<span class="k">print</span> <span class="s">&quot;Plugin subclasses: &quot;</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">item</span><span class="o">.</span><span class="n">__name__</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">Plugin</span><span class="o">.</span><span class="n">registry</span><span class="p">])</span>
+</code></pre>
+</div>
 
 <p>The output of both scripts is:</p>
 
-<p>Liquid error: No such file or directory - posix_spawnp</p>
+<div class="highlight"><pre><code class="bash">Plugin subclasses: Foo, Bar
+</code></pre>
+</div>
 
 <p>Happy coding! <span class='emoji emoji_kissing_cat'>kissing_cat emoji</span></p>
 
@@ -109,6 +162,11 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">15 Feb 2015</span>
+  <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Jan 2015</span>
   <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
 </li>
@@ -116,11 +174,6 @@
     <li class="post">
   <span class="left_title">22 Nov 2014</span>
   <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">08 Mar 2014</span>
-  <a href="/2014/03/08/python-class-and-static-methods" title="Class and static methods in python">Class and static methods in python</a>
 </li>
   
 </ul-->

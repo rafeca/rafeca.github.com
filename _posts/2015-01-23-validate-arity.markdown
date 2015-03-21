@@ -13,11 +13,11 @@ The idea is very simple: ensure that a function is called with the expected numb
 
 A function defined like:
 
-```javascript
+{% highlight javascript %}
 var fullName = function fullName (name, surname) {
     return name + ' ' + surname;
 };
-```
+{% endhighlight %}
 
 could be called with:
 
@@ -28,14 +28,14 @@ could be called with:
 
 You might want to ensure the function is always called with two parameters, so scenarios like this one won't happen:
 
-```javascript
+{% highlight javascript %}
 fullName("Foo");
 'Foo undefined'
-```
+{% endhighlight %}
 
 Let's do the magic by defining a method in the `Function prototype`:
 
-```javascript
+{% highlight javascript %}
 Function.prototype.validateArity = function validateArity () {
     var fn = this;
     return function () {
@@ -46,11 +46,11 @@ Function.prototype.validateArity = function validateArity () {
         }
     };
 };
-```
+{% endhighlight %}
 
 Simply adding to our previous function the following:
 
-```javascript
+{% highlight javascript %}
 var fullName = function fullName (name, surname) {
     return name + ' ' + surname;
 }.validateArity();
@@ -62,6 +62,6 @@ Foo Bar
 // Incorrect call
 console.log(fullName("Foo"));
 Error: Arity was <1> but expected <2>
-```
+{% endhighlight %}
 
 **Protip**: adding a function to `Function prototype` is usually NOT a good idea.

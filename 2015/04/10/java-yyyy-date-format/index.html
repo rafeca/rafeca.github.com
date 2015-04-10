@@ -81,6 +81,24 @@ either 52 or 53 weeks considering indivisible weeks.</p>
 
 <p>As an example:</p>
 
+<div class="highlight"><pre><code class="java">    <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+    <span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataExample</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">date_s</span> <span class="o">=</span> <span class="s">&quot;2015-12-31&quot;</span><span class="o">;</span>
+                <span class="n">SimpleDateFormat</span> <span class="n">dt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&quot;yyyy-MM-dd&quot;</span><span class="o">);</span>
+                <span class="n">Date</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">date_s</span><span class="o">);</span>
+                <span class="n">SimpleDateFormat</span> <span class="n">dt1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&quot;YYYY&quot;</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;And the year is...&quot;</span> <span class="o">+</span> <span class="n">dt1</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">));</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre>
+</div>
+
 <p>The snippet above prints &quot;<em>And the year is... 2015</em>&quot;, because <a href="http://www.epochconverter.com/date-and-time/weeknumbers-by-year.php?year=2014">2015 week year started on 29/12/2014</a>.</p>
 
 <p>This issue seemed to be the root cause of the <a href="http://tech.firstpost.com/news-analysis/twitter-suffers-massive-outage-on-all-online-platforms-back-now-247196.html">massive outage that Twitter suffered last year</a>.</p>

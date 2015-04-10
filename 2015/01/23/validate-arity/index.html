@@ -78,6 +78,12 @@
 
 <p>A function defined like:</p>
 
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">fullName</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">surname</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">surname</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
 <p>could be called with:</p>
 
 <ul>
@@ -89,9 +95,41 @@
 
 <p>You might want to ensure the function is always called with two parameters, so scenarios like this one won't happen:</p>
 
+<div class="highlight"><pre><code class="javascript"><span class="nx">fullName</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">);</span>
+<span class="s1">&#39;Foo undefined&#39;</span>
+</code></pre>
+</div>
+
 <p>Let's do the magic by defining a method in the <code>Function prototype</code>:</p>
 
+<div class="highlight"><pre><code class="javascript"><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">validateArity</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">validateArity</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Arity was &lt;&quot;</span><span class="o">+</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="o">+</span><span class="s2">&quot;&gt; but expected &lt;&quot;</span><span class="o">+</span><span class="nx">fn</span><span class="p">.</span><span class="nx">length</span><span class="o">+</span><span class="s2">&quot;&gt;&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
 <p>Simply adding to our previous function the following:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">fullName</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">surname</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">surname</span><span class="p">;</span>
+<span class="p">}.</span><span class="nx">validateArity</span><span class="p">();</span>
+
+<span class="c1">// Correct call</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fullName</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">,</span> <span class="s2">&quot;Bar&quot;</span><span class="p">));</span>
+<span class="nx">Foo</span> <span class="nx">Bar</span>
+
+<span class="c1">// Incorrect call</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fullName</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">));</span>
+<span class="nb">Error</span><span class="o">:</span> <span class="nx">Arity</span> <span class="nx">was</span> <span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span> <span class="nx">but</span> <span class="nx">expected</span> <span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span>
+</code></pre>
+</div>
 
 <p><strong>Protip</strong>: adding a function to <code>Function prototype</code> is usually NOT a good idea.</p>
 

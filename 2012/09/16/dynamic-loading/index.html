@@ -91,6 +91,25 @@
 
 <p>Our current solution to run different logic in both products, instead of using project configuration, is <strong>dynamic loading</strong>. To implement it, we have defined our own code structure respecting Django default structure:</p>
 
+<div class="highlight"><pre><code class="bash">- django_project_root
+  - django_app_1
+    - __init__.py
+    - services.py
+    - projectA
+       - __init__.py
+       - services.py
+    - projectB
+       - __init__.py
+       - sevices.py
+  - django_app_2
+    - __init__.py
+    - services.py
+    - projectB
+      - __init__.py
+      - services.py
+</code></pre>
+</div>
+
 <p>If the Django application is running as projectA, the service logic being used is:
 - for django_app_1 application, the module django_app_1.projectA.services
 - for django_app_2 application, the module django_app_2.services (as django_app_2.projectA.services module is not created).</p>
@@ -99,12 +118,34 @@
 
 <p>Find underneath the snippet of code (simplified) we're using to know which module must be loaded:</p>
 
+<div class="highlight"><pre><code class="python"><span class="k">def</span> <span class="nf">get_module</span><span class="p">(</span><span class="n">application_name</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">module</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">module_name</span> <span class="o">=</span> <span class="n">application_name</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">project</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">module</span>
+        <span class="k">return</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Unable to import module: {0} -&gt; {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">ex</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">application_name</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">module</span><span class="p">)</span>
+
+<span class="c"># Example</span>
+
+<span class="n">get_module</span><span class="p">(</span><span class="s">&#39;django_app_1&#39;</span><span class="p">,</span> <span class="s">&#39;projectA&#39;</span><span class="p">,</span> <span class="s">&#39;services&#39;</span><span class="p">)</span>
+</code></pre>
+</div>
+
 <p>Pretty simple. I'm trying to load a module, and if it fails, I'm logging a warning.
 Sometimes the warning is the expected behavior (i.e. projectA does not define its own django_app_2 service logic), but it could also happen that an exception is raised while parsing a module code, and therefore the module cannot be imported (i.e. projectB django_app_2 service logic has a syntax error). Not logging this situation will hide possible undesired errors.</p>
 
 <p>This is something that Django is not doing (at least in version 1.3.1) and caused me some paintful last Friday. This command:</p>
 
+<div class="highlight"><pre><code class="python"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">collectstatic</span> <span class="o">--</span><span class="n">settings</span><span class="o">=</span><span class="n">projectA_settings</span>
+</code></pre>
+</div>
+
 <p>generated the following result:</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">Unknown</span> <span class="n">command</span><span class="p">:</span> <span class="s">&#39;collectstatic&#39;</span>
+</code></pre>
+</div>
 
 <p>WTF! I was getting crazy as I was pretty sure the <em>django.contrib.staticfiles</em> app was installed in the projectA settings file. After some debugging I came out with the problem: Django is using dynamic loading, I had a missing dependency in a model module, and the projectA settings wasn't been loaded, therefore collectstatic was not a valid command.</p>
 

@@ -90,11 +90,32 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
 <li><p>Create a new account in Travis</p></li>
 <li><p>Configure your GitHub project to support <em>travis</em>. <a href="https://developer.github.com/webhooks/#services">Here</a> you can find the list of supported services &amp; webhooks (<a href="https://api.github.com/hooks">JSON format</a>).</p></li>
 <li><p>Install the <em>travis</em> gem in your local environment</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">gem install travis
+</code></pre>
+</div>
+
+<ul>
 <li><p>Generate a valid token in the GitHub project settings page.</p></li>
 <li><p>Hash the token for travis to be able to use it in a secured way (as the value will be included in your repository)</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">travis encrypt -r &lt;USER&gt;/&lt;REPOSITORY&gt; <span class="nv">GH_TOKEN</span><span class="o">=</span>&lt;GH-TOKEN&gt; --add env.global
+</code></pre>
+</div>
+
+<ul>
 <li><p><a href="http://docs.travis-ci.com/">Configure your build</a> in the <strong>.travis.yaml</strong> file at the root of your repository.</p></li>
 <li><p>In order to use a GitHub OAuth token, <a href="https://github.com/juandebravo/juandebravo.github.com/blob/master/.travis.yml#L36">the configured URL should be the HTTPS one</a>:</p></li>
-<li><p>Run the command <em>travis-lint</em> to validate the file syntax.</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">git remote <span class="nb">set</span>-url origin https://<span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span>@github.com/juandebravo/juandebravo.github.com.git
+</code></pre>
+</div>
+
+<ul>
+<li>Run the command <em>travis-lint</em> to validate the file syntax.</li>
 </ul>
 
 <p><em><a href="http://travis-ci.org">Travis</a></em> is a great piece of software that you can take advantage of very easily!! <span class='emoji emoji_bowtie'>bowtie emoji</span> <span class='emoji emoji_neckbeard'>neckbeard emoji</span></p>

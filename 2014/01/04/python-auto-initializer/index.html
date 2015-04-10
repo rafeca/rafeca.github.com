@@ -76,10 +76,55 @@
 
 <p>As an example, while defining a class which constructor requires one or more arguments, there's no need to assign the parameters to instance attributes, this is done out of the box by the compiler while creating the Java code:</p>
 
+<div class="highlight"><pre><code class="scala"><span class="k">class</span> <span class="nc">Foo</span><span class="o">(</span><span class="k">val</span> <span class="n">x</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="k">val</span> <span class="n">y</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="n">value</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Foo</span><span class="o">(</span><span class="s">&quot;bar&quot;</span><span class="o">,</span> <span class="s">&quot;bazz&quot;</span><span class="o">)</span>
+<span class="n">println</span><span class="o">(</span><span class="n">value</span><span class="o">.</span><span class="n">x</span><span class="o">)</span>
+<span class="c1">//&gt; bar</span>
+</code></pre>
+</div>
+
 <p>Python, like many other languages, does not behave that way, therefore you must assign the attributes to instance variables. Someone would argue that this is indeed the pythonic way to work, <a href="http://www.python.org/dev/peps/pep-0020/">making things as explicit as possible</a>. Letting aside that the method <a href="http://docs.python.org/2/reference/datamodel.html#object.__init__">__init__</a> is not a constructor, you can do the assigment with the following snippet of code:</p>
+
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;bazz&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">value</span><span class="o">.</span><span class="n">x</span>
+<span class="o">//</span> <span class="n">bar</span>
+</code></pre>
+</div>
 
 <p>It turns out that a high percentage of the time, the only thing you may need to do in your __init__ methods is assigning the parameters to instance variables.  Being a common behavior, it seems to me like a nice chance to build a
 <a href="2012/07/24/why-python-rocks_and_two/">decorator</a> <span class='emoji emoji_smile_cat'>smile_cat emoji</span>. Here it goes:</p>
+
+<div class="highlight"><pre><code class="python"><span class="kn">import</span> <span class="nn">inspect</span>
+
+<span class="k">def</span> <span class="nf">autoinit</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+    <span class="n">co_varnames</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_varnames</span>
+    <span class="n">kwa_defaults</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getargspec</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="o">.</span><span class="n">defaults</span>
+
+    <span class="k">def</span> <span class="nf">_wrap</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">nargs</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">co_varnames</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">nargs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">kwa_keys</span> <span class="o">=</span> <span class="n">co_varnames</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">nargs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">nargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">nargs</span><span class="p">[</span><span class="n">names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">k</span><span class="p">)])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">)</span>
+        <span class="c"># Add the keyword arguments</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwa_keys</span><span class="p">:</span>
+            <span class="n">nargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">else</span> <span class="n">kwa_defaults</span><span class="p">[</span><span class="n">kwa_keys</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
+
+        <span class="c"># Set the values to the instance attributes</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nargs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_wrap</span>
+</code></pre>
+</div>
 
 <p>The function that builds the decorator (autoinit) is doing simple things:</p>
 
@@ -89,6 +134,19 @@
 </ul>
 
 <p>An usage example:</p>
+
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="nd">@autoinit</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">f</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">b</span>
+<span class="o">//</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">100</span>
+</code></pre>
+</div>
 
   
   <p class="back">&laquo; <a href="/">Home</a></p>

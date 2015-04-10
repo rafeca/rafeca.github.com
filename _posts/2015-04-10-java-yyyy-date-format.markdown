@@ -22,12 +22,13 @@ As an example:
     public class DataExample {
         public static void main(String args[]) {
             try {
-                String date_s = "2015-12-31";
+                String date_s = "2014-12-31";
                 SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
                 Date d = dt.parse(date_s);
                 SimpleDateFormat dt1 = new SimpleDateFormat("YYYY");
-                System.out.println("And the year is..." + dt1.format(d));
+                System.out.println("And the year is... " + dt1.format(d));
             } catch (Exception e) {
+                System.out.println(e);
             }
         }
     }

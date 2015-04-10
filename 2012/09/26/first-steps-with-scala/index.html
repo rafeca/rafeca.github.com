@@ -78,36 +78,15 @@
 
 <h1>1. Install the interpreter</h1>
 
-<div class="highlight"><pre><code class="bash">brew install scala
-</code></pre>
-</div>
-
 <h1>2. Install SBT, the build tool</h1>
 
 <p><a href="https://github.com/harrah/xsbt/wiki">SBT</a> is for Scala what Maven is for Java. I haven't used it in depth yet, but hopefully it'll suck less than Maven.</p>
-
-<div class="highlight"><pre><code class="bash">brew install sbt
-</code></pre>
-</div>
 
 <h1>3. Write your first Scala code using the Scala REPL</h1>
 
 <p>Scala provides a built-in interpreter (Read-Evaluate-Print Loop) to write and run Scala code very easily.</p>
 
 <p>You can run the Scala <strong>REPL</strong> either using sbt or <strong>scala</strong> command:</p>
-
-<div class="highlight"><pre><code class="bash"><span class="c"># Using SBT</span>
-juandebravo <span class="o">[</span>~/bin<span class="o">]</span> λ sbt console
-scala&gt;
-scala&gt; println<span class="o">(</span><span class="s2">&quot;Hello world&quot;</span><span class="o">)</span>
-Hello world
-<span class="c"># Using scala</span>
-juandebravo <span class="o">[</span>~/bin<span class="o">]</span> λ scala
-scala&gt;
-scala&gt; println<span class="o">(</span><span class="s2">&quot;Hello world&quot;</span><span class="o">)</span>
-Hello world
-</code></pre>
-</div>
 
 <h1>4. Configure your IDE of choice. Sublime Text 2</h1>
 
@@ -118,20 +97,17 @@ Follow the instructions in the <a href="https://github.com/sublimescala/sublime-
 
 <p>Some months ago I created project showing some cool Scala features, check it out in my <a href="https://github.com/juandebravo/scala-examples">github repository</a>. To run it using Sublime Text 2, create a new Build system with the following configuration:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="p">{</span>
-    <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;sbt&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;selector&quot;</span><span class="o">:</span> <span class="s2">&quot;source.scala&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;working_dir&quot;</span><span class="o">:</span> <span class="s2">&quot;${project_path}&quot;</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
   
   <p class="back">&laquo; <a href="/">Home</a></p>
 </div>
       
 <!--h2>Related Posts</h2>
 <ul class="posts_list">
+  
+    <li class="post">
+  <span class="left_title">10 Apr 2015</span>
+  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
+</li>
   
     <li class="post">
   <span class="left_title">15 Feb 2015</span>
@@ -141,11 +117,6 @@ Follow the instructions in the <a href="https://github.com/sublimescala/sublime-
     <li class="post">
   <span class="left_title">23 Jan 2015</span>
   <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">22 Nov 2014</span>
-  <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
 </li>
   
 </ul-->

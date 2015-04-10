@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>About git internals - juandebravo's personal blog</title>
+  <title>Don't use YYYY in your date format template - juandebravo's personal blog</title>
   <meta name="description" content="juandebravo's personal blog - Personal thoughts about technology (@juandebravo)">
   <meta name="author" content="Juan de Bravo">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -58,26 +58,40 @@
     <div class="container">
 
       <header>   
-  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> About git internals <small>01 Dec 2012</small></h2>
+  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> Don't use YYYY in your date format template <small>10 Apr 2015</small></h2>
 
   <nav>
     <ul class="clearfix">
     
-      <li><a href="/tag/git.html">git</a></li>
+      <li><a href="/tag/java.html">java</a></li>
     
     </ul>
   </nav>
 </header>
 
 <div id="post" role="main">
-  <p>Last week, <a href="https://twitter.com/search?q=%23Devcon1&src=typd">the first Telefonica Digital Developers Conference</a> was held in Madrid.
-A two day event that gathered the Spain based developer team. 48 hours of lectures and constant knowledge sharing.</p>
+  <p><strong>yyyy</strong> is the pattern string to identify the year in the <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a> class.</p>
 
-<p>My talk, &quot;git internals&quot;, highlighted how git repository works when storing relevant information.</p>
+<p>Java 7 introduced <strong>YYYY</strong> as a new date pattern to identify the <em><a href="http://en.wikipedia.org/wiki/ISO_week_date">date week year</a></em>.</p>
 
-<p><center>
-<iframe src="http://www.slideshare.net/slideshow/embed_code/15439276" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
-</center></p>
+<p>An average year is exactly 52.1775 weeks long, which means that eventually a year might have
+either 52 or 53 weeks considering indivisible weeks.</p>
+
+<p>Using <strong>YYYY</strong> <em>unintendedly</em> while formatting a date can cause severe issues in your Java application.</p>
+
+<p>As an example:</p>
+
+<p>The snippet above prints &quot;<em>And the year is... 2015</em>&quot;, because <a href="http://www.epochconverter.com/date-and-time/weeknumbers-by-year.php?year=2014">2015 week year started on 29/12/2014</a>.</p>
+
+<p>This issue seemed to be the root cause of the <a href="http://tech.firstpost.com/news-analysis/twitter-suffers-massive-outage-on-all-online-platforms-back-now-247196.html">massive outage that Twitter suffered last year</a>.</p>
+
+<p>So double check if you really need to use <em>YYYY</em> while formatting your date, and in case of doubt... <strong>Better call Saul</strong>!!</p>
+
+<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/7404XMzHr-M"
+    frameborder="0"
+    allowfullscreen>
+</iframe>
 
   
   <p class="back">&laquo; <a href="/">Home</a></p>
@@ -87,11 +101,6 @@ A two day event that gathered the Spain based developer team. 48 hours of lectur
 <ul class="posts_list">
   
     <li class="post">
-  <span class="left_title">10 Apr 2015</span>
-  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
-</li>
-  
-    <li class="post">
   <span class="left_title">15 Feb 2015</span>
   <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
 </li>
@@ -99,6 +108,11 @@ A two day event that gathered the Spain based developer team. 48 hours of lectur
     <li class="post">
   <span class="left_title">23 Jan 2015</span>
   <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">22 Nov 2014</span>
+  <a href="/2014/11/22/using-travis-ci-to-build-this-blog" title="Using travis-ci to build this blog">Using travis-ci to build this blog</a>
 </li>
   
 </ul-->

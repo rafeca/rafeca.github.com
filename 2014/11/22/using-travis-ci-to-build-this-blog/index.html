@@ -90,32 +90,11 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
 <li><p>Create a new account in Travis</p></li>
 <li><p>Configure your GitHub project to support <em>travis</em>. <a href="https://developer.github.com/webhooks/#services">Here</a> you can find the list of supported services &amp; webhooks (<a href="https://api.github.com/hooks">JSON format</a>).</p></li>
 <li><p>Install the <em>travis</em> gem in your local environment</p></li>
-</ul>
-
-<div class="highlight"><pre><code class="bash">gem install travis
-</code></pre>
-</div>
-
-<ul>
 <li><p>Generate a valid token in the GitHub project settings page.</p></li>
 <li><p>Hash the token for travis to be able to use it in a secured way (as the value will be included in your repository)</p></li>
-</ul>
-
-<div class="highlight"><pre><code class="bash">travis encrypt -r &lt;USER&gt;/&lt;REPOSITORY&gt; <span class="nv">GH_TOKEN</span><span class="o">=</span>&lt;GH-TOKEN&gt; --add env.global
-</code></pre>
-</div>
-
-<ul>
 <li><p><a href="http://docs.travis-ci.com/">Configure your build</a> in the <strong>.travis.yaml</strong> file at the root of your repository.</p></li>
 <li><p>In order to use a GitHub OAuth token, <a href="https://github.com/juandebravo/juandebravo.github.com/blob/master/.travis.yml#L36">the configured URL should be the HTTPS one</a>:</p></li>
-</ul>
-
-<div class="highlight"><pre><code class="bash">git remote <span class="nb">set</span>-url origin https://<span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span>@github.com/juandebravo/juandebravo.github.com.git
-</code></pre>
-</div>
-
-<ul>
-<li>Run the command <em>travis-lint</em> to validate the file syntax.</li>
+<li><p>Run the command <em>travis-lint</em> to validate the file syntax.</p></li>
 </ul>
 
 <p><em><a href="http://travis-ci.org">Travis</a></em> is a great piece of software that you can take advantage of very easily!! <span class='emoji emoji_bowtie'>bowtie emoji</span> <span class='emoji emoji_neckbeard'>neckbeard emoji</span></p>
@@ -128,6 +107,11 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">10 Apr 2015</span>
+  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">15 Feb 2015</span>
   <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
 </li>
@@ -135,11 +119,6 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
     <li class="post">
   <span class="left_title">23 Jan 2015</span>
   <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">12 Mar 2014</span>
-  <a href="/2014/03/12/registering-subclasses-in-python-and-ruby" title="Registering subclasses in python and ruby">Registering subclasses in python and ruby</a>
 </li>
   
 </ul-->

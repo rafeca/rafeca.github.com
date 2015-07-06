@@ -100,12 +100,12 @@
 
   <span class="nb">require</span> <span class="s1">&#39;jekyll&#39;</span>
 
-  <span class="n">site</span> <span class="o">=</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Site</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">.</span><span class="n">configuration</span><span class="p">({}))</span>
+  <span class="n">site</span> <span class="o">=</span> <span class="ss">Jekyll</span><span class="p">:</span><span class="ss">:Site</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">.</span><span class="n">configuration</span><span class="p">({}))</span>
 
   <span class="n">path</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;emoji&#39;</span><span class="o">]</span>
 
   <span class="k">if</span> <span class="o">!</span><span class="n">path</span><span class="o">.</span><span class="n">empty?</span> <span class="ow">and</span> <span class="o">!</span><span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="o">!</span><span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">path</span><span class="si">}</span><span class="s2">/smiley.png&quot;</span><span class="p">)</span>
-    <span class="no">Dir</span><span class="o">::</span><span class="n">mkdir</span> <span class="n">path</span>
+    <span class="ss">Dir</span><span class="p">:</span><span class="ss">:mkdir</span> <span class="n">path</span>
 
     <span class="n">_css</span> <span class="o">=</span> <span class="sx">%[.emoji {</span>
 <span class="sx">  width: 20px;</span>
@@ -176,7 +176,7 @@
   <span class="k">end</span> <span class="c1"># EmojiFilter</span>
 <span class="k">end</span> <span class="c1"># Jekyll</span>
 
-<span class="no">Liquid</span><span class="o">::</span><span class="no">Template</span><span class="o">.</span><span class="n">register_filter</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">::</span><span class="no">EmojiFilter</span><span class="p">)</span>
+<span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Template</span><span class="o">.</span><span class="n">register_filter</span><span class="p">(</span><span class="ss">Jekyll</span><span class="p">:</span><span class="ss">:EmojiFilter</span><span class="p">)</span>
 </code></pre>
 </div>
 
@@ -214,6 +214,11 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">06 Jul 2015</span>
+  <a href="/2015/07/06/demystifying-coroutines-in-python" title="Demystifying coroutines in python">Demystifying coroutines in python</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">10 Apr 2015</span>
   <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
 </li>
@@ -221,11 +226,6 @@
     <li class="post">
   <span class="left_title">15 Feb 2015</span>
   <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">23 Jan 2015</span>
-  <a href="/2015/01/23/validate-arity" title="Validating Arity in JavaScript">Validating Arity in JavaScript</a>
 </li>
   
 </ul-->

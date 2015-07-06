@@ -4,7 +4,7 @@
  <title>juandebravo's personal blog</title>
  <link href="http://feeds.feedburner.com/juandebravo" rel="self"/>
  <link href="http://juandebravo.com"/>
- <updated>2015-07-06T21:21:12+02:00</updated>
+ <updated>2015-07-06T21:28:47+02:00</updated>
  <id>http://juandebravo.com</id>
  <author>
    <name>Juan de Bravo</name>
@@ -17,7 +17,7 @@
    <link href="http://juandebravo.com/2015/07/06/demystifying-coroutines-in-python"/>
    <updated>2015-07-06T00:00:00+02:00</updated>
    <id>http://juandebravo.com/2015/07/06/demystifying-coroutines-in-python</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Coroutine&quot;&gt;Coroutines&lt;/a&gt; are &lt;em&gt;special functions&lt;/em&gt; that differs from &lt;em&gt;usual ones&lt;/em&gt; in four aspects:&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Coroutine&quot;&gt;Coroutines&lt;/a&gt; are &lt;em&gt;special functions&lt;/em&gt; that differ from &lt;em&gt;usual ones&lt;/em&gt; in four aspects:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;exposes several entry points to a function&lt;/strong&gt;. An entry point is the line of code inside the function where it will take control over the execution.&lt;/li&gt;
@@ -28,7 +28,7 @@
 
 &lt;p&gt;&lt;strong&gt;Python implements coroutines starting in &lt;em&gt;Python 2.5&lt;/em&gt; by reusing the generator syntax&lt;/strong&gt;, as defined in &lt;a href=&quot;https://www.python.org/dev/peps/pep-0342/&quot;&gt;PEP 342 - Coroutines via Enhanced Generators&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Generator syntax is defined in &lt;a href=&quot;https://www.python.org/dev/peps/pep-0255/&quot;&gt;PEP 255 - Simple generators&lt;/a&gt;. I covered briefly the generator functionality in a &lt;a href=&quot;/2012/07/16/why-python-rocks/&quot;&gt;previous post&lt;/a&gt;. The basic usage of generators is creating an iterator over a data source. For example, the function in the snippet below returns a generator that iterates from a specific number till 0, decreasing an unit in every iteration.&lt;/p&gt;
+&lt;p&gt;Generator syntax is defined in &lt;a href=&quot;https://www.python.org/dev/peps/pep-0255/&quot;&gt;PEP 255 - Simple generators&lt;/a&gt;. I covered briefly the generator functionality in a &lt;a href=&quot;/2012/07/16/why-python-rocks/&quot;&gt;previous post&lt;/a&gt;. The basic usage of generators is creating an iterator over a data source. For example, the function in the snippet below returns a generator that iterates from a specific number down to 0, decreasing an unit in every iteration.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;countdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Counting down from &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; to 0&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
@@ -52,9 +52,9 @@ Counting down from 5 to 0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;In the example above, the keyword &lt;strong&gt;yield&lt;/strong&gt; is used to return a new value in every iteration while consuming the generator. It's interesting to note that a generator can be consumed only once, oposite to a list that can be consumed/iterate as much as needed. A generator is considered &lt;em&gt;exhausted&lt;/em&gt; after being consumed.&lt;/p&gt;
+&lt;p&gt;In the example above, the keyword &lt;strong&gt;yield&lt;/strong&gt; is used to return a new value in every iteration while &lt;em&gt;consuming&lt;/em&gt; the generator. It's interesting to note that &lt;em&gt;a generator can be consumed only once&lt;/em&gt;, opposite to a list that can be consumed/iterate as much as needed. A generator is considered &lt;em&gt;exhausted&lt;/em&gt; upon being consumed the first time.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;PEP 342&lt;/strong&gt; takes advantage of the keyword &lt;strong&gt;yield&lt;/strong&gt; for pointing out entry points where the function/coroutine will receive inputs while being executed. Let's see a very simple example of a coroutine that
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.python.org/dev/peps/pep-0342/&quot;&gt;PEP 342&lt;/a&gt;&lt;/strong&gt; takes advantage of the keyword &lt;strong&gt;yield&lt;/strong&gt; for pointing out entry points where the function/coroutine will receive inputs while being executed. Let's see a very simple example of a coroutine that
 concatenates every string inserted by the user from the command line:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;concatenate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
@@ -104,7 +104,9 @@ bazz
 
 &lt;p&gt;May you be interested in additional information about this topic, I recommend going through &lt;a href=&quot;http://www.dabeaz.com/&quot;&gt;Daviz Beazley&lt;/a&gt; slides regarding &lt;a href=&quot;http://www.dabeaz.com/generators/Generators.pdf&quot;&gt;generators&lt;/a&gt; and &lt;a href=&quot;http://www.dabeaz.com/coroutines/Coroutines.pdf&quot;&gt;coroutines&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;As a side project I have implemented a tiny library called &lt;em&gt;&lt;a href=&quot;https://github.com/juandebravo/washington&quot;&gt;washington&lt;/a&gt;&lt;/em&gt; that exposes a chainable API for building a coroutines stream.&lt;/p&gt;
+&lt;p&gt;As a side project I have implemented a tiny library called &lt;strong&gt;&lt;a href=&quot;https://github.com/juandebravo/washington&quot;&gt;washington&lt;/a&gt;&lt;/strong&gt; that exposes a chainable API for building a coroutines stream. I had a lot of fun while digging into the implementation, even though the real usage of the library is expected to be very limited :blush:&lt;/p&gt;
+
+&lt;p&gt;Happy coroutining!!! :bicyclist: :fireworks:&lt;/p&gt;
 </content>
  </entry>
  

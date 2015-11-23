@@ -4,13 +4,62 @@
  <title>juandebravo's personal blog</title>
  <link href="http://feeds.feedburner.com/juandebravo" rel="self"/>
  <link href="http://juandebravo.com"/>
- <updated>2015-07-06T21:28:47+02:00</updated>
+ <updated>2015-11-23T19:51:27+01:00</updated>
  <id>http://juandebravo.com</id>
  <author>
    <name>Juan de Bravo</name>
    <email>juandebravo@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>A virtual machine for WebRTC development</title>
+   <link href="http://juandebravo.com/2015/11/23/webrtc-adapter-vagrant-box"/>
+   <updated>2015-11-23T00:00:00+01:00</updated>
+   <id>http://juandebravo.com/2015/11/23/webrtc-adapter-vagrant-box</id>
+   <content type="html">&lt;p&gt;As described in the &lt;a href=&quot;http://www.webrtc.org/&quot;&gt;WebRTC project main webpage&lt;/a&gt;, WebRTC is a free, open project that provides browsers and mobile applications with Real-Time Communications (RTC) capabilities via simple APIs. Or in case you prefer the &lt;a href=&quot;https://en.wikipedia.org/wiki/WebRTC&quot;&gt;Wikipedia definition&lt;/a&gt;, WebRTC (Web Real-Time Communication) is an API definition drafted by the World Wide Web Consortium (W3C) that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing without the need of either internal or external plugins.&lt;/p&gt;
+
+&lt;p&gt;WebRTC implements &lt;strong&gt;three basic new APIs&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;getUserMedia&lt;/strong&gt;: it represents synchronized streams of media.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RTCPeerConnection&lt;/strong&gt;: it handles stable and efficient communication of streaming data between peers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DataChannel&lt;/strong&gt;: it enables peer-to-peer exchange of arbitrary data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://iswebrtcreadyyet.com/&quot;&gt;iswebrtcreadyyet&lt;/a&gt; lists the different WebRTC functionalities that are supported by the latest version of the most widely used browers.&lt;/p&gt;
+
+&lt;p&gt;WebRTC APIs are still in early stages, which means that new browser versions could introdude non backwards compatible changes, and APIs name may be prefixed by a browser prefix (&lt;em&gt;moz&lt;/em&gt;, &lt;em&gt;webkit&lt;/em&gt;, ...), which eventually means the JS developer is in charge on building a shim to support multiple browsers in her webRTC application.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/webrtc&quot;&gt;WebRTC team&lt;/a&gt; has created a &lt;strong&gt;&lt;a href=&quot;https://github.com/webrtc/adapter&quot;&gt;shim called adapter&lt;/a&gt;&lt;/strong&gt; as an effort for hiding those API changes and prefix differences from developers.&lt;/p&gt;
+
+&lt;p&gt;In case you want to get started with &lt;strong&gt;adapter development&lt;/strong&gt;, you will need a &lt;a href=&quot;https://github.com/webrtc/adapter/tree/master/test&quot;&gt;Debian box to ensure you can run the multi-browser tests&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In order to make this process simpler, I have put some effort on creating a Vagrant box called &lt;a href=&quot;https://github.com/juandebravo/webrtc-box&quot;&gt;webrtc-box&lt;/a&gt;, that is in change of automating the development environment setup for working on WebRTC adapter.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Running adapter tests should be as simple as&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Clone repository&lt;/span&gt;
+host &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/juandebravo/webrtc-box.git
+host &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;webrtc-box
+host &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vagrant up
+
+&lt;span class=&quot;c&quot;&gt;# Connect to guest machine&lt;/span&gt;
+host &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vagrant ssh
+
+&lt;span class=&quot;c&quot;&gt;# Execute tests&lt;/span&gt;
+vagrant@debian &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /adapter
+vagrant@debian /adapter &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And that's it, you're ready to start hacking on top of &lt;strong&gt;&lt;a href=&quot;https://github.com/webrtc/adapter&quot;&gt;adapter&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Happy webrtc-ing!!! :city_sunrise: :squirrel:&lt;/p&gt;
+
+&lt;p&gt;In case you read this post before November 30th 2015, you're on time for making a donation to our &lt;a href=&quot;http://moteam.co/tu-go&quot;&gt;Movember team&lt;/a&gt;!!! :man:&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Demystifying coroutines in python</title>
@@ -39,10 +88,10 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;i in countdown&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;5&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; i in countdown&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;5&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
 &amp;gt;&amp;gt;&amp;gt;     print i
 ...
-Counting down from 5 to 0
+Counting down from &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; to 0
 5
 4
 3
@@ -325,7 +374,7 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
 &lt;li&gt;&lt;p&gt;In order to use a GitHub OAuth token, &lt;a href=&quot;https://github.com/juandebravo/juandebravo.github.com/blob/master/.travis.yml#L36&quot;&gt;the configured URL should be the HTTPS one&lt;/a&gt;:&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git remote &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-url origin https://&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;@github.com/juandebravo/juandebravo.github.com.git
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git remote &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-url origin https://&lt;span class=&quot;si&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;@github.com/juandebravo/juandebravo.github.com.git
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -881,7 +930,7 @@ deferred, age, surname, name, email
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&amp;gt; sbt run
 
-Multiple main classes detected, &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;one to run:
+Multiple main classes detected, &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; one to run:
 
  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Bar
  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Foo
@@ -889,7 +938,7 @@ Multiple main classes detected, &lt;span class=&quot;k&quot;&gt;select &lt;/span
 Enter number: 2
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;info&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Running Foo
 Hello from Foo
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;success&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Total &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: 29 s, completed Dec 30, 2012 11:36:28 PM
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;success&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Total &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;29&lt;/span&gt; s, completed Dec 30, &lt;span class=&quot;m&quot;&gt;2012&lt;/span&gt; 11:36:28 PM
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -991,12 +1040,12 @@ A two day event that gathered the Spain based developer team. 48 hours of lectur
 
   &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;jekyll&amp;#39;&lt;/span&gt;
 
-  &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Site&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({}))&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Site&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({}))&lt;/span&gt;
 
   &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;emoji&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
 
   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty?&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/smiley.png&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;ss&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:mkdir&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;_css&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%[.emoji {&lt;/span&gt;
 &lt;span class=&quot;sx&quot;&gt;  width: 20px;&lt;/span&gt;
@@ -1067,7 +1116,7 @@ A two day event that gathered the Spain based developer team. 48 hours of lectur
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# EmojiFilter&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Jekyll&lt;/span&gt;
 
-&lt;span class=&quot;ss&quot;&gt;Liquid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;register_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:EmojiFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;Liquid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;register_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EmojiFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -1220,7 +1269,7 @@ Eventually I tidy up my long list of unread interesting stuff and today I found 
 
 &lt;span class=&quot;c&quot;&gt;# &amp;lt;language&amp;gt; should be a programming language supported by pygmentize.&lt;/span&gt;
 
-pbpaste | pygmentize -l &amp;lt;language&amp;gt; -f rtf | pbcopy
+pbpaste &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; pygmentize -l &amp;lt;language&amp;gt; -f rtf &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; pbcopy
 
 &lt;span class=&quot;c&quot;&gt;# Paste the pasteboard content into Keynote.app&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1975,8 +2024,8 @@ git commit -am &lt;span class=&quot;s2&quot;&gt;&amp;quot;bump version&amp;quot;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git branch feature/hello
 git lg                                                                                                                                   
-* d62b49a - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;HEAD, feature/hello, develop&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; bump version - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;66 seconds ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-* 9158f06 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; first commit - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* d62b49a - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;HEAD, feature/hello, develop&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; bump version - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;66&lt;/span&gt; seconds ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* 9158f06 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; first commit - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -1992,9 +2041,9 @@ git commit -am &lt;span class=&quot;s2&quot;&gt;&amp;quot;add hello method&amp;q
 &lt;p&gt;WRONG! You commit to develop instead of feature/hello&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git lg
-* ecd59c3 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;HEAD, develop&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; add hello method - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2 seconds ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-* d62b49a - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;feature/hello&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; bump version - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;40 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-* 9158f06 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; first commit - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;40 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* ecd59c3 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;HEAD, develop&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; add hello method - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; seconds ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* d62b49a - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;feature/hello&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; bump version - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;40&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* 9158f06 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; first commit - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;40&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -2007,9 +2056,9 @@ git commit -am &lt;span class=&quot;s2&quot;&gt;&amp;quot;add hello method&amp;q
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git checkout feature/crud_users
 git merge develop
 git lg
-* ecd59c3 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;HEAD, feature/hello, develop&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; add hello method - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-* d62b49a - bump version - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;43 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-* 9158f06 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; first commit - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;44 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* ecd59c3 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;HEAD, feature/hello, develop&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; add hello method - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* d62b49a - bump version - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;43&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* 9158f06 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; first commit - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;44&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -2022,9 +2071,9 @@ git lg
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git checkout develop
 git reset --hard HEAD~1
 git lg
-* ecd59c3 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;feature/hello&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; add hello method - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;4 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-* d62b49a - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;HEAD, develop&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; bump version - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;44 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-* 9158f06 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; first commit - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;44 minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* ecd59c3 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;feature/hello&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; add hello method - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* d62b49a - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;HEAD, develop&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; bump version - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;44&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+* 9158f06 - &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; first commit - juandebravo &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;44&lt;/span&gt; minutes ago&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 

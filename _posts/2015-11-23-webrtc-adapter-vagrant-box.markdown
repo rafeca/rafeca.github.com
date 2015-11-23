@@ -6,7 +6,7 @@ categories: [webrtc, vagrant, html5]
 
 As described in the [WebRTC project main webpage](http://www.webrtc.org/), WebRTC is a free, open project that provides browsers and mobile applications with Real-Time Communications (RTC) capabilities via simple APIs. Or in case you prefer the [Wikipedia definition](https://en.wikipedia.org/wiki/WebRTC), WebRTC (Web Real-Time Communication) is an API definition drafted by the World Wide Web Consortium (W3C) that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing without the need of either internal or external plugins.
 
-WebRTC implements three basic new APIs:
+WebRTC implements **three basic new APIs**:
 
 * **getUserMedia**: it represents synchronized streams of media.
 * **RTCPeerConnection**: it handles stable and efficient communication of streaming data between peers.
@@ -40,8 +40,8 @@ vagrant@debian /adapter $ npm test
 
 {% endhighlight %}
 
-And that's it, you're ready to start hacking on top of **adapter**.
+And that's it, you're ready to start hacking on top of **[adapter](https://github.com/webrtc/adapter)**.
 
 Happy webrtc-ing!!! :city_sunrise: :squirrel:
 
-In case you read this post before November 20th 2015, you're on time for making a donation to our [Movember team](http://moteam.co/tu-go)!!! :man:
+In case you read this post before November 30th 2015, you're on time for making a donation to our [Movember team](http://moteam.co/tu-go)!!! :man:

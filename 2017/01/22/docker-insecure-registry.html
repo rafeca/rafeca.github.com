@@ -1,0 +1,187 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Docker and how to get access to insecure registries - juandebravo's personal blog</title>
+  <meta name="description" content="juandebravo's personal blog - Personal thoughts about technology (@juandebravo)">
+  <meta name="author" content="Juan de Bravo">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="http://feeds.feedburner.com/juandebravo" rel="alternate" title="juandebravo's personal blog" type="application/atom+xml">
+  <link rel="author" href="/humans.txt">
+
+  <link rel="stylesheet" href="/css/emoji.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/disqus.css">
+
+  <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+  <div class='main_container'>
+    <div class="title">
+      <h1>
+        <a href="/index.html">juandebravo's personal blog</a>
+      </h1>
+    </div>
+    <div class="menu">
+      <ul>
+  
+    
+    
+    <li class="item active">
+      <a href="/index.html">Dev Blog</a>
+    </li>
+  
+    
+    
+    <li class="item ">
+      <a href="/open_source.html">Open Source</a>
+    </li>
+  
+    
+    
+    <li class="item ">
+      <a href="/about_me.html">About me</a>
+    </li>
+  
+</ul>
+    </div>
+    <div class="container">
+
+      <header>
+  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> Docker and how to get access to insecure registries <small>22 Jan 2017</small></h2>
+
+  <nav>
+    <ul class="clearfix">
+    
+      <li><a href="/tag/docker.html">docker</a></li>
+    
+    </ul>
+  </nav>
+</header>
+
+<div id="post" role="main">
+  <p>I just realized 2016 passed by and this blog didn’t get any update. I hope you were not worried about my health, I’ve been fine! Just a bit busy :construction_worker: :couplekiss:.</p>
+
+<p>Last two weeks I’ve been playing a bit with <a href="https://www.docker.com/">Docker</a>. In general before getting your feet wet with a new technology, it’s convenient (required?) to either go through the <a href="https://docs.docker.com/">usually great documentation about the project</a> or follow <a href="https://harishnarayanan.org/writing/kubernetes-django/">a tutorial</a> about it. I did the later, and as a result of it I pushed my first two docker images to <a href="https://hub.docker.com/r/juandebravo/">Docker Hub</a>. Nothing really impressive, but it helps you to go through the basics.</p>
+
+<p>Last week I started a side project and, for it to be more interesting, I decided to go with Docker and Kubernetes :neckbeard:. It turns out that the project cannot be public, so I needed to use an internal Docker hub we’re using in my current project for keeping it private.</p>
+
+<p>Unfortunately, that private Docker hub is configured to accept only HTTP requests, instead of HTTPS. I know… bear with me please :pray:.</p>
+
+<p>After tagging the image, I was trying to push to the docker hub repository and getting this response:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fish&gt; docker push &lt;insecure-docker-hub-hostname&gt;/&lt;image-name&gt;:&lt;image-tag&gt;
+The push refers to a repository [&lt;insecure-docker-hub-hostname&gt;/&lt;image-name&gt;]
+Get https://&lt;insecure-docker-hub-hostname&gt;/v1/_ping: dial tcp &lt;IP-address&gt;:443: getsockopt: connection refused</code></pre></figure>
+
+<p>Console information shows that docker is trying to connect via HTTPS to docker hub.</p>
+
+<p>For overcoming this and get access via HTTP, you need to do the following:</p>
+
+<p><strong>If you’re using Mac OSX Docker client</strong>:</p>
+
+<ul>
+  <li>Go to Docker -&gt; Daemon -&gt; Basic -&gt; Insecure registries</li>
+  <li>Add <insecure-docker-hub-hostname> to the list</insecure-docker-hub-hostname></li>
+  <li>Restart Docker</li>
+</ul>
+
+<p><strong>If you’re using a Linux distribution</strong>:</p>
+
+<ul>
+  <li>Open file <code>/etc/sysconfig/docker</code></li>
+  <li>Add <code>INSECURE_REGISTRY="--insecure-registry=&lt;insecure-docker-hub-hostname&gt; "</code></li>
+  <li>Restart Docker</li>
+</ul>
+
+<p>Now you’re ready to work with your insecure Docker hub!</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fish&gt; docker push &lt;insecure-docker-hub-hostname&gt;/&lt;image-name&gt;:&lt;image-tag&gt;
+The push refers to a repository [&lt;insecure-docker-hub-hostname&gt;/&lt;image-name&gt;]
+...</code></pre></figure>
+
+
+
+  <p class="back">&laquo; <a href="/">Home</a></p>
+</div>
+
+<!--h2>Related Posts</h2>
+<ul class="posts_list">
+  
+    <li class="post">
+  <span class="left_title">23 Nov 2015</span>
+  <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">06 Jul 2015</span>
+  <a href="/2015/07/06/demystifying-coroutines-in-python" title="Demystifying coroutines in python">Demystifying coroutines in python</a>
+</li>
+  
+    <li class="post">
+  <span class="left_title">10 Apr 2015</span>
+  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
+</li>
+  
+</ul-->
+
+<hr/>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'juandebravo'; // required: replace example with your forum shortname
+    //var disqus_developer = 1; // developer mode is on, for testing locally
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      <footer>
+        <span class="author_info">
+          <a href="/about_me.html">Juan de Bravo</a>
+        </span>
+        <a class="fadedlink footer_link github" href="https://github.com/juandebravo">
+          @github
+        </a>
+        <a class="fadedlink footer_link twitter" href="https://twitter.com/juandebravo">
+          @twitter
+        </a>
+        <a class="fadedlink footer_link linkedin" href="http://linkedin.com/in/juandebravo">
+          @linkedin
+        </a>
+        <a class="fadedlink" href="mailto:juandebravo@gmail.com">
+          <img src="/gfx/gmail-logo.png" alt="@gmail">
+        </a>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    window._gaq = [['_setAccount','UA-32824811-1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>

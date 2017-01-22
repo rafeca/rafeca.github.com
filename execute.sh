@@ -4,7 +4,7 @@ rm -f tag/*
 rake tags
 cp index.html.template index.html
 cp atom.xml.template atom.xml
-jekyll --no-safe
+jekyll build
 cp index.html.template index.html.template.back
 cp atom.xml.template atom.xml.back
 cp -r _site/* .

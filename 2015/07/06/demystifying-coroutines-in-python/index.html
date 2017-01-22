@@ -83,8 +83,8 @@
 
 <p>Generator syntax is defined in <a href="https://www.python.org/dev/peps/pep-0255/">PEP 255 - Simple generators</a>. I covered briefly the generator functionality in a <a href="/2012/07/16/why-python-rocks/">previous post</a>. The basic usage of generators is creating an iterator over a data source. For example, the function in the snippet below returns a generator that iterates from a specific number down to 0, decreasing an unit in every iteration.</p>
 
-<div class="highlight"><pre><code class="python"><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">&quot;Counting down from </span><span class="si">%s</span><span class="s"> to 0&quot;</span> <span class="o">%</span> <span class="n">n</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;Counting down from </span><span class="si">%s</span><span class="s2"> to 0&quot;</span> <span class="o">%</span> <span class="n">n</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">n</span>
     <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">yield</span> <span class="n">i</span>
@@ -92,7 +92,7 @@
 </code></pre>
 </div>
 
-<div class="highlight"><pre><code class="bash">&gt;&gt;&gt; <span class="k">for</span> i in countdown<span class="o">(</span>5<span class="o">)</span>:
+<div class="highlight"><pre><code class="bash"><span></span>&gt;&gt;&gt; <span class="k">for</span> i in countdown<span class="o">(</span>5<span class="o">)</span>:
 &gt;&gt;&gt;     print i
 ...
 Counting down from <span class="m">5</span> to 0
@@ -110,33 +110,33 @@ Counting down from <span class="m">5</span> to 0
 <p><strong><a href="https://www.python.org/dev/peps/pep-0342/">PEP 342</a></strong> takes advantage of the keyword <strong>yield</strong> for pointing out entry points where the function/coroutine will receive inputs while being executed. Let's see a very simple example of a coroutine that
 concatenates every string inserted by the user from the command line:</p>
 
-<div class="highlight"><pre><code class="python"><span class="k">def</span> <span class="nf">concatenate</span><span class="p">(</span><span class="n">_str</span><span class="p">):</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="k">def</span> <span class="nf">concatenate</span><span class="p">(</span><span class="n">_str</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Coroutine that receives a new string in every</span>
 <span class="sd">    iteration and concatenates to the original one</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">temp</span> <span class="o">=</span> <span class="bp">None</span>
 
-    <span class="k">while</span> <span class="n">temp</span> <span class="o">!=</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
-        <span class="c"># Wait for a new input (suspend the coroutine)...</span>
+    <span class="k">while</span> <span class="n">temp</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="c1"># Wait for a new input (suspend the coroutine)...</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="k">yield</span>
-        <span class="c"># ... and save control state (resume the execution)</span>
+        <span class="c1"># ... and save control state (resume the execution)</span>
         <span class="n">_str</span> <span class="o">+=</span> <span class="n">temp</span>
         <span class="k">print</span> <span class="n">_str</span>
 
-<span class="c"># Instantiate a new coroutine...</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">concatenate</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
+<span class="c1"># Instantiate a new coroutine...</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">concatenate</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
 
-<span class="c"># ... and &quot;move&quot; the coroutine state till the `yield` keyword</span>
+<span class="c1"># ... and &quot;move&quot; the coroutine state till the `yield` keyword</span>
 <span class="n">a</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
 
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="c"># Send the raw input from the user to the coroutine...</span>
+        <span class="c1"># Send the raw input from the user to the coroutine...</span>
         <span class="n">a</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">())</span>
     <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-        <span class="c"># ... and capture the coroutine end by means</span>
-        <span class="c"># of StopIteration exception</span>
+        <span class="c1"># ... and capture the coroutine end by means</span>
+        <span class="c1"># of StopIteration exception</span>
         <span class="k">break</span>
 </code></pre>
 </div>
@@ -145,7 +145,7 @@ concatenates every string inserted by the user from the command line:</p>
 <strong>yield</strong> keyword, allowing the program flow to be moved from the coroutine to the external program
 and back to it.</p>
 
-<div class="highlight"><pre><code class="bash">python coroutine.py
+<div class="highlight"><pre><code class="bash"><span></span>python coroutine.py
 bar
     foobar
 bazz
@@ -169,6 +169,11 @@ bazz
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">22 Jan 2017</span>
+  <a href="/2017/01/22/docker-insecure-registry" title="Docker and how to get access to insecure registries">Docker and how to get access to insecure registries</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Nov 2015</span>
   <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
 </li>
@@ -176,11 +181,6 @@ bazz
     <li class="post">
   <span class="left_title">10 Apr 2015</span>
   <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">15 Feb 2015</span>
-  <a href="/2015/02/15/toggle-func-in-python" title="Hanoi. Toggle functionalities in python">Hanoi. Toggle functionalities in python</a>
 </li>
   
 </ul-->

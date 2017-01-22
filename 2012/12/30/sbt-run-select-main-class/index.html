@@ -92,7 +92,7 @@
 
 <p>Let's consider the following snippet of code, having two objects that define a <em>main</em> method:</p>
 
-<div class="highlight"><pre><code class="scala"><span class="k">#</span> <span class="nc">File</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="nc">Foo</span><span class="o">.</span><span class="n">scala</span>
+<div class="highlight"><pre><code class="scala"><span></span><span class="k">#</span> <span class="nc">File</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="nc">Foo</span><span class="o">.</span><span class="n">scala</span>
 <span class="k">object</span> <span class="nc">Foo</span> <span class="o">{</span>
     <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="k">=</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello from Foo&quot;</span><span class="o">)</span>
 <span class="o">}</span>
@@ -106,7 +106,7 @@
 
 <p>When you execute the <strong>sbt run</strong> command, the following text shows up:</p>
 
-<div class="highlight"><pre><code class="bash">&gt; sbt run
+<div class="highlight"><pre><code class="bash"><span></span>&gt; sbt run
 
 Multiple main classes detected, <span class="k">select</span> one to run:
 
@@ -116,7 +116,7 @@ Multiple main classes detected, <span class="k">select</span> one to run:
 Enter number: 2
 <span class="o">[</span>info<span class="o">]</span> Running Foo
 Hello from Foo
-<span class="o">[</span>success<span class="o">]</span> Total <span class="nb">time</span>: <span class="m">29</span> s, completed Dec 30, <span class="m">2012</span> 11:36:28 PM
+<span class="o">[</span>success<span class="o">]</span> Total time: <span class="m">29</span> s, completed Dec 30, <span class="m">2012</span> 11:36:28 PM
 </code></pre>
 </div>
 
@@ -128,7 +128,7 @@ Hello from Foo
 <li>Create (or update) the file <em>project/plugins.sbt</em>, including:</li>
 </ul>
 
-<div class="highlight"><pre><code class="scala"><span class="n">addSbtPlugin</span><span class="o">(</span><span class="s">&quot;com.typesafe.sbt&quot;</span> <span class="o">%</span> <span class="s">&quot;sbt-start-script&quot;</span> <span class="o">%</span> <span class="s">&quot;0.6.0&quot;</span><span class="o">)</span>
+<div class="highlight"><pre><code class="scala"><span></span><span class="n">addSbtPlugin</span><span class="o">(</span><span class="s">&quot;com.typesafe.sbt&quot;</span> <span class="o">%</span> <span class="s">&quot;sbt-start-script&quot;</span> <span class="o">%</span> <span class="s">&quot;0.6.0&quot;</span><span class="o">)</span>
 </code></pre>
 </div>
 
@@ -136,7 +136,7 @@ Hello from Foo
 <li>Create (or update) the file <em>build.sbt</em>, adding:</li>
 </ul>
 
-<div class="highlight"><pre><code class="scala"><span class="k">import</span> <span class="nn">com.typesafe.sbt.SbtStartScript</span>
+<div class="highlight"><pre><code class="scala"><span></span><span class="k">import</span> <span class="nn">com.typesafe.sbt.SbtStartScript</span>
 <span class="n">seq</span><span class="o">(</span><span class="nc">SbtStartScript</span><span class="o">.</span><span class="n">startScriptForClassesSettings</span><span class="k">:</span> <span class="k">_</span><span class="kt">*</span><span class="o">)</span>
 </code></pre>
 </div>
@@ -145,14 +145,14 @@ Hello from Foo
 <li>Execute:</li>
 </ul>
 
-<div class="highlight"><pre><code class="bash">sbt update
+<div class="highlight"><pre><code class="bash"><span></span>sbt update
 sbt start-script
 </code></pre>
 </div>
 
 <p>As result, a new file <strong>target/start</strong> is created. A file that requires the main class name to be executed as the first argument:</p>
 
-<div class="highlight"><pre><code class="bash">&gt; target/start Foo
+<div class="highlight"><pre><code class="bash"><span></span>&gt; target/start Foo
 Hello from Foo
 
 &gt; target/start Bar
@@ -175,6 +175,11 @@ Hello from Bar
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">22 Jan 2017</span>
+  <a href="/2017/01/22/docker-insecure-registry" title="Docker and how to get access to insecure registries">Docker and how to get access to insecure registries</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Nov 2015</span>
   <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
 </li>
@@ -182,11 +187,6 @@ Hello from Bar
     <li class="post">
   <span class="left_title">06 Jul 2015</span>
   <a href="/2015/07/06/demystifying-coroutines-in-python" title="Demystifying coroutines in python">Demystifying coroutines in python</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">10 Apr 2015</span>
-  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
 </li>
   
 </ul-->

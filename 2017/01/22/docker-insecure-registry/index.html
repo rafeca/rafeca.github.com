@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>A virtual machine for WebRTC development - juandebravo's personal blog</title>
+  <title>Docker and how to get access to insecure registries - juandebravo's personal blog</title>
   <meta name="description" content="juandebravo's personal blog - Personal thoughts about technology (@juandebravo)">
   <meta name="author" content="Juan de Bravo">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -58,63 +58,61 @@
     <div class="container">
 
       <header>   
-  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> A virtual machine for WebRTC development <small>23 Nov 2015</small></h2>
+  <h2><a class="fadedlink" href="/" title="Home">&laquo;</a> Docker and how to get access to insecure registries <small>22 Jan 2017</small></h2>
 
   <nav>
     <ul class="clearfix">
     
-      <li><a href="/tag/webrtc.html">webrtc</a></li>
-    
-      <li><a href="/tag/vagrant.html">vagrant</a></li>
-    
-      <li><a href="/tag/html5.html">html5</a></li>
+      <li><a href="/tag/docker.html">docker</a></li>
     
     </ul>
   </nav>
 </header>
 
 <div id="post" role="main">
-  <p>As described in the <a href="http://www.webrtc.org/">WebRTC project main webpage</a>, WebRTC is a free, open project that provides browsers and mobile applications with Real-Time Communications (RTC) capabilities via simple APIs. Or in case you prefer the <a href="https://en.wikipedia.org/wiki/WebRTC">Wikipedia definition</a>, WebRTC (Web Real-Time Communication) is an API definition drafted by the World Wide Web Consortium (W3C) that supports browser-to-browser applications for voice calling, video chat, and P2P file sharing without the need of either internal or external plugins.</p>
+  <p>I just realized 2016 passed by and this blog didn't get any update. I hope you were not worried about my health, I've been fine! Just a bit busy <span class='emoji emoji_construction_worker'>construction_worker emoji</span> <span class='emoji emoji_couplekiss'>couplekiss emoji</span>.</p>
 
-<p>WebRTC implements <strong>three basic new APIs</strong>:</p>
+<p>Last two weeks I've been playing a bit with <a href="https://www.docker.com/">Docker</a>. In general before getting your feet wet with a new technology, it's convenient (required?) to either go through the <a href="https://docs.docker.com/">usually great documentation about the project</a> or follow <a href="https://harishnarayanan.org/writing/kubernetes-django/">a tutorial</a> about it. I did the later, and as a result of it I pushed my first two docker images to <a href="https://hub.docker.com/r/juandebravo/">Docker Hub</a>. Nothing really impressive, but it helps you to go through the basics.</p>
 
-<ul>
-<li><strong>getUserMedia</strong>: it represents synchronized streams of media.</li>
-<li><strong>RTCPeerConnection</strong>: it handles stable and efficient communication of streaming data between peers.</li>
-<li><strong>DataChannel</strong>: it enables peer-to-peer exchange of arbitrary data.</li>
-</ul>
+<p>Last week I started a side project and, for it to be more interesting, I decided to go with Docker and Kubernetes <span class='emoji emoji_neckbeard'>neckbeard emoji</span>. It turns out that the project cannot be public, so I needed to use an internal Docker hub we're using in my current project for keeping it private.</p>
 
-<p><a href="http://iswebrtcreadyyet.com/">iswebrtcreadyyet</a> lists the different WebRTC functionalities that are supported by the latest version of the most widely used browers.</p>
+<p>Unfortunately, that private Docker hub is configured to accept only HTTP requests, instead of HTTPS. I know... bear with me please <span class='emoji emoji_pray'>pray emoji</span>.</p>
 
-<p>WebRTC APIs are still in early stages, which means that new browser versions could introdude non backwards compatible changes, and APIs name may be prefixed by a browser prefix (<em>moz</em>, <em>webkit</em>, ...), which eventually means the JS developer is in charge on building a shim to support multiple browsers in her webRTC application.</p>
+<p>After tagging the image, I was trying to push to the docker hub repository and getting this response:</p>
 
-<p><a href="https://github.com/webrtc">WebRTC team</a> has created a <strong><a href="https://github.com/webrtc/adapter">shim called adapter</a></strong> as an effort for hiding those API changes and prefix differences from developers.</p>
-
-<p>In case you want to get started with <strong>adapter development</strong>, you will need a <a href="https://github.com/webrtc/adapter/tree/master/test">Debian box to ensure you can run the multi-browser tests</a>.</p>
-
-<p>In order to make this process simpler, I have put some effort on creating a Vagrant box called <a href="https://github.com/juandebravo/webrtc-box">webrtc-box</a>, that is in change of automating the development environment setup for working on WebRTC adapter.</p>
-
-<p><strong>Running adapter tests should be as simple as</strong>:</p>
-
-<div class="highlight"><pre><code class="bash"><span></span><span class="c1"># Clone repository</span>
-host $ git clone https://github.com/juandebravo/webrtc-box.git
-host $ <span class="nb">cd</span> webrtc-box
-host $ vagrant up
-
-<span class="c1"># Connect to guest machine</span>
-host $ vagrant ssh
-
-<span class="c1"># Execute tests</span>
-vagrant@debian $ <span class="nb">cd</span> /adapter
-vagrant@debian /adapter $ npm <span class="nb">test</span>
+<div class="highlight"><pre><code class="bash"><span></span>fish&gt; docker push &lt;insecure-docker-hub-hostname&gt;/&lt;image-name&gt;:&lt;image-tag&gt;
+The push refers to a repository <span class="o">[</span>&lt;insecure-docker-hub-hostname&gt;/&lt;image-name&gt;<span class="o">]</span>
+Get https://&lt;insecure-docker-hub-hostname&gt;/v1/_ping: dial tcp &lt;IP-address&gt;:443: getsockopt: connection refused
 </code></pre>
 </div>
 
-<p>And that's it, you're ready to start hacking on top of <strong><a href="https://github.com/webrtc/adapter">adapter</a></strong>.</p>
+<p>Console information shows that docker is trying to connect via HTTPS to docker hub.</p>
 
-<p>Happy webrtc-ing!!! <span class='emoji emoji_city_sunrise'>city_sunrise emoji</span> <span class='emoji emoji_squirrel'>squirrel emoji</span></p>
+<p>For overcoming this and get access via HTTP, you need to do the following:</p>
 
-<p>In case you read this post before November 30th 2015, you're on time for making a donation to our <a href="http://moteam.co/tu-go">Movember team</a>!!! <span class='emoji emoji_man'>man emoji</span></p>
+<p><strong>If you're using Mac OSX Docker client</strong>:</p>
+
+<ul>
+<li>Go to Docker -&gt; Daemon -&gt; Basic -&gt; Insecure registries</li>
+<li>Add <insecure-docker-hub-hostname> to the list</li>
+<li>Restart Docker</li>
+</ul>
+
+<p><strong>If you're using a Linux distribution</strong>:</p>
+
+<ul>
+<li>Open file <code>/etc/sysconfig/docker</code></li>
+<li>Add <code>INSECURE_REGISTRY=&quot;--insecure-registry=&lt;insecure-docker-hub-hostname&gt; &quot;</code></li>
+<li>Restart Docker</li>
+</ul>
+
+<p>Now you're ready to work with your insecure Docker hub!</p>
+
+<div class="highlight"><pre><code class="bash"><span></span>fish&gt; docker push &lt;insecure-docker-hub-hostname&gt;/&lt;image-name&gt;:&lt;image-tag&gt;
+The push refers to a repository <span class="o">[</span>&lt;insecure-docker-hub-hostname&gt;/&lt;image-name&gt;<span class="o">]</span>
+...
+</code></pre>
+</div>
 
   
   <p class="back">&laquo; <a href="/">Home</a></p>
@@ -124,8 +122,8 @@ vagrant@debian /adapter $ npm <span class="nb">test</span>
 <ul class="posts_list">
   
     <li class="post">
-  <span class="left_title">22 Jan 2017</span>
-  <a href="/2017/01/22/docker-insecure-registry" title="Docker and how to get access to insecure registries">Docker and how to get access to insecure registries</a>
+  <span class="left_title">23 Nov 2015</span>
+  <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
 </li>
   
     <li class="post">

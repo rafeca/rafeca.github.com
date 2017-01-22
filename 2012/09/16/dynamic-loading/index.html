@@ -91,7 +91,7 @@
 
 <p>Our current solution to run different logic in both products, instead of using project configuration, is <strong>dynamic loading</strong>. To implement it, we have defined our own code structure respecting Django default structure:</p>
 
-<div class="highlight"><pre><code class="bash">- django_project_root
+<div class="highlight"><pre><code class="bash"><span></span>- django_project_root
   - django_app_1
     - __init__.py
     - services.py
@@ -118,17 +118,17 @@
 
 <p>Find underneath the snippet of code (simplified) we're using to know which module must be loaded:</p>
 
-<div class="highlight"><pre><code class="python"><span class="k">def</span> <span class="nf">get_module</span><span class="p">(</span><span class="n">application_name</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">module</span><span class="p">):</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="k">def</span> <span class="nf">get_module</span><span class="p">(</span><span class="n">application_name</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">module</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">module_name</span> <span class="o">=</span> <span class="n">application_name</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">project</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">module</span>
+        <span class="n">module_name</span> <span class="o">=</span> <span class="n">application_name</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">project</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">module</span>
         <span class="k">return</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Unable to import module: {0} -&gt; {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">ex</span><span class="p">))</span>
-        <span class="k">return</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">application_name</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">module</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Unable to import module: {0} -&gt; {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">ex</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">application_name</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">module</span><span class="p">)</span>
 
-<span class="c"># Example</span>
+<span class="c1"># Example</span>
 
-<span class="n">get_module</span><span class="p">(</span><span class="s">&#39;django_app_1&#39;</span><span class="p">,</span> <span class="s">&#39;projectA&#39;</span><span class="p">,</span> <span class="s">&#39;services&#39;</span><span class="p">)</span>
+<span class="n">get_module</span><span class="p">(</span><span class="s1">&#39;django_app_1&#39;</span><span class="p">,</span> <span class="s1">&#39;projectA&#39;</span><span class="p">,</span> <span class="s1">&#39;services&#39;</span><span class="p">)</span>
 </code></pre>
 </div>
 
@@ -137,13 +137,13 @@ Sometimes the warning is the expected behavior (i.e. projectA does not define it
 
 <p>This is something that Django is not doing (at least in version 1.3.1) and caused me some paintful last Friday. This command:</p>
 
-<div class="highlight"><pre><code class="python"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">collectstatic</span> <span class="o">--</span><span class="n">settings</span><span class="o">=</span><span class="n">projectA_settings</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">collectstatic</span> <span class="o">--</span><span class="n">settings</span><span class="o">=</span><span class="n">projectA_settings</span>
 </code></pre>
 </div>
 
 <p>generated the following result:</p>
 
-<div class="highlight"><pre><code class="python"><span class="n">Unknown</span> <span class="n">command</span><span class="p">:</span> <span class="s">&#39;collectstatic&#39;</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="n">Unknown</span> <span class="n">command</span><span class="p">:</span> <span class="s1">&#39;collectstatic&#39;</span>
 </code></pre>
 </div>
 
@@ -161,6 +161,11 @@ Sometimes the warning is the expected behavior (i.e. projectA does not define it
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">22 Jan 2017</span>
+  <a href="/2017/01/22/docker-insecure-registry" title="Docker and how to get access to insecure registries">Docker and how to get access to insecure registries</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Nov 2015</span>
   <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
 </li>
@@ -168,11 +173,6 @@ Sometimes the warning is the expected behavior (i.e. projectA does not define it
     <li class="post">
   <span class="left_title">06 Jul 2015</span>
   <a href="/2015/07/06/demystifying-coroutines-in-python" title="Demystifying coroutines in python">Demystifying coroutines in python</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">10 Apr 2015</span>
-  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
 </li>
   
 </ul-->

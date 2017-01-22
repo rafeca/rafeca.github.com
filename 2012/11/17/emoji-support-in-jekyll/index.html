@@ -78,7 +78,7 @@
 
 <h2>1. Include the <strong>gemoji</strong> dependency in your Gemfile</h2>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">gem</span> <span class="s1">&#39;gemoji&#39;</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">&#39;emoji/railtie&#39;</span>
+<div class="highlight"><pre><code class="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;gemoji&#39;</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">&#39;emoji/railtie&#39;</span>
 </code></pre>
 </div>
 
@@ -86,7 +86,7 @@
 
 <p>This folder will contain the emoji icons.</p>
 
-<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">emoji</span><span class="p-Indicator">:</span>    <span class="l-Scalar-Plain">gfx/emoji</span>
+<div class="highlight"><pre><code class="yaml"><span></span><span class="l l-Scalar l-Scalar-Plain">emoji</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">gfx/emoji</span>
 </code></pre>
 </div>
 
@@ -94,7 +94,7 @@
 
 <p>This rake task copies the icons included in the gemoji gem into your Jekyll site folder. It also generates a CSS file.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s1">&#39;Generate emoji CSS styles&#39;</span>
+<div class="highlight"><pre><code class="ruby"><span></span><span class="n">desc</span> <span class="s1">&#39;Generate emoji CSS styles&#39;</span>
 <span class="n">task</span> <span class="ss">:emoji</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="n">green</span> <span class="s1">&#39;Generating emoji CSS...&#39;</span>
 
@@ -138,7 +138,7 @@
 
 <h2>4. Execute the rake task</h2>
 
-<div class="highlight"><pre><code class="bash">rake emoji
+<div class="highlight"><pre><code class="bash"><span></span>rake emoji
 </code></pre>
 </div>
 
@@ -146,7 +146,7 @@
 
 <h2>5. Include the generated CSS file into HTML layouts</h2>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/css/style.css&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html"><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/css/style.css&quot;</span><span class="p">&gt;</span>
 </code></pre>
 </div>
 
@@ -154,7 +154,7 @@
 
 <p>Copy this content into the file <strong>_plugins/emoji.rb</strong></p>
 
-<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s2">&quot;gemoji&quot;</span>
+<div class="highlight"><pre><code class="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;gemoji&quot;</span>
 
 <span class="k">module</span> <span class="nn">Jekyll</span>
   <span class="k">module</span> <span class="nn">EmojiFilter</span>
@@ -184,11 +184,11 @@
 
 <p>Concat the filter <strong>emojify</strong> in the layouts where you want to include emojies.</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;post&quot;</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html"><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
   Liquid error: undefined method `to_str&#39; for nil:NilClass
   
-  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;back&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;laquo;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;back&quot;</span><span class="p">&gt;</span><span class="ni">&amp;laquo;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre>
 </div>
 
@@ -198,7 +198,7 @@
 
 <h2>9. Run jekyll</h2>
 
-<div class="highlight"><pre><code class="bash">jekyll --server --auto
+<div class="highlight"><pre><code class="bash"><span></span>jekyll --server --auto
 </code></pre>
 </div>
 
@@ -214,6 +214,11 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">22 Jan 2017</span>
+  <a href="/2017/01/22/docker-insecure-registry" title="Docker and how to get access to insecure registries">Docker and how to get access to insecure registries</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Nov 2015</span>
   <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
 </li>
@@ -221,11 +226,6 @@
     <li class="post">
   <span class="left_title">06 Jul 2015</span>
   <a href="/2015/07/06/demystifying-coroutines-in-python" title="Demystifying coroutines in python">Demystifying coroutines in python</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">10 Apr 2015</span>
-  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
 </li>
   
 </ul-->

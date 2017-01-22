@@ -88,23 +88,23 @@
 
 <p>Before decorators reached python, the following excerpt was needed to create a class/static method:</p>
 
-<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
     <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&quot;Hello {0} from my class method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Hello {0} from my class method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">bazz</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&quot;Hello {0} from my static method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Hello {0} from my static method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     
-    <span class="c"># Convert bar from instance to class method</span>
+    <span class="c1"># Convert bar from instance to class method</span>
     <span class="n">bar</span> <span class="o">=</span> <span class="nb">classmethod</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
     
-    <span class="c"># Create a static method</span>
+    <span class="c1"># Create a static method</span>
     <span class="n">bazz</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">bazz</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s">&#39;John Doe&#39;</span><span class="p">)</span>
-    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bazz</span><span class="p">(</span><span class="s">&#39;John Doe&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bazz</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
 </code></pre>
 </div>
 
@@ -112,23 +112,23 @@
 
 <p>Using decorators and its syntax sugar (the <strong>@</strong> symbol), the previous excerpt can be re-written to:</p>
 
-<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
-    <span class="c"># Define bar as a class method</span>
-    <span class="c"># As first parameter we could use &#39;self&#39;, but the facto standard is to use &#39;cls&#39; while</span>
-    <span class="c"># defining class methods</span>
+    <span class="c1"># Define bar as a class method</span>
+    <span class="c1"># As first parameter we could use &#39;self&#39;, but the facto standard is to use &#39;cls&#39; while</span>
+    <span class="c1"># defining class methods</span>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&quot;Hello {0} from my class method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Hello {0} from my class method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
-    <span class="c"># Define bazz as a static method</span>
+    <span class="c1"># Define bazz as a static method</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">bazz</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&quot;Hello {0} from my static method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Hello {0} from my static method&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s">&#39;John Doe&#39;</span><span class="p">)</span>
-    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bazz</span><span class="p">(</span><span class="s">&#39;John Doe&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">Foo</span><span class="o">.</span><span class="n">bazz</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
 </code></pre>
 </div>
 
@@ -138,17 +138,17 @@
 
 <p>The following code creates a decorator that dumps the arguments that a function/method receives when executed. The base of that code is taken from <a href="http://wiki.python.org/moin/PythonDecoratorLibrary#Easy_Dump_of_Function_Arguments">wiki.python.org#Easy<em>Dump</em>Of<em>Function</em>Arguments</a>.</p>
 
-<div class="highlight"><pre><code class="python"><span class="c"># decorator_utils.py</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="c1"># decorator_utils.py</span>
 
 <span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">dump_args</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="c"># get function arguments name</span>
+    <span class="c1"># get function arguments name</span>
     <span class="n">argnames</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_varnames</span><span class="p">[:</span><span class="n">func</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_argcount</span><span class="p">]</span>
 
-    <span class="c"># get function name</span>
+    <span class="c1"># get function name</span>
     <span class="n">fname</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">func_name</span>
     <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 
@@ -157,14 +157,14 @@
 <span class="sd">        Log arguments, including name, type and value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">def</span> <span class="nf">format_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-            <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">=</span><span class="si">%s</span><span class="s">&lt;</span><span class="si">%s</span><span class="s">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">arg</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot; args =&gt; {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">=</span><span class="si">%s</span><span class="s1">&lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">arg</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot; args =&gt; {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
             <span class="n">format_arg</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">argnames</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">echo_func</span>
 
-<span class="c"># example.py</span>
+<span class="c1"># example.py</span>
 
 <span class="kn">from</span> <span class="nn">decorator_utils</span> <span class="kn">import</span> <span class="n">dump_args</span>
 
@@ -186,7 +186,7 @@
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
@@ -197,22 +197,22 @@
     <span class="k">pass</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">UserModel</span><span class="o">.</span><span class="n">find_by_id</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">UserModel</span><span class="o">.</span><span class="n">find_by_id</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
 
-    <span class="n">u</span> <span class="o">=</span> <span class="n">UserModel</span><span class="p">(</span><span class="s">&#39;879234-32423423&#39;</span><span class="p">)</span>
-    <span class="n">u</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="n">surname</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">UserModel</span><span class="p">(</span><span class="s1">&#39;879234-32423423&#39;</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">surname</span><span class="o">=</span><span class="s2">&quot;Doe&quot;</span><span class="p">)</span>
     <span class="n">f1</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-    <span class="n">f1</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="s">&#39;bazz&#39;</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
+    <span class="n">f1</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="s1">&#39;bazz&#39;</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
 </code></pre>
 </div>
 
 <p>The execution of the previous code generates the following output:</p>
 
-<div class="highlight"><pre><code class="bash">λ python example.py
+<div class="highlight"><pre><code class="bash"><span></span>λ python example.py
 
-DEBUG:find_by_id: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">cls</span><span class="o">=</span><span class="nb">type</span>&lt;&lt;class <span class="s1">&#39;__main__.UserModel&#39;</span>&gt;&gt;, <span class="nv">user_id</span><span class="o">=</span>str&lt;foo&gt;
+DEBUG:find_by_id: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">cls</span><span class="o">=</span>type&lt;&lt;class <span class="s1">&#39;__main__.UserModel&#39;</span>&gt;&gt;, <span class="nv">user_id</span><span class="o">=</span>str&lt;foo&gt;
 DEBUG:update: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">self</span><span class="o">=</span>UserModel&lt;879234-32423423&gt;, <span class="nv">surname</span><span class="o">=</span>str&lt;Doe&gt;, <span class="nv">name</span><span class="o">=</span>str&lt;John&gt;
 DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">user_id</span><span class="o">=</span>UserModel&lt;879234-32423423&gt;, <span class="nv">arg1</span><span class="o">=</span>int&lt;2&gt;, <span class="nv">arg2</span><span class="o">=</span>int&lt;3&gt;
 DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class="nv">user_id</span><span class="o">=</span>UserModel&lt;879234-32423423&gt;, <span class="nv">arg1</span><span class="o">=</span>int&lt;2&gt;, <span class="nv">arg2</span><span class="o">=</span>int&lt;3&gt;, <span class="nv">foo</span><span class="o">=</span>str&lt;bazz&gt;, <span class="nv">bar</span><span class="o">=</span>int&lt;23&gt;
@@ -227,8 +227,8 @@ DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class=
 
 <p>The basic example using python native library to handle a file object:</p>
 
-<div class="highlight"><pre><code class="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;/var/log/events.log&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;New user created&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/var/log/events.log&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;New user created&quot;</span><span class="p">)</span>
 </code></pre>
 </div>
 
@@ -236,7 +236,7 @@ DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class=
 
 <p>To create a context manager you need to define a class that implements two methods, <strong><strong>enter</strong></strong> and <strong><strong>exit</strong></strong>. In the following code I'm creating a context manager, <em>user</em>, that retrieves an object from an external source and stores it back if updated:</p>
 
-<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Database object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -245,7 +245,7 @@ DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class=
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">has_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c"># logic to check if any user property has been updated</span>
+        <span class="c1"># logic to check if any user property has been updated</span>
         <span class="k">return</span> <span class="bp">True</span>
 
 <span class="k">class</span> <span class="nc">user</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -260,8 +260,8 @@ DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class=
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This code block is executed while entering a context manager</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c"># mock that returns always a basic User</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="n">surname</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">)</span>
+        <span class="c1"># mock that returns always a basic User</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">surname</span><span class="o">=</span><span class="s2">&quot;Doe&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span>
 
     <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">):</span>
@@ -269,18 +269,18 @@ DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class=
 <span class="sd">        This code block is executed at context manager exit</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">has_changed</span><span class="p">():</span>
-            <span class="c"># here the save logic</span>
+            <span class="c1"># here the save logic</span>
             <span class="k">pass</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">with</span> <span class="n">user</span><span class="p">(</span><span class="s">&#39;00000-11111&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">u</span><span class="p">:</span>
-        <span class="n">u</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Johnny&#39;</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">user</span><span class="p">(</span><span class="s1">&#39;00000-11111&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">u</span><span class="p">:</span>
+        <span class="n">u</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Johnny&#39;</span>
 </code></pre>
 </div>
 
 <p>Switching to ruby, something similar can be achieved with the following snippet:</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Hash</span>
+<div class="highlight"><pre><code class="ruby"><span></span><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Hash</span>
   <span class="kp">attr_reader</span> <span class="ss">:user_id</span>
   
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="p">{})</span>
@@ -333,6 +333,11 @@ DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class=
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">22 Jan 2017</span>
+  <a href="/2017/01/22/docker-insecure-registry" title="Docker and how to get access to insecure registries">Docker and how to get access to insecure registries</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Nov 2015</span>
   <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
 </li>
@@ -340,11 +345,6 @@ DEBUG:f1: <span class="nv">args</span> <span class="o">=</span>&gt; <span class=
     <li class="post">
   <span class="left_title">06 Jul 2015</span>
   <a href="/2015/07/06/demystifying-coroutines-in-python" title="Demystifying coroutines in python">Demystifying coroutines in python</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">10 Apr 2015</span>
-  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
 </li>
   
 </ul-->

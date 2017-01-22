@@ -92,7 +92,7 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
 <li><p>Install the <em>travis</em> gem in your local environment</p></li>
 </ul>
 
-<div class="highlight"><pre><code class="bash">gem install travis
+<div class="highlight"><pre><code class="bash"><span></span>gem install travis
 </code></pre>
 </div>
 
@@ -101,7 +101,7 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
 <li><p>Hash the token for travis to be able to use it in a secured way (as the value will be included in your repository)</p></li>
 </ul>
 
-<div class="highlight"><pre><code class="bash">travis encrypt -r &lt;USER&gt;/&lt;REPOSITORY&gt; <span class="nv">GH_TOKEN</span><span class="o">=</span>&lt;GH-TOKEN&gt; --add env.global
+<div class="highlight"><pre><code class="bash"><span></span>travis encrypt -r &lt;USER&gt;/&lt;REPOSITORY&gt; <span class="nv">GH_TOKEN</span><span class="o">=</span>&lt;GH-TOKEN&gt; --add env.global
 </code></pre>
 </div>
 
@@ -110,7 +110,7 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
 <li><p>In order to use a GitHub OAuth token, <a href="https://github.com/juandebravo/juandebravo.github.com/blob/master/.travis.yml#L36">the configured URL should be the HTTPS one</a>:</p></li>
 </ul>
 
-<div class="highlight"><pre><code class="bash">git remote <span class="nb">set</span>-url origin https://<span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span>@github.com/juandebravo/juandebravo.github.com.git
+<div class="highlight"><pre><code class="bash"><span></span>git remote set-url origin https://<span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span>@github.com/juandebravo/juandebravo.github.com.git
 </code></pre>
 </div>
 
@@ -128,6 +128,11 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">22 Jan 2017</span>
+  <a href="/2017/01/22/docker-insecure-registry" title="Docker and how to get access to insecure registries">Docker and how to get access to insecure registries</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Nov 2015</span>
   <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
 </li>
@@ -135,11 +140,6 @@ one. The reason behind this might be to avoid any kind of attack from a maliciou
     <li class="post">
   <span class="left_title">06 Jul 2015</span>
   <a href="/2015/07/06/demystifying-coroutines-in-python" title="Demystifying coroutines in python">Demystifying coroutines in python</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">10 Apr 2015</span>
-  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
 </li>
   
 </ul-->

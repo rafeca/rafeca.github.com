@@ -74,7 +74,7 @@
 <div id="post" role="main">
   <p>It happens often that you need an array as object type, and even if you have defined your API like that, you still want to double check that the parameter received in your method is an array:</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+<div class="highlight"><pre><code class="ruby"><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
   <span class="n">param</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">[</span><span class="n">param</span><span class="o">]</span> <span class="k">if</span> <span class="o">!</span><span class="n">param</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Array</span><span class="p">)</span>
   <span class="c1"># Service logic here</span>
 <span class="k">end</span>
@@ -83,7 +83,7 @@
 
 <p>Fortunalety in ruby you have the following feature that converts your parameter to an array, or does nothing in case it is already an array:</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+<div class="highlight"><pre><code class="ruby"><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
   <span class="n">param</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
@@ -93,7 +93,7 @@
 
 <p>The following snippet covers that funcionality:</p>
 
-<div class="highlight"><pre><code class="python"><span class="c"># list_utils.py</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="c1"># list_utils.py</span>
 
 <span class="k">def</span> <span class="nf">list_</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="o">*</span><span class="n">more_values</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -110,29 +110,29 @@
 
 <p>Example:</p>
 
-<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">list_utils</span> <span class="kn">import</span> <span class="n">list_</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="kn">from</span> <span class="nn">list_utils</span> <span class="kn">import</span> <span class="n">list_</span>
 
 <span class="k">def</span> <span class="nf">send_mail</span><span class="p">(</span><span class="n">destinations</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">destinations</span> <span class="o">=</span> <span class="n">list_</span><span class="p">(</span><span class="n">destinations</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">destination</span> <span class="ow">in</span> <span class="n">destinations</span><span class="p">:</span>
-        <span class="c"># your service logic</span>
+        <span class="c1"># your service logic</span>
 </code></pre>
 </div>
 
 <p>You can check the behavior with the following chunk of unit tests:</p>
 
-<div class="highlight"><pre><code class="python"><span class="kn">import</span> <span class="nn">unittest</span>
+<div class="highlight"><pre><code class="python"><span></span><span class="kn">import</span> <span class="nn">unittest</span>
 
 <span class="kn">from</span> <span class="nn">list_utils</span> <span class="kn">import</span> <span class="n">list_</span>
 
 <span class="k">class</span> <span class="nc">ListTests</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">test_parameter_is_a_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">list_</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">),</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">list_</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">test_parameter_is_an_array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">list_</span><span class="p">([</span><span class="s">&quot;foo&quot;</span><span class="p">]),</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">list_</span><span class="p">([</span><span class="s2">&quot;foo&quot;</span><span class="p">]),</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">test_parameter_is_an_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">list_</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -146,7 +146,7 @@
     <span class="k">def</span> <span class="nf">test_parameter_is_none</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">list_</span><span class="p">(</span><span class="bp">None</span><span class="p">),</span> <span class="p">[</span><span class="bp">None</span><span class="p">])</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </code></pre>
 </div>
@@ -159,6 +159,11 @@
 <ul class="posts_list">
   
     <li class="post">
+  <span class="left_title">22 Jan 2017</span>
+  <a href="/2017/01/22/docker-insecure-registry" title="Docker and how to get access to insecure registries">Docker and how to get access to insecure registries</a>
+</li>
+  
+    <li class="post">
   <span class="left_title">23 Nov 2015</span>
   <a href="/2015/11/23/webrtc-adapter-vagrant-box" title="A virtual machine for WebRTC development">A virtual machine for WebRTC development</a>
 </li>
@@ -166,11 +171,6 @@
     <li class="post">
   <span class="left_title">06 Jul 2015</span>
   <a href="/2015/07/06/demystifying-coroutines-in-python" title="Demystifying coroutines in python">Demystifying coroutines in python</a>
-</li>
-  
-    <li class="post">
-  <span class="left_title">10 Apr 2015</span>
-  <a href="/2015/04/10/java-yyyy-date-format" title="Don't use YYYY in your date format template">Don't use YYYY in your date format template</a>
 </li>
   
 </ul-->

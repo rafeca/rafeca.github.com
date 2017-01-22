@@ -1,0 +1,25 @@
+safe:         true
+highlighter:  true
+permalink:    /:year/:month/:day/:title
+exclude:      ["CNAME", "Rakefile"]
+title:        juandebravo's personal blog
+description:  Personal thoughts about technology (@juandebravo)
+url_root:     http://juandebravo.com
+author:       Juan de Bravo
+author_short: juandebravo
+author_email: juandebravo@gmail.com
+analytics_ua: UA-32824811-1
+feedburner_id: juandebravo
+disqus_id:    juandebravo
+emoji:        gfx/emoji
+posts:      _posts
+gems:
+  - jemoji
+navigation:
+- text: Dev Blog
+  url: /index.html
+  layout: post
+- text: Open Source
+  url: /open_source.html
+- text: About me
+  url: /about_me.html

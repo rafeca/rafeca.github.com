@@ -1,6 +1,5 @@
 safe:         true
-pygments:     true
-markdown:     redcarpet
+highlighter:  true
 permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
 title:        juandebravo's personal blog
@@ -13,7 +12,9 @@ analytics_ua: UA-32824811-1
 feedburner_id: juandebravo
 disqus_id:    juandebravo
 emoji:        gfx/emoji
-posts:		  _posts
+posts:      _posts
+gems:
+  - jemoji
 navigation:
 - text: Dev Blog
   url: /index.html

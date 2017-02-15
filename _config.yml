@@ -1,5 +1,5 @@
 safe:         true
-highlighter:  true
+highlighter:  rouge
 permalink:    /:year/:month/:day/:title
 exclude:      ["CNAME", "Rakefile"]
 title:        juandebravo's personal blog

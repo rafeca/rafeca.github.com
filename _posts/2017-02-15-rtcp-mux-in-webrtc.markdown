@@ -79,8 +79,9 @@ both components.
 Negotiation for using RTP/RTCP multiplexing is done using `a=rtcp-mux`, `a=rtcp:...` and
 `a:candidate ...` lines in both offer and answer.
 
-Bottom line, **multiplexing RTP and RTCP reduces ICE overhead, as it requires gathering less
-candidates, which could as well reduce the call setup time.
+Bottom line, **multiplexing RTP and RTCP reduces ICE overhead**, as it requires gathering less
+candidates and it reduces the overhead in other parts of the VoIP architecture, e.g. less UDP
+ports used in the TURN servers and less bandwidth wasted in connectivity checks.
 
 **Cool, so what's next?**
 

@@ -97,7 +97,7 @@ This cuts by half the number of candidates that the offerer needs to gather.
 As defined in [Javascript Session Establishment Protocol](https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-17),
 "*the default multiplexing policy MUST be set to require*".
 
-In reality, the default multiplexing policy has always been *<negotiate>* in both Chrome and Firefox. But that's changing in the near future.
+In reality, the default multiplexing policy has always been *'negotiate'* in both Chrome and Firefox. But that's changing in the near future.
 
 Starting in [Chrome M57](https://groups.google.com/forum/#!topic/discuss-webrtc/eM57DEy89MY),
 the [`rtcpMuxPolicy` setting has gone from *negotiate* to *require*](https://bugs.chromium.org/p/webrtc/issues/detail?id=6030).

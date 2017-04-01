@@ -44,7 +44,7 @@ optimization, ICE candidates before calling *setLocalDescription*. No news
 about when [Firefox will implement this functionality](https://bugzilla.mozilla.org/show_bug.cgi?id=1291894).
 
 In a simple demo that you can find [here](https://jsfiddle.net/rn22efjd/4/), the
-time required for getting the user media, creating the peer conneciton and completing
+time required for getting the user media, creating the peer connection and completing
 the candidates gathering is reduced from 221ms to 180ms, around 19% reduction.
 
 Reducing as much as possible the call setup time is a key factor

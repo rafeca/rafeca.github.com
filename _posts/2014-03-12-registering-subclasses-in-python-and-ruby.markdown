@@ -10,12 +10,12 @@ As result of this exercise, different gems were developed to provide isolated fu
 
 Besides the primary goal of decoupling logic, developers should be able as well to create their own modules to extend the base functionality provided by [Adhearsion](http://adhearsion.com/). Those modules were called **plugins**.
 
-While thinking about how to build this plugin functionality, I dug into different libraries trying to find a clean solution, and [Rails](http://rubyonrails.org/) came to the rescue. The developer that is using Rails can define her own plugins to extend the functionality of the framework or modify its initialization. These plugins are called **[Railities](http://api.rubyonrails.org/classes/Rails/Railtie.html)**. Creating a Railtie is really simple:
+While thinking about how to build this plugin functionality, I dug into different libraries trying to find a clean solution, and [Rails](http://rubyonrails.org/) came to the rescue. The developer that is using Rails can define her own plugins to extend the functionality of the framework or modify its initialization. These plugins are called **[Railties](http://api.rubyonrails.org/classes/Rails/Railtie.html)**. Creating a Railtie is really simple:
 
-- inherit from [Railitie](http://api.rubyonrails.org/classes/Rails/Railtie.html) class.
+- inherit from [Railtie](http://api.rubyonrails.org/classes/Rails/Railtie.html) class.
 - load your class during the Rails boot process.
 
-But... how does Rails know that it should execute the code defined in the Railitie subclass while boosting itself? The trick is based on a cool feature from the Ruby language, which defines a hook in the [parent class](http://www.ruby-doc.org/core-2.1.0/Class.html#method-i-inherited) that is raised every time the class is inherited. [Here](https://github.com/rails/rails/blob/master/railties/lib/rails/railtie.rb#L129-L133) you can see the snippet of code that builds the Railtie magic.
+But... how does Rails know that it should execute the code defined in the Railtie subclass while boosting itself? The trick is based on a cool feature from the Ruby language, which defines a hook in the [parent class](http://www.ruby-doc.org/core-2.1.0/Class.html#method-i-inherited) that is raised every time the class is inherited. [Here](https://github.com/rails/rails/blob/master/railties/lib/rails/railtie.rb#L129-L133) you can see the snippet of code that builds the Railtie magic.
 
 Eventually, for [Adhearsion plugins](https://github.com/adhearsion/adhearsion/blob/develop/lib/adhearsion/plugin.rb) I followed the same rule.
 

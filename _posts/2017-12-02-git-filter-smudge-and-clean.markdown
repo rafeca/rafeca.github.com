@@ -8,9 +8,10 @@ Some years ago I learned about **smudging and cleaning data in a git repository*
 a very cool git functionality that I haven't used for a while till last week,
 when it came back to my mind for solving a specific need.
 
-Smudge and clean are two functionalities that can be configured via git attributes.
-While [git attributes](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes) are
-not a very popular git configuration, it provides several handy functionalities:
+Smudge and clean are two functionalities that can be configured via [git
+attributes](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes).
+While git attributes are not a very popular git configuration, it provides
+several handy functionalities:
 
 1. **identify files as binary files**: this can be convenient to skip those files in `git show`
 and `git diff` output (by default, git does not know how to compare binary files).
@@ -29,8 +30,6 @@ from the two versions and compare it.
 1. update files automatically upon checkout/commit: it's possible to change automatically
 the file content right after running `git checkout` or right before running `git commit`.
 This is the functionality I will focus on.
-
-![Smudge and clean filters](/gfx/posts/smudge-and-clean/smudge-clean-git-filters.png)
 
 ### Smudging your checkout
 
@@ -90,3 +89,6 @@ the smudge filter, this can be done in the git global config:
 ```bash
 git config --global filter.updateSecretToken.clean 'sed "s/super-secret-value!/{your-secret-token}/"'
 ```
+
+![Smudge and clean filters](/gfx/posts/smudge-and-clean/smudge-clean-git-filters.png)
+

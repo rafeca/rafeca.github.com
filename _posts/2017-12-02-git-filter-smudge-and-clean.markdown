@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Smudge and clean your git checkout with .gitattributes"
+title: "Smudge and clean your git working directory"
 categories: [git]
 ---
 

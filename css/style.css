@@ -563,6 +563,14 @@ nav li a:hover {
     text-align: left;
   }
 
+  .menu .item {
+    display: inline-block;
+  }
+
+  .menu .item+.item::before {
+    content: "-"
+  }
+
   h1 {
     font-size: 2em;
     text-indent: -25px;
@@ -619,7 +627,7 @@ nav li a:hover {
   }
 
   ul, ol {
-    padding-left: 30px;
+    padding-left: 10px;
   }
 }
 

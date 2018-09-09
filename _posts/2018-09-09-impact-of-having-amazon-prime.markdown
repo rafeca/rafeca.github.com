@@ -41,7 +41,7 @@ describe in the following paragraphs.
 
 ## Data gathering
 
-I googled "Amazon purchases CSV report" and apparently https://www.amazon.es/gp/b2b/reports
+I googled "Amazon purchases CSV report" and apparently *https://www.amazon.es/gp/b2b/reports*
 was the place I was looking for (mind the *.es* domain).
 
 ![Amazon Spain CSV report](/gfx/posts/amazon-prime/amazon-csv-spain.png)
@@ -147,7 +147,7 @@ The steps I followed to model the data were:
 1. Fill NaN values with the relevant data.
 
 You can find the actual code in the github repository that contains the
-[Jupyter notebook](https://github.com/juandebravo/amazon-prime-analysis)
+[Jupyter notebook](https://github.com/juandebravo/amazon-prime-analysis).
 
 ## Data analysis and plot
 
@@ -155,6 +155,8 @@ I became an Amazon prime customer in June 2017. In the following graphs you can 
 
 - the total amount spent from 2011 till 2018.
 - the number of orders, per month.
+
+Vertical line shows the exact moment when I became an Amazon Prime user.
 
 ![Amazon Puchases analysis](/gfx/posts/amazon-prime/amazon-purchases.png)
 

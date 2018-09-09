@@ -44,7 +44,7 @@ describe in the following paragraphs.
 I googled "Amazon purchases CSV report" and apparently https://www.amazon.es/gp/b2b/reports
 was the place I was looking for (mind the *.es* domain).
 
-![Amazon Spain CSV report](gfx/posts/amazon-prime/amazon-csv-spain.png)
+![Amazon Spain CSV report](/gfx/posts/amazon-prime/amazon-csv-spain.png)
 
 Well... a web form not using a single language is not what you'd expect from a
 [trillion company](https://money.cnn.com/2018/09/04/technology/amazon-1-trillion/index.html).
@@ -55,7 +55,7 @@ Spain web portal.
 In amazon.com things indeed got better, now I had a web form with a single language (English) and
 I was able to download my CSV report.
 
-![Amazon US CSV report](gfx/posts/amazon-prime/amazon-csv-us.png)
+![Amazon US CSV report](/gfx/posts/amazon-prime/amazon-csv-us.png)
 
 Wait!! The report included data only from 2011 to 2012. I was certainly sure I had purchased
 more stuff in Amazon in the following years, so something was wrong there.
@@ -156,7 +156,7 @@ I became an Amazon prime customer in June 2017. In the following graphs you can 
 - the total amount spent from 2011 till 2018.
 - the number of orders, per month.
 
-![Amazon Puchases analysis](gfx/posts/amazon-prime/amazon-purchases.png)
+![Amazon Puchases analysis](/gfx/posts/amazon-prime/amazon-purchases.png)
 
 ## Conclusions
 

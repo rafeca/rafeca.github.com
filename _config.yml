@@ -16,7 +16,7 @@ gems:
   - jemoji
 navigation:
 - text: Dev Blog
-  url: /index.html
+  url: /
   layout: post
 - text: Open Source
   url: /open_source.html

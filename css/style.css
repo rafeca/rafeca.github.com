@@ -432,9 +432,9 @@ code.bash {
 }
 
 .intro {
-  background:url("/gfx/juandebravo.png") no-repeat top right;
+  /* background:url("/gfx/juandebravo.png") no-repeat top right;
   height: 160px;
-  padding: 0 160px 0 0;
+  padding: 0 160px 0 0; */
 }
 
 h3.about_me {

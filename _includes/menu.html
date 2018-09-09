@@ -1,7 +1,7 @@
 <ul>
   {% for link in site.navigation %}
     {% assign current = nil %}
-    {% if page.url == link.url or (page.categories.size > 0 and link.url == '/index.html') %}
+    {% if page.url == link.url %}
       {% assign current = 'active' %}
     {% endif %}
     <li class="item {{ current }}">

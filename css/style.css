@@ -393,6 +393,7 @@ h1 img, h2 img {
   border: 1px solid #ccc;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   padding: 8px;
+  max-width: 95%;
 }
 
 /** Code styles **/

@@ -47,7 +47,7 @@ was the place I was looking for (mind the *.es* domain).
 ![Amazon Spain CSV report](/gfx/posts/amazon-prime/amazon-csv-spain.png)
 
 Well... a web form not using a single language is not what you'd expect from a
-[trillion company](https://money.cnn.com/2018/09/04/technology/amazon-1-trillion/index.html).
+[trillion dollar valuation company](https://money.cnn.com/2018/09/04/technology/amazon-1-trillion/index.html).
 
 I filled in the form to download the data and... uppss!! It didn't work. So I went to the
 amazon.com site (instead of amazon.es), as I assumed there was a temporal issue in the

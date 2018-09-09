@@ -258,7 +258,7 @@ header {
 /* ul and li */
 
 .container ul.posts {
-    list-style: none;
+    list-style: inside circle;
     padding: 0;
     margin: 0;
 }
@@ -266,12 +266,6 @@ header {
 .container ul.posts li {
     padding-left: 1em;
     padding-top: 1em;
-}
-
-.container ul.posts li:before {
-  content: "\0445";
-  padding-right: 5px;
-  color: black;
 }
 
 .container a {
@@ -282,9 +276,8 @@ header {
   text-decoration: underline;
 }
 
-.left_title {
-  display: inline-block;
-  min-width: 110px;
+.date {
+  font-size: small;
 }
 
 /* Prevent emoji to use a new line */

@@ -4,7 +4,7 @@ title: "Docker and how to get access to insecure registries"
 categories: [docker]
 ---
 
-I just realized 2016 passed by and this blog didn't get any update. I hope you were not worried about me! I've been fine! Just a bit busy :construction_worker: :couplekiss:.
+I just realized 2016 passed by and this blog didn't get any update. I hope you were not worried about me! I've been fine! Just a bit busy :construction_worker:.
 
 Last two weeks I've been playing a bit with [Docker](https://www.docker.com/). In general before getting your feet wet with a new technology, it's convenient (required?) to either go through the [usually great documentation about the project](https://docs.docker.com/) or follow [a tutorial](https://harishnarayanan.org/writing/kubernetes-django/) about it. I did the later, and as a result of it I pushed my first two docker images to [Docker Hub](https://hub.docker.com/r/juandebravo/). Nothing really impressive, but it helps you to go through the basics.
 
@@ -43,4 +43,3 @@ fish> docker push <insecure-docker-hub-hostname>/<image-name>:<image-tag>
 The push refers to a repository [<insecure-docker-hub-hostname>/<image-name>]
 ...
 {% endhighlight %}
-

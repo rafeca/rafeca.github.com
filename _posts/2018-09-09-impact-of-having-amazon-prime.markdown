@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Impact of having Amazon Prime in my puchase habits"
-categories: [panda, python, data, amazon, matplotlib]
+title: "Impact of Amazon Prime in my purchase habits"
+categories: [pandas, python, data, amazon, matplotlib]
 ---
 Summertime is always a great opportunity for me to read more frequently than usual.
 This August I've read two interesting books related to data analysis in python:
 
-- [Python Data Science Handbook](https://www.safaribooksonline.com/library/view/python-data-science)
-- [Personal Finance with Python: using pandas, Requests and Recurrent](https://www.safaribooksonline.com/library/view/personal-finance-with)
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+- [Personal Finance with Python: using pandas, Requests and Recurrent](https://www.apress.com/de/book/9781484238011)
 
-In [Personal Finance with Python: using pandas, Requests and Recurrent](https://www.safaribooksonline.com/library/view/personal-finance-with) last chapter,
+In [Personal Finance with Python: using pandas, Requests and Recurrent](https://www.apress.com/de/book/9781484238011) last chapter,
 the author talked about times series forecasting and how he used
 [Prophet](https://research.fb.com/prophet-forecasting-at-scale/) to estimate his future
 expenses in Amazon.
@@ -32,7 +32,7 @@ or more (the real world) sources.
 a normalization phase is required (or at least recommended!).
 1. **Data munging**: "The difference between data found in many tutorials
 and data in the real world is that real-world data is rarely clean and homogeneous". Great
-sentence by Jake VanderPlas in [Python Data Science Handbook](https://www.safaribooksonline.com/library/view/python-data-science). He is right :-)
+sentence by Jake VanderPlas in [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/). He is right :-)
 1. **Data analysis and plot**: execute the right algorithm and plot the data in a graph that
 will help you to understand the meaning of the data (extract information out of the data).
 

@@ -6,8 +6,8 @@ categories: [javascript]
 
 Last week I was discussing with my pals [@drslump](http://www.pollinimini.net)
  and [@ladybenko](http://www.ladybenko.net/) about a very simple idea I came up
- with while reading [John Resig](http://ejohn.org/about/) [Secrets of the JavaScript Ninja]
- (http://ejohn.org/blog/secrets-of-the-javascript-ninja-released/) book on Christmas holidays.
+ with while reading [John Resig](http://ejohn.org/about/)
+ [Secrets of the JavaScript Ninja](http://ejohn.org/blog/secrets-of-the-javascript-ninja-released/) book on Christmas holidays.
 
 The idea is very simple: ensure that a function is called with the expected number of parameters.
 

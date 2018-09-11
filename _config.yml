@@ -12,7 +12,7 @@ analytics_ua: UA-32824811-1
 feedburner_id: juandebravo
 disqus_id:    juandebravo
 posts:      _posts
-gems:
+plugins:
   - jemoji
 navigation:
 - text: Dev Blog

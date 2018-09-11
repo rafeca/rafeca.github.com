@@ -280,6 +280,11 @@ header {
   font-size: small;
 }
 
+.archive-group h3 {
+  color: black;
+}
+
+
 /* Prevent emoji to use a new line */
 #post img.emoji {
   display: inline;

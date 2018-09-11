@@ -19,7 +19,7 @@ navigation:
   url: /
   layout: post
 - text: Categories
-  url: /categories.html
+  url: /categories/index.html
   layout: post
 - text: Open Source
   url: /open_source.html

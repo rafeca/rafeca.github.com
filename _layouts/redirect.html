@@ -1,1 +1,7 @@
-<meta http-equiv="Refresh" content="0; url={{page.dest}}">
+<meta http-equiv="Refresh" content="1; url={{page.dest}}">
+<script>
+    window._gaq = [['_setAccount','{{ site.analytics_ua }}'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+</script>
